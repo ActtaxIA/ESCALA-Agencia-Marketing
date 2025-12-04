@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import styles from './Header.module.css'
@@ -48,8 +49,17 @@ export function Header() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <Link href="/" className={styles.logo}>
-        <span className={styles.logoMain}>ESCALA</span>
-        <span className={styles.logoSub}>Agencia de Marketing</span>
+        <Image 
+          src="/images/logo.png" 
+          alt="ESCALA" 
+          width={40} 
+          height={40}
+          className={styles.logoImage}
+        />
+        <div className={styles.logoText}>
+          <span className={styles.logoMain}>ESCALA</span>
+          <span className={styles.logoSub}>Agencia de Marketing</span>
+        </div>
       </Link>
 
       <nav className={styles.nav}>

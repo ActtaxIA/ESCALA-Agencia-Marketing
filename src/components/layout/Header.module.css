@@ -19,23 +19,43 @@
 
 .logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logoImage {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
 }
 
 .logoMain {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 0.25em;
   color: var(--stripe-1);
+  line-height: 1;
 }
 
 .logoSub {
-  font-size: 0.5rem;
+  font-size: 0.45rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   color: var(--text-light);
   text-transform: uppercase;
+  margin-top: 0.15rem;
 }
 
 .nav {
@@ -324,6 +344,20 @@
     left: 0;
     right: 0;
     padding: 1rem 1.5rem;
+  }
+
+  .logoImage {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logoMain {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+  }
+
+  .logoSub {
+    font-size: 0.4rem;
   }
 
   .nav {

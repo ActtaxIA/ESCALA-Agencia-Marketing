@@ -316,10 +316,12 @@
 
   /* CRÍTICO: Todas las franjas deben tener la misma altura (1/8 del viewport) */
   .stripe {
-    flex: 1 1 0 !important;
+    flex: 1 1 0% !important;
     min-height: 0 !important;
     max-height: none !important;
-    height: auto !important;
+    height: unset !important;
+    flex-shrink: 1 !important;
+    flex-grow: 1 !important;
   }
 
   /* Cuando se expande con doble tap, SÍ puede crecer */

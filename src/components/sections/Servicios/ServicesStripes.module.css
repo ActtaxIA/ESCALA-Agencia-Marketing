@@ -12,46 +12,6 @@
   transition: opacity 0.8s ease;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-.navLinks {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.navLinks a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.navLinks a:hover {
-  color: white;
-}
-
-.navCta {
-  background: linear-gradient(135deg, var(--stripe-7), var(--stripe-8)) !important;
-  color: white !important;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 50px;
-}
-
 /* ===== CONTAINER ===== */
 .container {
   display: flex;
@@ -82,46 +42,28 @@
   transition: transform 0.4s ease;
 }
 
-/* ===== COLORES: ATARDECER → NOCHE → AMANECER ===== */
-/* Usando EXACTAMENTE los colores de la home, pero invertidos */
-/* El centro es la noche, los lados son atardecer/amanecer */
-
-/* 1. Crepúsculo/Atardecer (rojo-naranja) */
+/* Colores de las franjas - gradiente invertido (noche a día) */
 .stripe:nth-child(1) { 
   background: linear-gradient(180deg, #e84a23 0%, #c0392b 50%, #a02818 100%); 
 }
-
-/* 2. Atardecer (naranja) */
 .stripe:nth-child(2) { 
-  background: linear-gradient(180deg, #ff6b35 0%, #e84a23 50%, #c0392b 100%); 
+  background: linear-gradient(180deg, #ff6b35 0%, #ff8c42 50%, #ffaa66 100%); 
 }
-
-/* 3. Tarde/Transición a noche */
 .stripe:nth-child(3) { 
-  background: linear-gradient(180deg, #1e3a5f 0%, #162a45 50%, #0f1729 100%); 
+  background: linear-gradient(180deg, #ffb366 0%, #ff9933 50%, #ff7f00 100%); 
 }
-
-/* 4. Noche profunda (CENTRO) */
 .stripe:nth-child(4) { 
-  background: linear-gradient(180deg, #0f1729 0%, #0a1018 50%, #050810 100%); 
+  background: linear-gradient(180deg, #fff5e6 0%, #ffecd2 50%, #ffd9b3 100%); 
 }
-
-/* 5. Noche profunda (CENTRO) */
 .stripe:nth-child(5) { 
-  background: linear-gradient(180deg, #050810 0%, #0a1018 50%, #0f1729 100%); 
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%); 
 }
-
-/* 6. Madrugada/Transición a día */
 .stripe:nth-child(6) { 
-  background: linear-gradient(180deg, #0f1729 0%, #162a45 50%, #1e3a5f 100%); 
+  background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6f 50%, #3d5a7f 100%); 
 }
-
-/* 7. Pre-amanecer (azul claro) */
 .stripe:nth-child(7) { 
   background: linear-gradient(180deg, #4a7c9b 0%, #5a9cb8 50%, #7ab4c9 100%); 
 }
-
-/* 8. Amanecer (celeste/crema) */
 .stripe:nth-child(8) { 
   background: linear-gradient(180deg, #87ceeb 0%, #b0e0f0 50%, #e0f4ff 100%); 
 }
@@ -163,15 +105,22 @@
   text-orientation: mixed;
   transform: rotate(180deg);
   white-space: nowrap;
-  text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
-  color: white;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
 }
 
-/* Texto oscuro para franjas claras (7 y 8 - azul claro y celeste) */
+/* Colores de texto según franja */
+.stripe:nth-child(5) .stripeContent h2,
+.stripe:nth-child(6) .stripeContent h2 {
+  color: #ffffff;
+}
+
+.stripe:nth-child(1) .stripeContent h2,
+.stripe:nth-child(2) .stripeContent h2,
+.stripe:nth-child(3) .stripeContent h2,
+.stripe:nth-child(4) .stripeContent h2,
 .stripe:nth-child(7) .stripeContent h2,
 .stripe:nth-child(8) .stripeContent h2 {
   color: #1a1a2e;
-  text-shadow: none;
 }
 
 /* ===== STRIPE ICON ===== */
@@ -184,7 +133,7 @@
 }
 
 .stripe:hover .stripeIcon {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /* ===== STRIPE LINE ===== */
@@ -204,12 +153,12 @@
 /* ===== LOGO ===== */
 .logo {
   position: fixed;
-  top: 5rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   color: white;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
   mix-blend-mode: difference;
   transition: opacity 0.3s ease;
   display: flex;
@@ -227,7 +176,7 @@
 .logoSub {
   font-size: 0.7rem;
   font-weight: 300;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   opacity: 0.85;
 }
@@ -245,7 +194,7 @@
   color: white;
   text-transform: uppercase;
   opacity: 0.6;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -282,50 +231,26 @@
 /* ===== MOON ===== */
 .moon {
   position: absolute;
-  top: 20%;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
   height: 50px;
   background: radial-gradient(circle at 65% 35%, 
-    #fffde7 0%, 
-    #f5f5dc 30%, 
-    #e8e4c9 60%, 
-    #d4d0b5 100%
+    #f5f5dc 0%, 
+    #e8e8d0 30%, 
+    #d4d4c0 60%, 
+    rgba(255, 255, 255, 0) 100%
   );
   border-radius: 50%;
-  opacity: 0.95;
+  opacity: 0.85;
   box-shadow: 
-    0 0 40px 15px rgba(255, 253, 231, 0.3),
-    0 0 80px 30px rgba(255, 253, 231, 0.15),
-    inset -10px -10px 20px rgba(0, 0, 0, 0.1);
+    0 0 40px 10px rgba(245, 245, 220, 0.3),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.1);
   pointer-events: none;
 }
 
-/* Cráteres sutiles de la luna */
-.moon::before {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  top: 35%;
-  left: 25%;
-}
-
-.moon::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgba(0, 0, 0, 0.04);
-  border-radius: 50%;
-  top: 55%;
-  left: 55%;
-}
-
-/* ===== LOADER - IGUAL QUE LA HOME ===== */
+/* ===== LOADER ===== */
 .loader {
   position: fixed;
   top: 0;
@@ -335,10 +260,8 @@
   background: #0f1729;
   z-index: 10000;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
@@ -378,115 +301,11 @@
 }
 
 .stripe.active .stripeIcon {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .stripe.active .stripeLine {
   height: 60px;
-}
-
-/* ===== MENÚ HAMBURGUESA MÓVIL ===== */
-.menuBtn {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  padding: 0.6rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.menuBtn span {
-  width: 24px;
-  height: 2px;
-  background: white;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.menuBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Menú off-canvas */
-.mobileMenu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
-  background: linear-gradient(180deg, #0f1729 0%, #1e3a5f 100%);
-  z-index: 300;
-  transition: right 0.4s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobileMenuOpen {
-  right: 0;
-}
-
-.mobileMenuHeader {
-  padding: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobileMenuHeader span {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-}
-
-.mobileMenuHeader button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobileMenuLinks {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-}
-
-.mobileMenuLinks a {
-  color: white;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  border-left: 3px solid transparent;
-}
-
-.mobileMenuLinks a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-left-color: white;
-}
-
-/* Overlay oscuro */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 250;
-  backdrop-filter: blur(4px);
 }
 
 /* ===== RESPONSIVE - MÓVIL ===== */
@@ -494,11 +313,6 @@
   .servicesWrapper {
     height: 100vh;
     overflow: hidden;
-  }
-
-  .navbar {
-    padding: 0.8rem 1rem;
-    justify-content: flex-end;
   }
 
   .container {
@@ -520,14 +334,6 @@
   /* Cuando se expande con doble tap, SÍ puede crecer */
   .stripe.active {
     flex: 2.5 1 0 !important;
-  }
-
-  .navLinks {
-    display: none;
-  }
-
-  .menuBtn {
-    display: flex;
   }
 
   .stripeContent h2 {
@@ -557,7 +363,7 @@
   }
 
   .logo {
-    top: 4rem;
+    top: 1.2rem;
   }
 
   .logoMain {
@@ -583,7 +389,7 @@
   .moon {
     width: 30px;
     height: 30px;
-    top: auto;
-    bottom: 15%;
+    bottom: 10%;
   }
 }
+

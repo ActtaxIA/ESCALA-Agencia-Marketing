@@ -2,19 +2,22 @@ import ServicesStripes from '@/components/sections/Servicios/ServicesStripes'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Servicios de Marketing Digital en Murcia | ESCALA',
-  description: '8 servicios de marketing digital para hacer crecer tu negocio: diseño web, SEO local, redes sociales, Google Ads, apps con IA, fotografía, branding y email marketing.',
+  title: 'Servicios | ESCALA Marketing Digital',
+  description: 'Diseño web, SEO local, redes sociales, Google Ads, apps con IA, fotografía, branding y email marketing. 8 servicios especializados para hacer crecer tu negocio en Murcia.',
   keywords: [
     'servicios marketing digital murcia',
     'diseño web murcia',
-    'seo murcia',
+    'seo local murcia',
     'redes sociales murcia',
     'google ads murcia',
+    'apps ia murcia',
+    'fotografía murcia',
     'branding murcia',
+    'email marketing murcia',
   ],
   openGraph: {
-    title: 'Servicios de Marketing Digital | ESCALA Murcia',
-    description: '8 servicios profesionales para impulsar tu presencia digital y conseguir más clientes.',
+    title: 'Nuestros Servicios | ESCALA Marketing',
+    description: '8 servicios de marketing digital para impulsar tu negocio: diseño web, SEO, redes sociales, publicidad, IA y más.',
     url: 'https://escalamarketing.es/servicios',
     siteName: 'ESCALA Marketing',
     locale: 'es_ES',
@@ -24,14 +27,14 @@ export const metadata: Metadata = {
         url: '/og-servicios.jpg',
         width: 1200,
         height: 630,
-        alt: 'Servicios ESCALA Marketing',
+        alt: 'ESCALA - Servicios de Marketing Digital',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Servicios de Marketing Digital | ESCALA Murcia',
-    description: '8 servicios profesionales para impulsar tu presencia digital.',
+    title: 'Nuestros Servicios | ESCALA Marketing',
+    description: '8 servicios de marketing digital para impulsar tu negocio.',
     images: ['/og-servicios.jpg'],
   },
   alternates: {

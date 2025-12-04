@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import styles from './ServicesStripes.module.css'
 
 interface ServiceStripe {
@@ -12,7 +11,6 @@ interface ServiceStripe {
   route: string
 }
 
-// 8 servicios = 8 franjas (atardecer → noche → amanecer)
 const services: ServiceStripe[] = [
   { slug: 'diseno-web', icon: '□', title: 'Diseño Web', route: '/servicios/diseno-web' },
   { slug: 'seo-local', icon: '⚲', title: 'SEO Local', route: '/servicios/seo-local' },
@@ -27,7 +25,6 @@ const services: ServiceStripe[] = [
 export default function ServicesStripes() {
   const [isLoading, setIsLoading] = useState(true)
   const [activeStripe, setActiveStripe] = useState<string | null>(null)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
@@ -40,7 +37,7 @@ export default function ServicesStripes() {
   useEffect(() => {
     if (isLoading) return
 
-    // Generar estrellas para las franjas de noche (3, 4, 5 - las más oscuras)
+    // Generar estrellas en franjas nocturnas (3, 4, 5)
     const nightStripes = [3, 4, 5]
     nightStripes.forEach((index) => {
       const starsContainer = document.getElementById(`stars-${index}`)
@@ -59,7 +56,7 @@ export default function ServicesStripes() {
       }
     })
 
-    // Efecto parallax con el mouse
+    // Efecto parallax (solo desktop)
     if (typeof window !== 'undefined' && window.innerWidth > 768) {
       const handleMouseMove = (e: MouseEvent) => {
         const x = (e.clientX / window.innerWidth - 0.5) * 10
@@ -82,6 +79,7 @@ export default function ServicesStripes() {
       }
     }
 
+    // Animación y navegación
     const stripe = document.querySelector(`[data-service="${slug}"]`) as HTMLElement
     if (stripe) {
       stripe.style.transform = 'scale(1.02)'
@@ -97,70 +95,18 @@ export default function ServicesStripes() {
 
   return (
     <>
-      {/* Loader inicial - IGUAL QUE LA HOME */}
+      {/* Loader inicial */}
       <div className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`}>
         <span className={styles.loaderText}>ESCALA</span>
       </div>
 
       {/* Contenedor principal */}
       <div className={styles.servicesWrapper} style={{ opacity: isLoading ? 0 : 1 }}>
-        {/* Header/Navbar para poder navegar */}
-        <nav className={styles.navbar}>
-          {/* Menú desktop */}
-          <div className={styles.navLinks}>
-            <Link href="/">Inicio</Link>
-            <Link href="/quienes-somos">Nosotros</Link>
-            <Link href="/metodologia">Metodología</Link>
-            <Link href="/portfolio">Portfolio</Link>
-            <Link href="/exitos">Éxitos</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contacto" className={styles.navCta}>Contactar</Link>
-          </div>
-
-          {/* Botón hamburguesa móvil */}
-          <button 
-            className={styles.menuBtn}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menú"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </nav>
-
-        {/* Menú off-canvas móvil */}
-        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
-          <div className={styles.mobileMenuHeader}>
-            <span>ESCALA</span>
-            <button onClick={() => setMobileMenuOpen(false)}>×</button>
-          </div>
-          <div className={styles.mobileMenuLinks}>
-            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Inicio</Link>
-            <Link href="/quienes-somos" onClick={() => setMobileMenuOpen(false)}>Nosotros</Link>
-            <Link href="/metodologia" onClick={() => setMobileMenuOpen(false)}>Metodología</Link>
-            <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)}>Portfolio</Link>
-            <Link href="/exitos" onClick={() => setMobileMenuOpen(false)}>Éxitos</Link>
-            <Link href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
-            <Link href="/contacto" onClick={() => setMobileMenuOpen(false)}>Contactar</Link>
-          </div>
-        </div>
-
-        {/* Overlay */}
-        {mobileMenuOpen && (
-          <div 
-            className={styles.overlay} 
-            onClick={() => setMobileMenuOpen(false)}
-          />
-        )}
-
-        {/* Logo comentado - causaba problemas de altura */}
-        {/* 
+        {/* Logo */}
         <div className={styles.logo}>
           <span className={styles.logoMain}>ESCALA</span>
           <span className={styles.logoSub}>Nuestros Servicios</span>
         </div>
-        */}
 
         {/* Hint */}
         <div className={styles.hint}>8 servicios · un objetivo · tu éxito</div>
@@ -174,13 +120,13 @@ export default function ServicesStripes() {
               data-service={service.slug}
               onClick={() => handleStripeClick(service.route, service.slug)}
             >
+              {/* Luna en la franja central de noche (índice 4 - Apps IA) */}
+              {index === 4 && <div className={styles.moon}></div>}
+
               {/* Estrellas en franjas nocturnas (3, 4, 5) */}
               {[3, 4, 5].includes(index) && (
                 <div className={styles.stars} id={`stars-${index}`}></div>
               )}
-
-              {/* Luna en la franja central de noche (índice 4 - Apps IA) */}
-              {index === 4 && <div className={styles.moon}></div>}
 
               {/* Contenido de la franja */}
               <div className={styles.stripeContent}>

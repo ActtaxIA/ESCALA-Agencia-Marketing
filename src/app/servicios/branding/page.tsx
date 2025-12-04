@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Branding en Murcia | Diseño de Marca e Identidad Visual',
   description: 'Servicios de branding en Murcia. Creación de marca, logotipo, identidad visual y manual de estilo. Marcas que conectan y perduran. Consulta gratuita.',
   keywords: ['branding murcia', 'diseño de marca murcia', 'logotipo murcia', 'identidad visual murcia'],
+  openGraph: {
+    title: 'Branding en Murcia | ESCALA Marketing',
+    description: 'Creación de marca, logotipo e identidad visual. Marcas que conectan y perduran.',
+    url: 'https://escalamarketing.es/servicios/branding',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-branding.jpg', width: 1200, height: 630, alt: 'Branding ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Branding en Murcia | ESCALA Marketing',
+    description: 'Diseño de marca e identidad visual profesional.',
+    images: ['/og-branding.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/branding' },
 }
 
 const heroData = {

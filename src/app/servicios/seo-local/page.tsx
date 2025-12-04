@@ -10,6 +10,22 @@ export const metadata = {
   title: 'SEO Local en Murcia | Posicionamiento Web Local',
   description: 'Servicio de SEO local en Murcia. Aparece en Google cuando buscan negocios como el tuyo en tu zona. Más visibilidad, más clientes. Consulta gratis.',
   keywords: ['seo local murcia', 'posicionamiento web murcia', 'google my business murcia', 'seo murcia'],
+  openGraph: {
+    title: 'SEO Local en Murcia | ESCALA Marketing',
+    description: 'Aparece en Google Maps y búsquedas locales. SEO local profesional en Murcia.',
+    url: 'https://escalamarketing.es/servicios/seo-local',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-seo-local.jpg', width: 1200, height: 630, alt: 'SEO Local ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SEO Local en Murcia | ESCALA Marketing',
+    description: 'Aparece en Google Maps cuando te buscan en tu zona.',
+    images: ['/og-seo-local.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/seo-local' },
 }
 
 const heroData = {

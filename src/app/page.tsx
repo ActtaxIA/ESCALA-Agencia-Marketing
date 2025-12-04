@@ -1,4 +1,42 @@
 import HomeStripes from '@/components/sections/Home/HomeStripes'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+  description: 'Agencia de marketing digital en Murcia especializada en diseño web, SEO local, redes sociales, Google Ads y apps con IA. Hacemos crecer tu negocio.',
+  keywords: [
+    'agencia marketing digital murcia',
+    'marketing digital murcia',
+    'agencia publicidad murcia',
+    'diseño web murcia',
+    'seo murcia',
+  ],
+  openGraph: {
+    title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+    description: 'Hacemos crecer tu negocio con estrategias de marketing digital que funcionan. Diseño web, SEO, redes sociales y más.',
+    url: 'https://escalamarketing.es',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: '/og-home.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'ESCALA - Agencia de Marketing Digital en Murcia',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+    description: 'Hacemos crecer tu negocio con estrategias de marketing digital que funcionan.',
+    images: ['/og-home.jpg'],
+  },
+  alternates: {
+    canonical: 'https://escalamarketing.es',
+  },
+}
 
 export default function HomePage() {
   return <HomeStripes />

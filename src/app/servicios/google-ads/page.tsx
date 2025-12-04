@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Google Ads en Murcia | Campañas SEM Profesionales',
   description: 'Gestión de Google Ads en Murcia. Campañas de búsqueda, display y shopping optimizadas para máximo ROI. Partner de Google. Consulta gratuita.',
   keywords: ['google ads murcia', 'sem murcia', 'publicidad google murcia', 'adwords murcia'],
+  openGraph: {
+    title: 'Google Ads en Murcia | ESCALA Marketing',
+    description: 'Campañas de Google Ads optimizadas para máximo ROI. Gestión SEM profesional.',
+    url: 'https://escalamarketing.es/servicios/google-ads',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-google-ads.jpg', width: 1200, height: 630, alt: 'Google Ads ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Google Ads en Murcia | ESCALA Marketing',
+    description: 'Campañas de Google Ads optimizadas para máximo ROI.',
+    images: ['/og-google-ads.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/google-ads' },
 }
 
 const heroData = {

@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Email Marketing en Murcia | Newsletters y Automatizaciones',
   description: 'Servicio de email marketing en Murcia. Newsletters, automatizaciones, segmentación y campañas que convierten. ROI de 42€ por cada 1€ invertido.',
   keywords: ['email marketing murcia', 'newsletter murcia', 'mailchimp murcia', 'automatizacion email murcia'],
+  openGraph: {
+    title: 'Email Marketing en Murcia | ESCALA Marketing',
+    description: 'Newsletters y automatizaciones que convierten. ROI de 42€ por cada 1€ invertido.',
+    url: 'https://escalamarketing.es/servicios/email-marketing',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-email-marketing.jpg', width: 1200, height: 630, alt: 'Email Marketing ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Email Marketing en Murcia | ESCALA Marketing',
+    description: 'Newsletters y automatizaciones con el mejor ROI.',
+    images: ['/og-email-marketing.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/email-marketing' },
 }
 
 const heroData = {

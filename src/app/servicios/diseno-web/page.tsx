@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Diseño Web en Murcia | Páginas Web Profesionales',
   description: 'Diseño web profesional en Murcia. Creamos páginas web modernas, rápidas y optimizadas para convertir visitantes en clientes. Presupuesto sin compromiso.',
   keywords: ['diseño web murcia', 'páginas web murcia', 'desarrollo web murcia', 'crear web murcia'],
+  openGraph: {
+    title: 'Diseño Web en Murcia | ESCALA Marketing',
+    description: 'Páginas web modernas, rápidas y que convierten. Diseño web profesional en Murcia.',
+    url: 'https://escalamarketing.es/servicios/diseno-web',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-diseno-web.jpg', width: 1200, height: 630, alt: 'Diseño Web ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Diseño Web en Murcia | ESCALA Marketing',
+    description: 'Páginas web modernas, rápidas y que convierten.',
+    images: ['/og-diseno-web.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/diseno-web' },
 }
 
 const heroData = {

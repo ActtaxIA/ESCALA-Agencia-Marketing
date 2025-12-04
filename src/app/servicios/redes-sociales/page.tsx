@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Gestión de Redes Sociales en Murcia | Community Manager',
   description: 'Gestión profesional de redes sociales en Murcia. Instagram, Facebook, LinkedIn y TikTok. Contenido, comunidad y resultados. Consulta sin compromiso.',
   keywords: ['redes sociales murcia', 'community manager murcia', 'instagram murcia', 'social media murcia'],
+  openGraph: {
+    title: 'Redes Sociales en Murcia | ESCALA Marketing',
+    description: 'Community manager profesional. Gestión de Instagram, Facebook, LinkedIn y TikTok.',
+    url: 'https://escalamarketing.es/servicios/redes-sociales',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-redes-sociales.jpg', width: 1200, height: 630, alt: 'Redes Sociales ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Redes Sociales en Murcia | ESCALA Marketing',
+    description: 'Community manager profesional en Murcia.',
+    images: ['/og-redes-sociales.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/redes-sociales' },
 }
 
 const heroData = {

@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Fotografía Profesional en Murcia | Fotos para Empresas',
   description: 'Fotografía profesional para empresas en Murcia. Producto, corporativa, eventos, gastronomía y lifestyle. Imágenes que venden. Presupuesto sin compromiso.',
   keywords: ['fotografia profesional murcia', 'fotografo empresas murcia', 'fotos producto murcia', 'fotografo corporativo murcia'],
+  openGraph: {
+    title: 'Fotografía Profesional en Murcia | ESCALA Marketing',
+    description: 'Fotografía de producto, corporativa y eventos para empresas. Imágenes que venden.',
+    url: 'https://escalamarketing.es/servicios/fotografia',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-fotografia.jpg', width: 1200, height: 630, alt: 'Fotografía ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fotografía Profesional en Murcia | ESCALA Marketing',
+    description: 'Fotografía de producto y corporativa para empresas.',
+    images: ['/og-fotografia.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/fotografia' },
 }
 
 const heroData = {

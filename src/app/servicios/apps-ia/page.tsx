@@ -10,6 +10,22 @@ export const metadata = {
   title: 'Desarrollo de Apps con IA en Murcia | Inteligencia Artificial',
   description: 'Desarrollo de aplicaciones con inteligencia artificial en Murcia. Chatbots, automatización, análisis predictivo y soluciones IA personalizadas para tu negocio.',
   keywords: ['apps ia murcia', 'inteligencia artificial murcia', 'chatbot murcia', 'automatización ia murcia'],
+  openGraph: {
+    title: 'Apps con IA en Murcia | ESCALA Marketing',
+    description: 'Chatbots, automatización y soluciones de inteligencia artificial para tu negocio.',
+    url: 'https://escalamarketing.es/servicios/apps-ia',
+    siteName: 'ESCALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-apps-ia.jpg', width: 1200, height: 630, alt: 'Apps IA ESCALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Apps con IA en Murcia | ESCALA Marketing',
+    description: 'Chatbots y automatización con inteligencia artificial.',
+    images: ['/og-apps-ia.jpg'],
+  },
+  alternates: { canonical: 'https://escalamarketing.es/servicios/apps-ia' },
 }
 
 const heroData = {

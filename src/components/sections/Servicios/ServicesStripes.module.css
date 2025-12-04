@@ -496,25 +496,28 @@
     overflow: hidden;
   }
 
+  .navbar {
+    padding: 0.8rem 1rem;
+    justify-content: flex-end;
+  }
+
   .container {
     flex-direction: column;
     height: 100vh;
+    width: 100vw;
   }
 
   /* CRÍTICO: Todas las franjas deben tener la misma altura (1/8 del viewport) */
   .stripe {
-    flex: 1 !important;
-    min-height: 0;
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto !important;
   }
 
   /* Cuando se expande con doble tap, SÍ puede crecer */
   .stripe.active {
-    flex: 2.5 !important;
-  }
-
-  .navbar {
-    padding: 0.8rem 1rem;
-    justify-content: flex-end;
+    flex: 2.5 1 0 !important;
   }
 
   .navLinks {

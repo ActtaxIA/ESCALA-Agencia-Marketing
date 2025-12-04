@@ -64,21 +64,7 @@ export const metadata: Metadata = {
     // yandex: 'tu-codigo-yandex',
   },
   category: 'marketing',
-  icons: {
-    icon: [
-      { url: '/images/logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/logo.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/images/logo.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/images/logo.png',
-      },
-    ],
-  },
+  // Next.js detecta automáticamente icon.png y apple-icon.png en /app
 }
 
 // Schema JSON-LD para datos estructurados

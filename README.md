@@ -4,6 +4,97 @@ Web corporativa de **ESCALA**, agencia de marketing digital con sede en Murcia. 
 
 ---
 
+## ⚡ Stack Tecnológico
+
+| Tecnología | Versión | Propósito |
+|------------|---------|-----------|
+| **Next.js** | 14.x | Framework React con App Router |
+| **TypeScript** | 5.x | Tipado estático |
+| **Tailwind CSS** | 3.x | Estilos utility-first |
+| **CSS Modules** | - | Estilos encapsulados por componente |
+| **AWS Amplify** | - | **Hosting y despliegue en producción** |
+
+---
+
+## 🚀 DESPLIEGUE EN AWS AMPLIFY
+
+> **⚠️ IMPORTANTE: Esta web está diseñada para desplegarse en AWS Amplify**
+
+### Requisitos previos
+- Cuenta de AWS activa
+- Repositorio en GitHub conectado
+- Node.js 18.x o superior
+
+### Pasos para desplegar:
+
+#### 1️⃣ Desde la consola de AWS Amplify:
+1. Ir a [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+2. Click en **"New app"** → **"Host web app"**
+3. Seleccionar **GitHub** como proveedor
+4. Autorizar AWS a acceder al repositorio
+5. Seleccionar: `ActtaxIA/ESCALA-Agencia-Marketing`
+6. Rama: `main`
+
+#### 2️⃣ Configuración de Build:
+AWS Amplify detectará automáticamente Next.js. Si no, usar esta configuración:
+
+```yaml
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
+```
+
+#### 3️⃣ Variables de entorno (si las hay):
+En Amplify Console → App settings → Environment variables:
+```
+NODE_ENV=production
+NEXT_PUBLIC_SITE_URL=https://escalamarketing.es
+```
+
+#### 4️⃣ Dominio personalizado:
+1. Amplify Console → Domain management
+2. Add domain → `escalamarketing.es`
+3. Configurar DNS en tu proveedor de dominio
+
+### Comandos locales:
+
+```bash
+# Instalar dependencias
+npm install
+
+# Desarrollo local
+npm run dev
+
+# Build de producción (igual que AWS)
+npm run build
+
+# Iniciar en modo producción
+npm start
+```
+
+### URLs del proyecto:
+| Entorno | URL |
+|---------|-----|
+| **Producción** | https://escalamarketing.es |
+| **Preview (Amplify)** | https://main.xxxxx.amplifyapp.com |
+| **Local** | http://localhost:3000 |
+
+---
+
 ## 📐 Estructura de Layouts
 
 La web tiene **3 tipos de layouts** según el tipo de página:

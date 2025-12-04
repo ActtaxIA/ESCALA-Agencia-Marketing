@@ -500,6 +500,17 @@
     height: 100vh;
   }
 
+  /* CRÍTICO: Todas las franjas deben tener la misma altura (1/8 del viewport) */
+  .stripe {
+    flex: 1 !important;
+    min-height: 0;
+  }
+
+  /* Cuando se expande con doble tap, SÍ puede crecer */
+  .stripe.active {
+    flex: 2.5 !important;
+  }
+
   .navbar {
     padding: 0.8rem 1rem;
     justify-content: flex-end;

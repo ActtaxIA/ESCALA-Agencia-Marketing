@@ -490,8 +490,14 @@
 
 /* ===== RESPONSIVE - MÓVIL ===== */
 @media (max-width: 768px) {
+  .servicesWrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .container {
     flex-direction: column;
+    height: 100vh;
   }
 
   .navbar {

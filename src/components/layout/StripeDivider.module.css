@@ -42,11 +42,27 @@
     height: 60px;
   }
 
+  /* Eliminamos pointer-events: none para permitir interacción en móvil */
   .stripe {
-    pointer-events: none;
+    cursor: pointer;
+  }
+
+  /* Estado expandido en móvil (primer tap) */
+  .stripe.expanded {
+    flex: 3;
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+
+  .stripe.expanded .label {
+    opacity: 1;
+    display: block;
   }
 
   .label {
-    display: none;
+    font-size: 0.6rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 }

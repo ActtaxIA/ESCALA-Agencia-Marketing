@@ -302,8 +302,14 @@
 
 /* ===== RESPONSIVE - MÓVIL ===== */
 @media (max-width: 768px) {
+  .homeWrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .container {
     flex-direction: column;
+    height: 100vh;
   }
 
   .stripeContent h2 {

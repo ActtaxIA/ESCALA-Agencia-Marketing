@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { NAV_ITEMS, LIGHT_STRIPES, STRIPE_COLORS } from '@/types'
 import styles from './StripeNav.module.css'
 
@@ -11,10 +12,28 @@ interface StripeNavProps {
 
 export function StripeNav({ position }: StripeNavProps) {
   const pathname = usePathname()
+  const router = useRouter()
+  const [expandedStripe, setExpandedStripe] = useState<string | null>(null)
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/'
     return pathname.startsWith(href)
+  }
+
+  const handleStripeClick = (e: React.MouseEvent, href: string) => {
+    // Solo aplicar lógica de doble tap en móvil
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      e.preventDefault() // Prevenir navegación por defecto
+      
+      if (expandedStripe === href) {
+        // Segundo tap en la misma franja, navegar
+        router.push(href)
+      } else {
+        // Primer tap, expandir franja
+        setExpandedStripe(href)
+      }
+    }
+    // En desktop, el Link funciona normalmente (navegación directa)
   }
 
   return (
@@ -22,12 +41,14 @@ export function StripeNav({ position }: StripeNavProps) {
       {NAV_ITEMS.map((item) => {
         const isLightStripe = LIGHT_STRIPES.includes(item.stripeNumber)
         const active = isActive(item.href)
+        const expanded = expandedStripe === item.href
         
         return (
           <Link
             key={item.href}
             href={item.href}
-            className={`${styles.stripe} ${active ? styles.active : ''}`}
+            onClick={(e) => handleStripeClick(e, item.href)}
+            className={`${styles.stripe} ${active ? styles.active : ''} ${expanded ? styles.expanded : ''}`}
             style={{ 
               backgroundColor: STRIPE_COLORS[item.stripeNumber as keyof typeof STRIPE_COLORS] 
             }}

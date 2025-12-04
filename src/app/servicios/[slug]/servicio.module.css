@@ -1,0 +1,210 @@
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+}
+
+.heroContent {
+  max-width: 800px;
+  text-align: center;
+}
+
+.heroBadge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.heroDesc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefitsCard,
+.featuresCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.benefitsCard h2,
+.featuresCard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--stripe-1);
+}
+
+.benefitsCard ul,
+.featuresCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefitsCard li,
+.featuresCard li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.benefitsCard li:last-child,
+.featuresCard li:last-child {
+  border-bottom: none;
+}
+
+.checkIcon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.bulletIcon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.procesoSection {
+  background: var(--stripe-1);
+  padding: 5rem 2rem;
+}
+
+.procesoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .procesoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .procesoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.procesoStep {
+  text-align: center;
+  padding: 2rem;
+}
+
+.procesoNum {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.procesoStep h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.procesoStep p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.otherServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1024px) {
+  .otherServicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .otherServicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.otherServiceCard {
+  display: block;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.otherServiceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.otherServiceIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.otherServiceCard h3 {
+  color: var(--stripe-1);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.otherServiceCard p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+

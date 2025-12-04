@@ -3,9 +3,21 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { StripeDivider } from '@/components/layout/StripeDivider'
-import { CTASection } from '@/components/sections/CTASection'
-import { STRIPE_COLORS, SERVICES } from '@/types'
+import ServiceCTA from '@/components/sections/ServicioDetalle/ServiceCTA'
+import { STRIPE_COLORS } from '@/types'
 import styles from './servicio.module.css'
+
+// Definición local de servicios para este componente
+const SERVICES = [
+  { slug: 'diseno-web', title: 'Diseño Web', icon: '🌐', stripeNumber: 1, shortDesc: 'Webs que convierten' },
+  { slug: 'seo-local', title: 'SEO Local', icon: '📈', stripeNumber: 2, shortDesc: 'Aparece en Google' },
+  { slug: 'redes-sociales', title: 'Redes Sociales', icon: '📱', stripeNumber: 3, shortDesc: 'Conecta con tu audiencia' },
+  { slug: 'google-ads', title: 'Google Ads', icon: '🎯', stripeNumber: 4, shortDesc: 'Publicidad efectiva' },
+  { slug: 'apps-ia', title: 'Apps con IA', icon: '🤖', stripeNumber: 5, shortDesc: 'Automatiza tu negocio' },
+  { slug: 'fotografia', title: 'Fotografía', icon: '📸', stripeNumber: 6, shortDesc: 'Imágenes que venden' },
+  { slug: 'branding', title: 'Branding', icon: '✏️', stripeNumber: 7, shortDesc: 'Marca memorable' },
+  { slug: 'email-marketing', title: 'Email Marketing', icon: '📧', stripeNumber: 8, shortDesc: 'El mejor ROI' },
+]
 
 interface ServiceData {
   fullDescription: string
@@ -14,8 +26,16 @@ interface ServiceData {
   process: { title: string; desc: string }[]
 }
 
+interface ServiceType {
+  slug: string
+  title: string
+  icon: string
+  stripeNumber: number
+  shortDesc: string
+}
+
 interface Props {
-  service: typeof SERVICES[number]
+  service: ServiceType
   data: ServiceData
 }
 
@@ -212,7 +232,11 @@ export function ServicioPage({ service, data }: Props) {
       </section>
 
       {/* CTA */}
-      <CTASection />
+      <ServiceCTA 
+        title="¿Listo para empezar?"
+        subtitle="Cuéntanos tu proyecto y te enviamos presupuesto en 24h"
+      />
     </>
   )
 }
+

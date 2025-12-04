@@ -113,7 +113,7 @@ export default function WhatsAppButton() {
               </button>
             </>
           ) : (
-            <button className={styles.startChatBtn} onClick={handleStartWriting}>
+            <button className={styles.startChatBtn} onClick={() => handleStartWriting()}>
               Escribe un mensaje...
             </button>
           )}

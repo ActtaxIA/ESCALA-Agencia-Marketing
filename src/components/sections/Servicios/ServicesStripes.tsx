@@ -154,14 +154,15 @@ export default function ServicesStripes() {
           />
         )}
 
-        {/* Logo - IGUAL QUE LA HOME */}
+        {/* Logo y Hint comentados temporalmente para debug */}
+        {/* 
         <div className={styles.logo}>
           <span className={styles.logoMain}>ESCALA</span>
           <span className={styles.logoSub}>Nuestros Servicios</span>
         </div>
 
-        {/* Hint */}
         <div className={styles.hint}>8 servicios · un objetivo · tu éxito</div>
+        */}
 
         {/* Contenedor de franjas */}
         <div className={styles.container}>

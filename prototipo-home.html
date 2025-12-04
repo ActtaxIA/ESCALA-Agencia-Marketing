@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCALA Marketing - Prototipo Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .stripe {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+            transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        filter 0.4s ease;
+            overflow: hidden;
+        }
+
+        .stripe::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            transition: transform 0.4s ease;
+        }
+
+        /* Colores de las franjas - gradiente del día */
+        .stripe:nth-child(1) { background: linear-gradient(180deg, #0f1729 0%, #1a2744 50%, #2d3a52 100%); }
+        .stripe:nth-child(2) { background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6f 50%, #3d5a7f 100%); }
+        .stripe:nth-child(3) { background: linear-gradient(180deg, #4a7c9b 0%, #5a9cb8 50%, #7ab4c9 100%); }
+        .stripe:nth-child(4) { background: linear-gradient(180deg, #87ceeb 0%, #b0e0f0 50%, #e0f4ff 100%); }
+        .stripe:nth-child(5) { background: linear-gradient(180deg, #fff5e6 0%, #ffecd2 50%, #ffd9b3 100%); }
+        .stripe:nth-child(6) { background: linear-gradient(180deg, #ffb366 0%, #ff9933 50%, #ff7f00 100%); }
+        .stripe:nth-child(7) { background: linear-gradient(180deg, #ff6b35 0%, #e84a23 50%, #c0392b 100%); }
+        .stripe:nth-child(8) { background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%); }
+
+        /* Efecto hover - expandir franja */
+        .container:hover .stripe {
+            filter: brightness(0.7);
+        }
+
+        .container .stripe:hover {
+            flex: 2.5;
+            filter: brightness(1.1);
+        }
+
+        /* Contenido de cada franja */
+        .stripe-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease 0.1s,
+                        transform 0.4s ease 0.1s;
+            transform: translate(-50%, -40%);
+            pointer-events: none;
+        }
+
+        .stripe:hover .stripe-content {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        .stripe-content h2 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            white-space: nowrap;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Colores de texto según franja */
+        .stripe:nth-child(1) .stripe-content h2,
+        .stripe:nth-child(2) .stripe-content h2,
+        .stripe:nth-child(7) .stripe-content h2,
+        .stripe:nth-child(8) .stripe-content h2 {
+            color: #ffffff;
+        }
+
+        .stripe:nth-child(3) .stripe-content h2,
+        .stripe:nth-child(4) .stripe-content h2,
+        .stripe:nth-child(5) .stripe-content h2,
+        .stripe:nth-child(6) .stripe-content h2 {
+            color: #1a1a2e;
+        }
+
+        /* Icono decorativo */
+        .stripe-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease 0.2s;
+            writing-mode: horizontal-tb;
+        }
+
+        .stripe:hover .stripe-icon {
+            opacity: 0.8;
+        }
+
+        /* Línea decorativa */
+        .stripe-line {
+            width: 2px;
+            height: 0;
+            background: currentColor;
+            margin: 1rem auto;
+            transition: height 0.4s ease 0.15s;
+            opacity: 0.5;
+        }
+
+        .stripe:hover .stripe-line {
+            height: 60px;
+        }
+
+        /* Logo ESCALA */
+        .logo {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            color: white;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+            mix-blend-mode: difference;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo-main {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 0.5em;
+        }
+
+        .logo-sub {
+            font-size: 0.7rem;
+            font-weight: 300;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        /* Hint de exploración */
+        .hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: white;
+            text-transform: uppercase;
+            opacity: 0.6;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Cursor personalizado */
+        .stripe:hover {
+            cursor: pointer;
+        }
+
+        /* Estrellas en la última franja */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Sol en la franja naranja */
+        .sun {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #fff700 0%, #ffaa00 70%, transparent 100%);
+            border-radius: 50%;
+            opacity: 0.9;
+            box-shadow: 0 0 60px 20px rgba(255, 200, 0, 0.4);
+            pointer-events: none;
+        }
+
+        /* Transición al hacer click */
+        .stripe.clicked {
+            flex: 20 !important;
+        }
+
+        .stripe.clicked .stripe-content h2 {
+            writing-mode: horizontal-tb;
+            transform: rotate(0);
+            font-size: 4rem;
+        }
+
+        /* Responsive - móvil */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .stripe-content h2 {
+                writing-mode: horizontal-tb;
+                transform: rotate(0);
+                font-size: 0.85rem;
+            }
+
+            .stripe-line {
+                width: 40px;
+                height: 2px !important;
+            }
+
+            .stripe:hover .stripe-line {
+                height: 2px;
+                width: 40px;
+            }
+
+            .stripe-icon {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .logo {
+                top: 1.2rem;
+            }
+
+            .logo-main {
+                font-size: 1.2rem;
+                letter-spacing: 0.3em;
+            }
+
+            .logo-sub {
+                font-size: 0.5rem;
+                letter-spacing: 0.15em;
+            }
+
+            .hint {
+                font-size: 0.55rem;
+                letter-spacing: 0.1em;
+                text-align: center;
+                width: 100%;
+                padding: 0 1rem;
+                bottom: 1rem;
+                white-space: nowrap;
+            }
+
+            .sun {
+                width: 25px;
+                height: 25px;
+                bottom: 10%;
+            }
+        }
+
+        /* Overlay de carga inicial */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #0f1729;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-text {
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.5em;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader inicial -->
+    <div class="loader" id="loader">
+        <span class="loader-text">ESCALA</span>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <span class="logo-main">ESCALA</span>
+        <span class="logo-sub">Agencia de Marketing</span>
+    </div>
+
+    <!-- Hint -->
+    <div class="hint">explora · descubre · escala</div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Franja 1: Inicio -->
+        <div class="stripe" data-section="inicio">
+            <div class="stripe-content">
+                <div class="stripe-icon">🌙</div>
+                <div class="stripe-line"></div>
+                <h2>Inicio</h2>
+            </div>
+        </div>
+
+        <!-- Franja 2: Quiénes somos -->
+        <div class="stripe" data-section="quienes-somos">
+            <div class="stripe-content">
+                <div class="stripe-icon">✦</div>
+                <div class="stripe-line"></div>
+                <h2>Quiénes Somos</h2>
+            </div>
+        </div>
+
+        <!-- Franja 3: Metodología -->
+        <div class="stripe" data-section="metodologia">
+            <div class="stripe-content">
+                <div class="stripe-icon">◈</div>
+                <div class="stripe-line"></div>
+                <h2>Metodología</h2>
+            </div>
+        </div>
+
+        <!-- Franja 4: Servicios -->
+        <div class="stripe" data-section="servicios">
+            <div class="stripe-content">
+                <div class="stripe-icon">☀</div>
+                <div class="stripe-line"></div>
+                <h2>Servicios</h2>
+            </div>
+        </div>
+
+        <!-- Franja 5: Portfolio -->
+        <div class="stripe" data-section="portfolio">
+            <div class="stripe-content">
+                <div class="stripe-icon">◐</div>
+                <div class="stripe-line"></div>
+                <h2>Portfolio</h2>
+            </div>
+        </div>
+
+        <!-- Franja 6: Casos de éxito -->
+        <div class="stripe" data-section="casos-exito">
+            <div class="sun"></div>
+            <div class="stripe-content">
+                <div class="stripe-icon">▲</div>
+                <div class="stripe-line"></div>
+                <h2>Éxitos</h2>
+            </div>
+        </div>
+
+        <!-- Franja 7: Blog -->
+        <div class="stripe" data-section="blog">
+            <div class="stripe-content">
+                <div class="stripe-icon">◆</div>
+                <div class="stripe-line"></div>
+                <h2>Blog</h2>
+            </div>
+        </div>
+
+        <!-- Franja 8: Contacto -->
+        <div class="stripe" data-section="contacto">
+            <div class="stars" id="stars"></div>
+            <div class="stripe-content">
+                <div class="stripe-icon">★</div>
+                <div class="stripe-line"></div>
+                <h2>Contacto</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ocultar loader después de cargar
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Generar estrellas en la última franja
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 30; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            star.style.width = (Math.random() * 2 + 1) + 'px';
+            star.style.height = star.style.width;
+            starsContainer.appendChild(star);
+        }
+
+        // Click en franja - navegación simulada
+        document.querySelectorAll('.stripe').forEach(stripe => {
+            stripe.addEventListener('click', function() {
+                const section = this.dataset.section;
+                
+                // Feedback visual
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+
+                // Aquí iría la navegación real
+                console.log('Navegando a:', section);
+            });
+        });
+
+        // Efecto parallax sutil con el mouse (solo desktop)
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                document.querySelector('.logo').style.transform = 
+                    `translateX(calc(-50% + ${x}px))`;
+            });
+        }
+    </script>
+</body>
+</html>

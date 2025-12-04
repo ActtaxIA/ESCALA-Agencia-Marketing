@@ -1,0 +1,75 @@
+/* ===== CTA ===== */
+.cta {
+  background: linear-gradient(135deg, var(--stripe-1) 0%, var(--stripe-2) 100%);
+  text-align: center;
+  padding: 10rem 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaStripes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  display: flex;
+  opacity: 0.15;
+}
+
+.ctaStripes div:nth-child(1) { flex: 1; background: var(--stripe-2); }
+.ctaStripes div:nth-child(2) { flex: 1; background: var(--stripe-3); }
+.ctaStripes div:nth-child(3) { flex: 1; background: var(--stripe-4); }
+.ctaStripes div:nth-child(4) { flex: 1; background: var(--stripe-5); }
+.ctaStripes div:nth-child(5) { flex: 1; background: var(--stripe-6); }
+.ctaStripes div:nth-child(6) { flex: 1; background: var(--stripe-7); }
+.ctaStripes div:nth-child(7) { flex: 1; background: var(--stripe-8); }
+
+.cta h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.cta h2 span {
+  background: linear-gradient(90deg, var(--stripe-6), var(--stripe-7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ctaEmail {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(232, 74, 35, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .cta {
+    padding: 6rem 1.5rem;
+  }
+}
+

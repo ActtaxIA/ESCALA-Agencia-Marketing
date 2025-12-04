@@ -1,0 +1,73 @@
+.testimonial {
+  background: linear-gradient(135deg, var(--stripe-2) 0%, var(--stripe-3) 100%);
+  padding: 8rem 5%;
+}
+
+.testimonialContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quoteIcon {
+  font-size: 6rem;
+  font-weight: 800;
+  color: white;
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: -2rem;
+}
+
+.quote {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--stripe-6) 0%, var(--stripe-7) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.authorInfo strong {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.authorInfo span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .testimonial {
+    padding: 5rem 1.5rem;
+  }
+}
+

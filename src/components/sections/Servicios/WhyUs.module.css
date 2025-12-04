@@ -1,0 +1,91 @@
+.whyUs {
+  background: white;
+  padding: 8rem 5%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionLabel {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--stripe-1);
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.reasonCard {
+  padding: 3rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--stripe-1) 0%, var(--stripe-2) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.reasonCard:nth-child(2) {
+  background: linear-gradient(135deg, var(--stripe-3) 0%, var(--stripe-4) 100%);
+  color: var(--stripe-1);
+}
+
+.reasonCard:nth-child(3) {
+  background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+  color: white;
+}
+
+.reasonCard:hover {
+  transform: translateY(-5px);
+}
+
+.reasonNumber {
+  font-size: 4rem;
+  font-weight: 800;
+  opacity: 0.15;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.reasonTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.reasonDesc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .whyUs {
+    padding: 5rem 1.5rem;
+  }
+
+  .reasonsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

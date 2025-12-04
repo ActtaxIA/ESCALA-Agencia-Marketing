@@ -1,0 +1,52 @@
+.divider {
+  height: 80px;
+  display: flex;
+  position: relative;
+}
+
+.stripe {
+  flex: 1;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stripe:hover {
+  flex: 4;
+}
+
+.stripe:hover .label {
+  opacity: 1;
+}
+
+.divider:hover .stripe:not(:hover) {
+  filter: brightness(0.7);
+}
+
+.label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .divider {
+    height: 60px;
+  }
+
+  .stripe {
+    pointer-events: none;
+  }
+
+  .label {
+    display: none;
+  }
+}

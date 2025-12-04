@@ -1,0 +1,341 @@
+/* ===== HOME WRAPPER ===== */
+.homeWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ===== STRIPE ===== */
+.stripe {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.4s ease;
+  overflow: hidden;
+}
+
+.stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  transition: transform 0.4s ease;
+}
+
+/* Colores de las franjas - gradiente del día */
+.stripe:nth-child(1) { 
+  background: linear-gradient(180deg, #0f1729 0%, #1a2744 50%, #2d3a52 100%); 
+}
+.stripe:nth-child(2) { 
+  background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6f 50%, #3d5a7f 100%); 
+}
+.stripe:nth-child(3) { 
+  background: linear-gradient(180deg, #4a7c9b 0%, #5a9cb8 50%, #7ab4c9 100%); 
+}
+.stripe:nth-child(4) { 
+  background: linear-gradient(180deg, #87ceeb 0%, #b0e0f0 50%, #e0f4ff 100%); 
+}
+.stripe:nth-child(5) { 
+  background: linear-gradient(180deg, #fff5e6 0%, #ffecd2 50%, #ffd9b3 100%); 
+}
+.stripe:nth-child(6) { 
+  background: linear-gradient(180deg, #ffb366 0%, #ff9933 50%, #ff7f00 100%); 
+}
+.stripe:nth-child(7) { 
+  background: linear-gradient(180deg, #ff6b35 0%, #e84a23 50%, #c0392b 100%); 
+}
+.stripe:nth-child(8) { 
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%); 
+}
+
+/* Efecto hover - expandir franja */
+.container:hover .stripe {
+  filter: brightness(0.7);
+}
+
+.container .stripe:hover {
+  flex: 2.5;
+  filter: brightness(1.1);
+}
+
+/* ===== STRIPE CONTENT ===== */
+.stripeContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.1s,
+              transform 0.4s ease 0.1s;
+  pointer-events: none;
+}
+
+.stripe:hover .stripeContent {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.stripeContent h2 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+/* Colores de texto según franja */
+.stripe:nth-child(1) .stripeContent h2,
+.stripe:nth-child(2) .stripeContent h2,
+.stripe:nth-child(7) .stripeContent h2,
+.stripe:nth-child(8) .stripeContent h2 {
+  color: #ffffff;
+}
+
+.stripe:nth-child(3) .stripeContent h2,
+.stripe:nth-child(4) .stripeContent h2,
+.stripe:nth-child(5) .stripeContent h2,
+.stripe:nth-child(6) .stripeContent h2 {
+  color: #1a1a2e;
+}
+
+/* ===== STRIPE ICON ===== */
+.stripeIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+  writing-mode: horizontal-tb;
+}
+
+.stripe:hover .stripeIcon {
+  opacity: 0.8;
+}
+
+/* ===== STRIPE LINE ===== */
+.stripeLine {
+  width: 2px;
+  height: 0;
+  background: currentColor;
+  margin: 1rem auto;
+  transition: height 0.4s ease 0.15s;
+  opacity: 0.5;
+}
+
+.stripe:hover .stripeLine {
+  height: 60px;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  color: white;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  mix-blend-mode: difference;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.logoMain {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5em;
+}
+
+.logoSub {
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* ===== HINT ===== */
+.hint {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0.6;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+}
+
+/* ===== STARS ===== */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ===== SUN ===== */
+.sun {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #fff700 0%, #ffaa00 70%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 0 0 60px 20px rgba(255, 200, 0, 0.4);
+  pointer-events: none;
+}
+
+/* ===== LOADER ===== */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0f1729;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loaderText {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.5em;
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE - MÓVIL ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .stripeContent h2 {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    font-size: 0.85rem;
+  }
+
+  .stripeLine {
+    width: 40px;
+    height: 2px !important;
+  }
+
+  .stripe:hover .stripeLine {
+    height: 2px;
+    width: 40px;
+  }
+
+  .stripeIcon {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .logo {
+    top: 1.2rem;
+  }
+
+  .logoMain {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+  }
+
+  .logoSub {
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hint {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    bottom: 1rem;
+    white-space: nowrap;
+  }
+
+  .sun {
+    width: 25px;
+    height: 25px;
+    bottom: 10%;
+  }
+}
+

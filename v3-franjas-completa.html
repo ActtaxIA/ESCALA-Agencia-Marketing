@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - ESCALA | Agencia de Marketing Digital en Murcia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta de franjas del día - IDÉNTICA A HOME */
+            --stripe-1: #0f1729;  /* Noche oscura */
+            --stripe-2: #1e3a5f;  /* Azul noche */
+            --stripe-3: #4a7c9b;  /* Amanecer */
+            --stripe-4: #87ceeb;  /* Mañana */
+            --stripe-5: #fff5e6;  /* Mediodía */
+            --stripe-6: #ffb366;  /* Tarde */
+            --stripe-7: #ff6b35;  /* Atardecer */
+            --stripe-8: #e84a23;  /* Crepúsculo */
+            
+            --white: #ffffff;
+            --cream: #fafafa;
+            --text: #1a1a2e;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--white);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVEGACIÓN FRANJAS LATERALES (COMO HOME) ===== */
+        .stripe-nav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stripe-nav.left { left: 0; }
+        .stripe-nav.right { right: 0; }
+
+        .stripe-nav a {
+            flex: 1;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stripe-nav a:nth-child(1) { background: var(--stripe-1); }
+        .stripe-nav a:nth-child(2) { background: var(--stripe-2); }
+        .stripe-nav a:nth-child(3) { background: var(--stripe-3); }
+        .stripe-nav a:nth-child(4) { background: var(--stripe-4); }
+        .stripe-nav a:nth-child(5) { background: var(--stripe-5); }
+        .stripe-nav a:nth-child(6) { background: var(--stripe-6); }
+        .stripe-nav a:nth-child(7) { background: var(--stripe-7); }
+        .stripe-nav a:nth-child(8) { background: var(--stripe-8); }
+
+        .stripe-nav a .stripe-label {
+            position: absolute;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Colores claros necesitan texto oscuro */
+        .stripe-nav a:nth-child(4) .stripe-label,
+        .stripe-nav a:nth-child(5) .stripe-label,
+        .stripe-nav a:nth-child(6) .stripe-label {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .stripe-nav a:hover {
+            flex: 2.5;
+        }
+
+        .stripe-nav a:hover .stripe-label {
+            opacity: 1;
+        }
+
+        /* Efecto: otras franjas se oscurecen */
+        .stripe-nav:hover a:not(:hover) {
+            filter: brightness(0.7);
+        }
+
+        /* Indicador de sección activa */
+        .stripe-nav a.active::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        .stripe-nav a:nth-child(4).active::after,
+        .stripe-nav a:nth-child(5).active::after,
+        .stripe-nav a:nth-child(6).active::after {
+            background: var(--text);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 60px;
+            right: 60px;
+            z-index: 999;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.25em;
+            color: var(--stripe-1);
+        }
+
+        .logo-sub {
+            font-size: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--stripe-7), var(--stripe-8));
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        .main-content {
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--stripe-1);
+        }
+
+        .hero-stripes {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 55%;
+            display: flex;
+        }
+
+        .hero-stripes a {
+            flex: 1;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .hero-stripes a:nth-child(1) { background: linear-gradient(180deg, var(--stripe-1) 0%, var(--stripe-2) 100%); }
+        .hero-stripes a:nth-child(2) { background: linear-gradient(180deg, var(--stripe-2) 0%, var(--stripe-3) 100%); }
+        .hero-stripes a:nth-child(3) { background: linear-gradient(180deg, var(--stripe-3) 0%, var(--stripe-4) 100%); }
+        .hero-stripes a:nth-child(4) { background: linear-gradient(180deg, var(--stripe-4) 0%, var(--stripe-5) 100%); }
+        .hero-stripes a:nth-child(5) { background: linear-gradient(180deg, var(--stripe-5) 0%, var(--stripe-6) 100%); }
+        .hero-stripes a:nth-child(6) { background: linear-gradient(180deg, var(--stripe-6) 0%, var(--stripe-7) 100%); }
+        .hero-stripes a:nth-child(7) { background: linear-gradient(180deg, var(--stripe-7) 0%, var(--stripe-8) 100%); }
+        .hero-stripes a:nth-child(8) { background: linear-gradient(180deg, var(--stripe-8) 0%, var(--stripe-1) 100%); }
+
+        .hero-stripes a .hero-stripe-label {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-stripes a:nth-child(4) .hero-stripe-label,
+        .hero-stripes a:nth-child(5) .hero-stripe-label {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .hero-stripes a:hover {
+            flex: 3;
+        }
+
+        .hero-stripes a:hover .hero-stripe-label {
+            opacity: 1;
+        }
+
+        .hero-stripes:hover a:not(:hover) {
+            filter: brightness(0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 5%;
+            padding-top: 80px;
+            max-width: 50%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, var(--stripe-6) 0%, var(--stripe-7) 50%, var(--stripe-8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 450px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(232, 74, 35, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 74, 35, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* ===== FRANJA SEPARADORA INTERACTIVA ===== */
+        .stripe-divider {
+            height: 80px;
+            display: flex;
+            position: relative;
+        }
+
+        .stripe-divider a {
+            flex: 1;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stripe-divider a:nth-child(1) { background: var(--stripe-1); }
+        .stripe-divider a:nth-child(2) { background: var(--stripe-2); }
+        .stripe-divider a:nth-child(3) { background: var(--stripe-3); }
+        .stripe-divider a:nth-child(4) { background: var(--stripe-4); }
+        .stripe-divider a:nth-child(5) { background: var(--stripe-5); }
+        .stripe-divider a:nth-child(6) { background: var(--stripe-6); }
+        .stripe-divider a:nth-child(7) { background: var(--stripe-7); }
+        .stripe-divider a:nth-child(8) { background: var(--stripe-8); }
+
+        .stripe-divider a span {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .stripe-divider a:nth-child(4) span,
+        .stripe-divider a:nth-child(5) span,
+        .stripe-divider a:nth-child(6) span {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .stripe-divider a:hover {
+            flex: 4;
+        }
+
+        .stripe-divider a:hover span {
+            opacity: 1;
+        }
+
+        .stripe-divider:hover a:not(:hover) {
+            filter: brightness(0.7);
+        }
+
+        /* ===== SECCIONES ===== */
+        .section {
+            padding: 8rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--stripe-1);
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--stripe-1);
+            color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 450px;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .about-visual a {
+            flex: 1;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .about-visual a:hover {
+            flex: 2.5;
+        }
+
+        .about-visual a span {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+        }
+
+        .about-visual a:nth-child(3) span,
+        .about-visual a:nth-child(4) span {
+            color: var(--text);
+        }
+
+        .about-visual a:hover span {
+            opacity: 1;
+        }
+
+        .about-visual:hover a:not(:hover) {
+            filter: brightness(0.6);
+        }
+
+        .about-visual a:nth-child(1) { background: var(--stripe-2); }
+        .about-visual a:nth-child(2) { background: var(--stripe-3); }
+        .about-visual a:nth-child(3) { background: var(--stripe-4); }
+        .about-visual a:nth-child(4) { background: var(--stripe-5); }
+        .about-visual a:nth-child(5) { background: var(--stripe-6); }
+        .about-visual a:nth-child(6) { background: var(--stripe-7); }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-content h2 span {
+            background: linear-gradient(90deg, var(--stripe-6), var(--stripe-7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--stripe-6), var(--stripe-7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background: linear-gradient(180deg, #f8fafc 0%, var(--white) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--stripe-1), var(--stripe-3), var(--stripe-5), var(--stripe-7), var(--stripe-8));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card:nth-child(1) .service-icon { background: var(--stripe-1); }
+        .service-card:nth-child(2) .service-icon { background: var(--stripe-2); }
+        .service-card:nth-child(3) .service-icon { background: var(--stripe-3); }
+        .service-card:nth-child(4) .service-icon { background: var(--stripe-4); color: var(--text); }
+        .service-card:nth-child(5) .service-icon { background: var(--stripe-5); color: var(--text); }
+        .service-card:nth-child(6) .service-icon { background: var(--stripe-6); }
+        .service-card:nth-child(7) .service-icon { background: var(--stripe-7); }
+        .service-card:nth-child(8) .service-icon { background: var(--stripe-8); }
+
+        .service-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--stripe-1);
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== VALUES ===== */
+        .values {
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            padding: 3rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card:nth-child(1) {
+            background: linear-gradient(135deg, var(--stripe-1) 0%, var(--stripe-2) 100%);
+            color: white;
+        }
+
+        .value-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--stripe-3) 0%, var(--stripe-4) 100%);
+            color: var(--stripe-1);
+        }
+
+        .value-card:nth-child(3) {
+            background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+            color: white;
+        }
+
+        .value-number {
+            font-size: 4rem;
+            font-weight: 800;
+            opacity: 0.15;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .value-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .value-desc {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.85;
+            position: relative;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: linear-gradient(135deg, var(--stripe-1) 0%, var(--stripe-2) 100%);
+            text-align: center;
+            padding: 10rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-stripes {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            display: flex;
+            opacity: 0.15;
+        }
+
+        .cta-stripes div:nth-child(1) { flex: 1; background: var(--stripe-2); }
+        .cta-stripes div:nth-child(2) { flex: 1; background: var(--stripe-3); }
+        .cta-stripes div:nth-child(3) { flex: 1; background: var(--stripe-4); }
+        .cta-stripes div:nth-child(4) { flex: 1; background: var(--stripe-5); }
+        .cta-stripes div:nth-child(5) { flex: 1; background: var(--stripe-6); }
+        .cta-stripes div:nth-child(6) { flex: 1; background: var(--stripe-7); }
+        .cta-stripes div:nth-child(7) { flex: 1; background: var(--stripe-8); }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta h2 span {
+            background: linear-gradient(90deg, var(--stripe-6), var(--stripe-7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-email {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 3rem;
+            background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 74, 35, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--stripe-1);
+            color: white;
+            padding: 5rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand .logo-main {
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .footer-brand .logo-sub {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.6;
+            max-width: 280px;
+        }
+
+        .footer-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--stripe-6), var(--stripe-7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-links li:not(:has(a)) {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* Mini franjas decorativas en footer */
+        .footer-stripes {
+            display: flex;
+            height: 4px;
+            margin-bottom: 3rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .footer-stripes div {
+            flex: 1;
+        }
+
+        .footer-stripes div:nth-child(1) { background: var(--stripe-2); }
+        .footer-stripes div:nth-child(2) { background: var(--stripe-3); }
+        .footer-stripes div:nth-child(3) { background: var(--stripe-4); }
+        .footer-stripes div:nth-child(4) { background: var(--stripe-5); }
+        .footer-stripes div:nth-child(5) { background: var(--stripe-6); }
+        .footer-stripes div:nth-child(6) { background: var(--stripe-7); }
+        .footer-stripes div:nth-child(7) { background: var(--stripe-8); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .stripe-nav {
+                width: 40px;
+            }
+
+            .header {
+                left: 40px;
+                right: 40px;
+            }
+
+            .main-content {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                height: 300px;
+            }
+
+            .hero-content {
+                max-width: 60%;
+            }
+
+            .hero-stripes {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* En móvil: franjas laterales desaparecen */
+            .stripe-nav {
+                display: none;
+            }
+
+            .header {
+                left: 0;
+                right: 0;
+                padding: 1rem 1.5rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            /* Hero en móvil: franjas como fondo */
+            .hero {
+                flex-direction: column;
+                justify-content: flex-end;
+                padding-bottom: 3rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                padding: 0 1.5rem;
+                padding-top: 100px;
+            }
+
+            .hero-stripes {
+                position: absolute;
+                width: 100%;
+                opacity: 0.3;
+                pointer-events: none;
+            }
+
+            .hero-stripes a {
+                pointer-events: none;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            /* Stripe divider: más visible, sin hover en móvil */
+            .stripe-divider {
+                height: 60px;
+            }
+
+            .stripe-divider a {
+                pointer-events: none;
+            }
+
+            .stripe-divider a span {
+                display: none;
+            }
+
+            .section {
+                padding: 5rem 1.5rem;
+            }
+
+            .services-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .cta {
+                padding: 6rem 1.5rem;
+            }
+        }
+
+        /* ===== ANIMACIONES SCROLL ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN FRANJAS IZQUIERDA -->
+    <nav class="stripe-nav left">
+        <a href="prototipo-home.html" data-section="inicio">
+            <span class="stripe-label">Inicio</span>
+        </a>
+        <a href="#nosotros" data-section="nosotros" class="active">
+            <span class="stripe-label">Nosotros</span>
+        </a>
+        <a href="#metodologia" data-section="metodologia">
+            <span class="stripe-label">Método</span>
+        </a>
+        <a href="#servicios" data-section="servicios">
+            <span class="stripe-label">Servicios</span>
+        </a>
+        <a href="#portfolio" data-section="portfolio">
+            <span class="stripe-label">Portfolio</span>
+        </a>
+        <a href="#exitos" data-section="exitos">
+            <span class="stripe-label">Éxitos</span>
+        </a>
+        <a href="#blog" data-section="blog">
+            <span class="stripe-label">Blog</span>
+        </a>
+        <a href="#contacto" data-section="contacto">
+            <span class="stripe-label">Contacto</span>
+        </a>
+    </nav>
+
+    <!-- NAVEGACIÓN FRANJAS DERECHA -->
+    <nav class="stripe-nav right">
+        <a href="prototipo-home.html" data-section="inicio">
+            <span class="stripe-label">Inicio</span>
+        </a>
+        <a href="#nosotros" data-section="nosotros" class="active">
+            <span class="stripe-label">Nosotros</span>
+        </a>
+        <a href="#metodologia" data-section="metodologia">
+            <span class="stripe-label">Método</span>
+        </a>
+        <a href="#servicios" data-section="servicios">
+            <span class="stripe-label">Servicios</span>
+        </a>
+        <a href="#portfolio" data-section="portfolio">
+            <span class="stripe-label">Portfolio</span>
+        </a>
+        <a href="#exitos" data-section="exitos">
+            <span class="stripe-label">Éxitos</span>
+        </a>
+        <a href="#blog" data-section="blog">
+            <span class="stripe-label">Blog</span>
+        </a>
+        <a href="#contacto" data-section="contacto">
+            <span class="stripe-label">Contacto</span>
+        </a>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href="prototipo-home.html" class="logo">
+            <span class="logo-main">ESCALA</span>
+            <span class="logo-sub">Agencia de Marketing</span>
+        </a>
+        <nav class="nav">
+            <a href="prototipo-home.html">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto" class="nav-cta">Contactar</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        <!-- HERO -->
+        <section class="hero" id="nosotros">
+            <!-- Franjas interactivas como en home -->
+            <div class="hero-stripes">
+                <a href="prototipo-home.html">
+                    <span class="hero-stripe-label">Inicio</span>
+                </a>
+                <a href="#nosotros">
+                    <span class="hero-stripe-label">Nosotros</span>
+                </a>
+                <a href="#metodologia">
+                    <span class="hero-stripe-label">Método</span>
+                </a>
+                <a href="#servicios">
+                    <span class="hero-stripe-label">Servicios</span>
+                </a>
+                <a href="#portfolio">
+                    <span class="hero-stripe-label">Portfolio</span>
+                </a>
+                <a href="#exitos">
+                    <span class="hero-stripe-label">Éxitos</span>
+                </a>
+                <a href="#blog">
+                    <span class="hero-stripe-label">Blog</span>
+                </a>
+                <a href="#contacto">
+                    <span class="hero-stripe-label">Contacto</span>
+                </a>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-badge">📍 Agencia de Marketing en Murcia</div>
+                <h1 class="hero-title">
+                    Llevamos tu negocio al <span>siguiente nivel</span>
+                </h1>
+                <p class="hero-desc">
+                    Marketing digital, desarrollo web y estrategias que generan resultados reales. Escalamos tu presencia online con soluciones a medida.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Empezar ahora →</a>
+                    <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FRANJA SEPARADORA INTERACTIVA -->
+        <div class="stripe-divider">
+            <a href="prototipo-home.html"><span>Inicio</span></a>
+            <a href="#nosotros"><span>Nosotros</span></a>
+            <a href="#metodologia"><span>Método</span></a>
+            <a href="#servicios"><span>Servicios</span></a>
+            <a href="#portfolio"><span>Portfolio</span></a>
+            <a href="#exitos"><span>Éxitos</span></a>
+            <a href="#blog"><span>Blog</span></a>
+            <a href="#contacto"><span>Contacto</span></a>
+        </div>
+
+        <!-- ABOUT -->
+        <section class="section about" id="about">
+            <div class="about-grid">
+                <!-- Visual con franjas interactivas -->
+                <div class="about-visual">
+                    <a href="#nosotros"><span>Nosotros</span></a>
+                    <a href="#metodologia"><span>Método</span></a>
+                    <a href="#servicios"><span>Servicios</span></a>
+                    <a href="#portfolio"><span>Portfolio</span></a>
+                    <a href="#exitos"><span>Éxitos</span></a>
+                    <a href="#contacto"><span>Contacto</span></a>
+                </div>
+                <div class="about-content fade-up">
+                    <h2>No somos una agencia más. <span>Somos tu partner.</span></h2>
+                    <p>
+                        En ESCALA combinamos creatividad, tecnología y estrategia para impulsar negocios en el entorno digital. Desde Murcia trabajamos con empresas de toda España.
+                    </p>
+                    <p>
+                        Aplicamos las últimas tendencias en marketing digital e inteligencia artificial para maximizar cada euro invertido. Cada proyecto es único, cada estrategia es personalizada.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Proyectos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Satisfacción</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3x</div>
+                            <div class="stat-label">ROI Medio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FRANJA -->
+        <div class="stripe-divider">
+            <a href="prototipo-home.html"><span>Inicio</span></a>
+            <a href="#nosotros"><span>Nosotros</span></a>
+            <a href="#metodologia"><span>Método</span></a>
+            <a href="#servicios"><span>Servicios</span></a>
+            <a href="#portfolio"><span>Portfolio</span></a>
+            <a href="#exitos"><span>Éxitos</span></a>
+            <a href="#blog"><span>Blog</span></a>
+            <a href="#contacto"><span>Contacto</span></a>
+        </div>
+
+        <!-- SERVICES -->
+        <section class="section services" id="servicios">
+            <div class="section-header fade-up">
+                <span class="section-label">Nuestros servicios</span>
+                <h2 class="section-title">Todo lo que necesitas para crecer</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Diseño Web</h3>
+                    <p class="service-desc">Webs modernas que convierten visitantes en clientes.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">SEO Local</h3>
+                    <p class="service-desc">Domina las búsquedas en Murcia y alrededores.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Redes Sociales</h3>
+                    <p class="service-desc">Contenido que conecta con tu audiencia.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Google Ads</h3>
+                    <p class="service-desc">Campañas optimizadas para máximo ROI.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Apps con IA</h3>
+                    <p class="service-desc">Automatización inteligente para tu negocio.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📸</div>
+                    <h3 class="service-title">Fotografía</h3>
+                    <p class="service-desc">Imágenes profesionales que venden.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">✏️</div>
+                    <h3 class="service-title">Branding</h3>
+                    <p class="service-desc">Identidades de marca memorables.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📧</div>
+                    <h3 class="service-title">Email Marketing</h3>
+                    <p class="service-desc">Emails que se abren y convierten.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FRANJA -->
+        <div class="stripe-divider">
+            <a href="prototipo-home.html"><span>Inicio</span></a>
+            <a href="#nosotros"><span>Nosotros</span></a>
+            <a href="#metodologia"><span>Método</span></a>
+            <a href="#servicios"><span>Servicios</span></a>
+            <a href="#portfolio"><span>Portfolio</span></a>
+            <a href="#exitos"><span>Éxitos</span></a>
+            <a href="#blog"><span>Blog</span></a>
+            <a href="#contacto"><span>Contacto</span></a>
+        </div>
+
+        <!-- VALUES -->
+        <section class="section values" id="valores">
+            <div class="section-header fade-up">
+                <span class="section-label">Por qué elegirnos</span>
+                <h2 class="section-title">Nuestra forma de trabajar</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-up">
+                    <div class="value-number">01</div>
+                    <h3 class="value-title">Transparencia</h3>
+                    <p class="value-desc">Sin letra pequeña. Sabrás exactamente qué hacemos y qué resultados conseguimos.</p>
+                </div>
+                <div class="value-card fade-up">
+                    <div class="value-number">02</div>
+                    <h3 class="value-title">Tecnología</h3>
+                    <p class="value-desc">IA y herramientas punta para maximizar cada acción y tu inversión.</p>
+                </div>
+                <div class="value-card fade-up">
+                    <div class="value-number">03</div>
+                    <h3 class="value-title">Resultados</h3>
+                    <p class="value-desc">No vendemos humo. KPIs claros y medibles. Tu éxito es nuestro éxito.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="contacto">
+            <div class="cta-stripes">
+                <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <h2 class="fade-up">¿Listo para <span>escalar</span>?</h2>
+            <p class="cta-email fade-up">hola@escalamarketing.es</p>
+            <a href="mailto:hola@escalamarketing.es" class="cta-btn fade-up">Hablemos →</a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-stripes">
+                <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="prototipo-home.html" class="logo">
+                        <span class="logo-main">ESCALA</span>
+                        <span class="logo-sub">Agencia de Marketing</span>
+                    </a>
+                    <p>Agencia de marketing digital en Murcia. Llevamos tu negocio al siguiente nivel con estrategia, creatividad y tecnología.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Diseño Web</a></li>
+                        <li><a href="#">SEO Local</a></li>
+                        <li><a href="#">Redes Sociales</a></li>
+                        <li><a href="#">Apps con IA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-links">
+                        <li>📍 Murcia, España</li>
+                        <li>✉️ hola@escalamarketing.es</li>
+                        <li>📱 +34 XXX XXX XXX</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2024 ESCALA Marketing. Todos los derechos reservados.</span>
+                <span>Hecho con 🧡 en Murcia</span>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Intersection Observer para animaciones fade-up
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Actualizar franja activa según scroll
+        const sections = document.querySelectorAll('section[id]');
+        const stripeLinks = document.querySelectorAll('.stripe-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            stripeLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

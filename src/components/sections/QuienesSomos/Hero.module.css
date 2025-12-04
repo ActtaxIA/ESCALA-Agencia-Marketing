@@ -1,0 +1,197 @@
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--stripe-1);
+}
+
+.heroStripes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  display: flex;
+}
+
+.heroStripes a {
+  flex: 1;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.heroStripes a:nth-child(1) { background: linear-gradient(180deg, var(--stripe-1) 0%, var(--stripe-2) 100%); }
+.heroStripes a:nth-child(2) { background: linear-gradient(180deg, var(--stripe-2) 0%, var(--stripe-3) 100%); }
+.heroStripes a:nth-child(3) { background: linear-gradient(180deg, var(--stripe-3) 0%, var(--stripe-4) 100%); }
+.heroStripes a:nth-child(4) { background: linear-gradient(180deg, var(--stripe-4) 0%, var(--stripe-5) 100%); }
+.heroStripes a:nth-child(5) { background: linear-gradient(180deg, var(--stripe-5) 0%, var(--stripe-6) 100%); }
+.heroStripes a:nth-child(6) { background: linear-gradient(180deg, var(--stripe-6) 0%, var(--stripe-7) 100%); }
+.heroStripes a:nth-child(7) { background: linear-gradient(180deg, var(--stripe-7) 0%, var(--stripe-8) 100%); }
+.heroStripes a:nth-child(8) { background: linear-gradient(180deg, var(--stripe-8) 0%, var(--stripe-1) 100%); }
+
+.heroStripeLabel {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.heroStripes a:nth-child(4) .heroStripeLabel,
+.heroStripes a:nth-child(5) .heroStripeLabel {
+  color: var(--text);
+  text-shadow: none;
+}
+
+.heroStripes a:hover {
+  flex: 3;
+}
+
+.heroStripes a:hover .heroStripeLabel {
+  opacity: 1;
+}
+
+.heroStripes:hover a:not(:hover) {
+  filter: brightness(0.6);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding: 0 5%;
+  padding-top: 80px;
+  max-width: 50%;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.heroTitle span {
+  background: linear-gradient(90deg, var(--stripe-6) 0%, var(--stripe-7) 50%, var(--stripe-8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDesc {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 450px;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--stripe-7) 0%, var(--stripe-8) 100%);
+  color: white;
+  box-shadow: 0 10px 30px rgba(232, 74, 35, 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(232, 74, 35, 0.4);
+}
+
+.btnSecondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btnSecondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .heroContent {
+    max-width: 60%;
+  }
+
+  .heroStripes {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    padding: 0 1.5rem;
+    padding-top: 100px;
+  }
+
+  .heroStripes {
+    position: absolute;
+    width: 100%;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .heroStripes a {
+    pointer-events: none;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+}
+

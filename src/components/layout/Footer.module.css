@@ -1,0 +1,135 @@
+.footer {
+  background: var(--stripe-1);
+  color: white;
+  padding: 5rem 5% 2rem;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.stripes {
+  display: flex;
+  height: 4px;
+  margin-bottom: 3rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.stripes div {
+  flex: 1;
+}
+
+.stripes div:nth-child(1) { background: var(--stripe-2); }
+.stripes div:nth-child(2) { background: var(--stripe-3); }
+.stripes div:nth-child(3) { background: var(--stripe-4); }
+.stripes div:nth-child(4) { background: var(--stripe-5); }
+.stripes div:nth-child(5) { background: var(--stripe-6); }
+.stripes div:nth-child(6) { background: var(--stripe-7); }
+.stripes div:nth-child(7) { background: var(--stripe-8); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0.6;
+  max-width: 280px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.logoMain {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: white;
+}
+
+.logoSub {
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--stripe-6), var(--stripe-7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.links {
+  list-style: none;
+}
+
+.links li {
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: white;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

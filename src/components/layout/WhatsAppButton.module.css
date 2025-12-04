@@ -1,0 +1,353 @@
+.whatsappContainer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+}
+
+/* ===== BOTÓN PRINCIPAL ===== */
+.whatsappBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.whatsappBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+}
+
+.whatsappIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #25D366;
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Notificación */
+.notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 22px;
+  height: 22px;
+  background: #e84a23;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 2px solid white;
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ===== CHAT BOX ===== */
+.chatBox {
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  width: 350px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Header del chat */
+.chatHeader {
+  background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatHeaderInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.chatAvatar {
+  width: 45px;
+  height: 45px;
+  background: white;
+  color: #075e54;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.onlineIndicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background: #25D366;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.chatHeaderText {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeaderText strong {
+  font-size: 0.95rem;
+}
+
+.chatHeaderText span {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.chatClose {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.chatClose:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Body del chat */
+.chatBody {
+  flex: 1;
+  padding: 1rem;
+  background: #e5ddd5;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8c4c0' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  min-height: 200px;
+}
+
+/* Mensaje del bot */
+.messageBot {
+  margin-bottom: 1rem;
+}
+
+.messageBubble {
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: 0 12px 12px 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  max-width: 85%;
+  display: inline-block;
+}
+
+.messageBubble p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.messageBubble p + p {
+  margin-top: 0.5rem;
+}
+
+.messageTime {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(0,0,0,0.4);
+  margin-top: 0.3rem;
+  margin-left: 0.5rem;
+}
+
+/* Quick replies */
+.quickReplies {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.quickReplies button {
+  background: white;
+  border: 1px solid #25D366;
+  color: #075e54;
+  padding: 0.7rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.quickReplies button:hover {
+  background: #25D366;
+  color: white;
+}
+
+/* Footer del chat */
+.chatFooter {
+  padding: 0.8rem;
+  background: #f0f0f0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.chatInput {
+  flex: 1;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  background: white;
+  max-height: 100px;
+}
+
+.chatInput::placeholder {
+  color: #999;
+}
+
+.startChatBtn {
+  flex: 1;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: #999;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.startChatBtn:hover {
+  background: #f5f5f5;
+}
+
+.sendBtn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  color: white;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sendBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sendActive {
+  background: #25D366;
+  cursor: pointer;
+}
+
+.sendActive:hover {
+  background: #20bd5a;
+  transform: scale(1.05);
+}
+
+/* Powered by */
+.chatPowered {
+  background: #f0f0f0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .whatsappContainer {
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+
+  .whatsappBtn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .whatsappIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .chatBox {
+    width: calc(100vw - 2rem);
+    right: -0.5rem;
+    bottom: 70px;
+  }
+}

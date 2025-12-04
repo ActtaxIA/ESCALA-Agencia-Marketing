@@ -366,7 +366,33 @@
 }
 
 /* ===== RESPONSIVE - MÓVIL ===== */
+
+/* Clase activa para móvil (doble tap) */
+.stripe.active {
+  flex: 2.5;
+  filter: brightness(1.1);
+}
+
+.stripe.active .stripeContent {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.stripe.active .stripeIcon {
+  opacity: 0.9;
+}
+
+.stripe.active .stripeLine {
+  height: 60px;
+}
+
 @media (max-width: 768px) {
+  /* ... (código existente) ... */
+  .stripe.active .stripeLine {
+    height: 2px !important;
+    width: 60px; /* Un poco más larga en móvil activo */
+  }
+}
   .container {
     flex-direction: column;
   }

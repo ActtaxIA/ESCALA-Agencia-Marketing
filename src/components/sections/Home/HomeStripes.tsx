@@ -28,10 +28,45 @@ export default function HomeStripes() {
   const router = useRouter()
 
   useEffect(() => {
-    // ... (código existente) ...
+    // Ocultar loader después de cargar
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
   }, [])
 
-  // ... (useEffect estrellas y parallax igual) ...
+  useEffect(() => {
+    // Generar estrellas en la última franja
+    const starsContainer = document.getElementById('stars')
+    if (starsContainer) {
+      for (let i = 0; i < 30; i++) {
+        const star = document.createElement('div')
+        star.className = styles.star
+        star.style.left = Math.random() * 100 + '%'
+        star.style.top = Math.random() * 100 + '%'
+        star.style.animationDelay = Math.random() * 2 + 's'
+        const size = Math.random() * 2 + 1 + 'px'
+        star.style.width = size
+        star.style.height = size
+        starsContainer.appendChild(star)
+      }
+    }
+
+    // Efecto parallax sutil con el mouse (solo desktop)
+    if (window.innerWidth > 768) {
+      const handleMouseMove = (e: MouseEvent) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 10
+        const logo = document.querySelector(`.${styles.logo}`) as HTMLElement
+        if (logo) {
+          logo.style.transform = `translateX(calc(-50% + ${x}px))`
+        }
+      }
+
+      document.addEventListener('mousemove', handleMouseMove)
+      return () => document.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [isLoading])
 
   const handleStripeClick = (route: string, section: string) => {
     // En móvil: Primer click activa, segundo click navega
@@ -42,7 +77,7 @@ export default function HomeStripes() {
       }
     }
 
-    // Animación y navegación normal
+    // Animación y navegación
     const stripe = document.querySelector(`[data-section="${section}"]`) as HTMLElement
     if (stripe) {
       stripe.style.transform = 'scale(1.02)'
@@ -51,6 +86,7 @@ export default function HomeStripes() {
       }, 200)
     }
 
+    // Navegación real
     if (route !== '/') {
       setTimeout(() => {
         router.push(route)
@@ -60,7 +96,21 @@ export default function HomeStripes() {
 
   return (
     <>
-      {/* ... (loader y resto igual) ... */}
+      {/* Loader inicial */}
+      <div className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`} id="loader">
+        <span className={styles.loaderText}>ESCALA</span>
+      </div>
+
+      {/* Contenedor principal - ocultar hasta que termine de cargar */}
+      <div className={styles.homeWrapper} style={{ opacity: isLoading ? 0 : 1 }}>
+        {/* Logo */}
+        <div className={styles.logo}>
+          <span className={styles.logoMain}>ESCALA</span>
+          <span className={styles.logoSub}>Agencia de Marketing</span>
+        </div>
+
+        {/* Hint */}
+        <div className={styles.hint}>explora · descubre · escala</div>
 
         {/* Contenedor de franjas */}
         <div className={styles.container}>
@@ -71,7 +121,6 @@ export default function HomeStripes() {
               data-section={stripe.section}
               onClick={() => handleStripeClick(stripe.route, stripe.section)}
             >
-              {/* ... (contenido igual) ... */}
               {/* Sol en la franja naranja (índice 5) */}
               {index === 5 && <div className={styles.sun}></div>}
 
@@ -91,4 +140,3 @@ export default function HomeStripes() {
     </>
   )
 }
-

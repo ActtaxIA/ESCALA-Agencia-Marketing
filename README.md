@@ -280,6 +280,55 @@ src/
 
 ---
 
+## 📱 UX Móvil
+
+### Interacción Doble Tap (Home y Servicios)
+En dispositivos táctiles (móviles/tablets), la navegación por franjas funciona con un sistema de **2 toques**:
+
+1. **Primer toque**: La franja se expande, mostrando icono y título
+2. **Segundo toque**: Navegación a la página correspondiente
+
+Esto mejora la usabilidad ya que el usuario puede ver qué está seleccionando antes de navegar.
+
+### Iconos Minimalistas
+Los iconos de la página de Servicios usan caracteres unicode monocromáticos (□, ⚲, ∞, ◎, ❖, etc.) en lugar de emojis de colores, manteniendo la estética minimalista y profesional coherente con la Home.
+
+---
+
+## 🔍 SEO
+
+### Metadatos Optimizados
+Todas las páginas incluyen:
+- `title` y `description` únicos y optimizados
+- `keywords` relevantes por página
+- **OpenGraph** para redes sociales (Facebook, LinkedIn)
+- **Twitter Cards** con imágenes 1200x630
+- **URLs canónicas** para evitar duplicados
+- **JSON-LD Schema** (tipo `MarketingAgency`) en el layout global
+
+### Imágenes OpenGraph Pendientes
+Crear imágenes de 1200x630px en `/public/`:
+- `og-default.jpg`, `og-home.jpg`, `og-quienes-somos.jpg`
+- `og-metodologia.jpg`, `og-servicios.jpg`, `og-portfolio.jpg`
+- `og-exitos.jpg`, `og-blog.jpg`, `og-contacto.jpg`
+- Y una para cada servicio: `og-diseno-web.jpg`, etc.
+
+---
+
+## 🚨 REGLAS DEL PROYECTO
+
+### Reglas Críticas (NUNCA ROMPER):
+1. ❌ **NO borrar archivos** sin consentimiento previo explícito
+2. ❌ **NO hacer commit/push** sin autorización explícita (esperar "commit", "push", "despliega")
+
+### Reglas de Desarrollo:
+- Minimizar creación de archivos nuevos, modificar existentes cuando sea posible
+- Ejecutar scripts con PowerShell (no cmd)
+- Tests E2E deben abrir Chrome visible (no headless)
+- Búsquedas no inician automáticamente, solo cuando se solicita
+
+---
+
 ## 📞 Contacto
 
 **ESCALA - Agencia de Marketing Digital**

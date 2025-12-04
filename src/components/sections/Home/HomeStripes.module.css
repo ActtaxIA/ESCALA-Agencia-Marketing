@@ -281,8 +281,6 @@
   }
 }
 
-/* ===== RESPONSIVE - MÓVIL ===== */
-
 /* Clase activa para móvil (doble tap) */
 .stripe.active {
   flex: 2.5;
@@ -302,13 +300,8 @@
   height: 60px;
 }
 
+/* ===== RESPONSIVE - MÓVIL ===== */
 @media (max-width: 768px) {
-  /* ... (código existente) ... */
-  .stripe.active .stripeLine {
-    height: 2px !important;
-    width: 60px; /* Un poco más larga en móvil activo */
-  }
-}
   .container {
     flex-direction: column;
   }
@@ -327,6 +320,11 @@
   .stripe:hover .stripeLine {
     height: 2px;
     width: 40px;
+  }
+
+  .stripe.active .stripeLine {
+    height: 2px !important;
+    width: 60px;
   }
 
   .stripeIcon {

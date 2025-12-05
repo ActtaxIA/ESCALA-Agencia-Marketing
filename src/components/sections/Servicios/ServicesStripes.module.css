@@ -163,11 +163,17 @@
   color: white;
   text-shadow: 0 2px 20px rgba(0,0,0,0.5);
   mix-blend-mode: difference;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .logoMain {
@@ -221,23 +227,14 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background: #ffffff;
+  background: white;
   border-radius: 50%;
-  box-shadow: 
-    0 0 3px 1px rgba(255, 255, 255, 0.8),
-    0 0 6px 2px rgba(255, 255, 255, 0.4);
   animation: twinkle 2s ease-in-out infinite;
 }
 
 @keyframes twinkle {
-  0%, 100% { 
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% { 
-    opacity: 1;
-    transform: scale(1.2);
-  }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 /* ===== MOON ===== */
@@ -246,40 +243,12 @@
   bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle at 65% 35%, 
-    #fffef7 0%,
-    #fdfce8 25%,
-    #f5f3d0 50%,
-    #e8e6c0 70%,
-    rgba(255, 255, 220, 0.2) 100%
-  );
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #f5f5dc 0%, #e8e8d0 70%, transparent 100%);
   border-radius: 50%;
-  opacity: 0.95;
-  box-shadow: 
-    0 0 60px 20px rgba(255, 255, 220, 0.5),
-    0 0 100px 30px rgba(255, 255, 200, 0.3),
-    inset -8px -8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.85;
   pointer-events: none;
-  animation: moonGlow 4s ease-in-out infinite;
-}
-
-@keyframes moonGlow {
-  0%, 100% { 
-    opacity: 0.95;
-    box-shadow: 
-      0 0 60px 20px rgba(255, 255, 220, 0.5),
-      0 0 100px 30px rgba(255, 255, 200, 0.3),
-      inset -8px -8px 20px rgba(0, 0, 0, 0.15);
-  }
-  50% { 
-    opacity: 1;
-    box-shadow: 
-      0 0 80px 25px rgba(255, 255, 220, 0.6),
-      0 0 120px 40px rgba(255, 255, 200, 0.4),
-      inset -8px -8px 20px rgba(0, 0, 0, 0.15);
-  }
 }
 
 /* ===== LOADER ===== */
@@ -419,8 +388,8 @@
   }
 
   .moon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     bottom: 10%;
   }
 }

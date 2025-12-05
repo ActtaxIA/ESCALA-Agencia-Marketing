@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import styles from './ServicesStripes.module.css'
 
 interface ServiceStripe {
@@ -103,10 +104,10 @@ export default function ServicesStripes() {
       {/* Contenedor principal */}
       <div className={styles.servicesWrapper} style={{ opacity: isLoading ? 0 : 1 }}>
         {/* Logo */}
-        <div className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <span className={styles.logoMain}>ESCALA</span>
           <span className={styles.logoSub}>Nuestros Servicios</span>
-        </div>
+        </Link>
 
         {/* Hint */}
         <div className={styles.hint}>8 servicios · un objetivo · tu éxito</div>

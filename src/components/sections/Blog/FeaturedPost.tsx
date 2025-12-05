@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './FeaturedPost.module.css'
 import { StripeDivider } from '@/components/layout'
-import { supabase } from '@/lib/supabase/client'
+import { createClient } from '@/lib/supabase/client'
 
 // Mapeo de categorías a colores
 const categoryColors: Record<string, string> = {
@@ -33,6 +33,7 @@ export default function FeaturedPost() {
   useEffect(() => {
     async function loadFeaturedPost() {
       try {
+        const supabase = createClient()
         const { data, error } = await supabase
           .from('articles')
           .select(`

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './PortfolioContent.module.css'
 import { StripeDivider } from '@/components/layout'
-import { supabase } from '@/lib/supabase/client'
+import { createClient } from '@/lib/supabase/client'
 
 interface Project {
   id: string
@@ -91,13 +91,19 @@ export default function PortfolioContent() {
   useEffect(() => {
     async function loadProjects() {
       try {
+        const supabase = createClient()
         const { data, error } = await supabase
           .from('portfolio_projects')
           .select('*')
           .eq('published', true)
           .order('order_position', { ascending: true })
 
-        if (error) throw error
+        if (error) {
+          console.error('Error de Supabase:', error)
+          throw error
+        }
+
+        console.log('Proyectos cargados desde Supabase:', data?.length || 0)
 
         // Procesar proyectos
         const processedProjects = data?.map((project: any) => {

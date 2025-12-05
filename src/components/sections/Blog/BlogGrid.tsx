@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './BlogGrid.module.css'
 import { StripeDivider } from '@/components/layout'
-import { supabase } from '@/lib/supabase/client'
+import { createClient } from '@/lib/supabase/client'
 
 // Mapeo de categorías a colores e iconos
 const categoryStyles: Record<string, { color: string; icon: string }> = {
@@ -56,6 +56,7 @@ export default function BlogGrid() {
   useEffect(() => {
     async function loadArticles() {
       try {
+        const supabase = createClient()
         // Fetch artículos publicados con su categoría
         const { data: articles, error } = await supabase
           .from('articles')

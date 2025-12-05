@@ -1,0 +1,47 @@
+# Mapeo de Imágenes para Artículos del Blog
+
+ARTÍCULO 1: Guía Completa de SEO Local para 2025
+- Slug: guia-seo-local-2025
+- Imagen: murcia-tranquila.png (ciudad local, perfecto para SEO local)
+- Ruta final: /blog/guia-seo-local-2025.png
+
+ARTÍCULO 2: Cómo mejorar el SEO local de tu negocio en 2024
+- Slug: como-mejorar-seo-local
+- Imagen: murcia-nocturno.png (ciudad nocturna, local)
+- Ruta final: /blog/como-mejorar-seo-local.png
+
+ARTÍCULO 3: 10 tendencias de diseño web para 2025
+- Slug: tendencias-diseno-web-2025
+- Imagen: camper-cyberpunk.webp (diseño futurista, moderno)
+- Ruta final: /blog/tendencias-diseno-web-2025.webp
+
+ARTÍCULO 4: Google Ads vs Facebook Ads: ¿Cuál elegir?
+- Slug: google-ads-vs-facebook-ads
+- Imagen: firefly-city-neon-discount.jpg (publicidad, luces neón, descuento)
+- Ruta final: /blog/google-ads-vs-facebook-ads.jpg
+
+ARTÍCULO 5: IA en marketing: Cómo aprovecharla para tu negocio
+- Slug: ia-en-marketing
+- Imagen: monkey-volt-selfie-1.png (tecnología, IA, innovación)
+- Ruta final: /blog/ia-en-marketing.png
+
+ARTÍCULO 6: Redes sociales para empresas locales: Guía práctica
+- Slug: redes-sociales-empresas-locales
+- Imagen: monkey-volt-selfie-2.png (selfies, social media)
+- Ruta final: /blog/redes-sociales-empresas-locales.png
+
+ARTÍCULO 7: Email marketing que convierte: Secretos revelados
+- Slug: email-marketing-que-convierte
+- Imagen: firefly-city-daylight.jpg (comunicación digital, ciudad)
+- Ruta final: /blog/email-marketing-que-convierte.jpg
+
+ARTÍCULO 8: Optimiza tu Google My Business en 30 minutos
+- Slug: optimizar-google-my-business
+- Imagen: ceo-ciudad.png (profesional, negocio, ciudad)
+- Ruta final: /blog/optimizar-google-my-business.png
+
+ARTÍCULO 9: 7 errores de diseño web que ahuyentan clientes
+- Slug: errores-web-pymes
+- Imagen: poster-wireframe.webp (diseño web, wireframe técnico)
+- Ruta final: /blog/errores-web-pymes.webp
+

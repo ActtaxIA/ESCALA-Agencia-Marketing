@@ -128,7 +128,8 @@ export default function BlogGrid() {
         setPopularPosts(popular)
 
       } catch (error) {
-        console.error('Error cargando artículos:', error)
+        console.error('❌ ERROR cargando artículos:', error)
+        setAllPosts([]) // Asegurar que está vacío en caso de error
       } finally {
         setLoading(false)
       }

@@ -156,7 +156,8 @@ export default function PortfolioContent() {
         
         setProjects(processedProjects)
       } catch (error) {
-        console.error('Error cargando proyectos:', error)
+        console.error('❌ ERROR cargando proyectos:', error)
+        setProjects([]) // Asegurar que está vacío en caso de error
       } finally {
         setLoading(false)
       }

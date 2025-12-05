@@ -1,0 +1,125 @@
+[
+  {
+    "url": "https://www.furgocasa.com",
+    "status": 200,
+    "title": "Las mejores furgonetas camper en alquiler - Furgocasa Campervans",
+    "description": "Alquiler de autocaravanas Campervan de máxima calidad. Tu hotel 5 estrellas sobre ruedas desde 68,00 € al día. Las mejores furgonetas camper en alquiler.",
+    "keywords": "",
+    "h1": [
+      "FURGOCASA CAMPERVANS"
+    ],
+    "services": [
+      "alquiler",
+      "servicios"
+    ]
+  },
+  {
+    "url": "https://www.tricholand.com",
+    "status": 200,
+    "title": "Tricholand - Productores de Trichocereus y otros cactus",
+    "description": "Somos una empresa en continuo crecimiento con el objetivo de ofrecer a todos nuestros las mejores variedades y especímenes de cactus Trichocereus.",
+    "keywords": "",
+    "h1": [
+      "COMPRAR CACTUS",
+      "VENTA DE CACTUS",
+      "TRICHOLAND"
+    ],
+    "services": [
+      "seo"
+    ]
+  },
+  {
+    "url": "https://www.acttax.es",
+    "status": 200,
+    "title": "ACTTAX | Asesoría Fiscal Especializada en Precios de Transferencia",
+    "description": "Asesoría fiscal especializada en precios de transferencia, operaciones vinculadas, valoración de empresas e inteligencia artificial aplicada a fiscalidad.",
+    "keywords": "precios de transferencia,operaciones vinculadas,valoración de empresas,asesoría fiscal Murcia,transfer pricing,modelo 232,APAs,OCDE,valoración financiera,inteligencia artificial fiscal,IA financiera,automatización fiscal",
+    "h1": [],
+    "services": [
+      "servicios",
+      "asesoría",
+      "consultoría"
+    ]
+  },
+  {
+    "url": "https://www.gvcexpertos.com",
+    "status": 200,
+    "title": "GVC Expertos",
+    "description": "Bufete de abogados en Murcia con trayectoria desde 1946. Despacho multidisciplinar especializado en negligencias médicas y derecho sanitario.",
+    "keywords": "abogados negligencias médicas,errores médicos,mala praxis médica,defensa del paciente,derecho sanitario",
+    "h1": [
+      "Abogados Especialistas en Negligencias Médicas"
+    ],
+    "services": [
+      "servicios",
+      "tratamiento",
+      "abogados",
+      "peritos"
+    ]
+  },
+  {
+    "url": "https://www.gvcabogados.com",
+    "status": 200,
+    "title": "García-Válcarcel &amp; Cáceres - Bufete abogados Murcia",
+    "description": "García-Válcarcel y Cáceres. Abogados en Murcia especializado en múltiples áreas de derecho público y privado. Al servicio de nuestro clientes desde 1946.",
+    "keywords": "",
+    "h1": [
+      "¿Por qué elegirnos como tus abogados?",
+      "Bufete abogados Murcia",
+      "García Valcárcel & Cáceres Abogados"
+    ],
+    "services": [
+      "servicios",
+      "abogados"
+    ]
+  },
+  {
+    "url": "https://www.casicinco.com",
+    "status": 200,
+    "title": "Casi Cinco - Los mejores lugares con 4.7+ estrellas",
+    "description": "Descubre restaurantes, hoteles, spas y experiencias con valoraciones excepcionales de 4.7 estrellas o más. Solo los mejores lugares de España.",
+    "keywords": "restaurantes,hoteles,spas,experiencias,valoraciones,4.7 estrellas,Google Maps,lugares recomendados,España",
+    "h1": [],
+    "services": []
+  },
+  {
+    "url": "https://www.mapafurgocasa.com",
+    "status": 200,
+    "title": "Mapa Furgocasa - Áreas Autocaravanas + Gestión Inteligente con IA | +3600 Ubicaciones",
+    "description": "🚐 Descubre +3600 áreas para autocaravanas en Europa y LATAM. 🤖 Gestión inteligente con IA: valoración automática GPT-4, control de mantenimiento, gastos, ROI. 📍 Sistema QR anti-robos. 🗺️ Planifica rutas. ¡100% GRATIS!",
+    "keywords": "áreas autocaravanas,mapa autocaravanas,gestión autocaravanas,valoración autocaravana IA,GPT-4 autocaravanas,inteligencia artificial autocaravanas,control mantenimiento autocaravana,QR antirrobo autocaravana,sistema alertas accidentes,parkings autocaravanas,camping autocaravanas,pernocta autocaravanas,rutas autocaravanas,áreas autocaravanas europa,áreas autocaravanas latinoamérica,furgocasa,autocaravanas españa,chatbot autocaravanas,valoración automática vehículo,precio mercado autocaravana",
+    "h1": [],
+    "services": [
+      "servicios"
+    ]
+  },
+  {
+    "url": "https://www.hakadogs.com",
+    "status": 200,
+    "title": "Hakadogs - Inicio",
+    "description": "",
+    "keywords": "",
+    "h1": [
+      "HAKADOGS"
+    ],
+    "services": [
+      "servicios",
+      "adiestramiento"
+    ]
+  },
+  {
+    "url": "https://www.onprocuradores.com",
+    "status": 200,
+    "title": "Olga Navas Procuradores - Inicio",
+    "description": "ON Procuradores: Servicio profesional de representación procesal en toda España. Tramitamos escritos, agilizamos notificaciones y garantizamos un seguimiento eficaz de los procedimientos judiciales. ¡Confía en nuestra experiencia!",
+    "keywords": "",
+    "h1": [
+      "Olga Navas"
+    ],
+    "services": [
+      "servicios",
+      "abogados",
+      "procuradores"
+    ]
+  }
+]

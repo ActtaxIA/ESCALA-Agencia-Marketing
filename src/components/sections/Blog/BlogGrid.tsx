@@ -73,7 +73,13 @@ export default function BlogGrid() {
           .eq('published', true)
           .order('published_at', { ascending: false })
 
-        if (error) throw error
+        if (error) {
+          console.error('Error al cargar artículos:', error)
+          throw error
+        }
+
+        console.log('✅ Artículos cargados:', articles?.length || 0)
+        console.log('📄 Primer artículo:', articles?.[0])
 
         // Procesar artículos para añadir campos calculados
         const processedArticles = articles?.map((article: any) => {
@@ -92,6 +98,9 @@ export default function BlogGrid() {
           }
         }) || []
 
+        console.log('✅ Artículos procesados:', processedArticles.length)
+        console.log('📄 Primer artículo procesado:', processedArticles[0])
+        
         setAllPosts(processedArticles)
 
         // Calcular categorías con conteo

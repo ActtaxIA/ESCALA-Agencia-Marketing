@@ -102,6 +102,7 @@ export default function BlogGrid() {
         console.log('📄 Primer artículo procesado:', processedArticles[0])
         
         setAllPosts(processedArticles)
+        console.log('✅ setAllPosts ejecutado con', processedArticles.length, 'artículos')
 
         // Calcular categorías con conteo
         const categoryCount: Record<string, number> = {}

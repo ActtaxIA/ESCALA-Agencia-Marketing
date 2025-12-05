@@ -155,6 +155,7 @@ export default function PortfolioContent() {
         console.log('📄 Primer proyecto procesado:', processedProjects[0])
         
         setProjects(processedProjects)
+        console.log('✅ setProjects ejecutado con', processedProjects.length, 'proyectos')
       } catch (error) {
         console.error('❌ ERROR cargando proyectos:', error)
         setProjects([]) // Asegurar que está vacío en caso de error

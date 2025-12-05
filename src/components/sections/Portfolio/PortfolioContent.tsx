@@ -168,12 +168,19 @@ export default function PortfolioContent() {
   }, [])
 
   useEffect(() => {
+    if (loading || projects.length === 0) return
+    
+    console.log('🎯 Configurando IntersectionObserver para', projects.length, 'proyectos')
+    
     const fadeElements = document.querySelectorAll('.fade-up')
+    console.log('🎯 Elementos .fade-up encontrados:', fadeElements.length)
+    
     const fadeObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible')
+            console.log('✨ Proyecto visible añadido')
           }
         })
       },
@@ -182,7 +189,7 @@ export default function PortfolioContent() {
 
     fadeElements.forEach((el) => fadeObserver.observe(el))
     return () => fadeObserver.disconnect()
-  }, [activeFilter])
+  }, [projects, loading, activeFilter])
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 

@@ -140,14 +140,19 @@ export default function BlogGrid() {
   }, [])
 
   useEffect(() => {
-    if (loading) return
+    if (loading || allPosts.length === 0) return
+    
+    console.log('🎯 Configurando IntersectionObserver para', allPosts.length, 'posts')
     
     const fadeElements = document.querySelectorAll('.fade-up')
+    console.log('🎯 Elementos .fade-up encontrados:', fadeElements.length)
+    
     const fadeObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible')
+            console.log('✨ Elemento visible añadido')
           }
         })
       },
@@ -156,7 +161,7 @@ export default function BlogGrid() {
 
     fadeElements.forEach((el) => fadeObserver.observe(el))
     return () => fadeObserver.disconnect()
-  }, [visiblePosts])
+  }, [allPosts, loading])
 
   const loadMore = () => {
     setVisiblePosts((prev) => prev + 3)

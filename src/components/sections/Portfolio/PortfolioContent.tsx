@@ -103,12 +103,25 @@ export default function PortfolioContent() {
           throw error
         }
 
-        console.log('Proyectos cargados desde Supabase:', data?.length || 0)
+        console.log('✅ Proyectos cargados desde Supabase:', data?.length || 0)
+        console.log('📄 Primer proyecto raw:', data?.[0])
 
         // Procesar proyectos
         const processedProjects = data?.map((project: any) => {
+          console.log('🔄 Procesando proyecto:', project.client, project.services)
+          
           // Determinar categoría principal del primer servicio
-          const mainService = project.services?.[0] || 'web'
+          // services puede ser array o string, manejarlo correctamente
+          let servicesArray = project.services
+          if (typeof servicesArray === 'string') {
+            try {
+              servicesArray = JSON.parse(servicesArray)
+            } catch (e) {
+              servicesArray = ['diseño-web']
+            }
+          }
+          
+          const mainService = servicesArray?.[0] || 'diseño-web'
           const category = serviceToCategory[mainService] || 'web'
           
           // Extraer año del project_date
@@ -119,22 +132,28 @@ export default function PortfolioContent() {
             ([key, value]) => `${value}`
           ).slice(0, 3) : []
 
-          return {
+          const processed = {
             id: project.id,
             slug: project.slug,
             title: project.title,
             client: project.client,
             category,
             categoryLabel: categoryLabels[category] || 'Diseño Web',
-            description: project.short_description,
+            description: project.short_description || 'Proyecto de marketing digital',
             results: metricsArray,
             color: categoryColors[category] || '#4a7c9b',
             icon: categoryIcons[category] || '🌐',
             year,
             metrics: project.metrics,
           }
+          
+          console.log('✅ Proyecto procesado:', processed.client, processed.category)
+          return processed
         }) || []
 
+        console.log('📊 Total proyectos procesados:', processedProjects.length)
+        console.log('📄 Primer proyecto procesado:', processedProjects[0])
+        
         setProjects(processedProjects)
       } catch (error) {
         console.error('Error cargando proyectos:', error)

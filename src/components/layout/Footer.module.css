@@ -2,8 +2,7 @@
   background: var(--stripe-1);
   color: white;
   padding: 5rem 5% 2rem;
-  margin-left: 60px;
-  margin-right: 60px;
+  width: 100%;
 }
 
 .stripes {
@@ -104,17 +103,8 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .footer {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-}
-
 @media (max-width: 768px) {
   .footer {
-    margin-left: 0;
-    margin-right: 0;
     padding: 3rem 1.5rem 2rem;
   }
 

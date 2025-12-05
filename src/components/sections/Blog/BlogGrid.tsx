@@ -202,7 +202,7 @@ export default function BlogGrid() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className={`${styles.postCard} fade-up`}
+                  className={styles.postCard}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className={styles.postImage}>

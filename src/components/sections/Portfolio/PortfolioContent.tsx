@@ -249,7 +249,7 @@ export default function PortfolioContent() {
               return (
             <article
               key={project.id}
-              className={`${styles.projectCard} fade-up`}
+              className={styles.projectCard}
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 '--project-color': project.color 

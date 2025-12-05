@@ -1,25 +1,96 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './FeaturedPost.module.css'
 import { StripeDivider } from '@/components/layout'
+import { supabase } from '@/lib/supabase/client'
 
-const featuredPost = {
-  slug: 'guia-seo-local-2025',
-  title: 'Guía Completa de SEO Local para 2025: Domina las Búsquedas en tu Ciudad',
-  excerpt: 'Todo lo que necesitas saber para posicionar tu negocio en las búsquedas locales de Google. Desde Google My Business hasta estrategias avanzadas de link building local.',
-  category: 'SEO',
-  categoryColor: '#4a7c9b',
-  date: '28 Nov 2024',
-  readTime: '15 min',
-  author: {
-    name: 'ESCALA Marketing',
-    avatar: 'EM',
-  },
-  image: '/blog/seo-local.jpg',
+// Mapeo de categorías a colores
+const categoryColors: Record<string, string> = {
+  'SEO y Posicionamiento': '#4a7c9b',
+  'SEO': '#4a7c9b',
+  'Diseño Web': '#87ceeb',
+  'Redes Sociales': '#ffb366',
+  'Publicidad Digital': '#ff6b35',
+  'Estrategia Digital': '#1e3a5f',
+}
+
+// Íconos por categoría
+const categoryIcons: Record<string, string> = {
+  'SEO y Posicionamiento': '📈',
+  'SEO': '📈',
+  'Diseño Web': '🎨',
+  'Redes Sociales': '📱',
+  'Publicidad Digital': '🎯',
+  'Estrategia Digital': '🤖',
 }
 
 export default function FeaturedPost() {
+  const [featuredPost, setFeaturedPost] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadFeaturedPost() {
+      try {
+        const { data, error } = await supabase
+          .from('articles')
+          .select(`
+            id,
+            slug,
+            title,
+            excerpt,
+            content,
+            author,
+            published_at,
+            category:categories(name)
+          `)
+          .eq('published', true)
+          .eq('featured', true)
+          .order('published_at', { ascending: false })
+          .limit(1)
+          .single()
+
+        if (error) throw error
+
+        if (data) {
+          const categoryName = data.category?.name || 'General'
+          const date = new Date(data.published_at)
+          const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+          const formattedDate = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+          
+          // Calcular tiempo de lectura
+          const wordsPerMinute = 200
+          const wordCount = data.content.split(/\s+/).length
+          const minutes = Math.ceil(wordCount / wordsPerMinute)
+
+          setFeaturedPost({
+            ...data,
+            category: categoryName,
+            categoryColor: categoryColors[categoryName] || '#4a7c9b',
+            icon: categoryIcons[categoryName] || '📄',
+            date: formattedDate,
+            readTime: `${minutes} min`,
+            author: {
+              name: data.author || 'ESCALA Marketing',
+              avatar: 'EM'
+            }
+          })
+        }
+      } catch (error) {
+        console.error('Error cargando artículo destacado:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadFeaturedPost()
+  }, [])
+
+  if (loading || !featuredPost) {
+    return null
+  }
+
   return (
     <>
       <StripeDivider />
@@ -35,8 +106,8 @@ export default function FeaturedPost() {
             {/* Imagen placeholder con gradiente */}
             <div className={styles.cardImage}>
               <div className={styles.imagePlaceholder}>
-                <div className={styles.imageIcon}>📈</div>
-                <span>SEO Local</span>
+                <div className={styles.imageIcon}>{featuredPost.icon}</div>
+                <span>{featuredPost.category}</span>
               </div>
               <div 
                 className={styles.categoryTag}

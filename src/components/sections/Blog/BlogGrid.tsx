@@ -4,119 +4,130 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './BlogGrid.module.css'
 import { StripeDivider } from '@/components/layout'
+import { supabase } from '@/lib/supabase/client'
 
-const allPosts = [
-  {
-    slug: 'como-mejorar-seo-local',
-    title: 'Cómo mejorar el SEO local de tu negocio en 2024',
-    excerpt: 'Guía completa para aparecer en las búsquedas locales de Google y atraer más clientes de tu zona.',
-    category: 'SEO',
-    categoryColor: '#4a7c9b',
-    date: '15 Nov 2024',
-    readTime: '8 min',
-    icon: '📈',
-  },
-  {
-    slug: 'tendencias-diseno-web-2025',
-    title: '10 tendencias de diseño web para 2025',
-    excerpt: 'Las últimas tendencias en diseño web que debes conocer para mantener tu sitio actualizado.',
-    category: 'Diseño Web',
-    categoryColor: '#87ceeb',
-    date: '10 Nov 2024',
-    readTime: '6 min',
-    icon: '🎨',
-  },
-  {
-    slug: 'google-ads-vs-facebook-ads',
-    title: 'Google Ads vs Facebook Ads: ¿Cuál elegir?',
-    excerpt: 'Comparativa detallada para saber qué plataforma de publicidad se adapta mejor a tu negocio.',
-    category: 'Publicidad',
-    categoryColor: '#ff6b35',
-    date: '5 Nov 2024',
-    readTime: '10 min',
-    icon: '🎯',
-  },
-  {
-    slug: 'ia-en-marketing',
-    title: 'IA en marketing: Cómo aprovecharla para tu negocio',
-    excerpt: 'Herramientas de inteligencia artificial que pueden transformar tu estrategia de marketing.',
-    category: 'IA',
-    categoryColor: '#1e3a5f',
-    date: '1 Nov 2024',
-    readTime: '12 min',
-    icon: '🤖',
-  },
-  {
-    slug: 'redes-sociales-empresas-locales',
-    title: 'Redes sociales para empresas locales: Guía práctica',
-    excerpt: 'Estrategia práctica para pequeñas y medianas empresas que quieren crecer en redes sociales.',
-    category: 'Redes Sociales',
-    categoryColor: '#ffb366',
-    date: '28 Oct 2024',
-    readTime: '7 min',
-    icon: '📱',
-  },
-  {
-    slug: 'email-marketing-que-convierte',
-    title: 'Email marketing que convierte: Secretos revelados',
-    excerpt: 'Cómo crear campañas de email que tu audiencia realmente quiera abrir y leer.',
-    category: 'Email',
-    categoryColor: '#e84a23',
-    date: '25 Oct 2024',
-    readTime: '9 min',
-    icon: '📧',
-  },
-  {
-    slug: 'optimizar-google-my-business',
-    title: 'Optimiza tu Google My Business en 30 minutos',
-    excerpt: 'Checklist rápido para sacar el máximo partido a tu ficha de Google My Business.',
-    category: 'SEO',
-    categoryColor: '#4a7c9b',
-    date: '20 Oct 2024',
-    readTime: '5 min',
-    icon: '📍',
-  },
-  {
-    slug: 'errores-web-pymes',
-    title: '7 errores de diseño web que ahuyentan clientes',
-    excerpt: 'Errores comunes en webs de PYMEs que hacen que los visitantes se vayan sin contactar.',
-    category: 'Diseño Web',
-    categoryColor: '#87ceeb',
-    date: '15 Oct 2024',
-    readTime: '8 min',
-    icon: '⚠️',
-  },
-  {
-    slug: 'copywriting-landing-pages',
-    title: 'Copywriting para landing pages que convierten',
-    excerpt: 'Cómo escribir textos persuasivos que conviertan visitantes en leads cualificados.',
-    category: 'Copywriting',
-    categoryColor: '#9b59b6',
-    date: '10 Oct 2024',
-    readTime: '11 min',
-    icon: '✍️',
-  },
-]
+// Mapeo de categorías a colores e iconos
+const categoryStyles: Record<string, { color: string; icon: string }> = {
+  'SEO y Posicionamiento': { color: '#4a7c9b', icon: '📈' },
+  'SEO': { color: '#4a7c9b', icon: '📈' },
+  'Diseño Web': { color: '#87ceeb', icon: '🎨' },
+  'Redes Sociales': { color: '#ffb366', icon: '📱' },
+  'Publicidad Digital': { color: '#ff6b35', icon: '🎯' },
+  'Estrategia Digital': { color: '#1e3a5f', icon: '🤖' },
+  'IA': { color: '#1e3a5f', icon: '🤖' },
+  'Email': { color: '#e84a23', icon: '📧' },
+  'Copywriting': { color: '#9b59b6', icon: '✍️' },
+}
 
-const categories = [
-  { name: 'SEO', count: 12, icon: '📈' },
-  { name: 'Diseño Web', count: 8, icon: '🎨' },
-  { name: 'Redes Sociales', count: 10, icon: '📱' },
-  { name: 'Publicidad', count: 6, icon: '🎯' },
-  { name: 'IA', count: 4, icon: '🤖' },
-  { name: 'Email', count: 5, icon: '📧' },
-]
-
-const popularPosts = [
-  { title: 'Cómo mejorar el SEO local', slug: 'como-mejorar-seo-local' },
-  { title: 'Google Ads vs Facebook Ads', slug: 'google-ads-vs-facebook-ads' },
-  { title: 'IA en marketing digital', slug: 'ia-en-marketing' },
-]
+interface Article {
+  id: string
+  slug: string
+  title: string
+  excerpt: string
+  category: { name: string } | null
+  published_at: string
+  views: number
+  content: string
+}
 
 export default function BlogGrid() {
+  const [allPosts, setAllPosts] = useState<any[]>([])
+  const [categories, setCategories] = useState<{ name: string; count: number; icon: string }[]>([])
+  const [popularPosts, setPopularPosts] = useState<{ title: string; slug: string }[]>([])
+  const [loading, setLoading] = useState(true)
   const [visiblePosts, setVisiblePosts] = useState(6)
 
+  // Calcular tiempo de lectura basado en palabras
+  const calculateReadTime = (content: string) => {
+    const wordsPerMinute = 200
+    const wordCount = content.split(/\s+/).length
+    const minutes = Math.ceil(wordCount / wordsPerMinute)
+    return `${minutes} min`
+  }
+
+  // Formatear fecha
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+  }
+
+  // Cargar artículos desde Supabase
   useEffect(() => {
+    async function loadArticles() {
+      try {
+        // Fetch artículos publicados con su categoría
+        const { data: articles, error } = await supabase
+          .from('articles')
+          .select(`
+            id,
+            slug,
+            title,
+            excerpt,
+            content,
+            published_at,
+            views,
+            category:categories(name)
+          `)
+          .eq('published', true)
+          .order('published_at', { ascending: false })
+
+        if (error) throw error
+
+        // Procesar artículos para añadir campos calculados
+        const processedArticles = articles?.map((article: any) => {
+          const categoryName = article.category?.name || 'General'
+          const style = categoryStyles[categoryName] || { color: '#4a7c9b', icon: '📄' }
+          
+          return {
+            ...article,
+            category: categoryName,
+            categoryColor: style.color,
+            icon: style.icon,
+            date: formatDate(article.published_at),
+            readTime: calculateReadTime(article.content)
+          }
+        }) || []
+
+        setAllPosts(processedArticles)
+
+        // Calcular categorías con conteo
+        const categoryCount: Record<string, number> = {}
+        processedArticles.forEach((article: any) => {
+          const cat = article.category
+          categoryCount[cat] = (categoryCount[cat] || 0) + 1
+        })
+
+        const categoriesData = Object.entries(categoryCount).map(([name, count]) => {
+          const style = categoryStyles[name] || { color: '#4a7c9b', icon: '📄' }
+          return {
+            name,
+            count: count as number,
+            icon: style.icon
+          }
+        })
+        setCategories(categoriesData)
+
+        // Posts más populares (por views)
+        const popular = processedArticles
+          .sort((a: any, b: any) => b.views - a.views)
+          .slice(0, 3)
+          .map((p: any) => ({ title: p.title, slug: p.slug }))
+        setPopularPosts(popular)
+
+      } catch (error) {
+        console.error('Error cargando artículos:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadArticles()
+  }, [])
+
+  useEffect(() => {
+    if (loading) return
+    
     const fadeElements = document.querySelectorAll('.fade-up')
     const fadeObserver = new IntersectionObserver(
       (entries) => {
@@ -143,17 +154,23 @@ export default function BlogGrid() {
 
       <section className={styles.blogSection}>
         <div className={styles.container}>
-          {/* Main Content */}
-          <main className={styles.mainContent}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Últimos Artículos</h2>
-              <p className={styles.sectionSubtitle}>
-                Explora nuestro contenido sobre marketing digital
-              </p>
+          {loading ? (
+            <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>
+              <p>Cargando artículos...</p>
             </div>
+          ) : (
+            <>
+              {/* Main Content */}
+              <main className={styles.mainContent}>
+                <div className={styles.sectionHeader}>
+                  <h2 className={styles.sectionTitle}>Últimos Artículos</h2>
+                  <p className={styles.sectionSubtitle}>
+                    Explora nuestro contenido sobre marketing digital
+                  </p>
+                </div>
 
-            <div className={styles.postsGrid}>
-              {allPosts.slice(0, visiblePosts).map((post, index) => (
+                <div className={styles.postsGrid}>
+                  {allPosts.slice(0, visiblePosts).map((post, index) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
@@ -253,6 +270,8 @@ export default function BlogGrid() {
               </form>
             </div>
           </aside>
+            </>
+          )}
         </div>
       </section>
     </>

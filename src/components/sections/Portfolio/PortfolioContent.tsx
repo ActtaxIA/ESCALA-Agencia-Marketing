@@ -19,6 +19,8 @@ interface Project {
   year: string
   slug: string
   metrics: any
+  featured_image?: string
+  website_url?: string
 }
 
 // Mapeo de servicios a categorías de filtro

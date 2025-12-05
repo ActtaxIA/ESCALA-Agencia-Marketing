@@ -76,7 +76,9 @@ export default function BlogGrid() {
 
         // Procesar artículos para añadir campos calculados
         const processedArticles = articles?.map((article: any) => {
-          const categoryName = article.category?.name || 'General'
+          // category puede venir como array o como objeto
+          const categoryData = Array.isArray(article.category) ? article.category[0] : article.category
+          const categoryName = categoryData?.name || 'General'
           const style = categoryStyles[categoryName] || { color: '#4a7c9b', icon: '📄' }
           
           return {

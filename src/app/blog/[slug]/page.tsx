@@ -60,6 +60,10 @@ export default async function ArticlePage({ params }: Props) {
     .update({ views: (article.views || 0) + 1 })
     .eq('id', article.id)
 
+  // Manejar categoría (puede venir como array o objeto)
+  const categoryData = Array.isArray(article.category) ? article.category[0] : article.category
+  const categoryName = categoryData?.name || 'General'
+
   // Formatear fecha
   const date = new Date(article.published_at)
   const formattedDate = date.toLocaleDateString('es-ES', {
@@ -89,7 +93,7 @@ export default async function ArticlePage({ params }: Props) {
         <header className={styles.header}>
           <div className={styles.container}>
             <div className={styles.meta}>
-              <span className={styles.category}>{article.category?.name || 'General'}</span>
+              <span className={styles.category}>{categoryName}</span>
               <span className={styles.separator}>•</span>
               <time className={styles.date}>{formattedDate}</time>
               <span className={styles.separator}>•</span>

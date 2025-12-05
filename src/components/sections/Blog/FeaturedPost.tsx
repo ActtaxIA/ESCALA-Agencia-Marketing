@@ -54,7 +54,9 @@ export default function FeaturedPost() {
         if (error) throw error
 
         if (data) {
-          const categoryName = data.category?.name || 'General'
+          // category puede venir como array o como objeto
+          const categoryData = Array.isArray(data.category) ? data.category[0] : data.category
+          const categoryName = categoryData?.name || 'General'
           const date = new Date(data.published_at)
           const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
           const formattedDate = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`

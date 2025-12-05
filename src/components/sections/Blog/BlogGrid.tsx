@@ -160,6 +160,8 @@ export default function BlogGrid() {
     setVisiblePosts((prev) => prev + 3)
   }
 
+  console.log('🔄 BlogGrid render - allPosts length:', allPosts.length, 'loading:', loading)
+
   return (
     <>
       <StripeDivider />
@@ -181,8 +183,15 @@ export default function BlogGrid() {
                   </p>
                 </div>
 
-                <div className={styles.postsGrid}>
-                  {allPosts.slice(0, visiblePosts).map((post, index) => (
+                {allPosts.length === 0 ? (
+                  <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>
+                    <p>No hay artículos disponibles.</p>
+                  </div>
+                ) : (
+                  <div className={styles.postsGrid}>
+                    {allPosts.slice(0, visiblePosts).map((post, index) => {
+                      console.log('🎨 Renderizando post:', post.title, post)
+                      return (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
@@ -217,8 +226,10 @@ export default function BlogGrid() {
                     <span className={styles.postLink}>Leer más →</span>
                   </div>
                 </Link>
-              ))}
-            </div>
+                      )
+                    })}
+                  </div>
+                )}
 
             {visiblePosts < allPosts.length && (
               <button className={styles.loadMore} onClick={loadMore}>

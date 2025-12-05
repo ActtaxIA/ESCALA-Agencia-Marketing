@@ -186,6 +186,8 @@ export default function PortfolioContent() {
     ? projects 
     : projects.filter(p => p.category === activeFilter)
 
+  console.log('🔄 PortfolioContent render - projects length:', projects.length, 'filteredProjects:', filteredProjects.length, 'loading:', loading)
+
   if (loading) {
     return (
       <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -227,8 +229,15 @@ export default function PortfolioContent() {
 
       {/* Grid de proyectos */}
       <section className={styles.projectsSection}>
-        <div className={styles.projectsGrid}>
-          {filteredProjects.map((project, index) => (
+        {filteredProjects.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>
+            <p>No hay proyectos disponibles para esta categoría.</p>
+          </div>
+        ) : (
+          <div className={styles.projectsGrid}>
+            {filteredProjects.map((project, index) => {
+              console.log('🎨 Renderizando proyecto:', project.client, project)
+              return (
             <article
               key={project.id}
               className={`${styles.projectCard} fade-up`}
@@ -267,8 +276,10 @@ export default function PortfolioContent() {
                 <span className={styles.projectCta}>Ver proyecto →</span>
               </div>
             </article>
-          ))}
-        </div>
+              )
+            })}
+          </div>
+        )}
       </section>
 
       {/* Stats bar */}

@@ -8,9 +8,11 @@ Web corporativa de **ESCALA**, agencia de marketing digital con sede en Murcia. 
 
 | Tecnología | Versión | Propósito |
 |------------|---------|-----------|
-| **Next.js** | 14.x | Framework React con App Router |
+| **Next.js** | 14.2.18 | Framework React con App Router |
 | **TypeScript** | 5.x | Tipado estático |
-| **Tailwind CSS** | 3.x | Estilos utility-first |
+| **Supabase** | 2.45.0 | Base de datos PostgreSQL + Auth |
+| **@supabase/ssr** | 0.5.0 | Cliente Supabase para Next.js |
+| **Tailwind CSS** | 3.4.14 | Estilos utility-first |
 | **CSS Modules** | - | Estilos encapsulados por componente |
 | **AWS Amplify** | - | **Hosting y despliegue en producción** |
 
@@ -58,12 +60,17 @@ frontend:
       - .next/cache/**/*
 ```
 
-#### 3️⃣ Variables de entorno (si las hay):
+#### 3️⃣ Variables de entorno:
 En Amplify Console → App settings → Environment variables:
 ```
 NODE_ENV=production
 NEXT_PUBLIC_SITE_URL=https://escalamarketing.es
+NEXT_PUBLIC_SUPABASE_URL=https://yivdoyjjcwvezvnwzrph.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[tu-anon-key]
+SUPABASE_SERVICE_ROLE_KEY=[tu-service-role-key]
 ```
+
+**⚠️ IMPORTANTE**: Las variables con `NEXT_PUBLIC_` son accesibles en el navegador. La `SERVICE_ROLE_KEY` solo se usa en server-side.
 
 #### 4️⃣ Dominio personalizado:
 1. Amplify Console → Domain management
@@ -89,8 +96,9 @@ npm start
 ### URLs del proyecto:
 | Entorno | URL |
 |---------|-----|
-| **Producción** | https://escalamarketing.es |
-| **Preview (Amplify)** | https://main.xxxxx.amplifyapp.com |
+| **Producción** | https://main.d1romvrvb9wihr.amplifyapp.com |
+| **Supabase Dashboard** | https://supabase.com/dashboard/project/yivdoyjjcwvezvnwzrph |
+| **GitHub** | https://github.com/ActtaxIA/ESCALA-Agencia-Marketing |
 | **Local** | http://localhost:3000 |
 
 ---
@@ -242,8 +250,16 @@ src/
 │   ├── quienes-somos/
 │   ├── metodologia/
 │   ├── portfolio/
+│   │   ├── page.tsx            # Listado de proyectos
+│   │   └── [slug]/             # ✅ Detalle de cada proyecto
+│   │       ├── page.tsx
+│   │       └── project.module.css
 │   ├── exitos/
 │   ├── blog/
+│   │   ├── page.tsx            # Listado de artículos
+│   │   └── [slug]/             # ✅ Detalle de cada artículo
+│   │       ├── page.tsx
+│   │       └── article.module.css
 │   ├── contacto/
 │   │
 │   └── servicios/
@@ -264,8 +280,30 @@ src/
 │       ├── Home/
 │       ├── Servicios/
 │       ├── Blog/
+│       │   ├── BlogHero.tsx
+│       │   ├── FeaturedPost.tsx  # ✅ Lee desde Supabase
+│       │   └── BlogGrid.tsx      # ✅ Lee desde Supabase
 │       ├── Portfolio/
+│       │   └── PortfolioContent.tsx  # ✅ Lee desde Supabase
 │       └── ServicioDetalle/
+│
+├── lib/
+│   └── supabase/
+│       ├── client.ts           # Cliente browser (componentes 'use client')
+│       └── server.ts           # Cliente server (Server Components)
+│
+public/
+├── portfolio/                  # Imágenes de proyectos
+│   ├── README.md              # Instrucciones de estructura
+│   ├── furgocasa-alquiler-camper/
+│   ├── tricholand-tienda-cactus/
+│   └── ... (9 carpetas totales)
+│
+Archivos SQL:
+├── supabase-schema.sql         # Schema completo de la BD
+├── supabase-blog-data.sql      # 9 artículos + categorías
+├── supabase-portfolio-data.sql # 9 proyectos reales
+└── update-portfolio-images.sql # UPDATE de imágenes
 ```
 
 ---
@@ -339,4 +377,54 @@ Crear imágenes de 1200x630px en `/public/`:
 
 ---
 
-*Última actualización: Diciembre 2024*
+---
+
+## 🗄️ Base de Datos Supabase
+
+### Tablas Implementadas:
+| Tabla | Registros | Estado |
+|-------|-----------|--------|
+| `categories` | 6 | ✅ Poblada |
+| `articles` | 9 | ✅ Poblada |
+| `portfolio_projects` | 9 | ✅ Poblada |
+| `success_stories` | - | ⏳ Pendiente |
+| `testimonials` | - | ⏳ Pendiente |
+| `contact_submissions` | - | ✅ Lista |
+| `newsletter_subscribers` | - | ✅ Lista |
+
+### Proyectos Reales en Portfolio:
+1. **Furgocasa** - Plataforma de alquiler de autocaravanas
+2. **Mapa Furgocasa** - Herramienta IA para gestión de rutas
+3. **Tricholand** - E-commerce de cactus Trichocereus
+4. **Acttax** - Web para asesoría fiscal
+5. **GVC Expertos** - Bufete especializado en negociaciones médicas
+6. **GVC Abogados** - Web corporativa para despacho de abogados
+7. **Casi Cinco** - Plataforma de recomendaciones premium
+8. **Hakadogs** - Centro de adiestramiento canino
+9. **ON Procuradores** - Web profesional para procuradores
+
+### Artículos del Blog:
+- Email marketing que convierte
+- IA en marketing
+- Cómo mejorar el SEO local
+- Guía Completa de SEO Local para 2025
+- Redes sociales para empresas locales
+- Optimiza tu Google My Business
+- 7 errores de diseño web
+- Google Ads vs Facebook Ads
+- 10 tendencias de diseño web para 2025
+
+---
+
+## 📸 Imágenes del Portfolio
+
+Las capturas de pantalla de cada proyecto se almacenan en:
+```
+public/portfolio/[slug-del-proyecto]/hero.jpg
+```
+
+Ver `public/portfolio/README.md` para instrucciones detalladas.
+
+---
+
+*Última actualización: 5 Diciembre 2024*

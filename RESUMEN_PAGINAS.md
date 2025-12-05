@@ -43,8 +43,14 @@ Estado actual de todas las páginas de la web.
 ### ✅ PORTFOLIO (`/portfolio`)
 - **Layout**: StandardLayout
 - **Componente**: `PortfolioContent`
+- **Base de datos**: ✅ Supabase (9 proyectos reales)
 - **Secciones**: Hero compacto con filtros, Grid de proyectos, Stats, Modal de proyecto, CTA
-- **Features**: Filtro por categoría, modal con detalle, resultados destacados
+- **Features**: 
+  - Filtro por categoría (Web, SEO, Social, Ads, Branding, IA)
+  - Modal con detalle al hacer click
+  - Resultados destacados (métricas JSONB)
+  - Imágenes reales de cada proyecto web
+  - Link a página de detalle `/portfolio/[slug]`
 
 ### ✅ ÉXITOS (`/exitos`)
 - **Layout**: StandardLayout
@@ -54,12 +60,14 @@ Estado actual de todas las páginas de la web.
 ### ✅ BLOG (`/blog`)
 - **Layout**: StandardLayout
 - **Componente**: `BlogHero` + `FeaturedPost` + `BlogGrid`
+- **Base de datos**: ✅ Supabase (9 artículos + 6 categorías)
 - **Features**:
   - Buscador
   - Filtros por categoría
-  - Post destacado grande
-  - Grid de posts
-  - Sidebar con categorías, posts populares, newsletter
+  - Post destacado (campo `featured = true`)
+  - Grid de posts (lee desde `articles` table)
+  - Sidebar con categorías dinámicas, posts populares por views
+  - Newsletter subscription form
   - Botón "Cargar más"
 
 ### ✅ CONTACTO (`/contacto`)
@@ -116,10 +124,20 @@ Todas usan `StandardLayout` con los componentes de `ServicioDetalle`:
 
 ---
 
+## ✅ Páginas Dinámicas
+
+### Blog
+- **`/blog`** - Listado de artículos (BlogHero + FeaturedPost + BlogGrid)
+- **`/blog/[slug]`** - ✅ Artículo completo con contenido, autor, métricas
+  - Ejemplos: `/blog/guia-seo-local-2025`, `/blog/ia-en-marketing`
+
+### Portfolio
+- **`/portfolio`** - Listado de proyectos con filtros por categoría
+- **`/portfolio/[slug]`** - ✅ Proyecto completo con desafío, solución, resultados
+  - Ejemplos: `/portfolio/furgocasa-alquiler-camper`, `/portfolio/tricholand-tienda-cactus`
+
 ## ⏳ Páginas Pendientes
 
-- [ ] `/blog/[slug]` - Página individual de artículo
-- [ ] `/portfolio/[slug]` - Página individual de proyecto
 - [ ] `/politica-privacidad` - Política de privacidad
 - [ ] `/aviso-legal` - Aviso legal
 - [ ] `/cookies` - Política de cookies
@@ -130,11 +148,15 @@ Todas usan `StandardLayout` con los componentes de `ServicioDetalle`:
 
 | Métrica | Valor |
 |---------|-------|
-| Total páginas | ~20 |
-| Páginas completadas | 17 |
+| Total páginas | ~22 |
+| Páginas completadas | 19 (+ 2 dinámicas) |
+| Páginas dinámicas | 2 ([slug]) |
 | Layouts | 3 |
-| Componentes reutilizables | ~20 |
+| Componentes reutilizables | ~25 |
+| Artículos en BD | 9 |
+| Proyectos en BD | 9 |
+| Categorías | 6 |
 
 ---
 
-*Última actualización: Diciembre 2024*
+*Última actualización: 5 Diciembre 2024*

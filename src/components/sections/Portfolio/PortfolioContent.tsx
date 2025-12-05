@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './PortfolioContent.module.css'
 import { StripeDivider } from '@/components/layout'
+import { supabase } from '@/lib/supabase/client'
 
 interface Project {
-  id: number
+  id: string
   title: string
   client: string
   category: string
@@ -16,106 +17,59 @@ interface Project {
   color: string
   icon: string
   year: string
+  slug: string
+  metrics: any
 }
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'E-commerce de Moda',
-    client: 'Boutique Mía',
-    category: 'web',
-    categoryLabel: 'Diseño Web',
-    description: 'Tienda online completa con catálogo de +500 productos, pasarela de pago y gestión de inventario.',
-    results: ['+340% ventas online', '12K visitas/mes', '4.2% conversión'],
-    color: '#4a7c9b',
-    icon: '🛍️',
-    year: '2024',
-  },
-  {
-    id: 2,
-    title: 'Posicionamiento Local',
-    client: 'Clínica Dental García',
-    category: 'seo',
-    categoryLabel: 'SEO Local',
-    description: 'Estrategia SEO local completa con optimización de Google My Business y contenido localizado.',
-    results: ['#1 en Google Maps', '+180% llamadas', '45 reseñas 5⭐'],
-    color: '#1e3a5f',
-    icon: '📍',
-    year: '2024',
-  },
-  {
-    id: 3,
-    title: 'Campaña Redes Sociales',
-    client: 'Restaurante La Huerta',
-    category: 'social',
-    categoryLabel: 'Redes Sociales',
-    description: 'Gestión integral de Instagram y Facebook con contenido gastronómico y gestión de comunidad.',
-    results: ['8K seguidores', '+250% engagement', '3-4 reservas/día'],
-    color: '#ffb366',
-    icon: '📱',
-    year: '2024',
-  },
-  {
-    id: 4,
-    title: 'Google Ads Leads',
-    client: 'Reformas Integrales Murcia',
-    category: 'ads',
-    categoryLabel: 'Google Ads',
-    description: 'Campañas de búsqueda y display optimizadas para captación de presupuestos cualificados.',
-    results: ['3x más leads', '-40% coste/lead', 'ROAS 8:1'],
-    color: '#ff6b35',
-    icon: '🎯',
-    year: '2024',
-  },
-  {
-    id: 5,
-    title: 'Branding Completo',
-    client: 'Construcciones Hernández',
-    category: 'branding',
-    categoryLabel: 'Branding',
-    description: 'Rediseño de marca completo: logotipo, identidad visual, papelería y aplicaciones.',
-    results: ['Nueva identidad', 'Manual de marca', '+60% reconocimiento'],
-    color: '#e84a23',
-    icon: '✏️',
-    year: '2023',
-  },
-  {
-    id: 6,
-    title: 'Chatbot IA Atención',
-    client: 'Seguros del Sureste',
-    category: 'ia',
-    categoryLabel: 'Apps IA',
-    description: 'Desarrollo de chatbot inteligente para atención al cliente y captación de leads 24/7.',
-    results: ['70% consultas auto', '-50% tiempo resp.', '24/7 disponible'],
-    color: '#0f1729',
-    icon: '🤖',
-    year: '2024',
-  },
-  {
-    id: 7,
-    title: 'Fotografía de Producto',
-    client: 'Artesanía Murciana',
-    category: 'foto',
-    categoryLabel: 'Fotografía',
-    description: 'Sesión fotográfica completa de catálogo con más de 200 productos artesanales.',
-    results: ['+40% ventas', '200 productos', 'Catálogo premium'],
-    color: '#87ceeb',
-    icon: '📸',
-    year: '2023',
-  },
-  {
-    id: 8,
-    title: 'Email Marketing',
-    client: 'Moda Mediterránea',
-    category: 'email',
-    categoryLabel: 'Email Marketing',
-    description: 'Estrategia de email marketing con automatizaciones, segmentación y campañas semanales.',
-    results: ['15K€/mes ventas', '42% apertura', '8% conversión'],
-    color: '#9b59b6',
-    icon: '📧',
-    year: '2024',
-  },
-]
+// Mapeo de servicios a categorías de filtro
+const serviceToCategory: Record<string, string> = {
+  'diseño-web': 'web',
+  'diseno-web': 'web',
+  'seo-local': 'seo',
+  'seo': 'seo',
+  'redes-sociales': 'social',
+  'google-ads': 'ads',
+  'branding': 'branding',
+  'apps-ia': 'ia',
+  'fotografia': 'foto',
+  'email-marketing': 'email',
+}
+
+// Colores por categoría
+const categoryColors: Record<string, string> = {
+  'web': '#4a7c9b',
+  'seo': '#1e3a5f',
+  'social': '#ffb366',
+  'ads': '#ff6b35',
+  'branding': '#e84a23',
+  'ia': '#0f1729',
+  'foto': '#87ceeb',
+  'email': '#9b59b6',
+}
+
+// Iconos por categoría
+const categoryIcons: Record<string, string> = {
+  'web': '🌐',
+  'seo': '📈',
+  'social': '📱',
+  'ads': '🎯',
+  'branding': '✏️',
+  'ia': '🤖',
+  'foto': '📸',
+  'email': '📧',
+}
+
+// Labels por categoría
+const categoryLabels: Record<string, string> = {
+  'web': 'Diseño Web',
+  'seo': 'SEO Local',
+  'social': 'Redes Sociales',
+  'ads': 'Google Ads',
+  'branding': 'Branding',
+  'ia': 'Apps IA',
+  'foto': 'Fotografía',
+  'email': 'Email Marketing',
+}
 
 const categories = [
   { id: 'all', label: 'Todos', icon: '✦' },
@@ -128,8 +82,63 @@ const categories = [
 ]
 
 export default function PortfolioContent() {
+  const [projects, setProjects] = useState<Project[]>([])
+  const [loading, setLoading] = useState(true)
   const [activeFilter, setActiveFilter] = useState('all')
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
+  // Cargar proyectos desde Supabase
+  useEffect(() => {
+    async function loadProjects() {
+      try {
+        const { data, error } = await supabase
+          .from('portfolio_projects')
+          .select('*')
+          .eq('published', true)
+          .order('order_position', { ascending: true })
+
+        if (error) throw error
+
+        // Procesar proyectos
+        const processedProjects = data?.map((project: any) => {
+          // Determinar categoría principal del primer servicio
+          const mainService = project.services?.[0] || 'web'
+          const category = serviceToCategory[mainService] || 'web'
+          
+          // Extraer año del project_date
+          const year = project.project_date ? new Date(project.project_date).getFullYear().toString() : '2024'
+          
+          // Convertir métricas JSONB a array de resultados
+          const metricsArray = project.metrics ? Object.entries(project.metrics).map(
+            ([key, value]) => `${value}`
+          ).slice(0, 3) : []
+
+          return {
+            id: project.id,
+            slug: project.slug,
+            title: project.title,
+            client: project.client,
+            category,
+            categoryLabel: categoryLabels[category] || 'Diseño Web',
+            description: project.short_description,
+            results: metricsArray,
+            color: categoryColors[category] || '#4a7c9b',
+            icon: categoryIcons[category] || '🌐',
+            year,
+            metrics: project.metrics,
+          }
+        }) || []
+
+        setProjects(processedProjects)
+      } catch (error) {
+        console.error('Error cargando proyectos:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadProjects()
+  }, [])
 
   useEffect(() => {
     const fadeElements = document.querySelectorAll('.fade-up')
@@ -151,6 +160,14 @@ export default function PortfolioContent() {
   const filteredProjects = activeFilter === 'all' 
     ? projects 
     : projects.filter(p => p.category === activeFilter)
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ color: '#666' }}>Cargando proyectos...</p>
+      </div>
+    )
+  }
 
   return (
     <>

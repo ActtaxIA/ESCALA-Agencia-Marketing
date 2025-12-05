@@ -145,6 +145,8 @@ export default function PortfolioContent() {
             icon: categoryIcons[category] || '🌐',
             year,
             metrics: project.metrics,
+            featured_image: project.featured_image,
+            website_url: project.website_url,
           }
           
           console.log('✅ Proyecto procesado:', processed.client, processed.category)
@@ -257,12 +259,20 @@ export default function PortfolioContent() {
               onClick={() => setSelectedProject(project)}
             >
               <div className={styles.projectVisual}>
-                <div 
-                  className={styles.projectBg}
-                  style={{ background: `linear-gradient(135deg, ${project.color}33 0%, ${project.color}77 100%)` }}
-                >
-                  <span className={styles.projectIcon}>{project.icon}</span>
-                </div>
+                {project.featured_image ? (
+                  <img 
+                    src={project.featured_image} 
+                    alt={project.title}
+                    className={styles.projectImage}
+                  />
+                ) : (
+                  <div 
+                    className={styles.projectBg}
+                    style={{ background: `linear-gradient(135deg, ${project.color}33 0%, ${project.color}77 100%)` }}
+                  >
+                    <span className={styles.projectIcon}>{project.icon}</span>
+                  </div>
+                )}
                 <span 
                   className={styles.projectCategory}
                   style={{ background: project.color }}

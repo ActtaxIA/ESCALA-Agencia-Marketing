@@ -1,6 +1,8 @@
-# 🚀 ESCALA - Agencia de Marketing Digital
+# 🚀 ESKALA - Agencia de Marketing Digital
 
-Web corporativa de **ESCALA**, agencia de marketing digital con sede en Murcia. Diseño artístico basado en el concepto visual de **"El viaje del día"** representado a través de 8 franjas de color.
+Web corporativa de **ESKALA**, agencia de marketing digital con sede en Murcia. Diseño artístico basado en el concepto visual de **"El viaje del día"** representado a través de 8 franjas de color.
+
+**URL**: [www.eskaladigital.com](https://www.eskaladigital.com)
 
 ---
 

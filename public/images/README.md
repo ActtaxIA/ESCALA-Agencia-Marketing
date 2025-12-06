@@ -34,3 +34,4 @@ Si necesitas otros tamaños específicos para favicon, puedes crear:
 - `apple-touch-icon.png` (180x180)
 
 
+

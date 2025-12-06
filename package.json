@@ -1,6 +1,7 @@
 {
-  "name": "escala-marketing",
+  "name": "eskala-marketing-digital",
   "version": "1.0.0",
+  "description": "Agencia de marketing digital en Murcia - www.eskaladigital.com",
   "private": true,
   "scripts": {
     "dev": "next dev",

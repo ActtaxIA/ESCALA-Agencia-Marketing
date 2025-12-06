@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Quiénes Somos | Equipo de Marketing Digital en Murcia',
-  description: 'Conoce al equipo de ESCALA Marketing. Expertos en marketing digital, diseño web y estrategias de crecimiento para empresas en Murcia y toda España.',
+  description: 'Conoce al equipo de ESKALA Marketing Digital. Expertos en marketing digital, diseño web y estrategias de crecimiento para empresas en Murcia y toda España.',
   keywords: [
     'agencia marketing murcia',
     'equipo marketing digital',
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     'consultora marketing murcia',
   ],
   openGraph: {
-    title: 'Quiénes Somos | ESCALA Marketing Murcia',
+    title: 'Quiénes Somos | ESKALA Marketing Digital',
     description: 'Conoce al equipo de expertos en marketing digital que hará crecer tu negocio.',
-    url: 'https://escalamarketing.es/quienes-somos',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com/quienes-somos',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
@@ -27,18 +27,18 @@ export const metadata: Metadata = {
         url: '/og-quienes-somos.jpg',
         width: 1200,
         height: 630,
-        alt: 'Equipo ESCALA Marketing',
+        alt: 'Equipo ESKALA Marketing Digital',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Quiénes Somos | ESCALA Marketing Murcia',
+    title: 'Quiénes Somos | ESKALA Marketing Digital',
     description: 'Conoce al equipo de expertos en marketing digital que hará crecer tu negocio.',
     images: ['/og-quienes-somos.jpg'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es/quienes-somos',
+    canonical: 'https://www.eskaladigital.com/quienes-somos',
   },
 }
 

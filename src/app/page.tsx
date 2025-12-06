@@ -2,7 +2,7 @@ import HomeStripes from '@/components/sections/Home/HomeStripes'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+  title: 'ESKALA | Agencia de Marketing Digital en Murcia',
   description: 'Agencia de marketing digital en Murcia especializada en diseño web, SEO local, redes sociales, Google Ads y apps con IA. Hacemos crecer tu negocio.',
   keywords: [
     'agencia marketing digital murcia',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     'seo murcia',
   ],
   openGraph: {
-    title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+    title: 'ESKALA | Agencia de Marketing Digital en Murcia',
     description: 'Hacemos crecer tu negocio con estrategias de marketing digital que funcionan. Diseño web, SEO, redes sociales y más.',
-    url: 'https://escalamarketing.es',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
@@ -23,18 +23,18 @@ export const metadata: Metadata = {
         url: '/og-home.jpg',
         width: 1200,
         height: 630,
-        alt: 'ESCALA - Agencia de Marketing Digital en Murcia',
+        alt: 'ESKALA - Agencia de Marketing Digital en Murcia',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+    title: 'ESKALA | Agencia de Marketing Digital en Murcia',
     description: 'Hacemos crecer tu negocio con estrategias de marketing digital que funcionan.',
     images: ['/og-home.jpg'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es',
+    canonical: 'https://www.eskaladigital.com',
   },
 }
 

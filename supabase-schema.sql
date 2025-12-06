@@ -378,3 +378,4 @@ INSERT INTO categories (name, slug, description, icon, color) VALUES
 -- 3. Puedes usar el dashboard de Supabase para gestionar contenido
 -- 4. Para producción, considera agregar más validaciones y constraints
 
+

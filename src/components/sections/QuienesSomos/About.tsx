@@ -50,7 +50,7 @@ export default function About() {
               No somos una agencia más. <span>Somos tu partner.</span>
             </h2>
             <p>
-              En ESCALA combinamos creatividad, tecnología y estrategia para impulsar 
+              En ESKALA combinamos creatividad, tecnología y estrategia para impulsar 
               negocios en el entorno digital. Desde Murcia trabajamos con empresas de toda España.
             </p>
             <p>

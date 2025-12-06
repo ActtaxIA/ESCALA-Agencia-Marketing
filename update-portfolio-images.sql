@@ -14,3 +14,4 @@ UPDATE portfolio_projects SET featured_image = '/portfolio/on-procuradores-murci
 -- Verificar que se actualizaron correctamente
 SELECT slug, featured_image FROM portfolio_projects WHERE published = true ORDER BY order_position;
 
+

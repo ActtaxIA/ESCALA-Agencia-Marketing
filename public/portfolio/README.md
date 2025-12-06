@@ -58,3 +58,4 @@ UPDATE portfolio_projects SET gallery_images = ARRAY[
 - Formato: JPG o PNG
 - Calidad: Alta (para que se vean bien en la web)
 
+

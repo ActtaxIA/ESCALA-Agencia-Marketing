@@ -51,14 +51,14 @@ export function Header() {
       <Link href="/" className={styles.logo}>
         <Image 
           src="/images/logo.png" 
-          alt="ESCALA" 
+          alt="ESKALA" 
           width={40} 
           height={40}
           className={styles.logoImage}
         />
         <div className={styles.logoText}>
-          <span className={styles.logoMain}>ESCALA</span>
-          <span className={styles.logoSub}>Agencia de Marketing</span>
+          <span className={styles.logoMain}>ESKALA</span>
+          <span className={styles.logoSub}>Marketing Digital</span>
         </div>
       </Link>
 

@@ -33,8 +33,8 @@ export function Footer() {
       <div className={styles.grid}>
         <div className={styles.brand}>
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoMain}>ESCALA</span>
-            <span className={styles.logoSub}>Agencia de Marketing</span>
+            <span className={styles.logoMain}>ESKALA</span>
+            <span className={styles.logoSub}>Marketing Digital</span>
           </Link>
           <p>
             Agencia de marketing digital en Murcia. Llevamos tu negocio al 
@@ -68,14 +68,14 @@ export function Footer() {
           <h4 className={styles.title}>Contacto</h4>
           <ul className={styles.links}>
             <li>📍 Murcia, España</li>
-            <li>✉️ hola@escalamarketing.es</li>
+            <li>✉️ hola@eskaladigital.com</li>
             <li>📱 +34 XXX XXX XXX</li>
           </ul>
         </div>
       </div>
 
       <div className={styles.bottom}>
-        <span>© {new Date().getFullYear()} ESCALA Marketing. Todos los derechos reservados.</span>
+        <span>© {new Date().getFullYear()} ESKALA Marketing Digital. Todos los derechos reservados.</span>
         <span>Hecho con 🧡 en Murcia</span>
       </div>
     </footer>

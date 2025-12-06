@@ -98,14 +98,14 @@ export default function ServicesStripes() {
     <>
       {/* Loader inicial */}
       <div className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`}>
-        <span className={styles.loaderText}>ESCALA</span>
+        <span className={styles.loaderText}>ESKALA</span>
       </div>
 
       {/* Contenedor principal */}
       <div className={styles.servicesWrapper} style={{ opacity: isLoading ? 0 : 1 }}>
         {/* Logo */}
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoMain}>ESCALA</span>
+          <span className={styles.logoMain}>ESKALA</span>
           <span className={styles.logoSub}>Nuestros Servicios</span>
         </Link>
 

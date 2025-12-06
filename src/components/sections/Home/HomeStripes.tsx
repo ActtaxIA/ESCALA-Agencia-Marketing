@@ -98,15 +98,15 @@ export default function HomeStripes() {
     <>
       {/* Loader inicial */}
       <div className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`} id="loader">
-        <span className={styles.loaderText}>ESCALA</span>
+        <span className={styles.loaderText}>ESKALA</span>
       </div>
 
       {/* Contenedor principal - ocultar hasta que termine de cargar */}
       <div className={styles.homeWrapper} style={{ opacity: isLoading ? 0 : 1 }}>
         {/* Logo */}
         <div className={styles.logo}>
-          <span className={styles.logoMain}>ESCALA</span>
-          <span className={styles.logoSub}>Agencia de Marketing</span>
+          <span className={styles.logoMain}>ESKALA</span>
+          <span className={styles.logoSub}>Marketing Digital</span>
         </div>
 
         {/* Hint */}

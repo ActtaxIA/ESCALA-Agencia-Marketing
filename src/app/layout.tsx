@@ -9,16 +9,16 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://escalamarketing.es'),
+  metadataBase: new URL('https://www.eskaladigital.com'),
   title: {
-    default: 'ESCALA | Agencia de Marketing Digital en Murcia',
-    template: '%s | ESCALA Marketing',
+    default: 'ESKALA | Agencia de Marketing Digital en Murcia',
+    template: '%s | ESKALA Marketing Digital',
   },
   description: 'Agencia de marketing digital en Murcia. Diseño web, SEO, redes sociales, Google Ads y aplicaciones con IA. Llevamos tu negocio al siguiente nivel.',
   keywords: ['agencia marketing murcia', 'marketing digital murcia', 'diseño web murcia', 'seo murcia', 'redes sociales murcia', 'google ads murcia', 'community manager murcia'],
-  authors: [{ name: 'ESCALA Marketing', url: 'https://escalamarketing.es' }],
-  creator: 'ESCALA Marketing',
-  publisher: 'ESCALA Marketing',
+  authors: [{ name: 'ESKALA Marketing Digital', url: 'https://www.eskaladigital.com' }],
+  creator: 'ESKALA Marketing Digital',
+  publisher: 'ESKALA Marketing Digital',
   formatDetection: {
     email: false,
     address: false,
@@ -27,25 +27,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://escalamarketing.es',
-    siteName: 'ESCALA Marketing',
-    title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+    url: 'https://www.eskaladigital.com',
+    siteName: 'ESKALA Marketing Digital',
+    title: 'ESKALA | Agencia de Marketing Digital en Murcia',
     description: 'Agencia de marketing digital en Murcia. Llevamos tu negocio al siguiente nivel.',
     images: [
       {
         url: '/og-default.jpg',
         width: 1200,
         height: 630,
-        alt: 'ESCALA - Agencia de Marketing Digital en Murcia',
+        alt: 'ESKALA - Agencia de Marketing Digital en Murcia',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ESCALA | Agencia de Marketing Digital en Murcia',
+    title: 'ESKALA | Agencia de Marketing Digital en Murcia',
     description: 'Agencia de marketing digital en Murcia. Llevamos tu negocio al siguiente nivel.',
-    site: '@escalamarketing',
-    creator: '@escalamarketing',
+    site: '@eskaladigital',
+    creator: '@eskaladigital',
     images: ['/og-default.jpg'],
   },
   robots: {
@@ -71,13 +71,13 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'MarketingAgency',
-  name: 'ESCALA Marketing',
+  name: 'ESKALA Marketing Digital',
   description: 'Agencia de marketing digital en Murcia especializada en diseño web, SEO, redes sociales, Google Ads y aplicaciones con inteligencia artificial.',
-  url: 'https://escalamarketing.es',
-  logo: 'https://escalamarketing.es/logo.png',
-  image: 'https://escalamarketing.es/og-default.jpg',
+  url: 'https://www.eskaladigital.com',
+  logo: 'https://www.eskaladigital.com/logo.png',
+  image: 'https://www.eskaladigital.com/og-default.jpg',
   telephone: '+34626823404',
-  email: 'hola@escalamarketing.es',
+  email: 'hola@eskaladigital.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Murcia',
@@ -102,9 +102,9 @@ const jsonLd = {
     closes: '18:00',
   },
   sameAs: [
-    'https://www.instagram.com/escalamarketing',
-    'https://www.linkedin.com/company/escalamarketing',
-    'https://www.facebook.com/escalamarketing',
+    'https://www.instagram.com/eskaladigital',
+    'https://www.linkedin.com/company/eskaladigital',
+    'https://www.facebook.com/eskaladigital',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

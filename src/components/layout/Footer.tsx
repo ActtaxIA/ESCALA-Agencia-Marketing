@@ -75,7 +75,10 @@ export function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <span>© {new Date().getFullYear()} ESKALA Marketing Digital. Todos los derechos reservados.</span>
+        <div className={styles.bottomLinks}>
+          <span>© {new Date().getFullYear()} ESKALA Marketing Digital. Todos los derechos reservados.</span>
+          <Link href="/sitemap-html" className={styles.sitemapLink}>Mapa del Sitio</Link>
+        </div>
         <span>Hecho con 🧡 en Murcia</span>
       </div>
     </footer>

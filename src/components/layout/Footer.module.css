@@ -97,9 +97,31 @@
 .bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 2rem;
   font-size: 0.8rem;
   opacity: 0.5;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sitemapLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sitemapLink:hover {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* Responsive */
@@ -119,7 +141,12 @@
 
   .bottom {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     text-align: center;
+  }
+
+  .bottomLinks {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }

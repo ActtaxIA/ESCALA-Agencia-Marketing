@@ -80,7 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const supabase = await createClient()
     const { data: posts } = await supabase
-      .from('blog_posts')
+      .from('articles')
       .select('slug, updated_at, published_at')
       .eq('published', true)
       .order('published_at', { ascending: false })
@@ -105,7 +105,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .from('portfolio_projects')
       .select('slug, updated_at')
       .eq('published', true)
-      .order('order_index', { ascending: true })
+      .order('order_position', { ascending: true })
 
     if (projects) {
       portfolioPages = projects.map((project) => ({
@@ -121,4 +121,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticPages, ...serviciosPages, ...blogPages, ...portfolioPages]
 }
+
 

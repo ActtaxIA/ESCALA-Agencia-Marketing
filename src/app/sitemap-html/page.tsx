@@ -2,6 +2,7 @@ import { StandardLayout } from '@/components/layout'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import styles from './sitemap.module.css'
+import { createClient } from '@/lib/supabase/server'
 
 export const metadata: Metadata = {
   title: 'Mapa del Sitio | ESKALA Marketing Digital',
@@ -34,7 +35,21 @@ const PAGES = [
   { href: '/contacto', label: 'Contacto' },
 ]
 
-export default function SitemapPage() {
+export default async function SitemapPage() {
+  // Obtener artículos del blog
+  const supabase = await createClient()
+  const { data: articles } = await supabase
+    .from('articles')
+    .select('slug, title')
+    .eq('published', true)
+    .order('published_at', { ascending: false })
+
+  // Obtener proyectos del portfolio
+  const { data: projects } = await supabase
+    .from('portfolio_projects')
+    .select('slug, title')
+    .eq('published', true)
+    .order('order_position', { ascending: true })
   return (
     <StandardLayout>
       <section className={styles.sitemap}>
@@ -68,17 +83,30 @@ export default function SitemapPage() {
             </div>
 
             <div className={styles.section}>
-              <h2>Recursos</h2>
+              <h2>Artículos del Blog</h2>
               <ul>
                 <li>
-                  <Link href="/blog">Blog de Marketing Digital</Link>
+                  <Link href="/blog">Ver todos los artículos</Link>
                 </li>
+                {articles && articles.slice(0, 10).map((article) => (
+                  <li key={article.slug}>
+                    <Link href={`/blog/${article.slug}`}>{article.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.section}>
+              <h2>Proyectos Portfolio</h2>
+              <ul>
                 <li>
-                  <Link href="/portfolio">Casos de Éxito y Proyectos</Link>
+                  <Link href="/portfolio">Ver todos los proyectos</Link>
                 </li>
-                <li>
-                  <Link href="/exitos">Testimonios de Clientes</Link>
-                </li>
+                {projects && projects.map((project) => (
+                  <li key={project.slug}>
+                    <Link href={`/portfolio/${project.slug}`}>{project.title}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -102,4 +130,5 @@ export default function SitemapPage() {
     </StandardLayout>
   )
 }
+
 

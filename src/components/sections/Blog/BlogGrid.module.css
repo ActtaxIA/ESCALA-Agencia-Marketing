@@ -77,6 +77,17 @@
   transition: transform 0.5s ease;
 }
 
+.postImageActual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.postCard:hover .postImageActual {
+  transform: scale(1.05);
+}
+
 .postIcon {
   font-size: 3rem;
   opacity: 0.6;
@@ -349,6 +360,8 @@
     min-width: 100%;
   }
 }
+
+
 
 
 

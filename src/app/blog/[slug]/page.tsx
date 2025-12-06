@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   const { data: article } = await supabase
     .from('articles')
-    .select('title, excerpt, meta_title, meta_description, keywords')
+    .select('title, excerpt, meta_title, meta_description, keywords, featured_image, slug')
     .eq('slug', params.slug)
     .eq('published', true)
     .single()
@@ -24,14 +24,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
+  // URL base para las imágenes OpenGraph
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.eskaladigital.com'
+  const ogImage = article.featured_image 
+    ? `${baseUrl}/blog/${article.featured_image}`
+    : `${baseUrl}/eskala_digital_opengraph.png`
+
   return {
     title: article.meta_title || article.title,
     description: article.meta_description || article.excerpt,
     keywords: article.keywords?.join(', '),
     openGraph: {
-      title: article.title,
-      description: article.excerpt,
+      title: article.meta_title || article.title,
+      description: article.meta_description || article.excerpt,
       type: 'article',
+      url: `${baseUrl}/blog/${article.slug}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.meta_title || article.title,
+      description: article.meta_description || article.excerpt,
+      images: [ogImage],
     },
   }
 }
@@ -114,6 +135,17 @@ export default async function ArticlePage({ params }: Props) {
               </div>
             </div>
           </div>
+
+          {/* Imagen de portada */}
+          {article.featured_image && (
+            <div className={styles.featuredImageContainer}>
+              <img 
+                src={`/blog/${article.featured_image}`}
+                alt={article.title}
+                className={styles.featuredImage}
+              />
+            </div>
+          )}
         </header>
 
         {/* Contenido del artículo */}

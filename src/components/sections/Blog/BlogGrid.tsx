@@ -68,6 +68,7 @@ export default function BlogGrid() {
             content,
             published_at,
             views,
+            featured_image,
             category:categories(name)
           `)
           .eq('published', true)
@@ -206,14 +207,22 @@ export default function BlogGrid() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className={styles.postImage}>
-                    <div 
-                      className={styles.postImageBg}
-                      style={{ 
-                        background: `linear-gradient(135deg, ${post.categoryColor}22 0%, ${post.categoryColor}44 100%)` 
-                      }}
-                    >
-                      <span className={styles.postIcon}>{post.icon}</span>
-                    </div>
+                    {post.featured_image ? (
+                      <img 
+                        src={`/blog/${post.featured_image}`}
+                        alt={post.title}
+                        className={styles.postImageActual}
+                      />
+                    ) : (
+                      <div 
+                        className={styles.postImageBg}
+                        style={{ 
+                          background: `linear-gradient(135deg, ${post.categoryColor}22 0%, ${post.categoryColor}44 100%)` 
+                        }}
+                      >
+                        <span className={styles.postIcon}>{post.icon}</span>
+                      </div>
+                    )}
                     <span 
                       className={styles.postCategory}
                       style={{ background: post.categoryColor }}

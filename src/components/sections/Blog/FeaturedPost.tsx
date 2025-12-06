@@ -44,6 +44,7 @@ export default function FeaturedPost() {
             content,
             author,
             published_at,
+            featured_image,
             category:categories(name)
           `)
           .eq('published', true)
@@ -106,12 +107,20 @@ export default function FeaturedPost() {
           </div>
 
           <Link href={`/blog/${featuredPost.slug}`} className={styles.card}>
-            {/* Imagen placeholder con gradiente */}
+            {/* Imagen featured o placeholder con gradiente */}
             <div className={styles.cardImage}>
-              <div className={styles.imagePlaceholder}>
-                <div className={styles.imageIcon}>{featuredPost.icon}</div>
-                <span>{featuredPost.category}</span>
-              </div>
+              {featuredPost.featured_image ? (
+                <img 
+                  src={`/blog/${featuredPost.featured_image}`}
+                  alt={featuredPost.title}
+                  className={styles.featuredImage}
+                />
+              ) : (
+                <div className={styles.imagePlaceholder}>
+                  <div className={styles.imageIcon}>{featuredPost.icon}</div>
+                  <span>{featuredPost.category}</span>
+                </div>
+              )}
               <div 
                 className={styles.categoryTag}
                 style={{ background: featuredPost.categoryColor }}

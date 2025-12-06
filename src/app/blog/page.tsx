@@ -1,6 +1,6 @@
 import { StandardLayout } from '@/components/layout'
 import BlogHero from '@/components/sections/Blog/BlogHero'
-import FeaturedPost from '@/components/sections/Blog/FeaturedPost'
+import FeaturedSlider from '@/components/sections/Blog/FeaturedSlider'
 import BlogGrid from '@/components/sections/Blog/BlogGrid'
 import type { Metadata } from 'next'
 
@@ -45,7 +45,7 @@ export default function BlogPage() {
   return (
     <StandardLayout>
       <BlogHero />
-      <FeaturedPost />
+      <FeaturedSlider />
       <BlogGrid />
     </StandardLayout>
   )

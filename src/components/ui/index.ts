@@ -1,2 +1,5 @@
 export { Button } from './Button'
 export { Card } from './Card'
+export { default as OptimizedImage } from './OptimizedImage'
+export { default as ConsentModal } from './ConsentModal'
+export { default as EmailContactButton } from './EmailContactButton'

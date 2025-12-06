@@ -2,6 +2,7 @@
 
 import styles from './Hero.module.css'
 import Link from 'next/link'
+import EmailContactButton from '@/components/ui/EmailContactButton'
 
 const stripes = [
   { label: 'Inicio', href: '/' },
@@ -38,9 +39,13 @@ export default function Hero() {
           <Link href="#formulario" className={`${styles.btn} ${styles.btnPrimary}`}>
             Enviar mensaje ↓
           </Link>
-          <a href="mailto:contacto@eskaladigital.com" className={`${styles.btn} ${styles.btnSecondary}`}>
-            Email directo
-          </a>
+          <EmailContactButton 
+            variant="secondary"
+            subject="Consulta desde la página de contacto"
+            className={`${styles.btn} ${styles.btnSecondary}`}
+          >
+            📧 Email directo
+          </EmailContactButton>
         </div>
       </div>
     </section>

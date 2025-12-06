@@ -1,0 +1,276 @@
+/* ===== CONTACT OPTIONS ===== */
+.contactOptions {
+  padding: 5rem 5%;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.label {
+  display: inline-block;
+  background: linear-gradient(135deg, #4a7c9b 0%, #87ceeb 100%);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.title span {
+  background: linear-gradient(135deg, #4a7c9b 0%, #87ceeb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== OPTIONS GRID ===== */
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.optionCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.optionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(74, 124, 155, 0.15);
+  border-color: #87ceeb;
+}
+
+.optionIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.optionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.optionDescription {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.optionInfo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a7c9b;
+  background: #f0f9ff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.optionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  font-family: inherit;
+}
+
+.optionButton {
+  background: linear-gradient(135deg, #4a7c9b 0%, #87ceeb 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 124, 155, 0.2);
+}
+
+.optionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 124, 155, 0.3);
+}
+
+.optionButton.whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.optionButton.whatsapp:hover {
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.optionButton.phone {
+  background: linear-gradient(135deg, #ff6b35 0%, #ffb366 100%);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+.optionButton.phone:hover {
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* ===== SOCIAL SECTION ===== */
+.socialSection {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.socialTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.socialCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: #374151;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  border: 2px solid transparent;
+}
+
+.socialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--social-color);
+}
+
+.socialIcon {
+  font-size: 2rem;
+}
+
+.socialName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ===== INFO BOX ===== */
+.infoBox {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border-left: 4px solid #ff6b35;
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.infoIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.infoContent h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.infoContent p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.infoContent strong {
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contactOptions {
+    padding: 3rem 5%;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .optionsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .optionCard {
+    padding: 2rem;
+  }
+
+  .socialGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .infoBox {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .infoContent h4 {
+    font-size: 1.1rem;
+  }
+
+  .infoContent p {
+    font-size: 0.95rem;
+  }
+}
+

@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './CTA.module.css'
-import Link from 'next/link'
+import EmailContactButton from '@/components/ui/EmailContactButton'
 
 export default function CTA() {
   return (
@@ -19,9 +19,13 @@ export default function CTA() {
         ¿Listo para <span>escalar</span>?
       </h2>
       <p className={`${styles.ctaEmail} fade-up`}>contacto@eskaladigital.com</p>
-      <Link href="mailto:contacto@eskaladigital.com" className={`${styles.ctaBtn} fade-up`}>
+      <EmailContactButton 
+        variant="primary"
+        subject="Consulta desde Quiénes Somos"
+        className={`${styles.ctaBtn} fade-up`}
+      >
         Hablemos →
-      </Link>
+      </EmailContactButton>
     </section>
   )
 }

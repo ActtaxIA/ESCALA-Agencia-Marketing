@@ -15,29 +15,29 @@ export const metadata: Metadata = {
     'opiniones escala marketing',
   ],
   openGraph: {
-    title: 'Casos de Éxito | ESCALA Marketing Murcia',
+    title: 'Casos de Éxito | ESKALA Marketing Murcia',
     description: 'Resultados reales de nuestros clientes. Testimonios y métricas que demuestran nuestro trabajo.',
-    url: 'https://escalamarketing.es/exitos',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com/exitos',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
       {
-        url: '/og-exitos.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
-        alt: 'Casos de Éxito ESCALA Marketing',
+        alt: 'Casos de Éxito ESKALA Marketing',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Casos de Éxito | ESCALA Marketing Murcia',
+    title: 'Casos de Éxito | ESKALA Marketing Murcia',
     description: 'Resultados reales de nuestros clientes. Testimonios y métricas que demuestran nuestro trabajo.',
-    images: ['/og-exitos.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es/exitos',
+    canonical: 'https://www.eskaladigital.com/exitos',
   },
 }
 

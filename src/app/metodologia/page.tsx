@@ -17,27 +17,27 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Metodología | ESCALA Marketing Murcia',
     description: 'Proceso de trabajo transparente y orientado a resultados. Conoce cómo trabajamos.',
-    url: 'https://escalamarketing.es/metodologia',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com/metodologia',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
       {
-        url: '/og-metodologia.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
-        alt: 'Metodología ESCALA Marketing',
+        alt: 'Metodología ESKALA Marketing',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Metodología | ESCALA Marketing Murcia',
+    title: 'Metodología | ESKALA Marketing Murcia',
     description: 'Proceso de trabajo transparente y orientado a resultados.',
-    images: ['/og-metodologia.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es/metodologia',
+    canonical: 'https://www.eskaladigital.com/metodologia',
   },
 }
 

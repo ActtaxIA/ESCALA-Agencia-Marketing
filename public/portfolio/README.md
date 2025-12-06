@@ -59,3 +59,5 @@ UPDATE portfolio_projects SET gallery_images = ARRAY[
 - Calidad: Alta (para que se vean bien en la web)
 
 
+
+

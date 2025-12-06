@@ -14,29 +14,29 @@ export const metadata: Metadata = {
     'telefono escala marketing',
   ],
   openGraph: {
-    title: 'Contacto | ESCALA Marketing Murcia',
+    title: 'Contacto | ESKALA Marketing Murcia',
     description: 'Cuéntanos tu proyecto y te enviamos presupuesto en 24 horas. Sin compromiso.',
-    url: 'https://escalamarketing.es/contacto',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com/contacto',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
       {
-        url: '/og-contacto.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
-        alt: 'Contacta con ESCALA Marketing',
+        alt: 'Contacta con ESKALA Marketing',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contacto | ESCALA Marketing Murcia',
+    title: 'Contacto | ESKALA Marketing Murcia',
     description: 'Cuéntanos tu proyecto y te enviamos presupuesto en 24 horas.',
-    images: ['/og-contacto.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es/contacto',
+    canonical: 'https://www.eskaladigital.com/contacto',
   },
 }
 

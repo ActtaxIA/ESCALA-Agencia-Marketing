@@ -379,3 +379,5 @@ INSERT INTO categories (name, slug, description, icon, color) VALUES
 -- 4. Para producción, considera agregar más validaciones y constraints
 
 
+
+

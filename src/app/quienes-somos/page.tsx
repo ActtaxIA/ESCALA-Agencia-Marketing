@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-quienes-somos.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
         alt: 'Equipo ESKALA Marketing Digital',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Quiénes Somos | ESKALA Marketing Digital',
     description: 'Conoce al equipo de expertos en marketing digital que hará crecer tu negocio.',
-    images: ['/og-quienes-somos.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
     canonical: 'https://www.eskaladigital.com/quienes-somos',

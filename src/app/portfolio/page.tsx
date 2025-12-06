@@ -12,29 +12,29 @@ export const metadata: Metadata = {
     'trabajos agencia marketing',
   ],
   openGraph: {
-    title: 'Portfolio | ESCALA Marketing Murcia',
+    title: 'Portfolio | ESKALA Marketing Murcia',
     description: '+50 proyectos exitosos de marketing digital, diseño web y branding.',
-    url: 'https://escalamarketing.es/portfolio',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com/portfolio',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
       {
-        url: '/og-portfolio.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
-        alt: 'Portfolio ESCALA Marketing',
+        alt: 'Portfolio ESKALA Marketing',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio | ESCALA Marketing Murcia',
+    title: 'Portfolio | ESKALA Marketing Murcia',
     description: '+50 proyectos exitosos de marketing digital, diseño web y branding.',
-    images: ['/og-portfolio.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es/portfolio',
+    canonical: 'https://www.eskaladigital.com/portfolio',
   },
 }
 

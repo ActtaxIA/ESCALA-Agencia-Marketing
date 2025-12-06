@@ -35,3 +35,5 @@ Si necesitas otros tamaños específicos para favicon, puedes crear:
 
 
 
+
+

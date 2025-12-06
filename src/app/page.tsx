@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-home.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
         alt: 'ESKALA - Agencia de Marketing Digital en Murcia',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ESKALA | Agencia de Marketing Digital en Murcia',
     description: 'Hacemos crecer tu negocio con estrategias de marketing digital que funcionan.',
-    images: ['/og-home.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
     canonical: 'https://www.eskaladigital.com',

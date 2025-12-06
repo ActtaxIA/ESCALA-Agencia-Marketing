@@ -15,7 +15,7 @@ const contactOptions = [
     title: 'Email Directo',
     description: 'Escríbenos un email y te respondemos en menos de 24h',
     action: 'email',
-    email: 'hola@eskaladigital.com',
+    email: 'contacto@eskaladigital.com',
   },
   {
     icon: '💬',

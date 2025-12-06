@@ -22,11 +22,11 @@ interface UseEmailContactReturn {
 
 export function useEmailContact(): UseEmailContactReturn {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [email, setEmail] = useState('hola@eskaladigital.com')
+  const [email, setEmail] = useState('contacto@eskaladigital.com')
   const [subject, setSubject] = useState('')
 
   const openEmailContact = useCallback((
-    contactEmail: string = 'hola@eskaladigital.com',
+    contactEmail: string = 'contacto@eskaladigital.com',
     emailSubject: string = 'Consulta desde la web'
   ) => {
     // Verificar si ya dio consentimiento

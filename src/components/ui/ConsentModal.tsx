@@ -21,7 +21,7 @@ export default function ConsentModal({
   isOpen, 
   onClose, 
   onAccept,
-  email = 'hola@eskaladigital.com' 
+  email = 'contacto@eskaladigital.com' 
 }: ConsentModalProps) {
   const [accepted, setAccepted] = useState(false)
   const [rememberChoice, setRememberChoice] = useState(false)

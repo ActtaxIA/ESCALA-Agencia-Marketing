@@ -31,7 +31,7 @@ interface EmailContactButtonProps {
 
 export default function EmailContactButton({
   children,
-  email = 'hola@eskaladigital.com',
+  email = 'contacto@eskaladigital.com',
   subject = 'Consulta desde la web',
   variant = 'primary',
   size = 'medium',

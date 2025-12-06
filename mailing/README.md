@@ -10,7 +10,7 @@ Versión original con:
 - 8 franjas clicables con servicios
 - CTA principal
 
-### 2. `eskala-franjas-vertical.html` ⭐ RECOMENDADA
+### 2. `eskala-franjas-vertical.html`
 Versión mejorada con:
 - Diseño más impactante
 - Mejor compatibilidad con clientes de email
@@ -18,40 +18,67 @@ Versión mejorada con:
 - Footer completo con contacto
 - Responsive mobile
 
+### 3. `eskala-dia-noche-animado.html` 🌟 **RECOMENDADA - CON MOVIMIENTO**
+Versión espectacular con animaciones:
+- ✨ **Animaciones CSS** (fadeIn, slideIn, pulse, twinkle)
+- 🌙 **Luna y estrellas** en el header (parpadean)
+- ☀️ **Sol animado** en la franja naranja (pulsa y sube)
+- 🎨 **Ciclo completo del día** en las franjas:
+  - Noche → Madrugada → Amanecer → Mañana → Mediodía → Tarde → Atardecer → Noche
+- 📊 **Sección "Tu viaje de 24 horas"** con iconos
+- 🎯 **CTA con animación de pulso**
+- 🌟 **Texto animado** que entra suavemente
+- 💫 **Más visual e impactante** que las anteriores
+
 ---
 
 ## ✨ Características del Diseño
 
-### 🎯 Elementos Principales:
+### 🎯 Elementos Principales (Versión Animada):
 
-1. **Header con Logo**
+1. **Header con Luna y Estrellas** 🌙⭐
    - ESKALA en grande (56px)
-   - "Marketing Digital · Murcia"
-   - Fondo degradado oscuro
+   - Luna decorativa con sombras realistas
+   - 6 estrellas parpadeantes
+   - Animación fadeIn al cargar
+   - Fondo degradado noche
 
-2. **Mensaje Central**
-   - "Somos tu agencia de Marketing"
-   - Texto impactante y grande
-   - CTA naranja llamativo
+2. **Mensaje Central Animado**
+   - "De la noche al día con tu Marketing"
+   - Texto con gradiente de colores (día/noche)
+   - Animación slideIn desde la izquierda
+   - CTA con pulso infinito
 
-3. **8 Franjas Verticales** (Como la home)
-   - WEB (azul oscuro)
-   - SEO (azul medio)
-   - RRSS (azul claro)
-   - ADS (celeste)
-   - IA (beige)
-   - FOTO (naranja)
-   - BRAND (rojo)
-   - EMAIL (negro)
+3. **8 Franjas: El Ciclo del Día** 🌗→☀️
+   - 🌙 **WEB** (Noche profunda) - Con estrellas
+   - 🌌 **SEO** (Madrugada)
+   - 🌅 **RRSS** (Amanecer azul)
+   - ☀️ **ADS** (Mañana luminosa)
+   - 🌤️ **IA** (Mediodía dorado)
+   - 🌞 **FOTO** (Tarde naranja) - Con sol animado
+   - 🌇 **BRAND** (Atardecer rojo)
+   - 🌃 **EMAIL** (Noche) - Con estrellas
 
-4. **Propuesta de Valor**
-   - 3 iconos: Estrategia, Resultados, Experiencia
-   - Fondo gris claro
+4. **Sección "Tu viaje de 24 horas"**
+   - 4 fases con emojis: 🌙🌅☀️🌇
+   - Estrategia → Ejecución → Resultados → Análisis
+   - Concepto visual único
 
 5. **Footer Contacto**
    - Email principal
    - Links: Portfolio, Blog, Contacto
    - Teléfono y ubicación
+
+### 🎬 Animaciones Incluidas:
+
+- **fadeIn**: Logo y header suben suavemente
+- **slideInRight**: Texto central entra desde la izquierda
+- **twinkle**: Estrellas parpadean (2s loop)
+- **sunRise**: Sol sube con fade
+- **pulse**: CTA y sol pulsan (efecto latido)
+
+✅ **Compatible con**: Gmail, Apple Mail, Outlook.com  
+⚠️ **Animaciones no funcionan en**: Outlook desktop (pero se ve igual, solo sin movimiento)
 
 ---
 
@@ -246,7 +273,26 @@ Un email que:
 
 **Archivos listos en:** `/mailing/`
 - `email-franjas-murcia.html` (original)
-- `eskala-franjas-vertical.html` (mejorada) ⭐
+- `eskala-franjas-vertical.html` (mejorada)
+- `eskala-dia-noche-animado.html` (con animaciones) 🌟 **← USAR ESTA**
+
+---
+
+## 🎨 Diferencias Entre Versiones
+
+| Característica | Original | Mejorada | Animada 🌟 |
+|---|---|---|---|
+| Franjas verticales | ✅ | ✅ | ✅ |
+| Responsive | ✅ | ✅ | ✅ |
+| Luna y estrellas | ❌ | ❌ | ✅ Animadas |
+| Sol decorativo | ❌ | ❌ | ✅ Animado |
+| Animaciones CSS | ❌ | ❌ | ✅ 5 tipos |
+| Ciclo día/noche | ❌ | ❌ | ✅ Completo |
+| Sección viaje 24h | ❌ | ❌ | ✅ |
+| Propuesta valor | ❌ | ✅ | ✅ Mejorada |
+| Concepto narrativo | ❌ | ❌ | ✅ "De noche a día" |
+
+**Recomendación:** Usa `eskala-dia-noche-animado.html` para máximo impacto visual.
 
 **¿Listo para enviar?** 🚀
 

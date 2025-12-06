@@ -18,8 +18,8 @@ export default function CTA() {
       <h2 className="fade-up">
         ¿Listo para <span>escalar</span>?
       </h2>
-      <p className={`${styles.ctaEmail} fade-up`}>hola@escalamarketing.es</p>
-      <Link href="mailto:hola@escalamarketing.es" className={`${styles.ctaBtn} fade-up`}>
+      <p className={`${styles.ctaEmail} fade-up`}>contacto@eskaladigital.com</p>
+      <Link href="mailto:contacto@eskaladigital.com" className={`${styles.ctaBtn} fade-up`}>
         Hablemos →
       </Link>
     </section>

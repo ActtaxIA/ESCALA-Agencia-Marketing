@@ -7,7 +7,7 @@ const contactMethods = [
   {
     icon: '📧',
     title: 'Email',
-    info: 'hola@escalamarketing.es',
+    info: 'contacto@eskaladigital.com',
     desc: 'Respuesta en menos de 24h',
   },
   {

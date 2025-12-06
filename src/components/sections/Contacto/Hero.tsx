@@ -38,7 +38,7 @@ export default function Hero() {
           <Link href="#formulario" className={`${styles.btn} ${styles.btnPrimary}`}>
             Enviar mensaje ↓
           </Link>
-          <a href="mailto:hola@escalamarketing.es" className={`${styles.btn} ${styles.btnSecondary}`}>
+          <a href="mailto:contacto@eskaladigital.com" className={`${styles.btn} ${styles.btnSecondary}`}>
             Email directo
           </a>
         </div>

@@ -78,7 +78,7 @@ const jsonLd = {
   logo: 'https://www.eskaladigital.com/logo.png',
   image: 'https://www.eskaladigital.com/og-default.jpg',
   telephone: '+34626823404',
-  email: 'hola@eskaladigital.com',
+  email: 'contacto@eskaladigital.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Murcia',

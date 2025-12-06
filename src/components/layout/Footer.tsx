@@ -68,7 +68,7 @@ export function Footer() {
           <h4 className={styles.title}>Contacto</h4>
           <ul className={styles.links}>
             <li>📍 Murcia, España</li>
-            <li>✉️ hola@eskaladigital.com</li>
+            <li>✉️ contacto@eskaladigital.com</li>
             <li>📱 +34 XXX XXX XXX</li>
           </ul>
         </div>

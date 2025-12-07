@@ -346,10 +346,15 @@
   }
 
   .chatBox {
-    width: calc(100vw - 3rem);
+    width: calc(100vw - 2rem);
     max-width: 350px;
-    right: 0;
-    left: 1rem;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px) scale(0.95);
     bottom: 70px;
+  }
+
+  .chatOpen {
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 }

@@ -333,7 +333,7 @@
   .stripeContent {
     opacity: 0.5;
     transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease;
   }
 
   .stripeContent h2 {
@@ -341,12 +341,12 @@
     transform: rotate(0);
     font-size: 0.65rem;
     transition: font-size 0.3s ease;
+    will-change: font-size;
   }
 
   /* Cuando se expande, más visible y grande */
   .stripe.active .stripeContent {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
   }
 
   .stripe.active .stripeContent h2 {

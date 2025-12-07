@@ -212,6 +212,11 @@
   50% { opacity: 0.3; }
 }
 
+/* ===== MOBILE HINT (solo móvil) ===== */
+.mobileHint {
+  display: none;
+}
+
 /* ===== STARS ===== */
 .stars {
   position: absolute;
@@ -391,6 +396,26 @@
     width: 30px;
     height: 30px;
     bottom: 10%;
+  }
+
+  /* Hint móvil - instrucciones de navegación */
+  .mobileHint {
+    display: block;
+    position: fixed;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0.7;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    animation: pulse 2s ease-in-out infinite;
   }
 }
 

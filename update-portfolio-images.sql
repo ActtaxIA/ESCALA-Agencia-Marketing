@@ -22,3 +22,4 @@ SELECT slug, featured_image FROM portfolio_projects WHERE published = true ORDER
 
 
 
+

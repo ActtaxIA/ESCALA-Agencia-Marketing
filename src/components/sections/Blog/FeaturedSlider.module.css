@@ -135,7 +135,7 @@
 
 /* ===== CONTENT ===== */
 .cardContent {
-  padding: 2.5rem;
+  padding: 2.5rem 3rem 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -342,5 +342,6 @@
     gap: 1rem;
   }
 }
+
 
 

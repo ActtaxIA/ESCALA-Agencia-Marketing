@@ -104,3 +104,4 @@ export default function BlogHero({ onSearch, onCategoryChange }: BlogHeroProps) 
 
 
 
+

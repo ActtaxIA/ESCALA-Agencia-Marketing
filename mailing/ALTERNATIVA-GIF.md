@@ -61,3 +61,4 @@ Si necesitas animaciones en Outlook Desktop, convierte las animaciones a GIF:
 - No importa el peso del email
 
 
+

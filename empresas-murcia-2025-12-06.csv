@@ -1,0 +1,773 @@
+﻿Nombre,Email,Teléfono,Web,Dirección,Categoría,Ubicación,Rating,Reviews
+"Centro Médico Vistalegre","","+34 688 79 80 32","/url?q=http://www.centromedicovistalegre.com/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI2QIoDw&usg=AOvVaw0kLqlegE0JPOPBBv5qxcbr","Pl. Pintor Inocencio Medina Vera, 1, Bajo, 30007 Murcia, España","médicos","Murcia",4,20
+"Restaurante La Pequeña Taberna","reservas@lapequenataberna.com","+34 968 21 98 40","http://www.lapequenataberna.com/","Pl. San Juan, 7, 30003 Murcia, España","restaurantes","Murcia",4.5,4569
+"RESTAURANTES MURCIA CONJUGOO","","+34 633 70 87 00","http://conjugoo.es/","RESTAURANTE CONJUGOO MURCIA -The Cóctel Shop, C. Simón García, 1, 30003 Murcia, España","restaurantes","Murcia",4.9,1322
+"Centro de Especialidades Doctor Quesada","","+34 968 29 10 98","/url?q=http://www.murciasalud.es/pagina.php%3Fid%3D190893%26idsec%3D347&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI-wIoDw&usg=AOvVaw3ZctXcg-p0uCpabnZvr7ap","Calle Dr. Jesús Quesada Sanz, S/N, 30005 Murcia, España","médicos","Murcia",3.7,76
+"Pura Cepa","puracepa@puracepamurcia.com","+34 968 21 73 97","http://www.puracepamurcia.com/","Pl. Cristo del Rescate, 8, 30001 Murcia, España","restaurantes","Murcia",4.4,1590
+"Hospital Universitario Reina Sofía de Murcia","","+34 968 35 90 00","/url?q=http://www.murciasalud.es/seccion.php%3Fidsec%3D77&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gImQMoDw&usg=AOvVaw03w1kVy-U4Er5oYH-1MKoN","Av. Intendente Jorge Palacios, 1, 30003 Murcia, España","médicos","Murcia",3.2,591
+"La Bodeguita de Javi Gracia","","+34 621 25 73 25","https://www.bodeguitamurcia.com/","Pl. Raimundo González Frutos, 5, 30001 Murcia, España","restaurantes","Murcia",4.6,616
+"Restaurante Salzillo","contacto@restaurantesalzillo.com","+34 968 22 01 94","http://www.restaurantesalzillo.com/","C. Cánovas del Castillo, 28, 30003 Murcia, España","restaurantes","Murcia",4.6,2830
+"Centro de Salud San Andrés","","+34 968 39 48 00","/url?q=http://www.murciasalud.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gItwMoDw&usg=AOvVaw1fO65ckunqorRvpRpNGbhm","C. Escultor José Sánchez Lozano, 7, 30005 Murcia, España","médicos","Murcia",2.5,135
+"Centro Médico La Fama","","+34 650 31 99 68","","C. de la Calí Josefa Fernández Romero, 30006 Murcia, España","médicos","Murcia",4,4
+"Cosa Fina GastroBar","info@cosafinagastrobar.com","+34 615 03 58 63","http://www.cosafinagastrobar.com/","Pl. de laPuxmarina, 2, Planta Baja, 30004 Murcia, España","restaurantes","Murcia",4.5,1605
+"Restaurante Por Herencia","","+34 868 97 46 00","https://familialostoneles.com/","En Plaza Sancho, C. Cánovas del Castillo, 9, 30003 Murcia, España","restaurantes","Murcia",4.6,997
+"La Gavacha","","+34 868 95 50 38","http://www.restaurantelagavacha.com/","C. Gavacha, 2, 30004 Murcia, España","restaurantes","Murcia",4.5,1582
+"Almo de Juan Guillamón","","+34 868 06 95 57","https://almorestaurante.com/","C. Madre de Dios, 15, 30004 Murcia, España","restaurantes","Murcia",4.8,909
+"Clínica Herrero - Varices y Medicina Estética","","+34 629 37 27 26","/url?q=http://www.doctorherrero.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI8gMoDw&usg=AOvVaw0V2XID15bXsHNgvV8GAZoW","C. las Norias, 8, 5º A, 30009 Murcia, España","médicos","Murcia",4.8,60
+"Polea","","+34 614 14 69 78","https://polearestaurante.es/","C. Almohajar, 2, bajo, 30002 Murcia, España","restaurantes","Murcia",4.8,410
+"MUNAI Restaurante Argentino","","+34 648 75 91 42","https://linktr.ee/RESTAURANTEMUNAI","C. Reina Sofía, 7, 30007 Murcia, España","restaurantes","Murcia",4.7,518
+"Proctólogo Dr. José Luis Paredes Campillo - Tratamiento de hemorroides en Murcia","","+34 968 90 51 76","/url?q=http://medicoproctologo.com/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIlQQoDw&usg=AOvVaw0oz32fQ706trOd3UJildkc","Ronda Norte, 9, 30009 Murcia, España","médicos","Murcia",5,10
+"La SuFrida - Restaurante Mexicano en Murcia","","+34 652 56 60 50","https://lasufrida.com/","C. José García Martínez, 2, 30005 Murcia, España","restaurantes","Murcia",4.7,4888
+"Clinica de Coloproctologia","","+34 968 20 45 57","/url?q=https://www.clinicadecoloproctologia.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gItgQoEQ&usg=AOvVaw2A83-hZ75Gmr8weH6p5ksO","Edificio Alba, Av. de la Libertad, 8, 30009 Murcia, España","médicos","Murcia",4.9,90
+"Pizzería Mano a Mano","","+34 644 72 29 11","http://www.pizzeriamanoamano.es/","C. Teniente Gral. Gutierrez Mellado, 9, 30008 Murcia, España","restaurantes","Murcia",4.6,5178
+"Restaurante Torremolinos","","+34 968 24 74 81","https://torremolinosrestaurante.com/","Ctra. de Churra, 113, 30110 Churra, Murcia, España","restaurantes","Murcia",4.4,5323
+"Restaurante Keki","","+34 614 25 59 21","http://www.keki.es/","C. Fuensanta, 4, 30001 Murcia, España","restaurantes","Murcia",4.5,1739
+"Doctor Javier Hernández López, Traumatólogo","","+34 694 21 65 59","/url?q=https://javierhernandeztraumatologia.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI1wQoDw&usg=AOvVaw0phuULi9Ksw0eW4VCrHsdo","C. Pasos de Santiago, 6, Bajo, 30005 Murcia, España","médicos","Murcia",4.9,51
+"Colegio Oficial de Médicos de Murcia. Sede en Cartagena","","+34 968 50 56 29","","Pl. del Rey, 8, 30201 Cartagena, Murcia, España","médicos","Murcia",4,4
+"El Pasaje de Zabálburu","pasajedezabalburu@gmail.com","+34 622 62 21 67","http://el-pasaje-de-zabalburu.eatbu.com/","Pl. de San Pedro, 3, 30004 Murcia, España","restaurantes","Murcia",4.4,1829
+"La Tapeoteca San Pedro I Restaurante Murcia","","+34 663 72 40 59","https://www.latapeoteca.es/?utm_source=GMB&utm_medium=WEB&utm_id=San+Pedro","Pl. de San Pedro, 3, 30004 Murcia, España","restaurantes","Murcia",4.2,1817
+"Lionza","info@lionza.es","+34 665 51 81 34","https://lionza.es/","C. Ruipérez, 3, 30005 Murcia, España","restaurantes","Murcia",4.8,346
+"Restaurante Mesón Pepe","","+34 968 20 02 42","http://www.mesondepepe.es/","C. Arquitecto Emilio Perez Piñero, 16, 30007 Murcia, España","restaurantes","Murcia",4.6,1117
+"Restaurante Rincón de Pepe","eventos@orenesgrupo.com","+34 610 99 99 99","https://www.restauranterincondepepe.com/","C. Apóstoles, 34, 30001 Murcia, España","restaurantes","Murcia",4.3,1371
+"El Togo II / Bares en Murcia","","+34 968 90 62 24","https://baresenmurciaeltogo.jimdofree.com/","C. Jacobo de las Leyes, 8, 30001 Murcia, España","bares","Murcia",4.4,3017
+"Bar Los Zagales","","+34 968 21 55 79","","C. Polo de Medina, 4, 30004 Murcia, España","bares","Murcia",4.4,3898
+"Leyendas","","+34 625 86 34 00","http://www.barleyendas.es/","C. Corregidor Pueyo, 2, 30007 Murcia, España","bares","Murcia",4.6,1264
+"La Tapeoteca Apóstoles | Restaurante Murcia","","+34 697 48 87 06","https://www.latapeoteca.es/?utm_source=GMB&utm_medium=WEB&utm_id=Apostoles","C. Apóstoles, 16, 30001 Murcia, España","bares","Murcia",4.3,1411
+"A'rocha Café - Tapas - Bar","","","","C. San Nicolás, 2, 30005 Murcia, España","bares","Murcia",4.9,333
+"La Ronería y La Gintonería","","+34 968 90 00 05","https://www.la-roneria-y-la-gintoneria.com/","C. Cánovas del Castillo, 17, 30003 Murcia, España","bares","Murcia",4.4,777
+"Las Flores Bar","","","https://www.facebook.com/lasfloresbarmurcia","C. Sta. Isabel, 5, 30004 Murcia, España","bares","Murcia",4.4,1547
+"Touché","","+34 671 25 26 97","","C. Victorio, 1, 30003 Murcia, España","bares","Murcia",4.5,504
+"El Albergue. Cóctel bar. - Murcia","","+34 611 19 11 37","","C. Vara de Rey, 19, 30001 Murcia, España","bares","Murcia",4.5,211
+"Clínica Londres | Cirugía y Medicina Estética","","+34 968 27 51 57","https://www.clinicalondres.es/clinicas/murcia","Av. Juan Carlos I, 21, 30008 Murcia, España","clínicas","Murcia",4.8,866
+"Bodegón Los Toneles","","+34 968 21 02 05","https://familialostoneles.com/bodegon-los-toneles/","C. Cánovas del Castillo, 7, 30003 Murcia, España","bares","Murcia",4.4,1671
+"La Uva Jumillana de Murcia","","+34 868 07 85 32","https://www.facebook.com/pages/La-Uva-Jumillana-Murcia/959944727406325","C. Balsas, 10, 30009 Murcia, España","bares","Murcia",4.1,441
+"Bar La Toga / Bares en Murcia","eltogoinfo@gmail.com","+34 868 94 08 95","https://eltogo.eatbu.com/?lang=es","Pl. de la Universidad, 1, 30001 Murcia, España","bares","Murcia",4.3,1377
+"La Isla Beer Club","","","http://www.laislabeerclub.es/","Pl. Sta. Eulalia, 8-10, 30003 Murcia, España","bares","Murcia",4.6,388
+"Clinica Doctor del Pino Murcia","","+34 868 45 54 24","https://doctordelpino.es/","Ronda Norte, 3, 30009 Murcia, España","clínicas","Murcia",5,82
+"La Cueva del Oso","","+34 968 24 37 36","https://www.facebook.com/cuevadelosomurcia/","C. Alejandro Seiquer, 18, 30001 Murcia, España","bares","Murcia",4.4,704
+"La Tapa","info@latapa.com","+34 968 21 13 17","https://latapadelasflores.es/","Pl. de las Flores, 13, 30004 Murcia, España","bares","Murcia",4.3,7376
+"Bar Paco","","+34 653 16 94 51","","C. Pintor Pablo Picasso, 8, 30010 Murcia, España","bares","Murcia",4.3,1179
+"Minibar Murcia","","","","C. González Adalid, 9, 30001 Murcia, España","bares","Murcia",4.7,92
+"Trocadero","","+34 633 70 92 92","","Pl. de la Universidad, 2, 30001 Murcia, España","bares","Murcia",4.4,668
+"Monalisa Clínicas","","+34 968 73 10 99","https://monalisaclinicas.com/","C. González Adalid, nº 15, Bajo, 30001 Murcia, España","clínicas","Murcia",4.8,320
+"Clínicas Velvet Murcia","","+34 664 35 23 99","","Ronda Norte, 30009 Murcia, España","clínicas","Murcia",4.6,153
+"CafeLab","","+34 868 24 61 90","http://cafelab.es/","C. Apóstoles, 14, 30001 Murcia, España","cafeterías","Murcia",4.5,5123
+"Mariantonietta Cafe","","+34 868 16 59 44","http://www.facebook.com/mariantoniettacafe","C. Simón García, 49, 30003 Murcia, España","cafeterías","Murcia",4.5,602
+"Drexco","","+34 968 21 95 95","http://www.drexco.es/","C. Trapería, 26, 30001 Murcia, España","cafeterías","Murcia",4.3,2110
+"Café milano desde 1996","","","https://cafemilanomurcia.com/","C. Abenarabi, 4, 30008 Murcia, España","cafeterías","Murcia",4.6,565
+"Cafetería Buencafé","","+34 678 67 74 70","","P.º de Garay, 11, 30003 Murcia, España","cafeterías","Murcia",4.9,294
+"Café de Ficciones","","+34 660 63 25 69","","esquina C/ Correos, C. Fuensanta, 5, 30001 Murcia, España","cafeterías","Murcia",4.5,635
+"Aztekum","","+34 968 05 09 76","https://instagram.com/aztekum?utm_medium=copy_link","C. Mariano Padilla, 10, 30003 Murcia, España","cafeterías","Murcia",4.7,520
+"Drexco Gran Vía","","+34 868 91 21 19","http://www.drexco.es/","C. Almudena, 3, 30005 Murcia, España","cafeterías","Murcia",4.1,1407
+"Podoactiva Murcia","podoactivamurcia@podoactiva.com","+34 968 21 54 03","https://www.podoactiva.com/es/clinicas-y-centros/podoactiva-murcia","C. Alejandro Seiquer, 15, 30001 Murcia, España","clínicas","Murcia",4.7,271
+"Clínica Dra. Ana de León Murcia","info@clinicasanadeleon.es","+34 611 58 77 32","https://clinicasanadeleon.es/","Av. de la Constitución, 13, 1º D, 30008 Murcia, España","clínicas","Murcia",4.9,47
+"Clínica Esquivel Murcia","","+34 621 23 17 15","https://clinicasesquivel.com/","Av. General Primo de Rivera, 17, 30008 Murcia, España","clínicas","Murcia",4.7,35
+"Clínica Bellezone","","+34 968 29 00 30","https://www.instagram.com/clinicasbellezone/","C. Condestable, 2, Entresuelo izq, 30009 Murcia, España","clínicas","Murcia",4.8,219
+"Clínica Condestable Murcia","","+34 868 70 27 22","http://www.clinicacondestable.es/","Pl. Condestable, 5, 30009 Murcia, España","clínicas","Murcia",4.4,7
+"Detroit Hacienda “Más Que Desayunos”","","+34 968 97 60 25","http://www.detroitmasquedesayunos.com/","Av. Juan Pablo II, n17, 30007 Murcia, España","cafeterías","Murcia",4.7,1332
+"Café Moderno","","+34 968 43 61 08","","Gran Vía Alfonso X el Sabio, 2, 30008 Murcia, España","cafeterías","Murcia",4.1,783
+"Bangles Cafetería","","","","C. Alhambra, 9, 30011 Murcia, España","cafeterías","Murcia",4.7,283
+"Socolá","","+34 868 97 25 89","http://www.socola.es/","Calle Mariano Vergara, 5, 30003 Murcia, España","cafeterías","Murcia",4.5,2134
+"Café-bar El Sur","","+34 968 21 87 55","","C. Montijo, 7, 30001 Murcia, España","cafeterías","Murcia",4.6,498
+"Kawaii Café Murcia","","","http://www.kawaiicafe.es/","C. Alejandro Seiquer, 2, 30001 Murcia, España","cafeterías","Murcia",4.9,78
+"Café del Arco","","+34 628 11 15 73","https://cafedelarco.es/","Calle Arco de Santo Domingo, 1, 30001 Murcia, España","cafeterías","Murcia",3.8,1419
+"Café de Alba","","+34 629 82 77 23","https://es-es.facebook.com/Caf%C3%A9-de-Alba-572556496088741/","C. San Antón, 2, 30009 Murcia, España","cafeterías","Murcia",4.5,1096
+"Bar Culturas","","","http://www.barculturas.es/","Carril Acequia de Alguazas, 34, 30012 San Benito - Progreso, Murcia, España","cafeterías","Murcia",4.2,3238
+"Itaca","","+34 968 28 00 07","","Calle Mariano Vergara, 6, Bajo, 30003 Murcia, España","cafeterías","Murcia",4.6,635
+"La Gatera - Cat Café","info@lagateracatcafe.com","+34 622 56 62 07","http://lagateracatcafe.com/","C. Vara de Rey, 8, 30001 Murcia, España","cafeterías","Murcia",4.6,720
+"Cafetería Coliseum","","+34 699 64 92 84","","C. Juan Ramón Jiménez, 42, 30006 Murcia, España","cafeterías","Murcia",4.5,581
+"Aura Clínicas","atencion@auraclinica.com","+34 868 11 09 00","https://www.auraclinica.com/","Av. Miguel de Cervantes, 45, 30009 Murcia, España","clínicas","Murcia",4.6,316
+"Clínica de Injerto Capilar en Murcia y Cartagena | INJERMUR","","+34 968 35 57 67","https://injertocapilarenmurcia.es/","C. Olof Palme, 9, 11, 30009 Murcia, España","clínicas","Murcia",5,23
+"Pizzería Cafetería Pintada","","+34 680 21 90 20","/url?q=https://m.facebook.com/arenal3pintada&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIaygP&usg=AOvVaw06H4Ht3C1-IUgsuFA1nGoy","C. Arenal, 3, 30011 Murcia, España","pizzerías","Murcia",4.7,1063
+"Clínica Novovisión Murcia","info@clinicasnovovision.com","+34 968 20 08 88","https://www.clinicasnovovision.com/","Av. de la Libertad, 4, 30008 Murcia, España","clínicas","Murcia",4.8,349
+"Pizzería La Piccola Julia","","+34 603 10 12 55","/url?q=https://pizzerialapiccolajulia.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gInQEoEQ&usg=AOvVaw0w1O7wocPcF-nNcH94YQsG","P.º Duques de Lugo, 14, bajo, 30009 El Ranero, Murcia, España","pizzerías","Murcia",4.6,456
+"Clínica Clemente | Dermatología, Láser y Medicina estética","info@clinicaclemente.es","+34 968 20 00 23","https://www.clinicaclemente.es/","Av. Europa, 23-25, bajo, 30007 Murcia, España","clínicas","Murcia",4.8,519
+"Pizzería La Góndola","","+34 968 21 82 48","/url?q=https://www.just-eat.es/restaurants-la-gondola-murcia/menu&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIxAEoDw&usg=AOvVaw258Fr2nxOwF4m4wLTX1Khx","C. Saavedra Fajardo, 5, 30001 Murcia, España","pizzerías","Murcia",4.3,1750
+"Oven Mozzarella | Pizzeria Murcia","","+34 911 33 07 45","/url?q=http://www.oven.es/%3Futm_source%3DGMB%26utm_medium%3Dgmb%26utm_campaign%3Dgmb%26utm_id%3Dweb&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gI8wEoDw&usg=AOvVaw0LgQUqzHkj3yXl8V1Ua1gR","Pl. Julián Romea, 5, 30001 Murcia, España","pizzerías","Murcia",4.4,1888
+"Clínica Lorents","","+34 682 93 89 11","https://www.clinicalorents.es/","Av. Francisco Jiménez Ruiz, 9, 30007 El Puntal, Murcia, España","clínicas","Murcia",5,77
+"Clínica Belsia","","","","C. Teniente Gral. Gutierrez Mellado, 9, Centro Comercial Centrofama 1º Planta, 30008 Murcia, España","clínicas","Murcia",5,13
+"Restaurante Mondo Italiano","","+34 968 90 02 75","/url?q=https://mondoitaliano.es/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIngIoDw&usg=AOvVaw0788GjHR4bXqV4zHAHAoq2","C. Miguel Hernández, 2, 30011 Murcia, España","pizzerías","Murcia",4.3,1788
+"Como en Napoli","","+34 621 29 08 56","/url?q=https://comoennapoli.es/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIyAIoDw&usg=AOvVaw0h8GjoSsGY_4XOFHjb8SGF","C. San Pedro, 7, 30004 Murcia, España","pizzerías","Murcia",4.9,615
+"Clínica Dorsia Cirugía y Medicina Estética","","+34 968 23 26 90","https://www.dorsia.es/clinicas-dorsia/murcia-constitucion/?utm_campaign=noviembre24&utm_content=sitio-web-gmb&utm_medium=gmb&utm_source=fichadegoogle","Av. de la Constitución, 8, 30008 Murcia, España","clínicas","Murcia",4.6,424
+"Grosso Napoletano","","+34 868 12 79 61","/url?q=https://www.grossonapoletano.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gI8wIoDw&usg=AOvVaw262x-AgX5lGn54gdwZJ1Iw","Pl. Sta. Catalina, 1, 30004 Murcia, España","pizzerías","Murcia",4.3,977
+"Artemédica","dpo@artemedica.es","+34 968 20 12 22","http://artemedica.es/","P.º Fernández Caballero, 3, 30007 Santiago y Zaraíche, Murcia, España","clínicas","Murcia",4.9,603
+"Via Torino","","+34 968 90 55 35","/url?q=https://viatorino.es/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIpgMoDw&usg=AOvVaw12E8JUEvA-UjSimQWzJc4O","C. Frenería, 9, 30004 Murcia, España","pizzerías","Murcia",4.3,1643
+"Pizzería Mano a Mano","","+34 644 67 71 51","/url?q=http://www.pizzeriamanoamano.es/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gI4wMoEQ&usg=AOvVaw3p_k4-i4iuqKfQKZxp1ZxD","P.º Misionero Luis Fontes Servet, 3, 30007 El Puntal, Murcia, España","pizzerías","Murcia",4.6,1832
+"Fisioterapia Osteopatía Pilates Peñarrubia ✅","","+34 968 96 71 63","https://www.fisioterapeutasmurcia.com/","Av. Don Juan de Borbon, 36, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",5,834
+"Fisioterapia Osteopatía Pilates Peñarrubia San Antón ✅","","+34 868 96 68 36","https://www.fisioterapeutasmurcia.com/clinica_fisioterapia.asp","Las, C. las Norias, 1, 30009 Murcia, España","fisioterapeutas","Murcia",5,646
+"Clínica de Fisioterapia El Carmen","info@fisioterapiaelcarmen.com","+34 603 05 81 01","https://fisioterapiaelcarmen.com/","C. del Rosal, 5, 30002 Murcia, España","fisioterapeutas","Murcia",4.8,339
+"Pizzería La Távola","","+34 868 07 92 92","/url?q=https://www.latavolapizzeria.es/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIkwQoDw&usg=AOvVaw1lb4-ju9WQS3ynKIU1-3d2","Av. Marqués de Los Vélez, 50, 30007 Murcia, España","pizzerías","Murcia",4.6,526
+"La Tarantella","","+34 868 04 67 98","","C. Madre Elisea Oliver Molina, 1, 30002 Murcia, España","pizzerías","Murcia",4.6,448
+"Pizzería Alemana","","+34 968 23 52 05","","C. Torre de la Marquesa, 10, 30008 Murcia, España","pizzerías","Murcia",4.6,191
+"Fisioterapia Thorax Murcia","","+34 623 02 93 18","https://www.fisioterapiathorax.com/","C. Almte. Malaspina, 1, 30007 Murcia, España","fisioterapeutas","Murcia",4.9,809
+"Infraganti Pizza Bar | Pizzería Murcia Centro","","+34 868 00 70 06","/url?q=https://infragantipizza.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gImQUoDw&usg=AOvVaw2ezquA7eLetdgJUyYuwHYI","C. Apóstoles, 20, 30001 Murcia, España","pizzerías","Murcia",4.6,769
+"Fisioterapia Osteopatía y Pilates Murcia | DENUEVO Siéntete bien","info@denuevo.com.es","+34 690 15 65 87","https://denuevo.com.es/","Calle Miguel de Unamuno, 4, Calle Ortega y Gasset, 1, 30009 Murcia, España","fisioterapeutas","Murcia",4.9,293
+"FISIOTERAPIA MESEGUER","contacto@fisioterapiameseguer.com","+34 968 90 92 12","http://www.fisioterapiameseguer.com/","C. Periodista Antonio Herrero, nº3, bajo, 30007 Murcia, España","fisioterapeutas","Murcia",5,46
+"La Pierotti Pizzería | Ronda de Levante","","+34 968 94 09 66","/url?q=https://lapierottipizzeria.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIxwUoDw&usg=AOvVaw1KuZjv4dFWvg8Csv29B8gX","Rda. de Levante, 8, 30008 Murcia, España","pizzerías","Murcia",4.8,129
+"El Rincón de la pizza Murcia","","+34 868 78 38 96","","Av. de Santiago, 58, 30007 Santiago y Zaraíche, Murcia, España","pizzerías","Murcia",4.8,88
+"Centro Avance Fisioterapia y Pilates Reformer","info@centroavance.es","+34 968 23 99 00","https://www.centroavance.es/","C. Parroco Jose Maria Belando, 5, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",4.9,99
+"AC Fisioterapia y Osteopatia Murcia","info@acfisioterapiamurcia.com","+34 653 18 54 26","http://acfisioterapiamurcia.com/","Calle Ortega y Gasset, 8, 30009 Murcia, España","fisioterapeutas","Murcia",5,109
+"MiFisio Clínica de Fisioterapia Murcia | Azahara Inés Castaño Ibáñez | Ramón Manzano Mirón","","+34 868 05 86 24","","C. Parroco Jose Maria Belando, 16, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",5,250
+"La Cattedrale","","+34 968 71 73 06","/url?q=http://lacattedrale.es/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIlAYoEQ&usg=AOvVaw38OoUEn9FXKVw_dUqVF1Pr","esquina, Calle Frenería, C. Polo de Medina, 2, 30004 Murcia, España","pizzerías","Murcia",4.2,283
+"Tierra Mía","","+34 605 85 32 33","/url?q=https://mitierramia.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIvgYoDw&usg=AOvVaw2zL6TfSycmj4vglSplgOvB","C. Sociedad, 5, 30004 Murcia, España","pizzerías","Murcia",4.3,1082
+"Fisioterapia y Osteopatía Casado Meseguer","","+34 659 78 07 04","http://www.casadomeseguer.es/","C. de la Gloria, 14, 30003 Murcia, España","fisioterapeutas","Murcia",4.6,69
+"La pizzería Ronda Sur","","+34 868 16 75 63","/url?q=http://www.pizzerialapizzeria.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gI6gYoEQ&usg=AOvVaw3lTXVxnA6Cb4eLYzbzQEU4","C. Pedáneo José Sánchez Mompeán, 8, 30010 San Benito - Patiño, Murcia, España","pizzerías","Murcia",4.3,267
+"Fisioterapia Osteopatía y Pilates Murcia Infante | DENUEVO Siéntete bien","info@denuevo.com.es","+34 604 89 60 84","https://www.denuevo.com.es/","Av. Infante Juan Manuel, 2, 30011 Murcia, España","fisioterapeutas","Murcia",5,102
+"Fisioterapia Marta Ramírez","info@fisioterapiamartaramirez.com","+34 611 67 80 11","https://fisioterapiamartaramirez.com/","C. San Rafael, 2, escalera 3, 4ºG, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",5,195
+"David López Fisioterapia","davidfisioterapia@gmail.com","+34 616 41 97 61","https://www.davidlopezfisioterapia.com/","Pl. Artesanos del Belen, 2, 30006 Puente Tocinos, Murcia, España","fisioterapeutas","Murcia",4.9,221
+"Dynamics | Clínica de fisioterapia en Murcia","dynamics.salud@gmail.com","+34 722 41 20 28","https://dynamicsalud.es/","Pl. Triangular, 2, 30009 Murcia, España","fisioterapeutas","Murcia",5,384
+"Clínica de Fisioterapia y Osteopatía SAGA","","+34 640 87 53 27","https://www.clinicafisiosaga.com/","La Flota, Calle Ing. Bryant, 24, bajo i, 30007 Murcia, España","fisioterapeutas","Murcia",5,117
+"PLENO. Salud en Movimiento","peacefulqode@gmail.com","+34 688 70 16 65","https://www.plenosaludenmovimiento.es/#home","C. Navegante Juan Fernández, 14, 30007 Murcia, España","fisioterapeutas","Murcia",5,187
+"La Pierotti Pizzería | Juan Carlos I","","+34 868 07 90 94","/url?q=https://lapierottipizzeria.com/&opi=79508299&sa=U&ved=0ahUKEwiUqv-L9amRAxViafUHHTa5Bz8Q61gIlgcoDw&usg=AOvVaw22hcXGdg-lqxPoAkYM6Lwx","Av. Juan Carlos I, 10, 30008 Murcia, España","pizzerías","Murcia",4.1,1169
+"SyG FISIOTERAPIA Y OSTEOPATÍA","","+34 613 54 56 13","http://www.sygfisioterapia.es/","C. La Flota, 1, Bajo, 30008 Murcia, España","fisioterapeutas","Murcia",5,112
+"Clínica fisioterapia Fisio Sport Murcia","info@fisiosportmurcia.es","+34 608 22 23 57","https://www.fisiosportmurcia.es/","Av. Don Juan de Borbon, 35, 30007 Murcia, España","fisioterapeutas","Murcia",4.8,142
+"Steakburger | Hamburguesería Murcia","","+34 919 33 28 33","http://www.steakburger.es/?utm_source=gmb&utm_medium=gmb&utm_id=web","Gran Vía Alfonso X el Sabio, 14b, 30008 Murcia, España","hamburgueserías","Murcia",4.6,2793
+"Proper Burger","info@properburgermurcia.com","+34 611 77 31 27","https://properburgermurcia.com/","C. Victorio, 14, 30003 Murcia, España","hamburgueserías","Murcia",4.8,522
+"Clínica FisioActif Murcia","","+34 621 19 33 17","https://www.clinicafisioactif.com/","C. Don Alfonso Palazón Clemares, 10, bajo, 30009 Murcia, España","fisioterapeutas","Murcia",5,78
+"Aires Burger Bar","","+34 968 64 90 30","https://airesburgerbar.com/murcia-santodomingo/","C. Sta. Ana, 1, 30008 Murcia, España","hamburgueserías","Murcia",4.7,5003
+"Söma Salud y Bienestar","info@somasaludybienestar.es","+34 633 20 62 07","http://www.somasaludybienestar.es/","Calle Dr. Alonso de Espejo, 10, 30007 Murcia, España","fisioterapeutas","Murcia",4.9,190
+"Impala Burger","impalaburger@gmail.com","+34 623 21 64 20","https://impalamurcia.com/","C. San José, 3, 30003 Murcia, España","hamburgueserías","Murcia",4.8,848
+"Vaxto","","+34 679 83 80 19","https://vaxtocrazyfood.es/","Pl. de los Apostoles, 5, 30001 Murcia, España","hamburgueserías","Murcia",4.8,4613
+"The Burger Shop","","+34 682 33 67 74","https://www.facebook.com/TheBurgerShopMurcia/","C. Periodista Nicolás Ortega Pagán, 2, 30003 Murcia, España","hamburgueserías","Murcia",4.4,1371
+"Goiko","","+34 868 28 99 34","http://www.goiko.com/","Gran Vía Alfonso X el Sabio, 7, 30008 Murcia, España","hamburgueserías","Murcia",4.4,6803
+"Magra","","+34 622 35 48 59","","Av. Juan Carlos I, 30009 Murcia, España","hamburgueserías","Murcia",4.9,125
+"Dinamita Burger Bar","info@dinamitaburgerbar.com","+34 968 43 81 29","http://www.dinamitaburgerbar.com/","Ctra. de Churra, 72, 30007 Santiago y Zaraíche, Murcia, España","hamburgueserías","Murcia",4.8,1305
+"Psiqué","","+34 601 05 06 68","https://www.psique.net/","P.º Científico Gabriel Císcar, 20, Bajo 3, 30007 Murcia, España","psicólogos","Murcia",4.9,147
+"Centro de Psicología Pepa Fernández","info@pepafernandezpsicologa.es","+34 661 58 67 21","https://pepafernandezpsicologa.es/","Av. Príncipe de Asturias, 34, Bajo B, 30007 Santiago y Zaraíche, Murcia, España","psicólogos","Murcia",5,110
+"MURCIA TERAPIA","murciaterapia@murciaterapia.es","+34 686 90 59 33","https://murciaterapia.es/","C. San Rafael, 3, Bajo C, 30007 Murcia, España","psicólogos","Murcia",5,55
+"Psicólogo Murcia Antonio Viñao, Consulta de psicología en Murcia","","+34 675 13 66 69","http://www.psicologomurcia-antoniovinao.com/","C. González Adalid, Nº13, piso 3º, puerta 6, 30001 Murcia, España","psicólogos","Murcia",5,25
+"Circo Burger","","+34 611 09 14 08","http://circorestaurante.com/","C. Apóstoles, 10, 30001 Murcia, España","hamburgueserías","Murcia",4.4,1234
+"Nukka Gastro Beer - Hamburguesería & Cervecería","","+34 621 36 93 68","https://restaurantenukka.com/","C. Sta. Teresa, 17, Bajo, 30005 Murcia, España","hamburgueserías","Murcia",4.8,1264
+"Elisa Sánchez Psicóloga","elisasanchezpsicologa@gmail.com","+34 600 31 27 32","https://elisasanchezpsicologa.es/","C. González Adalid, 13, 3o, 30001 Murcia, España","psicólogos","Murcia",5,14
+"Mostacho Murcia Burguer Bar","","+34 968 23 54 92","https://www.facebook.com/mostachomurcia/?epa=SEARCH_BOX","C. Teniente Gral. Gutierrez Mellado, 9, 30008 Murcia, España","hamburgueserías","Murcia",4.5,1497
+"Dra. Nieves Martínez-Hidalgo","psicologa@nievesmhidalgo.com","+34 676 02 27 66","https://nievesmhidalgo.com/","C. Trapería, 6, 1ºB, 30001 Murcia, España","psicólogos","Murcia",4.8,71
+"Tokio Burger","","+34 654 19 02 80","https://www.tokioburgers.com/","C. Azucaque, 6, 30001 Murcia, España","hamburgueserías","Murcia",4.6,442
+"Clara Ortiz - Psicóloga en Murcia","hola@claraortizpsicologa.com","+34 658 67 29 19","https://www.claraortizpsicologa.com/","Gabinete de Psicología Atalayas, C. de Molina de Segura, 5, 3ºB, 30007 Murcia, España","psicólogos","Murcia",4.9,19
+"Vacania Burger","","+34 644 19 03 37","https://vacaniaburger.com/","Av Reyes Católicos' 117. Las Torres de Cotillas 3565, Av. Reyes Católicos, 117, Local 1, 30565 Murcia, España","hamburgueserías","Murcia",4.7,960
+"Los Pepes Burger Zigzag","","+34 624 24 26 63","https://lospepesburger.es/","Av. Juan Carlos I, 1, 30008 Murcia, España","hamburgueserías","Murcia",4.5,292
+"Black Label Urban Grill","","+34 968 21 42 75","","Pl. de Sta. Isabel, 6, 30004 Murcia, España","hamburgueserías","Murcia",4.5,1094
+"Raquel Sastre Psicóloga","raquel_sastre@hotmail.com","+34 639 12 06 40","http://www.raquelsastrepsicologa.es/","C. Andrés Baquero, 9, 4° B, 30001 Murcia, España","psicólogos","Murcia",5,49
+"Freak Burguer International","","+34 968 92 31 42","http://www.fbimurcia.com/","C. Periodista Encarna Sánchez, 10, 30007 Murcia, España","hamburgueserías","Murcia",4.4,1383
+"Rolfo Tapas & Burger - El Ranero (Murcia)","","+34 613 33 22 32","https://rolfoburger.com/","C. Jose Manuel Sanchez Pedreño, 1, Local 3. Edificio Plazarte, 30009 Murcia, España","hamburgueserías","Murcia",4.5,384
+"Aires burger bar","","+34 968 82 86 27","https://airesburgerbar.com/murcia-merced/","C. Merced, 14, 30001 Murcia, España","hamburgueserías","Murcia",4.3,487
+"The Risky Burguer","contacto@riskyburger.com","+34 868 05 47 77","https://riskyburger.com/","Av. Libertad, 6, 30012 San Benito - Progreso, Murcia, España","hamburgueserías","Murcia",4.8,249
+"Psicólogos Murcia. Araceli González.","contacto@araceligonzalezpsicologa.com","+34 687 44 20 81","https://www.araceligonzalezpsicologa.com/","C. San Patricio, 10, 3ªD, 30004 Murcia, España","psicólogos","Murcia",5,122
+"Restaurante Asador Puerta de Murcia","","+34 968 27 73 05","/url?q=https://www.puertademurciarestaurante.es/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIPigR&usg=AOvVaw14N7NeTfE-kqujtX9D6G18","Av. Río Madera, 30110 Churra, Murcia, España","asadores","Murcia",4.2,3130
+"La Brasería de Carlos","","+34 673 42 71 13","","Pl. San Julián, 9, 30004 Murcia, España","asadores","Murcia",4.4,536
+"La Pilar Asador","","+34 868 70 80 06","","C. Pascual, 12, 30004 Murcia, España","asadores","Murcia",4.2,309
+"Tapa y Brasa","","+34 661 39 69 63","","C. Pintor Salvador Dalí, 2, 30007 Murcia, España","asadores","Murcia",4,909
+"Asador Las Curicas y parque de bolas","","+34 968 96 75 75","/url?q=https://uqr.to/162fd&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gI6wEoEQ&usg=AOvVaw3PAc1aP1Ugbb5GOFbgouF-","Av. Juan Carlos I, 74, 30007 El Puntal, Murcia, España","asadores","Murcia",4.1,857
+"Proalma Psicología","proalmapsicologia@gmail.com","+34 621 25 66 35","http://www.proalmapsicologia.es/","Calle Serrano Alcázar, 2, 1ºB, 30001 Murcia, España","psicólogos","Murcia",5,101
+"Clínica Moreno - Psicólogos","","+34 686 41 41 30","https://www.clinicamoreno.com/","Av. Juan Pablo II, 17, 1C Escalera 1, 30007 Santiago y Zaraíche, Murcia, España","psicólogos","Murcia",4.6,158
+"Psicologa Aliety Fernández","alietyrep1971@gmail.com","+34 678 67 94 91","http://www.alietypsicologa.es/","C. Vinader, 9, 3º D, 30004 Murcia, España","psicólogos","Murcia",5,45
+"MindUp","info@mindup-psicologos.es","+34 868 24 08 67","https://mindup-psicologos.es/","C. Portillo San Antonio, 6, 30005 Murcia, España","psicólogos","Murcia",5,111
+"Abrasador Cánovas","","+34 968 23 51 53","/url?q=https://abrasador.com/restaurantes/abrasador-canovas/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIpwIoEQ&usg=AOvVaw1I9Bc3ke3sZri4sEM58JPB","C. Angeles, 3, 30007 Casillas, Murcia, España","asadores","Murcia",4.4,1202
+"Restaurante El Huerto del Badén","","+34 968 26 12 33","","Cam. del Badén, 78, 30010 Murcia, España","asadores","Murcia",4.3,1529
+"Las Brasas de las Tascas","","+34 659 14 64 96","/url?q=https://lasbrasasdelastascasmurcia.com/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIwgMoDw&usg=AOvVaw3PfRupXTytaL_pGQ-O5tQO","Pl. Balsas, 2, 30001 Murcia, España","asadores","Murcia",4.2,926
+"Fumata Negra Asador Argentino","","+34 625 46 90 29","","Carril Torre Leales, 47, 30011 Murcia, España","asadores","Murcia",4.4,285
+"Restaurante El Cañal Los Almillas","","+34 968 25 14 05","","Cam. Los Partidores, 106, 30152 Aljucer, Murcia, España","asadores","Murcia",4.3,1886
+"Clínica Unitas - Psicología, Psiquiatría y Nutrición","","+34 744 65 32 52","http://www.clinicaunitas.com/","C. Pintor Villacis, 4, Entresuelo 2, 30003 Murcia, España","psicólogos","Murcia",5,57
+"Asador Mendoza Murcia","","+34 868 78 78 40","/url?q=https://www.asadormendozamurcia.es/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIgAUoDw&usg=AOvVaw01AxBzBlliofZnyMYUPVPZ","Tr.ª Cabezo de Torres, 30163 Murcia, España","asadores","Murcia",4.3,31
+"La Estancia Gastrohome","","+34 868 13 08 72","/url?q=http://www.laestanciagastrohome.es/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIpQUoEQ&usg=AOvVaw1PVypms4038e7oM236SjjE","C. Azarbe del Papel, 7, 30007 Santiago y Zaraíche, Murcia, España","asadores","Murcia",4.5,366
+"Centro Psicológico ""Gran Vía""","psicologosgranvia@gmail.com","+34 649 82 83 18","http://www.psicologosgranvia.com/","C. Apóstoles, 10, 3º B, 30001 Murcia, España","psicólogos","Murcia",4.9,68
+"Restaurante El Molinero","","+34 968 29 71 48","/url?q=http://www.r-elmolinero.com/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gI1AUoDw&usg=AOvVaw2ZhH8fZlgjefkXgGPuoQdh","C. Alcalde Garcia Sanchez, 4, 30009 Murcia, España","asadores","Murcia",4.4,3721
+"CENTRO ALMA - ANA PEINADO","","+34 633 08 14 24","https://centroalma.anapeinado.es/","P.º Pedáneo José Marín Serna, 25, 30010 Murcia, España","psicólogos","Murcia",5,27
+"Restaurante El Pencho","","+34 606 73 23 41","/url?q=https://restauranteelpencho.com/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIiwYoDw&usg=AOvVaw0or3rHeaObROm7_qCIoNwI","Carril Penchos, 77, 30009 Murcia, España","asadores","Murcia",4.1,1952
+"Muchachicha","","+34 968 31 34 12","/url?q=https://muchachicha.es/%3Futm_source%3DGMB%26utm_medium%3DWEB&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIrwYoDw&usg=AOvVaw2j-sieSUoetv82m-gxDRHM","C. Frenería, 10, 30004 Murcia, España","asadores","Murcia",4.6,424
+"Aranda-Séiquer","","+34 968 06 09 02","https://www.arandaseiquer.es/","Gran Vía del Escultor Francisco Salzillo, n°6, Piso 2°D, 30004 Murcia, España","psicólogos","Murcia",5,70
+"Maribel Sánchez. Psicóloga y psicoanalista","","+34 637 71 18 77","http://www.mspsicologamurcia.es/","C. González Adalid, 13, 1º Izq., Puerta 1, 30001 Murcia, España","psicólogos","Murcia",4.5,41
+"Asadero Rosarito","","+34 968 20 22 79","/url?q=https://www.asaderorosarito.com/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gI2QYoDw&usg=AOvVaw2DQrVdb_q1vJ3JMr-sXtJ4","Av. Don Juan de Borbon, 6, 30008 Murcia, España","asadores","Murcia",4.2,1207
+"Psiro: Centro de Psicología","","+34 644 54 70 07","http://psiro.es/","C. de Molina de Segura, 5, bloque 3, 3ºb, 30007 Murcia, España","psicólogos","Murcia",5,3
+"PSICÓLOGO ARMANDO GALIÁN","","+34 661 23 52 80","http://www.psicologiagalian.com/","Junto Hotel Rincón de Pepe, C. Apóstoles, 26, Entresuelo A, 30001 Murcia, España","psicólogos","Murcia",5,11
+"Restaurante Mesón La Torre","","+34 968 30 15 61","/url?q=http://www.restauranteslatorre.com/&opi=79508299&sa=U&ved=0ahUKEwjG6Jmy9amRAxXxM0QIHTzpBeoQ61gIgAcoEQ&usg=AOvVaw3cTJKe_DOYQlpZpBITF1wp","Carril de la Torre, 52, 30006 Puente Tocinos, Murcia, España","asadores","Murcia",4.1,2682
+"El asador","","+34 968 87 58 69","","Rda. de Garay, 17, 30003 Murcia, España","asadores","Murcia",4.6,14
+"Restaurante Marisqueria Estrella de Mar","","+34 968 90 70 26","https://marisqueriamurcia.com/","Av. San Juan de la Cruz, 7, 30011 Murcia, España","marisquerías","Murcia",4.3,575
+"Marisquería Los Pollos","","+34 968 25 66 79","https://www.facebook.com/MarisqueriaLosPollos/?ti=as","C. Mayor, 51, 30011 Murcia, España","marisquerías","Murcia",4.6,279
+"Virgen del Mar","","+34 968 21 66 79","http://restaurantevirgendelmar.com/","Pl. de San Nicolás, 3, bajo, 30005 Murcia, España","marisquerías","Murcia",4.5,483
+"Restaurante El Amarre Murcia","","+34 968 20 93 10","https://elamarremurcia.com/","Pl. Mayor, 1, 30005 Murcia, España","marisquerías","Murcia",4.3,1176
+"Gran Rhin","","+34 652 16 54 01","https://www.facebook.com/Restaurante-Gran-Rhin-111709540210282/","Pl. de San Pedro, 5, 30004 Murcia, España","marisquerías","Murcia",4,516
+"Don Gómez III, S.L.","","+34 968 20 27 80","","30007 Murcia, España","marisquerías","Murcia",4.1,671
+"Restaurante Pepe El Torrao","","+34 968 29 10 08","https://pepeeltorrao.es/","Ronda Norte, 6, 30009 Murcia, España","marisquerías","Murcia",4.4,884
+"La Barra de Pepe el Torrao bar de tapas","","+34 968 21 94 95","https://restaurantelabarradeltorrao.com/","C. Cronista Carlos Valcárcel, 1, 30008 Murcia, España","marisquerías","Murcia",4.6,1683
+"La Barra de Morata","","+34 692 04 66 49","","C. San Juan de Dios, 5, 30001 Murcia, España","marisquerías","Murcia",4.3,232
+"El Guiti","","+34 968 37 94 48","https://www.facebook.com/El-Guiti-Hijos-110157330697002/","C. Francisco José Vicente Ortega, 7, 30580 Alquerías, Murcia, España","marisquerías","Murcia",4.7,1196
+"Mesón de zona 3","","+34 665 66 55 84","","Ctra. Era Alta, Nº2, 30166 Nonduermas, Murcia, España","marisquerías","Murcia",4,1705
+"Cervecería el Púlpito","","+34 968 21 39 65","https://elpulpitorestaurantes.com/","C. Pascual, 16, 30004 Murcia, España","marisquerías","Murcia",3.6,952
+"Marisqueria Romero","","","","Av. de la Fama, 52, 30006 Murcia, España","marisquerías","Murcia",3.7,3
+"MISO RESTAURANTE BUFFET ASIÁTICO MURCIA","","+34 968 40 47 96","","C. Vara de Rey, 9, 30001 Murcia, España","sushi","Murcia",4.9,120
+"Wakamono","","+34 691 07 64 38","https://wakamonosushi.es/","C. Radio Murcia, 2, 30001 Murcia, España","sushi","Murcia",4.8,833
+"Dr. José Miguel Rubio Pérez, Dietista-Nutricionista","soporte@doctoralia.com","+34 644 60 49 90","https://www.doctoralia.es/jose-miguel-rubio-perez/dietista-nutricionista/murcia?utm_source=google&utm_medium=gmb&utm_campaign=122394&utm_content=website","C. San Patricio, 10, 2ª Planta, nº 4, 30004 Murcia, España","nutricionistas","Murcia",4.9,95
+"NuMurcia Atalayas | Dietistas y Nutricionistas en Murcia","","+34 613 05 24 27","https://numurcia.com/","C. de Molina de Segura, 5, 30007 Puente Tocinos, Murcia, España","nutricionistas","Murcia",5,336
+"María García Nutricionista","","+34 667 90 95 60","http://mariagarcianutricionista.es/","C. Vista Alegre, 23, 30007 Murcia, España","nutricionistas","Murcia",4.9,53
+"Dra. Martínez Bautista Centro Médico de Nutrición y Obesidad, Nutricionista en Murcia","doctoramartinezbautista@yahoo.es","+34 968 22 14 40","https://www.doctoramartinezbautista.es/","Av. General Primo de Rivera, 1, 30008 Murcia, España","nutricionistas","Murcia",4.8,20
+"Ana Isabel Gabaldón Dietista-Nutricionista Murcia","","+34 676 13 87 50","https://www.facebook.com/anabelnutricion/?ti=as","C. Infanta Cristina, 17, 30007 Murcia, España","nutricionistas","Murcia",5,16
+"Arias Abellán Nutrición","","+34 633 72 73 01","http://comeyentrena.com/","Calle Nueva de San Antón, Ronda Norte, 29, 2b, 30009 Murcia, España","nutricionistas","Murcia",5,265
+"Nutrición con Raíz - NUTRICIONISTAS MURCIA","","+34 624 22 02 57","https://consultorio.me/pro/cita-con-raiz","Ctra. de Churra, 96, 30007 Murcia, España","nutricionistas","Murcia",5,106
+"Adriana Guastella | Psiconutrición y Conducta Alimentaria","%20hola@adrianaguastella.com","+34 675 37 78 91","http://www.adrianaguastella.com/","Av. Don Juan de Borbon, 81, 30007 Churra, Murcia, España","nutricionistas","Murcia",4.9,64
+"Nusade","info@nusade.comS","+34 968 82 20 15","https://www.nusade.com/","P.º Joaquín Garrigues Walker, 11, 30007 El Puntal, Murcia, España","nutricionistas","Murcia",4.9,115
+"Rita Cava Roda. Dietista nutricionista, dra. en nutrición y tecnología de alimentos","","+34 613 35 60 68","https://www.nutricionymetabolismo.com/","Clinica Kiré, Av. Don Juan de Borbon, 98, Esc,1ª, Bajo, 30007 Santiago y Zaraíche, Murcia, España","nutricionistas","Murcia",5,13
+"Plan Mediterráneo - Nutrición Y Estética","info@planmediterraneo.com","+34 968 71 22 37","https://www.planmediterraneo.com/","C. José Antonio Ponzoa, 3, 30001 Murcia, España","nutricionistas","Murcia",5,39
+"Dietista y Nutrición Murcia | BC Salud | Nutrición y Acupuntura en Murcia","bcsaludmurcia@gmail.com","+34 698 93 67 84","https://www.bcsalud.es/","C. Corregidor Vicente Cano Altares, 1, 30007 Murcia, España","nutricionistas","Murcia",5,59
+"Balans - Alimentación Emocional","","+34 601 64 70 37","http://saludbalans.es/","C. Rios, 7, 30007 Zarandona, Murcia, España","nutricionistas","Murcia",5,53
+"Numurcia Juan Carlos I Dietistas Y Nutricionistas En Murcia","","+34 613 05 24 27","https://numurcia.com/","Av. Juan Carlos I, 54, 30007 Santiago y Zaraíche, Murcia, España","nutricionistas","Murcia",5,28
+"José Miguel","john@doe.com","+34 747 46 51 90","http://josemiguelnutri.com/","C. Ambrosio de Salazar, 1, 30002 Murcia, España","nutricionistas","Murcia",5,35
+"Belén Ortuño Nutrición","","+34 623 33 29 36","https://www.nutriban.com/","Pl. Circular, 4, 30008 Murcia, España","nutricionistas","Murcia",5,28
+"Virginia Hernández Díaz, Dietista Nutricionista","soporte@doctoralia.com","","https://www.doctoralia.es/virginia-hernandez-diaz/dietista-nutricionista/murcia?utm_source=google&utm_medium=gmb&utm_campaign=144257&utm_content=website","Travesía Ctra. Fuensanta, Edificio espigas bajo, Santiago el Mayor, 30012 San Benito - Patiño, España","nutricionistas","Murcia",5,1
+"Plenio Salud Integral","info@plenio.es","+34 613 05 24 27","https://www.plenio.es/","C. de Molina de Segura, 5, escalera 6, 2B, 30007 Puente Tocinos, Murcia, España","nutricionistas","Murcia",5,117
+"Centro de Nutrición Garaulet","info@garaulet.com","+34 968 22 19 90","http://www.garaulet.com/","Pl. Raimundo González Frutos, 5, 30001 Murcia, España","nutricionistas","Murcia",4.7,50
+"Clinica del Pie Rivera Podomur Murcia","","+34 968 21 17 98","http://www.clinicadelpierivera.com/","C. Escritor Alcalá Yañez, 2, bajos, 30003 Murcia, España","podólogos","Murcia",4.9,275
+"Podólogo Murcia - Clínica del Pie Javier Gil","info@clinicadelpiejaviergil.com","+34 968 02 15 88","http://clinicadelpiejaviergil.com/","Pl. Dentistas Murcianos, 3, 30007 Murcia, España","podólogos","Murcia",5,70
+"Clínica del Pie López del Amo","","+34 697 63 59 59","https://podologo.clinicalopezdelamo.com/","C. Jaime I el Conquistador, 11, 2B, 30008 Murcia, España","podólogos","Murcia",5,228
+"Podoba","info@podoba.es","+34 622 32 65 76","http://podologomurcia.es/","C. Sta. Teresa, 3, 1ºC, 30005 Murcia, España","podólogos","Murcia",5,53
+"Podólogo Murcia - Clínica del Pie Puerta Nueva","","+34 868 91 79 17","http://clinicadelpiepuertanueva.es/","C/ Puerta Nueva, 25, 30001 Murcia, España","podólogos","Murcia",4.8,34
+"Clínica de podología Con buen pie","","+34 601 39 69 99","https://www.instagram.com/conbuenpiemurcia/","Pl. Cetina, 3, 30001 Murcia, España","podólogos","Murcia",4.9,87
+"Clínica del pie Cermeño Murcia","","+34 968 23 19 64","https://clinicadelpiecermeno.com/","Plaza de la fuensanta 3 Gran Vía, Entlo.Izda., 30008 Murcia, España","podólogos","Murcia",4.9,35
+"Clínica del Pie Ronda de Garay - Podólogo Adolfo Chavarría","podologo.adolfochavarria@hotmail.es","+34 968 22 11 93","http://www.podologoadolfochavarria.com/","Ronda de Garay, 17,1D, 30003 Murcia, España","podólogos","Murcia",5,18
+"Clínica Podológica Diana Sánchez","","+34 629 56 02 87","","C. Nueva de San Antón, 1, 30009 Murcia, España","podólogos","Murcia",4.8,161
+"Fernando Barnuevo Palazón, Podólogo","soporte@doctoralia.com","+34 622 32 65 76","https://www.doctoralia.es/fernando-barnuevo-palazon/podologo/murcia?utm_source=google&utm_medium=gmb&utm_campaign=163046&utm_content=website","C. Sta. Teresa, 3, 1ºC, 30005 Murcia, España","podólogos","Murcia",5,5
+"David Hernández Argemí (Podólogo)","","+34 600 87 85 57","","C. Sierra de Peñarrubia, 24, 2ºD, 30009 Murcia, España","podólogos","Murcia",5,28
+"Podohome Murcia Podologia a Domilicio","","+34 622 22 27 57","http://romandiazpodologia.com/podohome","C. Desembojo, 2, ESCALERA 2C, 30009 Murcia, España","podólogos","Murcia",5,23
+"PODOLOGIA A DOMICILIO - Alberto Alcántara Olmos","","+34 636 88 21 92","https://www.albertoalcantarapodologo.com/","Rda. de Levante, 14, 30008 Murcia, España","podólogos","Murcia",5,32
+"Salud Pie Centros de Podología Murcia","","+34 968 29 32 39","http://www.saludpie.es/","C. Jerónimo de Roda, 1, 1°Q, 30005 Murcia, España","podólogos","Murcia",4.8,13
+"Clínica del pie Rivera Podólogo en Murcia","","+34 968 21 14 97","http://www.clinicadelpierivera.com/","C. Jumilla, 7, 30002 Murcia, España","podólogos","Murcia",4.4,58
+"Clínica del Pie Martínez Zafra","","+34 626 70 05 88","","C/ Antonio Machado Bajo Nª3, 30009 Murcia, España","podólogos","Murcia",4.8,18
+"Kamel Podólogo","","+34 633 18 33 44","","Paseo Florencia 46, Edificio Savia, 4 Escalera, 1-C, Rda. Sur, 30010 San Benito - Patiño, España","podólogos","Murcia",4.8,77
+"CLINICA PODOLOGICA GADEA","","+34 968 88 31 99","http://clinicapodologicagadea.com/","C. de la Alberca, 17a, 1º G, 30120 El Palmar, Murcia, España","podólogos","Murcia",5,21
+"AMANDA RIPOLL PODOLOGIA","","+34 868 91 28 40","http://www.amandaripollpodologia.com/","C. Arturo Duperier, 12, 30009 Murcia, España","podólogos","Murcia",4.7,14
+"Da Vinci Ópticas Puente Viejo","","+34 601 33 96 58","http://davinciopticas.es/","C. Cartagena, 15, bajo, 30002 Murcia, España","ópticas","Murcia",5,142
+"Ópticas y Audiología LUPER Murcia","hola@luper.es","+34 868 96 61 51","http://luper.es/","C. Barítono Marcos Redondo, 2, 30005 Murcia, España","ópticas","Murcia",4.9,1129
+"Alain Afflelou Óptico y Audiólogo Murcia Avda Constitución","murcia.constitucion@afflelou.es","+34 968 41 65 16","https://www.afflelou.es/opticas/murcia/afflelou-avenida-de-la-constitucion-6-30008?utm_campaign=gmb&utm_medium=organic&utm_source=google_gmb","Av. de la Constitución, 6, 30008 Murcia, España","ópticas","Murcia",4.9,106
+"Optica Constitucion","","+34 647 77 09 31","http://www.opticaconstitucion.com/","C. Lepanto, 3, 30008 Murcia, España","ópticas","Murcia",5,544
+"Óptica Centrofama","","+34 968 20 18 90","https://naturalopticsgroup.com/opticas/optica-centrofama_Murcia_2960.html?utm_source=google&utm_medium=mybussines&utm_campaign=murcia-centrofarma","C/ Puerta Nueva, 8, 30001 Murcia, España","ópticas","Murcia",4.9,142
+"Óptica Alba Murcia","opticaalba@regmurcia.com","+34 968 24 18 18","https://opticaalba.com/","Pl. Emilio Díez de Revenga, 4, 30008 Murcia, España","ópticas","Murcia",4.8,54
+"General Óptica","","+34 968 24 80 96","https://www.generaloptica.es/es/?utm_source=gmb&utm_medium=organic&utm_campaign=Murcia&utm_term=1061","Av. de la Constitución, 5, 30008 Murcia, España","ópticas","Murcia",4.5,210
+"Noveno B","","+34 968 20 51 61","https://novenob.es/","P.º la Fuente, 3, 30007 Murcia, España","ópticas","Murcia",5,239
+"Ópticas y audiología Luper","hola@luper.es","+34 868 96 61 51","https://luper.es/","Av. de Canalejas, 3, 30002 Murcia, España","ópticas","Murcia",4.8,472
+"Opticalia","velez@opticaliamurcia.es","+34 968 27 32 35","https://www.opticalia.com/es/tiendas/optica-murcia-marques-de-los-velez-opticalia","Av. Marqués de Los Vélez, 30007 Santiago y Zaraíche, Murcia, España","ópticas","Murcia",4.9,205
+"Óptica Siglo XXI Murcia","","+34 968 23 18 06","https://www.opticasigloxxi.es/","Av. Marqués de Los Vélez, 56, 30007 Murcia, España","ópticas","Murcia",4.8,95
+"Óptica Soloptical Murcia Thader","web@soloptical.com","+34 635 43 18 10","https://soloptical.net/es/soloptical-thader/?utm_source=Google&utm_medium=google_my_business&utm_campaign=sitio+web","Av. Juan de Borbón, S/N, Local 42 - 43, 30110 Churra, Murcia, España","ópticas","Murcia",4.9,1169
+"General Optica - Visión y Audición","","+34 968 21 36 42","https://www.generaloptica.es/es/?utm_source=gmb&utm_medium=organic&utm_campaign=Murcia&utm_term=1108","Alameda de Colón, 3, 30002 Murcia, España","ópticas","Murcia",4.8,78
+"VISTAOPTICA Murcia","","+34 623 47 50 61","https://vistaoptica.es/detalle/122-murcia_barrio_del_carmen","C. Torre de Romo, 25, 30002 Murcia, España","ópticas","Murcia",5,57
+"Óptica y Centro Auditivo Soloptical Murcia Atalayas","web@soloptical.com","+34 638 76 96 39","https://soloptical.net/es/soloptical-atalayas/?utm_source=google_my_business&utm_medium=boton_sitio_web","Calle de Molina de Segura, 10, Local B11 41/40, 30007 Puente Tocinos, España","ópticas","Murcia",4.8,515
+"Óptica Óptima","","+34 868 99 85 85","https://optica-optima.com/opticas/murcia/","Gran Vía del Escultor Francisco Salzillo, 4, 30004 Murcia, España","ópticas","Murcia",4.6,122
+"Óptica y Centro Auditivo Soloptical Murcia Gran Via","","+34 697 37 38 27","","Gran Vía del Escultor Francisco Salzillo, 17, 30004 Murcia, España","ópticas","Murcia",5,289
+"Centro Óptico Sánchez","info@sanchezcentrooptico.com","+34 968 96 70 11","https://sanchezcentrooptico.com/","Av. Príncipe de Asturias, 1, 30007 Santiago y Zaraíche, Murcia, España","ópticas","Murcia",4.9,45
+"Optica en Murcia. Optica Romana","info@opticaromana.es","+34 635 26 25 62","http://optica-romana.es/","C. Madre de Dios, 2, 30004 Murcia, España","ópticas","Murcia",5,103
+"óptica ALCÓN Audífonos","info@opticaalcon.com","+34 604 40 24 00","http://www.opticaalcon.com/","Rda. de Levante, 21, 30008 Murcia, España","ópticas","Murcia",5,114
+"Farmacia Juan de Borbón 24 horas Murcia","","+34 968 28 02 80","https://www.compraenfarma.com/","Av. Don Juan de Borbon, 38, 30007 Santiago y Zaraíche, Murcia, España","farmacias","Murcia",4.1,204
+"Farmacia 24 horas Marín Sánchez","","+34 968 21 86 99","","Rda. de Garay, 37, 30003 Murcia, España","farmacias","Murcia",3.7,94
+"Farmacia Cónsul 24 horas","","+34 968 29 59 25","","Pl. Condestable, 2, 30009 Murcia, España","farmacias","Murcia",3.5,46
+"Farmacia San Carlos","","+34 968 25 72 09","","C. Miguel Hernández, 7, 30011 Murcia, España","farmacias","Murcia",3.8,85
+"Farmacia 24 horas Sandoval","","+34 968 21 18 49","https://farmacentromurcia.com/","Pl. Martínez Tornel, 1, 30004 Murcia, España","farmacias","Murcia",3.9,59
+"Farmacia Pedro Sánchez Sanchez","","+34 968 29 35 22","","C. Don Alfonso Palazón Clemares, 2, 30009 Murcia, España","farmacias","Murcia",2.6,176
+"Farmacia Santa Catalina 24h","","+34 968 13 42 19","https://farmaciabrionesweb.blogspot.com/","Av. de Sta. Catalina, 26-28, 30152 Aljucer, Murcia, España","farmacias","Murcia",4.3,161
+"Farmacia Alemán","","+34 968 35 02 25","https://wa.me/c/34609484659","C. Princesa, 17, 30002 Murcia, España","farmacias","Murcia",4.9,190
+"Farmacia La Purísima 365","","+34 968 25 11 27","https://www.farmacia365fmas.com/","Av. Cdad. de Almería, 59, 30010 Murcia, España","farmacias","Murcia",4.8,138
+"Vostrafarma 24H","","+34 968 25 23 25","http://www.farmaciavostrafarma.com/","C. Pintor Almela Costa, 2, 30011 Murcia, España","farmacias","Murcia",4.8,21
+"Farmacia El Palmar 24h","info@farmacia24hmurcia.com","+34 968 88 22 36","https://farmacia24hmurcia.com/","Cl. Lorca, 147, 30120 El Palmar, Murcia, España","farmacias","Murcia",4.4,242
+"Farmacia Ortega 365 días","","+34 968 90 55 66","","C. Paloma, Número 1, 30010 Murcia, España","farmacias","Murcia",4.9,40
+"Farmacia Universidad","","+34 660 02 09 79","http://www.farmauniversidad.es/","Rda. Parque Universidad, nº 1, 30100 Murcia, España","farmacias","Murcia",4.7,204
+"Farmacia Salzillo, C.B. (Francisco Bernabé Ortuño, Nuria y Javier Bernabé Ruiz)","","+34 968 29 16 78","","FARMACIA, C. San Andrés, 17, BAJO, 30005 Murcia, España","farmacias","Murcia",4.8,40
+"Farmacia Tomás","","+34 968 23 23 68","https://www.instagram.com/farmaciatomasmurcia/","Pl. de la Fuensanta, 3, 30008 Murcia, España","farmacias","Murcia",4.7,10
+"FARMACIA TOMÁS MOMPÓ","","+34 968 26 19 59","","Av. de la Fama, 4, 30003 Murcia, España","farmacias","Murcia",4.7,19
+"Farmacia Abad","","+34 968 21 27 15","https://www.facebook.com/#!/FarmaciaAbad","C. San Nicolás, 1, 30005 Murcia, España","farmacias","Murcia",4.7,28
+"Farmacia Vistafarma","","+34 690 92 91 19","https://www.vistafarma.com/","C. Pintor Almela Costa, s/n, 30011 Murcia, España","farmacias","Murcia",4.8,535
+"Farmacia Mª Encarnación García-Lax Espinosa","farmaciagarcialax@gmail.com","+34 968 26 38 65","https://farmaciagarcialax.com/","C. Auroros, 3, 30002 Murcia, España","farmacias","Murcia",5,11
+"Farmacia Ruiz-Seiquer. Parafamacia Murcia.","","+34 968 21 14 07","https://www.farmaciaruizseiquer.com/","C. San Bartolomé, 1, 30004 Murcia, España","farmacias","Murcia",4.2,30
+"Clínica Veterinaria Murcia Norte","info@veterinariomurcia.es","+34 662 93 85 57","https://www.veterinariomurcia.es/","Av. Francisco Jiménez Ruiz, 22, 30007 El Puntal, Murcia, España","veterinarios","Murcia",4.8,753
+"Medivet 24 Horas La Flota","","+34 968 24 61 22","https://www.medivetgroup.com/es-es/veterinario-urgencia-24-horas/24-horas-la-flota/?utm_source=google&utm_medium=organic&utm_campaign=google_lpm_la_flota","P.º Ing. Sebastian Feringan, 22, 30007 Murcia, España","veterinarios","Murcia",3.9,727
+"Clínica Veterinaria Amigos","hola@amigos.vet","+34 968 23 48 84","http://amigos.vet/","C/ Puerta Nueva, 10, 30001 Murcia, España","veterinarios","Murcia",4.7,329
+"JC1Veterinarios","jc1veterinarios@jc1veterinarios.es","+34 968 93 29 33","https://www.jc1veterinarios.es/","Av. Juan Carlos I, 48, 30007 Santiago y Zaraíche, Murcia, España","veterinarios","Murcia",4.5,520
+"Clínica Veterinaria El Jardín","","+34 722 24 70 20","","C. Sta. Teresa, 4, Bajo, 30005 Murcia, España","veterinarios","Murcia",4.9,122
+"Distrito Animal - Clínica Veterinaria","","+34 659 87 23 60","http://www.cvdistritoanimal.es/","C. Pasos de Santiago, Nº13-14, Bajo, 30005 Murcia, España","veterinarios","Murcia",4.6,126
+"Clínica veterinaria Zoo Centro","","+34 968 26 48 35","","Av. Cdad. de Almería, 133, 30010 Murcia, España","veterinarios","Murcia",4.8,274
+"Vetter - Hospital Veterinario 24h Murcia","vetter@vetterhospital.com","+34 868 04 88 13","https://www.vetterhospital.com/","Av. Severo Ochoa, 30100 Murcia, España","veterinarios","Murcia",4.6,163
+"Sibuya Urban Sushi Bar","hola@gruposibuya.com","+34 868 68 00 68","https://sibuyaurbansushibar.com/","Pl. Julián Romea, 6, 30001 Murcia, España","sushi","Murcia",4.7,2460
+"Nakama","","+34 691 87 85 31","","Pl. de las Flores, 12, 30004 Murcia, España","sushi","Murcia",4.9,387
+"San Roque Veterinarios","","+34 968 21 07 61","https://clinicaveterinaria.es/es-es/i/21436-san-roque-veterinarios/","Plaza Cruz Roja, numero 3, bajo, 30003 Murcia, España","veterinarios","Murcia",4.9,368
+"Sushi Nami","","+34 868 08 42 82","https://restaurante.covermanager.com/sushi-nami/","C. Miguel Hernández, 1, 30011 Murcia, España","sushi","Murcia",4.8,531
+"Hospital Clínico Veterinario - Universidad de Murcia","","+34 609 62 58 53","http://www.um.es/hcv/","Facultad Veterinaria, Edificio 16. Junto a, C. Campus Universitario, 30100 Murcia, España","veterinarios","Murcia",4.3,860
+"Antonio Albaladejo CLÍNICA VETERINARIA","","+34 968 24 51 91","","Av. Juan Carlos I, 14, Bajo, 30008 Murcia, España","veterinarios","Murcia",4.9,109
+"Kizami Sushi","kizamisushirestaurante@gmail.com","+34 623 23 59 58","http://www.kizamisushi.es/","C. Acropolis, 7, 30007 Santiago y Zaraíche, Murcia, España","sushi","Murcia",4.9,255
+"Sushi Dori","","+34 686 34 19 63","https://sushidorimurcia.com/","C. de Molina de Segura, 8, 30007 Murcia, España","sushi","Murcia",4.7,3536
+"Enso Sushi","carlos@acidamarketing.com","+34 968 90 66 11","http://www.ensosushi.com/","C. Sta. Teresa, 6, 30005 Murcia, España","sushi","Murcia",4.5,1528
+"Hospital de Urgencias Veterinarias Región de Murcia","huvemur@veterinariourgente.com","+34 630 83 20 20","http://www.veterinariourgente.com/","C. Chimeneas, 22, 30110 Churra, Murcia, España","veterinarios","Murcia",3.8,744
+"Sushisom Murcia","murcia@sushisom.net","+34 868 81 40 67","https://sushisom.net/sushisom-murcia","Av. Ciclista Mariano Rojas, 19, 30009 Murcia, España","sushi","Murcia",4.1,986
+"Yi sushi","","+34 613 48 72 56","","C. Mariano Girada, 27, 30005 Murcia, España","sushi","Murcia",4.7,464
+"Kokoro Gastro Sushi","info@kokorogastrosushi.com","+34 868 07 70 00","https://www.kokorogastrosushi.com/","Av. de la Libertad, 6, 30009 Murcia, España","sushi","Murcia",4.4,1362
+"Miss Sushi","murcia@misssushi.es","+34 968 92 31 31","https://misssushi.es/restaurantes/miss-sushi-murcia/","Pl. San Juan, 2, 30003 Murcia, España","sushi","Murcia",4.1,1336
+"La Clínica veterinaria de Manuela","manuvet21@gmail.com","+34 868 61 07 93","https://www.laclinicademanuela.com/","Pl. Aurora, 1, bajo, 30001 Murcia, España","veterinarios","Murcia",4.9,113
+"Ohayo sushi fusion","","+34 611 91 65 12","http://www.ohayosushifusionmurcia.com/","C. Trinidad, 4, 30003 Murcia, España","sushi","Murcia",4.9,114
+"Centro Veterinario Mimos","info@cvmimos.com","+34 968 40 50 37","https://cvmimos.com/","C. Juan Alarcón Borja, 3, 30007 Murcia, España","veterinarios","Murcia",4.8,169
+"Izakaya Okina","","+34 968 11 88 24","http://www.facebook.com/izakayaokina/","C. Andrés Baquero, 30001 Murcia, España","sushi","Murcia",4.6,1108
+"Xiximu Creative Cuisine Sushi","","+34 968 19 93 39","https://www.covermanager.com/reserve/module_restaurant/restaurante-xiximucreativecuisine/spanish","C. Virgen de la Esperanza, 5, 30008 Murcia, España","sushi","Murcia",4.8,182
+"Kasumi Sushi Buffet","","+34 868 70 38 26","","España, Murcia, C. Ruipérez, 邮政编码: 30005","sushi","Murcia",4.6,598
+"Bāru","nhola@baru.es","+34 722 52 33 39","https://baru.es/","C. Poeta Vicente Medina, 2, bajo izquierda, 30007 Murcia, España","sushi","Murcia",4.8,330
+"Green sushi","greensushi@hotmail.es","+34 968 96 73 64","http://www.greensushi.es/","C. Merced, 3, 30001 Murcia, España","sushi","Murcia",4.4,920
+"Kappou Makoto","","+34 627 65 67 67","","C. Historiador Juan Torres Fontes, 20, 30011 Murcia, España","sushi","Murcia",4.8,372
+"Natsu","","+34 628 64 64 40","http://www.instagram.com/natsu.es","C. Luis Braille, 1, 30005 Murcia, España","sushi","Murcia",4.8,2192
+"Clínica Veterinaria Guadalupe","","+34 868 95 72 78","http://www.cvguaudalupe.com/","Calle Ntra. Sra. de Guadalupe, 74, 30107 Guadalupe, Murcia, España","veterinarios","Murcia",4.8,162
+"Clínica Veterinaria Salzillo","","+34 968 22 29 50","https://www.clinicaveterinariasalzillo.com/","C. Cartagena, 15, 30002 Murcia, España","veterinarios","Murcia",4.8,192
+"Clínica Veterinaria Santiago el Mayor","","+34 968 35 30 14","","C. Antonio y Manuel Martinez, 22, 30012 Murcia, España","veterinarios","Murcia",4.7,193
+"China House Co.","eventos@orenesgrupo.com","+34 680 87 76 40","https://mercadodecorreos.com/carta/china-food/","C. Pintor Villacis, 3, 30003 Murcia, España","comida china","Murcia",4.9,286
+"Restaurante Chino Internacional","","+34 968 34 24 16","","C. Miguel Hernández, 1, 30011 Murcia, España","comida china","Murcia",4.3,802
+"Restaurante Wen Zhou","","+34 868 12 30 80","","C. Prta de Orihuela, 9, 30003 Murcia, España","comida china","Murcia",4,1156
+"Restaurante Jardín Chino","","+34 968 28 59 37","https://www.instagram.com/jardinchino/?hl=es","Av. Miguel de Cervantes, 56, 30009 Murcia, España","comida china","Murcia",4.2,1016
+"Clínica Veterinaria Exóticos Pluto","info@exoticospluto.com","+34 968 28 31 13","http://www.exoticospluto.com/","Av. Miguel de Cervantes, 23, 30009 Murcia, España","veterinarios","Murcia",4.3,431
+"La Casa de Xu","info@turismoregiondemurcia.es","+34 968 27 26 47","https://www.murciaturistica.es/es/restaurante/la-casa-de-xu-3873/","Rda. de Levante, 8, 30008 Murcia, España","comida china","Murcia",4,269
+"Casa Yan","zouxuanxuan@me.com","+34 868 04 62 97","https://casayan.es/","C. Vara de Rey, 11, 30001 Murcia, España","comida china","Murcia",4.6,205
+"Clinica Veterinaria Floridablanca","","+34 968 34 39 80","http://www.floridablancaveterinarios.com/","Av. Juan Antonio Perea, 11, 30002 Murcia, España","veterinarios","Murcia",4.9,75
+"Gran Mundo","granmundomur@gmail.com","+34 968 22 04 01","https://drive.google.com/drive/folders/1gMTbIjz-qO981bCPOv_GkRPAGMRtO8PP","Av. Don Juan de Borbon, 36, 30007 Santiago y Zaraíche, Murcia, España","comida china","Murcia",4,503
+"Casa De Lai","","+34 968 23 89 23","","C. Azarbe del Papel, n3, 30007 Santiago y Zaraíche, Murcia, España","comida china","Murcia",4.2,458
+"Centro veterinario especializado ""El Malecón""","","+34 627 85 45 22","http://www.elmaleconcve.com/","C. Pintor Sobejano, 16, 30004 Murcia, España","veterinarios","Murcia",4.8,48
+"Restaurante chino auténtico Anchong","restauranteanchong@gmail.com","+34 641 18 09 31","https://restauranteanchong.es/","ZigZag, Av. Juan Carlos I, S/N, Planta 1, 30008 Murcia, España","comida china","Murcia",5,18
+"Restaurante Chino Bambu Garden","","+34 968 22 33 63","http://www.bambugarden.net/","C. Cánovas del Castillo, 24, 30003 Murcia, España","comida china","Murcia",3.6,300
+"Restaurante Kyushu","","+34 868 04 92 49","","P.º de Florencia, 41, 30010 San Benito - Patiño, Murcia, España","comida china","Murcia",4.5,371
+"Lanzhou ramen china","","+34 868 61 11 71","https://lanzhouramen.es/","España, Murcia, MEDINACELI, Pl. San Juan, 邮政编码: 30003","comida china","Murcia",4.8,582
+"Restaurante Chino La Corona","","+34 968 29 88 08","http://www.restaurantechinolacorona.es/","Calle Isaac Albéniz, Pl. del Rocío, 11, BAJO, 30009 Agres, Murcia, España","comida china","Murcia",3.7,139
+"Restaurante Chino Song","","+34 868 04 51 32","https://carta.alihuaren.com/carta-vip/9420/","Av. de la Region Murciana, 101, 30011 Murcia, España","comida china","Murcia",4.5,111
+"China town","","+34 968 24 75 17","","Rda. de Levante, 6, 30008 Murcia, España","comida china","Murcia",3.8,445
+"Gran Dragón Hot Pot","","+34 630 57 15 97","https://gran-dragon-hot-pot-restaurant.makro.rest/?lang=es","Av. Juan Carlos I, S/N, 30008 Murcia, España","comida china","Murcia",4.6,207
+"Jardín Chino","","+34 968 35 86 00","http://www.murcia.es/","P.º de Garay, S/N, 30003 Murcia, España","comida china","Murcia",4.1,546
+"Asia Jufu","","+34 868 63 03 88","","C. Mayor, 38, 30006 Puente Tocinos, Murcia, España","comida china","Murcia",4.6,223
+"Restaurante Chino Fu-Lin","","+34 968 24 92 99","","C. Mayor, 71, 30006 Puente Tocinos, Murcia, España","comida china","Murcia",4.3,670
+"Restaurante El Chino Latino","","+34 868 04 51 41","","Ctra. Beniaján, 4b, 30011 Los Dolores, Murcia, España","comida china","Murcia",4,278
+"Restaurante La Tagliatella","","+34 968 22 39 00","https://www.latagliatella.es/restaurantes/murcia/cjulian-romea-murcia?utm_source=gmb&utm_medium=organic&utm_campaign=gmb&utm_content=web","Pl. Julián Romea, 3, 30001 Murcia, España","comida italiana","Murcia",4.2,1691
+"La Piazzetta di San Juan","","+34 868 62 07 06","https://smartmenu.agorapos.com/?id=u9bur36p&workplaceId=zbvjxiyo#/","Pl. San Juan, 6, 30003 Murcia, España","comida italiana","Murcia",4.4,433
+"Arte Bianca","","+34 614 28 96 89","","C. Plano de San Francisco, s/n, 30004 Murcia, España","comida italiana","Murcia",4.8,149
+"Pizzería Vianco","","+34 968 86 48 06","http://www.pizzeriavianco.com/","C. Navegante Macias del Poyo, 30007 Murcia, España","comida italiana","Murcia",4.3,748
+"La Mafia se sienta a la mesa","info@lamafia.es","+34 968 06 77 88","https://lamafia.es/restaurantes/murcia-thader/","Centro Comercial Thader, 30110 Churra, Murcia, España","comida italiana","Murcia",4.7,938
+"Pizzería El Italiano","","+34 968 90 04 13","http://facebook.com/pizzaparallevar","C. Torreta, 4, 30003 Murcia, España","comida italiana","Murcia",4.8,77
+"Ortopedia Florencio","","+34 868 91 55 58","","C. Torre de Romo, 13, 30002 Murcia, España","ortopedias","Murcia",4.9,183
+"ORTOPEDIA INFANTE en MURCIA CENTRO. ONLINE 24H Homologado para dispensación de productos subvencionados por el SMS","","+34 868 68 21 11","https://www.ortopediainfante.es/","C. Miguel Hernández, 7, 30011 Murcia, España","ortopedias","Murcia",4.9,13
+"La Tía Juana Murcia","dpo-google@google.com","+34 868 48 00 26","https://latiajuanamx.com/reservas/","Pl. Preciosa, 4, 30008 Murcia, España","comida mexicana","Murcia",4.4,3485
+"Ortopedia Precisión","","+34 968 26 70 42","http://www.ortopediaprecision.com/","C. Floridablanca, 9, 30002 Murcia, España","ortopedias","Murcia",4.1,49
+"Ortopedia Profeet","","+34 696 03 98 22","","C. San Martín de Porres, 15, 30001 Murcia, España","ortopedias","Murcia",5,25
+"Ortopedia Fuensanta","","+34 968 24 45 41","http://www.ortopediafuensanta.es/","Ronda Norte, 14, 30009 Murcia, España","ortopedias","Murcia",4,36
+"Ortopedia La Fama","","+34 968 34 26 58","https://www.ortopedialafamamurcia.es/","Av. de la Fama, 10, 30003 Murcia, España","ortopedias","Murcia",4.5,21
+"Ortopedia Vista Alegre","","+34 868 45 16 26","https://www.ortopediavistaalegre.net/","junto a Hospital Morales Meseguer, C. Ministro Diego Clemencin, 6, 30007 Murcia, España","ortopedias","Murcia",4.3,30
+"ORTOPEDIA TECNICA AZORIN MURCIA","","+34 868 91 78 18","","C. Abenarabi, 32, 30007 Murcia, España","ortopedias","Murcia",4.4,7
+"ORTOPEDIA SANTA EULALIA","info@ortopediasantaeulalia.es","+34 601 49 17 59","http://ortopediasantaeulalia.es/","Pl. Sta. Eulalia, 30003 Murcia, España","ortopedias","Murcia",5,6
+"Vialta Ortopedia y Material Médico. Homologado para dispensación de productos subvencionados por el SMS","","+34 968 28 72 86","https://www.vialta.es/","Av. Príncipe de Asturias, 24, 30007 Murcia, España","ortopedias","Murcia",4.6,60
+"La MexTiza","","","https://www.lamextiza.com/","Calle Rbla., 4, 30001 Murcia, España","comida mexicana","Murcia",4.7,268
+"1000 Central Médica","1000centralmedica@1000central.es","+34 968 24 51 87","https://suministrosmedicosmurcia.es/","Pl. Circular, 14, 30008 Murcia, España","ortopedias","Murcia",5,8
+"El Álamo","","+34 968 90 30 14","https://www.facebook.com/El-Alamo-bar-639169909477802/","C. Eulogio Soriano, 13, 30001 Murcia, España","comida mexicana","Murcia",4.7,637
+"Ortomol - Ortopedia Molinense","","+34 968 61 33 61","http://www.ortomol.com/","C. Caridad, 7, 30500 Molina de Segura, Murcia, España","ortopedias","Murcia",4.7,13
+"Farmacia Ortopedia Mª Dolores Jiménez Inglés","","+34 968 21 11 60","","Avenida Río Segura, Barrio del Carmen, 9, 30002 Murcia, España","ortopedias","Murcia",4.4,8
+"Takos Zig Zag","","+34 968 51 82 88","https://instagram.com/taqueria_takos?igshid=YmMyMTA2M2Y=","Centro de ocio Zig Zag, Av. Juan Carlos I, s/n, 30008 Murcia, España","comida mexicana","Murcia",4.4,562
+"Tacos y Chelas","","+34 699 84 07 45","","Plaza Europa, C. Sta. Quiteria, 8, 30001 Murcia, España","comida mexicana","Murcia",4.1,355
+"No es tamal","","+34 968 01 52 53","","C. Historiador Juan Torres Fontes, 4, 30011 Murcia, España","comida mexicana","Murcia",4.6,209
+"La Tia Juana Murcia Ronda Sur","dpo-google@google.com","+34 641 87 38 38","https://latiajuanamx.com/murcia-ronda-sur/","Paseo de Florencia, Rda. Sur, 38, 30010 Murcia, España","comida mexicana","Murcia",4.3,110
+"Cantina Mariachi","","+34 968 51 78 07","https://www.cantinamariachi.com/","Centro Comercial Nueva Condomina, Carr. de Cadiz, Km 760, 30110 Churra, Murcia, España","comida mexicana","Murcia",4,1525
+"Urban Burrito Bar","","+34 968 02 27 07","http://www.urbanburritobar.com/","C. Mariano Ruiz Funes, 5, 30007 Murcia, España","comida mexicana","Murcia",4.4,1466
+"Kebabish","","+34 968 86 07 86","","Ronda Norte, 18, 30009 Murcia, España","kebabs","Murcia",4.9,494
+"Kebab Europa","","+34 868 08 42 61","https://kebabeuropa.es/","C. Saavedra Fajardo, 2, 30001 Murcia, España","kebabs","Murcia",4.8,934
+"King Pak Doner Kebab","","+34 968 92 57 82","","Av. Reyes Católicos, 21, Ranero, 30009 Murcia, España","kebabs","Murcia",4.6,291
+"Kebab Sunderbon","","+34 643 85 57 50","","C. Buenos Aires, 8, 30011 Murcia, España","kebabs","Murcia",4.5,357
+"Clínica DRM Murcia · Logopedia · Psicología","informacion@clinicadrm.es","+34 868 12 77 33","http://www.clinicadrm.es/","P.º la Fuente, 6, 30007 Murcia, España","logopedas","Murcia",4.9,45
+"Kebab Gurmé","","+34 868 12 49 40","https://kebabgurme.com/","C. Pintor Pedro Flores, 16, 30011 Murcia, España","kebabs","Murcia",4.6,130
+"Clinica de logopedia, psicología y Neuropsicologia.Carmen María Sánchez Nicolás.ABECE.","","+34 968 90 97 78","https://www.logopedasmurciaabece.es/","Av. General Primo de Rivera, 12, 30008 Murcia, España","logopedas","Murcia",4.5,42
+"Zana pizzería kebab","","+34 968 21 14 57","http://www.zanakebab.es/","C. Alfaro, 6, 30001 Murcia, España","kebabs","Murcia",4.1,1002
+"Palacio Del Kebab","","+34 634 05 73 96","","Pl. Balsas, 3, 30001 Murcia, España","kebabs","Murcia",4,527
+"Kebaboom","","+34 624 58 82 94","","C. San Lorenzo, 7, 30001 Murcia, España","kebabs","Murcia",4.7,105
+"Ach@s kebab","","+34 631 39 26 04","","C. Estrella, 1, 30003 Murcia, España","kebabs","Murcia",4.7,213
+"Hablando Logopedia","info@hablandologopedas.com","+34 692 77 78 44","http://www.hablandologopedas.com/","Av. de Santiago, 26, bajo, 30007 Murcia, España","logopedas","Murcia",4.9,19
+"Kebab Rey Murcia.","","+34 632 09 01 28","https://verzonalaguia.es/kebab-rey-doner-kebabel-autentico/","C. Vara de Rey, 6, 30001 Murcia, España","kebabs","Murcia",4.3,184
+"Akses Kebab","","+34 868 91 56 44","","P.º Marqués de Corvera, 40, 30002 Murcia, España","kebabs","Murcia",4.5,516
+"Kebab la flota","","+34 968 60 58 83","","C. Navegante Macías del Poyo, Avenida reina victoria, 2, 30008 Murcia, España","kebabs","Murcia",4.7,105
+"Kebab crunchy","","+34 968 24 27 90","","C. Trinidad, 7, 30003 Murcia, España","kebabs","Murcia",4.7,33
+"Kebab","","+34 868 61 04 19","","C. Torre de Romo, 15c, 30002 Murcia, España","kebabs","Murcia",4.4,226
+"Centro Alodis","info@centroalodis.es","+34 604 18 79 09","https://centroalodis.es/","P.º Acacias, Urbanización Los Rectores, 1A, 30100 Murcia, España","logopedas","Murcia",5,15
+"Colegio Profesional de Logopedas de la Región de Murcia","","+34 968 29 75 58","https://logopedasmurcia.es/home","Av. Miguel de Cervantes, 45, 30009 Murcia, España","logopedas","Murcia",3.8,6
+"Original DKB","info@originaldkb.com","+34 699 50 26 63","http://originaldkb.com/","Calle De Áposteles, 22, 30001 Murcia, España","kebabs","Murcia",4.2,1295
+"A Fuego Lento Kebab","","+34 868 08 42 40","","Av. Primero de Mayo, 2, 30012 San Benito - Progreso, Murcia, España","kebabs","Murcia",4.4,73
+"Turkish","","+34 868 08 42 62","","Pl. Circular, 13, 30008 Murcia, España","kebabs","Murcia",4,233
+"El Sultán ( KEBABS - TACOS - HAMBURGUESAS )","","+34 868 32 07 39","https://gruposultan.es/","C. Gardenias, 2, 30009 Murcia, España","kebabs","Murcia",4.5,137
+"The Boss kebab","","+34 602 02 83 65","","C. Obispo Frutos, 12c, 30003 Murcia, España","kebabs","Murcia",4.3,77
+"Doner Kebab Ronda Sur","","+34 968 92 74 90","","P.º Pedáneo José Marín Serna, 23, 30010 Murcia, España","kebabs","Murcia",4,404
+"Los pintxos de Lucía","","+34 868 07 63 31","","Calle San Ignacio de Loyola, 1, 30008 Murcia, España","tapas","Murcia",4.4,522
+"Tapeo Bar Azul","","+34 868 11 00 12","https://www.tapeobarazul.com/","C. Arenal, 2, 30011 Murcia, España","tapas","Murcia",4,969
+"Rosa Contreras Logopedia Clínica, Escolar y Foniatría","rosalogocent@gmail.com","+34 626 03 91 98","http://logopediarosacontreras.es/logopeda-rosa-contreras","Junto al Teatro Romea, C. José Antonio Ponzoa, 3, 1ºizda, 30001 Murcia, España","logopedas","Murcia",4.9,39
+"Las tapas murcia","","+34 601 92 22 14","https://www.instagram.com/lastapas.murcia","Calle Joaquín Báguena, 10, 30003 Murcia, España","tapas","Murcia",4.6,27
+"El museo de la tapa","","+34 633 55 99 07","","Calle Joaquín Báguena, 8, 30003 Murcia, España","tapas","Murcia",4.2,996
+"El Jardín","","+34 633 44 11 12","","C. Teniente Gral. Gutierrez Mellado, 9, 30008 Murcia, España","tapas","Murcia",4.5,337
+"Bar Pepe de los Jamones","","+34 968 25 18 16","https://pepedelosjamones.com/","P.º Marqués de Corvera, 64, 30002 Murcia, España","tapas","Murcia",4.6,1770
+"Pura Tapa","","+34 642 15 41 30","","C. Pío XII, 30012 Murcia, España","tapas","Murcia",4.6,186
+"Pepico del Tío Ginés","","+34 968 21 12 09","","C. Ruipérez, 4, 30005 Murcia, España","tapas","Murcia",4.3,960
+"Shooter's Lab","","+34 692 06 78 41","https://www.facebook.com/Shooterslab/","C. Victorio, 12, 30003 Murcia, España","cervecerías","Murcia",4.7,426
+"La cueva de la cerveza","","+34 600 38 92 29","","Pl. Sta. Ana, 3, 30008 Murcia, España","cervecerías","Murcia",4.2,715
+"La Porchá","","+34 646 08 05 08","https://facebook.com/laporchamurcia","C. Vara de Rey, 10, 30001 Murcia, España","cervecerías","Murcia",4.2,661
+"Saraena - Logopedia · Psicología · + Salud","hola@clinicasaraena.com","+34 968 11 28 64","https://clinicasaraena.com/","C. Abenarabi, 28, 1º puerta 4, 30008 Murcia, España","logopedas","Murcia",4.8,12
+"CLÍNICA OTOFON: Logopedia y Foniatría","","+34 968 34 18 08","","Av. de la Libertad, 8, 13G, 30009 Murcia, España","logopedas","Murcia",4.9,15
+"Gabinete de Logopedia Verbum","","+34 968 28 11 79","http://gabineteverbum.com/","Ronda Norte, 27, 3ºD, 30009 Murcia, España","logopedas","Murcia",5,12
+"Nuoca - Logopedas en Murcia - Especialista en audición y lenguaje y Pedagogía Terapéutica (PT)","","+34 646 27 86 93","https://especialistaenaudicionylenguaje.es/","C. Galileo, 1, 30008 Murcia, España","logopedas","Murcia",5,11
+"Cervezas Yakka","","+34 622 02 17 54","https://www.cervezasyakka.com/","Carretera Alicante Poligono Peñamar, Naves 6 y 7, 30007 Murcia, España","cervecerías","Murcia",4.4,1465
+"Hablando Logopedia Infante","info@hablandologopedas.com","+34 692 77 78 44","http://hablandologopedas.com/","Av. San Juan de la Cruz, 3, 30011 Murcia, España","logopedas","Murcia",5,8
+"Cervemur","","+34 968 34 69 98","http://www.cervemur.com/","Carril de la Condesa, 30, 30010 San Benito - Patiño, Murcia, España","cervecerías","Murcia",4.2,1178
+"CerveTour Murcia","","+34 968 20 48 31","https://www.cervetour.com/","Av. Casillas de Coria, 12, 30007 Murcia, España","cervecerías","Murcia",4,570
+"Cervecería Cervemur","","+34 608 58 36 70","http://www.cervemur.com/","Av. de Sta. Catalina, 100, 30152 Aljucer, Murcia, España","cervecerías","Murcia",4.3,2038
+"Ana Beloqui Logopeda","","+34 717 71 55 15","https://anabeloquilogopeda.com/","","logopedas","Murcia",5,36
+"Cervecería Tira la caña","reservas@cerveceriatiralacana.com","+34 968 93 52 66","https://cerveceriatiralacana.com/","Av. Reina Sofía, 3, 30107 Guadalupe, Murcia, España","cervecerías","Murcia",4.3,3516
+"Trigo Limpio “Un mundo de cervezas”","","+34 651 45 53 71","","C. Periodista Leopoldo Ayuso, 1, 30009 Murcia, España","cervecerías","Murcia",4.2,488
+"Cervecería Almudí","","+34 616 79 74 00","https://m.facebook.com/pages/category/Brewery/CERVECER%C3%8DA-ALMUD%C3%8D-414395388615179/?locale2=es_ES","C. Arco de Verónicas, 1, 30004 Murcia, España","cervecerías","Murcia",4.3,203
+"Cervecería Café - Bar Hermanos Romero","","","","Rda. de Garay, 16, 1ºB, 30003 Murcia, España","cervecerías","Murcia",4.6,46
+"Bar Cervecería The New Pakillo's","","+34 868 62 24 94","","Av. de los Pinos, N° 3, 30009 Murcia, España","cervecerías","Murcia",3.9,457
+"Gabinete de logopedia Letras","","+34 699 40 88 30","https://es-es.facebook.com/letrasgabinete/","C. Jesús Esteban, 8, 30009 Murcia, España","logopedas","Murcia",4.8,6
+"Cervecería La Gusa","","+34 968 92 88 28","https://instagram.com/cerveceria_la_gusa?igshid=ZDdkNTZiNTM=","Plaza del Obispo Frutos, 1, 30003 Murcia, España","cervecerías","Murcia",3.9,219
+"El Tanque De Oro","","+34 639 89 22 17","http://www.facebook.com/eltanquedeoro","Pl. Sardoy, 4, 30003 Murcia, España","cervecerías","Murcia",4,362
+"Íberos Cafebar","","+34 687 74 16 71","","C. San Martín de Porres, 1, 30001 Murcia, España","cervecerías","Murcia",4.4,1592
+"Cervecería Charrate","","+34 634 42 68 54","https://www.facebook.com/barcharrate/","C. Juan de la Cierva, 4, 30004 Murcia, España","cervecerías","Murcia",4.3,158
+"Cervecería Luigi","","+34 660 23 49 02","","Pl. San Pio X, 1, 30010 Murcia, España","cervecerías","Murcia",4.5,81
+"Cervecerías La Sureña y 100 Montaditos","","","http://spain.100montaditos.com/","Pl. de Santo Domingo, 15, 30008 Murcia, España","cervecerías","Murcia",3.7,1532
+"Alter Ego","","+34 968 90 99 50","https://www.fourvenues.com/es/alter-ego/eventos","Cjón. de Burruezo, 3, 30005 Murcia, España","pubs","Murcia",3.5,2777
+"Kitsch","","","","C. Andrés Baquero, 5, 30001 Murcia, España","pubs","Murcia",4.1,565
+"Centro Pilar Sesma: Clínica de logopedia, psicología y pedagogía.","","+34 968 34 45 87","http://www.centropilarsesma.com/","C. Historiador Juan Torres Fontes, 17, 1ºB, 30011 Murcia, España","logopedas","Murcia",5,6
+"Logo Plus - Logopedia y Psicología","","+34 722 81 16 63","http://www.clinicalogoplus.com/","C. Juan Nicolás Mateo, 9, 30006 Murcia, España","logopedas","Murcia",5,17
+"Chill Out Music - Murcia","info@chilloutmurcia.es","+34 628 07 88 67","https://chilloutmurcia.es/","C. Trinidad, 12, 30003 Murcia, España","pubs","Murcia",4.4,179
+"Plan 9","","","","C. Trinidad, 12, 30003 Murcia, España","pubs","Murcia",4.5,583
+"Corleone","","+34 649 26 74 29","","C. San Lorenzo, 6, 30001 Murcia, España","pubs","Murcia",3.9,631
+"Fitzpatrick's irish pub Murcia","","+34 968 21 35 34","","C. Infantes, 1, 30001 Murcia, España","pubs","Murcia",4.2,1118
+"PsicoLogopedia Murcia","alberto@psicologopediamurcia.com","+34 611 55 59 37","http://www.psicologopediamurcia.com/","C. Pintor Pedro Flores, 2, 30002 Murcia, España","logopedas","Murcia",4.5,10
+"Taboo Bar Murcia","","+34 668 84 72 72","https://instagram.com/taboobarmurcia","Pl. Balsas, 2, 30001 Murcia, España","pubs","Murcia",4.4,176
+"Hablando Logopedia San Antón","info@hablandologopedas.com","+34 692 77 78 44","http://www.hablandologopedas.com/","C. Huerto Manu, 7, 30009 Murcia, España","logopedas","Murcia",5,7
+"El Bosque Animado","","+34 963 69 09 02","http://www.elbosqueanimado.es/","8, C. Soledad, 6, 30003 Murcia, España","pubs","Murcia",4.2,1488
+"PUB TEMPE","","+34 640 25 33 05","https://www.pubtempe.es/","C. Victorio, 9, 30003 Murcia, España","pubs","Murcia",4.2,506
+"BadulaKe Bar Murcia","","+34 633 70 92 92","http://www.facebook.com/badulakebar","Calle San Ignacio de Loyola, 4, 30008 Murcia, España","pubs","Murcia",3.7,502
+"Sala Revolver","","+34 633 70 92 92","","C. Victorio, 36, 30003 Murcia, España","pubs","Murcia",4.3,2191
+"The Black Crow Irish bar","","","https://www.instagram.com/the_black_crow_murcia?igsh=MTMwM21jMzBxbG53dg%3D%3D&utm_source=qr","C. Bartolomé Pérez Casas, 4, 30008 Murcia, España","pubs","Murcia",4,233
+"One Murcia","","+34 611 75 55 77","https://www.facebook.com/OneMurcia","Av. Juan Carlos I, 51, 30100 Murcia, España","pubs","Murcia",3.8,2115
+"Parlamento Bar Murcia","","+34 968 21 91 46","https://www.facebook.com/elparlamento.barmurcia","Calle Arquitecto Pedro Cerda, 30001 Murcia, España","pubs","Murcia",4.4,266
+"Instituto Terapéutico Integral","","+34 615 77 91 59","http://www.institutoterapeuticointegral.com/","2°A, C. Isaac Albéniz, 30009 Murcia, España","logopedas","Murcia",5,30
+"Contracorriente Pub","","","https://www.facebook.com/Contracorriente-pub-111475448137366","C. Sta. Quiteria, 8, 30001 Murcia, España","pubs","Murcia",4.1,477
+"Bizz'Art","","+34 633 70 92 92","https://www.facebook.com/BizzartMurcia/","C. Trinidad, 10, 30003 Murcia, España","pubs","Murcia",4.2,1301
+"Plaza 3","","+34 667 86 84 20","https://www.instagram.com/plaza3/","Pl. Condestable, 3, 30009 Murcia, España","pubs","Murcia",3.5,2179
+"Lenguaje y Emociones (Psicología y Logopedia)","info@lenguajeyemociones.com","+34 696 41 37 79","https://www.lenguajeyemociones.com/","C. Floridablanca, n° 70, 2° B, 30002 Murcia, España","logopedas","Murcia",5,2
+"Gabinete De Logopedia Y Foniatría De La Región De Murcia","","+34 868 94 44 44","","Av. Río Segura, 2 ENTRESUELO, B, 30002 Murcia, España","logopedas","Murcia",0,0
+"Chambi","","+34 868 93 10 08","/url?q=http://www.chambi.net/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIHSgP&usg=AOvVaw2PoLMm1Nf4KOFbIZTbDv07","Gran Vía Alfonso X el Sabio, 2, 30008 Murcia, España","heladerías","Murcia",4.6,1293
+"Heladería Temperato Felice Gelato","","+34 968 92 15 73","/url?q=http://temperato.es/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gITCgP&usg=AOvVaw1LfQ8heHGDrRI6wCLX-l5J","Pl. Sta. Catalina, 4, 30004 Murcia, España","heladerías","Murcia",4.3,1078
+"Borgonesse heladería","","","/url?q=http://www.borgonesse.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIaygL&usg=AOvVaw3unELh_K3OXXR-ckb05Hka","C. Escultor Nicolás Salzillo, 3, 30001 Murcia, España","heladerías","Murcia",4.3,386
+"Heladería Crepería Snoopy Murcia","","+34 633 37 60 63","/url?q=https://www.just-eat.es/restaurants-heladeriacreperiasnoopymurcia/reviews/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIigEoDw&usg=AOvVaw0A9vBkRGaRwIfBwStlJtap","Pl. Artesanos del Belen, 5b, 30006 Murcia, España","heladerías","Murcia",4.7,1607
+"Martonela","","","/url?q=https://www.martonela.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIsgEoCw&usg=AOvVaw3rIYZYgmS4rsGw-NlPArHg","Calle Alfonso X el sabio, 30008 Murcia, España","heladerías","Murcia",3.9,1011
+"Arturo Molina estilistas - Goa Organics, Keratina y Coloración","estilistas@arturomolina.es","+34 630 75 45 84","http://www.arturomolina.es/","Calle Actor Francisco Rabal, 2, 30009 Murcia, España","peluquerías","Murcia",4.7,287
+"Tony Plaza Estilistas","","+34 868 07 95 62","http://www.tonyplaza.es/","Av. de la Constitución, 10, Bajo, 30008 Murcia, España","peluquerías","Murcia",4.8,151
+"Alegría Peluqueros","","+34 968 21 02 41","https://alegriapeluqueros.com/","Gran Vía del Escultor Francisco Salzillo, 1, 30004 Murcia, España","peluquerías","Murcia",4.6,267
+"Hugo Nicolás Peluqueros","","+34 968 90 27 28","","C. Abenarabi, 9, 30007 Murcia, España","peluquerías","Murcia",4.7,118
+"Helados Sirvent Gisbert. Yoggu!","","+34 968 29 47 95","/url?q=https://helados-sirvent-gisbert-yoggu.eatbu.com/%3Flang%3Des&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gI3AEoDw&usg=AOvVaw11hD0DG87HHPbcydxViwuT","Ronda Norte, 4, 30009 Murcia, España","heladerías","Murcia",4.3,199
+"Salonissimo peluquería","","+34 968 71 50 77","http://www.salonissimo.es/","C. Polo de Medina, 7, 30004 Murcia, España","peluquerías","Murcia",4.7,114
+"José Escribano Peluqueros","","+34 968 23 12 53","","C. Sierra de Ascoy, 2, 30008 Murcia, España","peluquerías","Murcia",4.8,143
+"Txema Estilistas","","+34 968 23 77 71","","C. Obispo Frutos, 2, 30003 Murcia, España","peluquerías","Murcia",4.8,93
+"Salón de Belleza Natalia's Secret","","+34 722 86 79 37","https://instagram.com/natalias_secret?igshid=u9s4vwlmwp4p","Paseo de Sta. Águeda, 1, 30007 Murcia, España","peluquerías","Murcia",4.9,155
+"Peluquería de caballeros Garre","","+34 968 24 57 95","","C. Batalla de las Flores, bajo, 30008 Murcia, España","peluquerías","Murcia",4.9,97
+"Martonela","","","/url?q=https://www.martonela.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gI9wEoCw&usg=AOvVaw0rEDbAww_B54Wmq-D7wGZ_","Pl. de Santo Domingo, 11, 30008 Murcia, España","heladerías","Murcia",3.9,492
+"Nj Estilistas - Peluquería en Murcia","","+34 629 36 51 42","http://www.njestilistas.com/","C. Periodista Leopoldo Ayuso, 5, 30009 Murcia, España","peluquerías","Murcia",4.7,75
+"clakette peluqueros","","+34 968 90 71 20","","C. Azarbe del Papel, 8, Bajo, 30007 Murcia, España","peluquerías","Murcia",4.8,143
+"Francisco Gallego Peluqueros","","+34 968 23 98 47","https://instagram.com/franciscogallegoestilistas?igshid=OGQ5ZDc2ODk2ZA==%20%20https://www.facebook.com/Francisco-Gallego-Peluqueros-301486589888401/","C. Antonio de Ulloa, 2, Bajo. La Flota, 30007 Murcia, España","peluquerías","Murcia",4.8,136
+"Adamo Estilistas","","+34 968 28 60 28","","C. Miguel de Unamuno, 1, 30009 Murcia, España","peluquerías","Murcia",4.6,181
+"Cheis Estilistas Unisex","","+34 654 09 45 37","","C. Auroros, 1, local B, 30002 Murcia, España","peluquerías","Murcia",5,181
+"Carlos Peluqueros","","+34 679 95 64 92","","C. Periodista Antonio Herrero, Bajo, 30007 Murcia, España","peluquerías","Murcia",4.8,131
+"La Peluquería de Carlos","","+34 648 72 64 96","https://www.instagram.com/lapeluqueriadecarlos/","Calle Sgto. Ángel Tornel, 2b, 30009 Murcia, España","peluquerías","Murcia",4.8,328
+"STUDIO 46 ESTILISTAS","","+34 611 43 28 76","","Calle Dr. Alonso de Espejo, 30007 Murcia, España","peluquerías","Murcia",4.9,106
+"Capini","","+34 968 96 70 71","https://www.capini.es/","Av. Juan Carlos I, 54, bajo, 30007 Santiago y Zaraíche, Murcia, España","peluquerías","Murcia",4.7,142
+"Heladería Crepería Snoopy ZigZag","","+34 868 71 14 08","/url?q=https://cartaqrdigital.estamosconello.com/carta/366/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIlQIoDw&usg=AOvVaw3T9BWsThGHh7v1avgQfNOE","Av. Juan Carlos I, s/n, 30100 Murcia, España","heladerías","Murcia",4.3,400
+"Spejos Murcia","spejosmurcia@gmail.com","+34 968 22 25 75","http://www.spejosmurcia.es/","Pl. de Sta. Isabel, 30004 Murcia, España","peluquerías","Murcia",4.4,209
+"Peluquería Latina","","+34 631 20 83 60","","C. Santarén, 1, 30002 Murcia, España","peluquerías","Murcia",4.9,58
+"Sirvent - Gran Vía","","+34 692 62 57 24","/url?q=http://sirventmiralles.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIzAIoDw&usg=AOvVaw1sTRirYRd9_X9ZDUxTf28d","Gran Vía del Escultor Francisco Salzillo, 24, 30001 Murcia, España","heladerías","Murcia",3.1,600
+"Sirvent Oro","","+34 968 23 03 43","/url?q=https://sirventoro.shop/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gI7wIoDw&usg=AOvVaw2SGpzXXC7EeojpeL7bP0cl","Gran Vía Alfonso X el Sabio, 5, 30008 Murcia, España","heladerías","Murcia",3.6,808
+"Cafeteria heladeria Capirote","","+34 639 86 20 46","/url?q=https://www.facebook.com/profile.php%3Fid%3D61561779339082&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gImgMoDw&usg=AOvVaw1BsINrAzQTo0pyv0ARj57H","C. Juan García Abellán, 11, 30007 Murcia, España","heladerías","Murcia",4.8,54
+"Lady Cut Barber","","+34 968 29 36 45","/url?q=http://www.ladycutbarber.com/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gIHCgP&usg=AOvVaw20vhqnQzR4J9MPSQPuVb80","C. Antonio Machado, 30009 Murcia, España","barberías","Murcia",4.9,152
+"smöoy Murcia - Santo Domingo","","+34 968 22 23 62","/url?q=http://smooy.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIvAMoDw&usg=AOvVaw2tvrZJpvIoo7JY3_u5qSfn","Pl. de Santo Domingo, 10, 30008 Murcia, España","heladerías","Murcia",4,602
+"Barbershop Javi Garcia","","+34 608 23 67 02","/url?q=https://barbershopjavigarcia.com/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gIOSgP&usg=AOvVaw3AvSkBQo9KyBBWqYqN8PRb","C/ Puerta Nueva, 8, 30001 Murcia, España","barberías","Murcia",4.6,574
+"La barberia D'Garcia","","+34 603 80 97 52","","Barrio del carmen, 30002 Murcia, España","barberías","Murcia",4.9,104
+"llaollao","","","/url?q=https://www.llaollaoweb.com/es/tienda/murcia-santa-isabel/%3Futm_campaign%3Dgoogle-local%26utm_source%3DG&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gI3QMoCw&usg=AOvVaw2I4sezpfYPOnYJN7yILKaW","Pl. de Sta. Isabel, 4, 30004 Murcia, España","heladerías","Murcia",4.2,960
+"Paco Murcia Barber Shop & Peluquería","","+34 968 34 64 82","/url?q=https://verzonalaguia.es/paco-murcia-peluqueria/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gIeigP&usg=AOvVaw2jkpoN2lq9s_jDAxdkIhNt","C. Pío XII, 27, 30012 Murcia, España","barberías","Murcia",4.8,268
+"L'GALERÍA Barber Shop","","+34 642 67 07 18","","Av. Antonio Martínez Guirao, 1, 30007 El Puntal, Murcia, España","barberías","Murcia",4.8,52
+"Temperato Felice Gelato","","+34 968 92 15 73","/url?q=https://www.temperato.es/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gI_QMoDw&usg=AOvVaw3w-nj_CYFyW1PQfRoxtRiR","C. Trapería, 30001 Murcia, España","heladerías","Murcia",4.6,135
+"Jijona","","","","C. Pío XII, 7, 30012 Murcia, España","heladerías","Murcia",4.2,190
+"Parrica Barber Shop","","+34 665 18 55 56","/url?q=https://parricabarbershop.booksy.com/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gIuQEoDw&usg=AOvVaw3nPOFDhou51iTJj7Xt9XOH","Calle Dr. Tomás Pellicer Frutos, 151, 30168 Murcia, España","barberías","Murcia",4.9,136
+"Heladería Cafetería Snoopy","","+34 658 07 44 91","/url?q=https://www.instagram.com/snoopyheladerias/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIuAQoDw&usg=AOvVaw0jx2cITwGjwdbynV7iKih3","Av. de la Libertad, 7, 30009 Murcia, España","heladerías","Murcia",4,98
+"Heladería Bajo Cero","","+34 968 25 74 61","","C. Pedáneo José Sánchez Mompeán, 22, 30010 San Benito - Patiño, Murcia, España","heladerías","Murcia",4.2,319
+"Huele a gofre","","","","C. Trapería, 36, 30001 Murcia, España","heladerías","Murcia",4.1,56
+"Alberto The Barber","","+34 683 39 12 41","/url?q=https://www.instagram.com/alberto_barber99&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gI2gEoDw&usg=AOvVaw3gn70g6_wwcuudwVHPhjem","C. Herradura, 2, 30003 Murcia, España","barberías","Murcia",4.9,104
+"smöoy Murcia - Alfonso X","","+34 968 24 25 93","/url?q=http://www.smooy.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gIrAUoDw&usg=AOvVaw0Clrj5obYcGPQeICg6gMpF","Gran Vía Alfonso X el Sabio, 13, 30008 Murcia, España","heladerías","Murcia",4.1,173
+"42metros Barbería","","+34 630 11 66 38","/url?q=https://booksy.com/es-es/4329_42m2-barberia_barberia_81317_murcia&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gI-AEoDw&usg=AOvVaw2N4278Xh9kNjnK0HhZM6QU","C. Simón García, Nº6, 30003 Murcia, España","barberías","Murcia",4.7,144
+"Barbería - El Taller de la Barba","","+34 968 93 17 39","","C Sagasta, 48, · Bajo, 30005 Murcia, España","barberías","Murcia",5,130
+"Sirvent Oro","","+34 968 29 91 34","/url?q=http://www.sirventmiralles.com/&opi=79508299&sa=U&ved=0ahUKEwj0pJ_f9qmRAxV8MVkFHRAJH8sQ61gI1gUoDw&usg=AOvVaw1vUuJXKZXCowa6c5WQme-I","Pl. de Santo Domingo, 18, 30008 Murcia, España","heladerías","Murcia",2.9,543
+"Confitería Espinosa","info@espinosa.es","+34 968 26 23 04","http://espinosa.es/","C. Floridablanca, 3, bajo, 30002 Murcia, España","pastelerías","Murcia",4.4,2298
+"Barbershop JV91","","+34 868 96 68 55","/url?q=https://www.facebook.com/Barbershop-JV-101363524937490&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gItQIoEQ&usg=AOvVaw3JA8uTPq1vCqDuEmizkAwg","Edificio Deportes, Av. General Primo de Rivera, 10, Bajo B, 30008 Murcia, España","barberías","Murcia",4.8,100
+"7.23 barbershop","","+34 968 23 08 73","","C. Literato Andrés de Claramonte, 6, 30007 Murcia, España","barberías","Murcia",5,141
+"Pastelería BAKLAVA","","+34 632 26 88 31","http://www.pasteleriabaklava.com/","C. Ceballos, 5, 30003 Murcia, España","pastelerías","Murcia",5,394
+"Confitería La Peladilla","lapeladilla@hotmail.com","+34 968 21 63 71","http://www.lapeladilla.com/","C. San Antonio, 1, 30001 Murcia, España","pastelerías","Murcia",4.4,316
+"Buendía Confitería","","+34 968 25 07 62","https://www.facebook.com/confiteria.buendia/","C. Torre de Romo, 40, 30011 Murcia, España","pastelerías","Murcia",4.9,34
+"Pastelería Collado","","+34 968 90 44 42","https://pasteleriacollado.es/","C. Don Alfonso Palazón Clemares, 14, 30009 Murcia, España","pastelerías","Murcia",4.5,203
+"Pastelería Bonache","","+34 968 21 20 83","https://tienda-online.pasteleriabonache.com/","Pl. de las Flores, 8, 30004 Murcia, España","pastelerías","Murcia",4.3,343
+"Confitería Pastelería Carrión","","+34 968 29 22 17","http://www.confiteriacarrion.com/","Calle Ortega y Gasset, 1, 30009 Murcia, España","pastelerías","Murcia",4.6,121
+"American BarberShop","","+34 631 46 31 29","/url?q=https://m.facebook.com/americanbarbershopmurcia/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gI8wIoDw&usg=AOvVaw16R4zGU1mOiLLCkOXb0Em_","C. Conde del Campillo, 3, 30002 Murcia, España","barberías","Murcia",4.7,83
+"Pastelerías Zaher","","+34 968 21 13 85","http://pasteleriazaher.es/","C. Riquelme, 13, 30005 Murcia, España","pastelerías","Murcia",4.4,807
+"La Caprichosa","","+34 968 04 25 34","https://pastelerialacaprichosa.com/","P.º Fotógrafo Verdú, 30002 Murcia, España","pastelerías","Murcia",4.4,175
+"Confitería Carlos S L","","+34 968 23 30 20","https://www.instagram.com/confiteriacarlos?igsh=MXE0dzU2bnFlamJlOA==","C. Jaime I el Conquistador, 7, 30008 Murcia, España","pastelerías","Murcia",4.6,147
+"Confitería y cafetería Jesús Espinosa","","+34 968 90 70 50","https://www.confiteriaespinosaehijossl.com/","Av. Príncipe de Asturias, 1, 30007 Murcia, España","pastelerías","Murcia",4.1,1687
+"Pastelería Zamora","","+34 661 32 13 71","http://www.facebook.com/pasteleriazamora","C. Almohajar, 8, 30002 Murcia, España","pastelerías","Murcia",4.7,124
+"La Loca del Horno","","+34 659 13 72 66","","C. San Lorenzo, 8, 30001 Murcia, España","pastelerías","Murcia",4.7,153
+"Ricca","","","https://www.instagram.com/riccapasteleria.dv?igsh=cWliM2ZveWd0ZGQ3&utm_source=qr","Av. Río Segura, 2, 30002 Murcia, España","pastelerías","Murcia",4.8,220
+"Confitería Joaquín Roses Lison","","+34 968 21 13 25","https://googleenmurcia.jimdofree.com/","Pl. Camachos, 17, 30002 Murcia, España","pastelerías","Murcia",4.3,532
+"JJota BarberShop and Beauty Murcia","","+34 868 19 66 44","/url?q=https://www.fresha.com/book-now/jjota-barber-shop-cug4zqsy/all-offer%3Fid%3D759371%26share%26pId%3D713641&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gIkwMoEQ&usg=AOvVaw0pGnn21APp7cadkQdJ2zUU","Vista Alegre, Pl. Pintor Inocencio Medina Vera, 8, 30007 Murcia, España","barberías","Murcia",4.8,81
+"La Barbería de Jesús","","+34 675 49 22 86","","C. Intendente Patiño, 5, 30007 La flota, Murcia, España","barberías","Murcia",4.9,371
+"Patagonia Pastelería","","+34 677 84 45 12","https://instagram.com/patagonia.pasteleria?igshid=ZDdkNTZiNTM=","C. Obispo Sancho Dávila, 20, 30007 Murcia, España","pastelerías","Murcia",4.8,62
+"El Horno de Belluga","","+34 644 83 14 10","","C. Organistas, 1, 30004 Murcia, España","pastelerías","Murcia",4.4,95
+"Obrador Convento San Antonio","info@oconventosanantonio.com","+34 868 12 92 24","https://www.oconventosanantonio.com/","C. Zarandona, 4, 30004 Murcia, España","pastelerías","Murcia",4.9,20
+"Panandpie Panadería y pastelería.","","+34 698 96 56 41","https://instagram.com/panpiepasteleria?igshid=YmMyMTA2M2Y=","Av. Francisco Jiménez Ruiz, 30007 El Puntal, Murcia, España","pastelerías","Murcia",5,163
+"Barbería Marquez","","+34 868 97 71 59","/url?q=https://instagram.com/osmerstylo%3Figshid%3Duc57d67oxi4g&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gI0gMoEQ&usg=AOvVaw3loxKJha7etD9l6Iutl5Sk","comercial. Plaza de, C.C Bulevar Cetina, Bajo, Pl. Cetina, 3, Local 14, 30001 Murcia, España","barberías","Murcia",4.9,123
+"Confitería Agustín","","+34 968 89 97 51","https://www.obradordeagustin.com/","Av. Vicente Aleixandre, 14, 30110 Churra, Murcia, España","pastelerías","Murcia",4.1,1388
+"Pan Moreno","info@panaderiamoreno.com","+34 968 21 67 11","http://www.panaderiamoreno.com/","C. San Antonio, 19, 30001 Murcia, España","panaderías","Murcia",4.5,343
+"Blvck Barbershop Hair Studio","","+34 644 28 41 89","/url?q=http://www.instagram.com/blvck_barbershop&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gI8QMoDw&usg=AOvVaw3jpaO3nG87PJLtUfy6WO7n","C. Cánovas del Castillo, 12, 30003 Murcia, España","barberías","Murcia",4.9,83
+"Panadería ""El Rojo"" 1939","estudio@enfatika.com","+34 660 57 45 75","https://www.panaderiaelrojo.com/","Carr. de la Fuensanta, 149, 30012 Murcia, España","panaderías","Murcia",4.6,624
+"El Horno de Vistalegre","","+34 644 85 77 45","https://www.facebook.com/El-horno-de-Vistalegre-1740292916227951/","C. Mariano Ruiz Funes, 18, 30007 Murcia, España","panaderías","Murcia",4.6,235
+"La Solera, Pan Artesano","","+34 644 21 59 82","https://m.facebook.com/lasolerapanartesano/","C. Simón García, 51, 30003 Murcia, España","panaderías","Murcia",4.7,100
+"INFANTE BARBER","","+34 638 32 75 50","/url?q=https://infante-barber.es/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gIkwQoDw&usg=AOvVaw30xbeVfIjoI60zOXS8o-cy","Av. San Juan de la Cruz, Bajo 7, 30011 Murcia, España","barberías","Murcia",4.7,184
+"Manzanera Barber Club","","+34 696 53 15 78","","Av. Cdad. de Almería, 74, 30010 Murcia, España","barberías","Murcia",4.9,111
+"La Panadería","","+34 968 90 40 47","https://instagram.com/lapanaderia_murcia?utm_medium=copy_link","Av. Don Juan de Borbon, 12, 30008 Murcia, España","panaderías","Murcia",4.8,44
+"El Horno de López Giménez","","+34 968 25 54 05","https://www.instagram.com/elhornodelopez/?hl=es","Calle, P.º Marqués de Corvera, 46, 30002 Murcia, España","panaderías","Murcia",4.5,239
+"Panadería Santi","","+34 968 34 23 25","https://www.facebook.com/PanaderiaSanti","C. Seneca, 2, 30012 Murcia, España","panaderías","Murcia",4.7,324
+"El Gourmet del Pan","","+34 868 95 40 35","https://m.facebook.com/ELGOURMETDELPAN/?locale2=es_ES","P.º Marinero Luis de Torres, 1, 30007 Murcia, España","panaderías","Murcia",4.6,85
+"Panadería Loira Murcia - Empanadas Gallegas","","+34 626 38 83 08","","C. Isidoro de la Cierva, 2, 30001 Murcia, España","panaderías","Murcia",4.9,352
+"Pan Moreno","info@panaderiamoreno.com","+34 968 39 37 33","http://www.panaderiamoreno.com/","C. Jara Carrillo, 5, 30004 Murcia, España","panaderías","Murcia",4.3,322
+"Panadería Confitería Olimpia","","+34 654 79 52 90","https://panaderiaconfiteriaolimpia.netlify.app/","C. Miguel Hernández, 8, 30011 Murcia, España","panaderías","Murcia",4.8,37
+"Panadería Remedios","","+34 968 23 87 37","","C. Manuel de Falla, 5, 30008 Murcia, España","panaderías","Murcia",4.6,35
+"Panadería El Uñas","","","","Calle Obispo Francisco Landeira 20 Bajo esquina, C. Rubén Celis, 2, 30007 Murcia, España","panaderías","Murcia",4.7,190
+"Panadería de Alfonso","","+34 968 38 01 19","https://panaderiaalfonso.com/","Pl. Triangular, 14, 30009 Murcia, España","panaderías","Murcia",4.5,41
+"Panadería Ambato Murcia","","+34 632 57 12 85","https://www.facebook.com/ambatoescobar/","C. Juan de la Cierva, 1, 30004 Murcia, España","panaderías","Murcia",4.1,131
+"Buena Amistad - Panadería y Confitería Latina","","+34 868 62 33 29","","C. García Alix, 12, 30005 Murcia, España","panaderías","Murcia",4.6,31
+"barbershop","","+34 691 71 97 04","/url?q=http://eljordybarbershop.booksy.com/&opi=79508299&sa=U&ved=0ahUKEwiQ1Pbr-KmRAxXyKFkFHQ5sArAQ61gI0AQoDw&usg=AOvVaw2pp3DvHufc-0fdHdb8eiLy","C/ Puerta Nueva, 6, A, 30001 Murcia, España","barberías","Murcia",4.7,110
+"Barbería los Galgos","","+34 868 97 33 71","","Av. Miguel de Cervantes, 23, 30009 Murcia, España","barberías","Murcia",5,129
+"Exxquisito Churrería","Clientes@exxquisitochurreria.com","+34 633 53 01 94","http://exxquisitochurreria.com/","C. Andrés Baquero, 15, 30001 Murcia, España","churrerías","Murcia",4.1,1416
+"Churreria Picoesquina","","+34 609 77 09 10","","C. Párroco Pedro Martínez Conesa, 13, 30003 Murcia, España","churrerías","Murcia",4.5,854
+"Churreria Chokolate. Remolque","","+34 657 30 96 93","","C. Isaac Albéniz, 1, ZONA CENTRO, 30009 Murcia, España","churrerías","Murcia",4.7,42
+"Churrería Sagasta","","+34 868 07 53 70","https://churreriaenmurcia.jimdofree.com/","C Sagasta, 20, 30005 Murcia, España","churrerías","Murcia",4,385
+"Churrería Chispa","","+34 692 73 20 41","https://instagram.com/churreriachispamurcia?igshid=y5o36tvreuup","C. Cartagena, 72, 30002 Murcia, España","churrerías","Murcia",4.5,280
+"Churrería Bernal","","+34 644 27 66 28","","Diseminado Diego Carmona, 9, 30007 Zarandona, Murcia, España","churrerías","Murcia",4.9,36
+"La Vieja Aduana","soporte@webador.es","+34 683 59 36 59","http://www.laviejaaduana.com/","Calle Sol Pte., 1, 30007 Santiago y Zaraíche, Murcia, España","churrerías","Murcia",4.3,192
+"Churreria Candela churros, buñuelos y paparajotes","","+34 696 59 48 62","https://www.facebook.com/profile.php?id=100008852568786","C. Torre de la Marquesa, 30008 Murcia, España","churrerías","Murcia",4.8,37
+"Churreria el trastero 2.0","","+34 625 36 35 92","","C. Arquitecto Juan José Belmonte, 6, 30007 Murcia, España","churrerías","Murcia",4.9,49
+"Churreria Cafe Bar El Platanero","","+34 635 42 61 47","","Calle Dr. Jesús Quesada Sanz, 12, 30005 Murcia, España","churrerías","Murcia",4.7,45
+"Churrería El Plano","","","","Mercado de Verónicas puesto 36-38, 30004, Murcia, España","churrerías","Murcia",3.8,25
+"Churreria Victoria","","+34 680 57 86 96","","C. Mayor, 99, 30006 Puente Tocinos, Murcia, España","churrerías","Murcia",4.5,596
+"Churrería Arróniz","","+34 616 87 24 69","https://m.facebook.com/esparragalchurros/photos/a.103437041593592/103437154926914/?type=3","Calle a Sect Zm AG1 el Campillo, 1, 30163 Murcia, España","churrerías","Murcia",4.8,34
+"Chocolatería Valor","chocolaterias@valor.es","+34 968 21 07 40","http://www.chocolateriasvalor.es/","Pl. del Cardenal Belluga, 7, 30001 Murcia, España","churrerías","Murcia",3.8,962
+"Churrería churrox","churrox2014@gmail.com","+34 646 51 42 08","https://cys-churrox.com/","Av. del Progreso, 92, 30012 San Benito - Progreso, Murcia, España","churrerías","Murcia",4.4,21
+"Churrería","","","","C. Isaac Albéniz, 1486, 30009 Murcia, España","churrerías","Murcia",5,1
+"Rolling churros","","","","Plaza Ue I Ppcr5, 1, 30007 Santiago y Zaraíche, Murcia, España","churrerías","Murcia",4.6,14
+"Churrería Perucha","","+34 613 79 01 57","","30100 Murcia, España","churrerías","Murcia",4.9,19
+"Churrería Tradicional","","","","C. Floridablanca, 30002 Murcia, España","churrerías","Murcia",3.4,5
+"Churrería El Recinto","","+34 669 42 73 88","","C. Torre, 30006 Puente Tocinos, Murcia, España","churrerías","Murcia",5,4
+"Clínica Santos Dental Murcia","","+34 968 21 50 23","/url?q=http://www.santos-dental.es/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIPSgP&usg=AOvVaw2a80nG8Re0_vppJPYJcg68","Pl. de Sta. Isabel, nº12, 1º, 30001 Murcia, España","dentistas","Murcia",5,522
+"Clínica dental MAEX Vélez & Lozano","","+34 968 28 46 28","/url?q=https://maexdental.com/clinica-dental/murcia/%3Futm_campaign%3Dgbp%253Asin-campa%25C3%25B1a%26utm_content%3Dmaex%26utm_id%3Dcmp-01594-z6f4f%26utm_medium%3Dorganic%26utm_source%3Dgoogle-my-business%26utm_term%3Dsin-t%25C3%25A9rmino&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIXCgP&usg=AOvVaw1vQmercliH6QrAOMbYbdH6","C Salvador de Madariaga, 5, Bajo, 30009 Murcia, España","dentistas","Murcia",4.9,1144
+"Clínica Depilación Tulaser & Medicina Estética Murcia","","+34 650 40 49 62","","Av. General Primo de Rivera, 17, 30008 Murcia, España","centros de estética","Murcia",4.8,562
+"Clínica Dental Dávalos & Balboa- Invisalign Murcia- Implantes dentales- Centro","","+34 968 90 00 06","/url?q=http://www.davalosybalboa.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIfSgP&usg=AOvVaw1J7PyVNcAOt4N7xzShA7Ed","Pl. Circular, 3, bajo, 30008 Murcia, España","dentistas","Murcia",4.8,487
+"MiLena estética","youremail@yourdomain.com","+34 868 07 51 15","https://milenaestetica.com/","C. Azarbe del Papel, 6, 30007 Murcia, España","centros de estética","Murcia",4.9,135
+"San Antón","","+34 868 07 47 55","/url?q=http://dentalsananton.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gInQEoDw&usg=AOvVaw22aiuhrrdj2UAxPRcrw3FZ","C. San Antón, 29, 30009 Murcia, España","dentistas","Murcia",4.9,498
+"Ángela Morente","info@angelamorente.com","+34 868 91 10 09","http://angelamorente.com/","C. José Castaño, Nº 9, 30002 Murcia, España","centros de estética","Murcia",4.8,218
+"Clínica Dental Dr. José Luis Cano Rueda - Odontologia, ortodoncia e implantes dentales en Murcia","","+34 968 25 40 54","/url?q=http://clinicadentaljoseluiscano.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIugEoDw&usg=AOvVaw03VX4ftKOUtWdQ7Sa-rSqu","Pl. González Conde, 5, 30002 Murcia, España","dentistas","Murcia",4.8,365
+"Serrano Dental 🦷","","+34 637 61 61 31","/url?q=http://www.serranodental.es/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI2gEoDw&usg=AOvVaw11orpho-k9Qkz7zrZG5cEs","Pl. Circular, 13, 1º B, 30008 Murcia, España","dentistas","Murcia",4.9,279
+"Centro de Estética Murcia Láser","","+34 968 24 40 32","https://murcialaser.es/?utm_source=google&utm_medium=gbp&utm_id=Ficha","C. Dr. Jose Tapia Sanz, 3, 30001 Murcia, España","centros de estética","Murcia",4.8,61
+"TUS + Centro de Estética - Murcia","info@ivof.com","+34 601 42 66 91","https://massage.ivof.com/tus-centro-de-estetica/","Av. Juan Carlos I, 72, 30007 El Puntal, Murcia, España","centros de estética","Murcia",5,35
+"Clínica Dental Dávalos & Balboa","","+34 968 90 00 06","/url?q=https://davalosybalboa.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI9wEoDw&usg=AOvVaw2F8bS9XOtCGI1VX2PpdUQd","Av. Juan Carlos I, 1, 30008 Murcia, España","dentistas","Murcia",4.8,366
+"AVILÉS Clínica Dental","","+34 868 96 54 79","/url?q=https://www.murciaclinicadental.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIlAIoDw&usg=AOvVaw31Y3S1XbfkPpInWPyRqQst","C. Periodista Antonio Herrero, n•19, bajo, 30007 Murcia, España","dentistas","Murcia",4.9,401
+"Lola Bernal | Clínica Estética Murcia","clinicalolabernal@gmail.com","+34 722 79 03 05","http://www.clinicalolabernal.es/","P.º de Florencia, 18, bajo 2, 30010 Murcia, España","centros de estética","Murcia",4.8,69
+"CLÍNICA VÉLEZ Centro Dental Especializado","","+34 968 21 19 54","/url?q=https://clinicavelez.es/%3Futm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_campaign%3Dgmb&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gItwIoDw&usg=AOvVaw01yHd8eQLujrvw1sEGseb4","C. Sta. Catalina, 8, 30004 Murcia, España","dentistas","Murcia",4.9,305
+"Estética Avanzada Silvia Marcolino","cesilviamarcolino@gmail.com","+34 665 53 97 08","https://www.centroesteticasilviamarcolino.com/","Av. Juan Pablo II, 43, 30007 El Puntal, Murcia, España","centros de estética","Murcia",4.9,134
+"Garay Clínica Dental","","+34 968 34 32 58","/url?q=https://www.clinicadentalgaray.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI1gIoDw&usg=AOvVaw0jGThGNN1k2aqLNkn80eGN","C. Jorge Manrique, 1, BAJO, 30011 Murcia, España","dentistas","Murcia",4.9,307
+"Belleza Cosma","info@bellezacosma.com","+34 868 95 74 53","http://www.bellezacosma.com/","C. Maestro Alonso, 4, ENTRESUELO C, 30005 Murcia, España","centros de estética","Murcia",4.8,151
+"Clínica Sesemann Dental Murcia","","+34 968 12 17 18","/url?q=http://www.sesemanndental.es/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI9QIoDw&usg=AOvVaw0cWks8VcYxOzGEd5KK0OMg","Avenida de la Libertad, 4, Entresuelo 1º C, Edificio Simago, 30009 Murcia, España","dentistas","Murcia",5,662
+"Clínica Dental","","+34 665 53 25 18","","C. Juan Antonio Hernandez del Aguila, 25, Planta 2, A, 30002 Murcia, España","dentistas","Murcia",4.8,127
+"Pau Estética Integral Avanzada, BIENESTAR INTEGRAL y BELLEZA CONSCIENTE","info@pauesteticaintegral.net","+34 626 17 49 73","https://pauesteticaintegral.net/","Pl. Carlos III, 3, Entresuelo B,Edificio Captesa, 30008 Murcia, España","centros de estética","Murcia",5,242
+"Centro Loveliness Salud y Belleza","loveliness.murcia@gmail.com","+34 611 13 25 78","http://www.lovelinessaludybelleza.com/","C. Escritor Pérez de Hita, 1, 30009 Murcia, España","centros de estética","Murcia",4.9,91
+"Elisa Navarro | Centro de Estética Avanzada en Murcia","hola@elisanavarro.com","+34 679 34 65 34","https://elisanavarro.com/","C. Félix Rodríguez de la Fuente, 1, 30011 Murcia, España","centros de estética","Murcia",4.7,46
+"CLÍNICA DENTAL PLAZA DE LA FLORES","","+34 968 21 89 05","/url?q=https://www.clinicadentalplazadelasflores.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gItgMoDw&usg=AOvVaw1eU2_j427g2uf5bj-TAVc4","Pl. de las Flores, 11, Entresuelo, 30004 Murcia, España","dentistas","Murcia",4.9,44
+"Senzia Centro de Belleza","info@senziabelleza.com","+34 868 69 47 71","http://www.senziabelleza.com/","C. Sociedad, 11, Entresuelo A, 30004 Murcia, España","centros de estética","Murcia",4.8,60
+"Clínica Dental Vega Salud Dr. Gallego","","+34 633 39 14 25","/url?q=https://www.clinicadrgallego.com/%3Futm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_campaign%3Dgbp-posts%26utm_content%3D%3Futm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_campaign%3Dgbp%26utm_content%3D&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI0wMoDw&usg=AOvVaw2-H5QPcdNwxJPSHIcJTiHt","C. Río Argos, 1, 30008 Murcia, España","dentistas","Murcia",5,206
+"Liliya Beauty Center","hola@liliyabeautycenter.com","+34 688 28 81 33","https://liliyabeautycenter.es/","Av. Príncipe de Asturias, 16, bajo, 30007 Santiago y Zaraíche, Murcia, España","centros de estética","Murcia",4.8,98
+"COC Medicina Estética","","+34 968 21 01 41","https://cocmedicinaestetica.es/","C. Teniente Gral. Gutierrez Mellado, 9, 30008 Murcia, España","centros de estética","Murcia",4.9,312
+"Clinica Dental - Drs. Muñoz","","+34 968 24 70 02","/url?q=https://clinicadentaldrsmunoz.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI9QMoDw&usg=AOvVaw0z4PZtXn1cqgmDBnqvq7LK","C. Azucaque, 10, 1º Planta, 30001 Murcia, España","dentistas","Murcia",4.9,283
+"Dr Tomás Zamora. Clínica Estética","info@drtomaszamora.com","+34 667 87 69 60","https://drtomaszamora.com/?utm_source=gmb","Av. de la Libertad, 6, bloque I, Bajo, 30009 Murcia, España","centros de estética","Murcia",4.9,134
+"Clínica Dental CIROM Murcia","","+34 968 90 66 00","/url?q=https://clinicacirom.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIlgQoDw&usg=AOvVaw39jyRwMqMiwUQIwHw3VUzF","C. Vara de Rey, 1, Bajo, 30001 Murcia, España","dentistas","Murcia",4.9,191
+"Lola Martínez - Centro Estético Murcia","info@esteticalolamartinez.es","+34 968 85 07 91","http://www.esteticalolamartinez.es/","C. Mayor, 37, BAJO, 30007 Murcia, España","centros de estética","Murcia",4.9,134
+"Clínica Dental Clemente","","+34 636 35 64 13","/url?q=https://clinicadentalclemente.es/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIswQoDw&usg=AOvVaw0O0LBOKgaJZFSI76qlKtEd","C. Teniente Gral. Gutierrez Mellado, 3, Bajo A, 30008 Murcia, España","dentistas","Murcia",4.9,134
+"Clínica Dental - María Dolores Sánchez Carretero","","+34 968 93 55 40","","C. Reina Sofía, 18, 30007 Murcia, España","dentistas","Murcia",4.7,40
+"Vital & Style - Tratamientos - Centro de Estetica Natural","info@vitalstyle.eu","+34 605 72 29 59","https://www.vitalstyle.eu/","Av. de Santiago, nº47, 30007 Santiago y Zaraíche, Murcia, España","centros de estética","Murcia",5,65
+"Centro de Belleza Gran Nelva","","+34 637 31 22 51","https://www.facebook.com/bellezagrannelva","C. de Molina de Segura, 5, Bloque 8, 3 D, 30007 Puente Tocinos, Murcia, España","centros de estética","Murcia",5,46
+"Clínica Dental Cabel","","+34 968 22 20 49","/url?q=https://cabeldental.com/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gI8gQoDw&usg=AOvVaw0KiQ5i4_rOcyydAT_m8wEp","C. José Antonio Ponzoa, 6, Entresuelo B, 30001 Murcia, España","dentistas","Murcia",4.9,158
+"Dentista de Urgencias Murcia | Clínica Dental Ángel Samaniego","","+34 600 47 42 94","/url?q=https://clinicadentalangelsamaniego.es/&opi=79508299&sa=U&ved=0ahUKEwjIpNGQ96mRAxXJBbkGHabTJJ4Q61gIjwUoDw&usg=AOvVaw0cjxJrKKNHZft19bvpn94q","C. Navegante Macias del Poyo, 11, bajo, 30007 Murcia, España","dentistas","Murcia",4.8,161
+"Dra. Iris Martinez - Doctores Dental Murcia","info@doctoresdental.com","+34 604 40 99 80","https://doctoresdental.com/clinica-murcia-ciudad-de-murcia/","Gran Vía Alfonso X el Sabio, 11, Entresuelo B, 30008 Murcia, España","clínicas dentales","Murcia",4.9,59
+"Clínica Dental San Basilio","info@clinicadentalsanbasilio.es","+34 968 93 20 00","http://www.clinicadentalsanbasilio.es/","C. Musico Francisco Cebrian, 9, 9, 30009 Murcia, España","clínicas dentales","Murcia",5,122
+"Clínica Dental El Ranero","","+34 968 29 68 11","https://clinicadentalranero.com/","P.º Duques de Lugo, 3, 30009 Murcia, España","clínicas dentales","Murcia",4.9,83
+"Pérez Llanes Clínica Dental","info@perezllanesclinicadental.es","+34 685 68 95 30","https://perezllanesclinicadental.es/dentista-murcia/","Av. Miguel Ángel Blanco, N°28, 1°C, 30010 Murcia, España","clínicas dentales","Murcia",5,291
+"Centro Médico Sanitas Murcia","","+34 968 27 50 22","/url?q=https://centromedicomilenium-murcia.sanitas.es/%3Fgmb%3Dgmb%253Af-google%253Am-link%253Anc-cmmurcia%253Ap-hospitales&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIHCgP&usg=AOvVaw22HY0LMRsk0TcUdX_vuAKD","C. Torre Álvarez, 1, 30007 Murcia, España","médicos","Murcia",3.9,334
+"Lohega Spa Urbano","lohega.spa@gmail.com","+34 968 84 03 82","http://www.lohega.com/","Ctra. Sta. Catalina, Carril de los Alonsos, 6, 30012 Santo Ángel, Murcia, España","spas","Murcia",4.7,647
+"Spa Piscinas y Circuito Balnea - Balneario de Archena","info@balneariodearchena.com","+34 968 68 80 22","https://balneariodearchena.com/?partner=5812&utm_source=google&utm_medium=gmb&utm_campaign=web_link","C. Copenhague, s/n, 30600 Archena, Murcia, España","spas","Murcia",4.3,13376
+"Fran Barahona Ayurveda Spa","info@franbarahona.com","+34 868 95 06 66","https://www.franbarahona.com/","C. Cartagena, 101, 30002 Murcia, España","spas","Murcia",5,871
+"Centro Salud Murcia Centro - San Juan","","+34 968 39 48 48","/url?q=https://www.murciasalud.es/caps.php%3Fop%3Dmostrar_centro%26id_centro%3D31%26idsec%3D46&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIOigP&usg=AOvVaw00vcyUKhN8YFBetyYyJsjs","C. San José, 24, 30003 Murcia, España","médicos","Murcia",2.9,58
+"Japanese Head Spa Murcia - Spa Capilar Murcia","murcia@japaneseheadspa.es","+34 672 52 45 46","https://murcia-japaneseheadspa.com/","Ctra. de Churra, 45, 30007 Murcia, España","spas","Murcia",4.7,235
+"Ilustre Colegio Oficial de Médicos de Murcia","","+34 968 27 00 07","/url?q=https://www.commurcia.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIWCgP&usg=AOvVaw0-7NptMavUTxpekK52cSDy","Av. Juan Carlos I, 3, 30008 Murcia, España","médicos","Murcia",5,5
+"Centro Médico Adeslas Murcia","","+34 968 27 44 88","/url?q=https://www.segurcaixaadeslas.es/es/cuadro-medico/centro-medico%3FCentro%3DCentro%2BMedico%2BAdeslas-Murcia-30009&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIdygP&usg=AOvVaw1QWUnE2sZXLe4GDKB6YG_7","C/ Puerta Nueva, 37, 30008 Murcia, España","médicos","Murcia",2.9,130
+"Balneario de Leana","","+34 968 68 50 11","http://www.leana.es/","C. Marqués de Toca, 2, 30620 Los Baños de Fortuna, Murcia, España","spas","Murcia",4,3864
+"CESM Murcia","","+34 968 22 22 15","/url?q=http://www.medicosdemurcia.com/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIlQEoDw&usg=AOvVaw22PmyRTSqEVMczkZ7Nz1Es","C. Umbrete, 4, 30009 Murcia, España","médicos","Murcia",5,3
+"Medicaes","","+34 868 99 36 25","/url?q=http://www.medicaes.org/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIswEoDw&usg=AOvVaw1h8QkdqDFcar-2eyxbLUgv","Av. de la Constitución, 7, 5a, 30008 Murcia, España","médicos","Murcia",4.7,49
+"Aguas Termales BAÑOS EL POZO EN LOS BAÑOS DE MULA","","+34 968 66 40 56","http://www.balnearioelpozo.es/","C. los Baños, 22, 30193 Los Baños, Murcia, España","spas","Murcia",4.1,918
+"Hotel Lodomar Spa & Talasoterapia","reservas@lodomar.com","+34 968 18 68 02","https://www.lodomar.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB&utm_content=HotelLodomarSpa&Talasoterapia","C. Río Bidasoa, 1, 30740 San Pedro del Pinatar, Murcia, España","spas","Murcia",4.1,2319
+"Sercotel JC1 Murcia","","+34 968 85 88 44","https://www.sercotelhoteles.com/es/hotel-jc1-murcia?utm_source=google&utm_medium=referral&utm_campaign=metasearch-links","Av. Juan Carlos I, 55, 30100 Murcia, España","spas","Murcia",4.3,3249
+"Centro Médico Juan XXIII","","+34 968 23 85 10","/url?q=http://www.cmjuan23.com/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI1QEoDw&usg=AOvVaw1qoR8EskuBqbG8VFgK0AOA","Rda. de Levante, 14, 30008 Murcia, España","médicos","Murcia",2.1,204
+"Espacio de Salud Addsana Murcia","","+34 968 24 36 14","/url?q=http://espaciosdesalud.dkvseguros.com/es/espaciosSalud/Espacio_de_Salud_DKV_Murcia/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI9wEoEQ&usg=AOvVaw3IV3QTxdL_kjX5b9jBPCl9","Edificio Alba, Av. General Primo de Rivera, 23, 30009 Murcia, España","médicos","Murcia",3.4,60
+"Los Periquitos Hotel & Spa","recepcion@hotellosperiquitos.com","+34 968 68 52 40","http://www.hotellosperiquitos.com/","Rambla Salada, Carretera de Fortuna, Km. 9, 30620, Murcia, España","spas","Murcia",4.3,1514
+"Carlos Mendoza Spa","","+34 643 33 83 46","https://instagram.com/carlosmendozaspa?utm_medium=copy_link","C. Nueva de San Antón, 15, bajo 2, 30009 Murcia, España","spas","Murcia",4.6,11
+"Hospital Quirónsalud Murcia","","+34 968 36 50 00","/url?q=https://www.quironsalud.es/hospital-murcia&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIlwIoDw&usg=AOvVaw2pyRL9xo5POYzVCaYqP6-i","C. Miguel Hernández, 12, 30011 Murcia, España","médicos","Murcia",3.7,1446
+"Centro Médico Quirónsalud Murcia","","+34 968 27 10 30","/url?q=https://www.quironsalud.com/hospital-murcia/es/centro-medico-quironsalud-murcia&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIuQIoEQ&usg=AOvVaw2J2FlzhJkT0x3jxhK7BtuM","Avenida Juan De Borbón, C. Abenarabi, Esquina, 30008 Murcia, España","médicos","Murcia",2.7,62
+"Dreams Masajes Murcia","dreamsmurcia6@gmail.com","+34 615 47 34 61","https://www.masajesdreamsmurcia.com/","C. Conde de Roche, N1, 30004 Murcia, España","spas","Murcia",4.6,20
+"Centro Médico Vistalegre","","+34 688 79 80 32","/url?q=http://www.centromedicovistalegre.com/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI2QIoDw&usg=AOvVaw0kLqlegE0JPOPBBv5qxcbr","Pl. Pintor Inocencio Medina Vera, 1, Bajo, 30007 Murcia, España","médicos","Murcia",4,20
+"Centro de Especialidades Doctor Quesada","","+34 968 29 10 98","/url?q=http://www.murciasalud.es/pagina.php%3Fid%3D190893%26idsec%3D347&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI-wIoDw&usg=AOvVaw3ZctXcg-p0uCpabnZvr7ap","Calle Dr. Jesús Quesada Sanz, S/N, 30005 Murcia, España","médicos","Murcia",3.7,76
+"Hotel Hyltor","info@hotelhyltor.com","+34 968 68 82 05","http://www.hotelhyltor.com/","Carr. del Balneario, 12-14, 30600 Archena, Murcia, España","spas","Murcia",3.9,1032
+"Poseidon La Manga Hotel & Spa - Diseñado para Adultos","reservas.lamanga@hotelesposeidon.com","+34 968 33 70 00","https://www.hotelposeidonlamanga.com/","Avenida Gran Vía de la Manga, Km. 6,5, 30380 La Manga, Murcia, España","spas","Murcia",4.1,2812
+"Hospital Universitario Reina Sofía de Murcia","","+34 968 35 90 00","/url?q=http://www.murciasalud.es/seccion.php%3Fidsec%3D77&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gImQMoDw&usg=AOvVaw03w1kVy-U4Er5oYH-1MKoN","Av. Intendente Jorge Palacios, 1, 30003 Murcia, España","médicos","Murcia",3.2,591
+"Centro de Salud San Andrés","","+34 968 39 48 00","/url?q=http://www.murciasalud.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gItwMoDw&usg=AOvVaw1fO65ckunqorRvpRpNGbhm","C. Escultor José Sánchez Lozano, 7, 30005 Murcia, España","médicos","Murcia",2.5,135
+"Centro Médico La Fama","","+34 650 31 99 68","","C. de la Calí Josefa Fernández Romero, 30006 Murcia, España","médicos","Murcia",4,4
+"Masajes Natural Secrets","","+34 621 29 95 40","https://www.naturalsecretsmurcia.es/","Av. Europa, 26, Bajo, 30007 Murcia, España","spas","Murcia",4.6,48
+"Clínica Herrero - Varices y Medicina Estética","","+34 629 37 27 26","/url?q=http://www.doctorherrero.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI8gMoDw&usg=AOvVaw0V2XID15bXsHNgvV8GAZoW","C. las Norias, 8, 5º A, 30009 Murcia, España","médicos","Murcia",4.8,60
+"Proctólogo Dr. José Luis Paredes Campillo - Tratamiento de hemorroides en Murcia","","+34 968 90 51 76","/url?q=http://medicoproctologo.com/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gIlQQoDw&usg=AOvVaw0oz32fQ706trOd3UJildkc","Ronda Norte, 9, 30009 Murcia, España","médicos","Murcia",5,10
+"Clinica de Coloproctologia","","+34 968 20 45 57","/url?q=https://www.clinicadecoloproctologia.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gItgQoEQ&usg=AOvVaw2A83-hZ75Gmr8weH6p5ksO","Edificio Alba, Av. de la Libertad, 8, 30009 Murcia, España","médicos","Murcia",4.9,90
+"MasajesDv Murcia - Masajes eróticos en Murcia","masajesdv@hotmail.com","+34 601 03 69 84","https://masajesdv.com/murcia/","Salida Autovía desde mercado Verónicas, Calle Entierro de la Sardina Esq, C. Huerto Pomares, 30004 Murcia, España","masajes","Murcia",4.7,23
+"Masajes Corpore Sano","","+34 968 21 24 74","","C. Pintor Villacis, 6, Entresuelo izquierda, 30001 Murcia, España","masajes","Murcia",5,58
+"Doctor Javier Hernández López, Traumatólogo","","+34 694 21 65 59","/url?q=https://javierhernandeztraumatologia.es/&opi=79508299&sa=U&ved=0ahUKEwjs1qqw96mRAxXbRmwGHbnCGy0Q61gI1wQoDw&usg=AOvVaw0phuULi9Ksw0eW4VCrHsdo","C. Pasos de Santiago, 6, Bajo, 30005 Murcia, España","médicos","Murcia",4.9,51
+"Colegio Oficial de Médicos de Murcia. Sede en Cartagena","","+34 968 50 56 29","","Pl. del Rey, 8, 30201 Cartagena, Murcia, España","médicos","Murcia",4,4
+"Olimpia bienestar y relajación","","+34 607 03 26 65","https://olimpiamasajes.com/","C. Condestable López Dávalos, 19, 30007 Murcia, España","masajes","Murcia",4.9,29
+"Clínica Londres | Cirugía y Medicina Estética","","+34 968 27 51 57","https://www.clinicalondres.es/clinicas/murcia","Av. Juan Carlos I, 21, 30008 Murcia, España","clínicas","Murcia",4.8,866
+"Clinica Doctor del Pino Murcia","","+34 868 45 54 24","https://doctordelpino.es/","Ronda Norte, 3, 30009 Murcia, España","clínicas","Murcia",5,82
+"Monalisa Clínicas","","+34 968 73 10 99","https://monalisaclinicas.com/","C. González Adalid, nº 15, Bajo, 30001 Murcia, España","clínicas","Murcia",4.8,320
+"Clínicas Velvet Murcia","","+34 664 35 23 99","","Ronda Norte, 30009 Murcia, España","clínicas","Murcia",4.6,153
+"A&G Belleza y bienestar","info@bellezabienestarag.com","+34 868 12 40 82","http://bellezabienestarag.com/","C Sagasta, 19, 30004 Murcia, España","masajes","Murcia",4.7,46
+"Podoactiva Murcia","podoactivamurcia@podoactiva.com","+34 968 21 54 03","https://www.podoactiva.com/es/clinicas-y-centros/podoactiva-murcia","C. Alejandro Seiquer, 15, 30001 Murcia, España","clínicas","Murcia",4.7,271
+"Nona Masajes","hola@nona-masajes.com","+34 613 99 59 12","http://www.nona-masajes.com/","Cam. Hondo, 2, 30009 Murcia, España","masajes","Murcia",5,87
+"Clínica Dra. Ana de León Murcia","info@clinicasanadeleon.es","+34 611 58 77 32","https://clinicasanadeleon.es/","Av. de la Constitución, 13, 1º D, 30008 Murcia, España","clínicas","Murcia",4.9,47
+"Clínica Esquivel Murcia","","+34 621 23 17 15","https://clinicasesquivel.com/","Av. General Primo de Rivera, 17, 30008 Murcia, España","clínicas","Murcia",4.7,35
+"Clínica Bellezone","","+34 968 29 00 30","https://www.instagram.com/clinicasbellezone/","C. Condestable, 2, Entresuelo izq, 30009 Murcia, España","clínicas","Murcia",4.8,219
+"Clínica Condestable Murcia","","+34 868 70 27 22","http://www.clinicacondestable.es/","Pl. Condestable, 5, 30009 Murcia, España","clínicas","Murcia",4.4,7
+"Centro Anma","","+34 968 28 20 02","http://www.centroanma.es/","C. Ceferino, 6, 30004 Murcia, España","masajes","Murcia",4.6,36
+"Samadhi Masaje en Murcia/Oriental massage⭐️⭐️⭐️⭐️⭐️","","+34 722 32 22 30","http://samadhimasajes.com/murcia","C. Antonio Segado del Olmo, 9, 30005 Murcia, España","masajes","Murcia",4.7,23
+"JRC Quiromasaje","contacto@ejemplo.com","+34 621 14 58 95","https://www.jrcquiromasaje.es/","C. Poeta Vicente Medina, 9, 30007 Murcia, España","masajes","Murcia",4.9,115
+"Ada Quiromasaje","","+34 659 47 12 14","https://linkbio.co/6012909bYmyoj?utm_media=siteCard&utm_source=instabio","ZHÀO LÙ TAICHÍ, C. Virgen de la Soledad, 7, 30007 Murcia, España","masajes","Murcia",4.8,79
+"Oasis Care, Murcia - Head Spa (Spa & Bienestar)","","+34 614 01 23 18","https://api.whatsapp.com/send?phone=34614012318&text=%C2%A1Bienvenidos+a+Oasis+Care%2C+Spa+%26+Bienestar%21%0AEstaremos+encantados+de+atenderle+cuanto+antes.","C. Sánchez Madrigal, 11, 30004 Murcia, España","masajes","Murcia",4.9,55
+"Aura Clínicas","atencion@auraclinica.com","+34 868 11 09 00","https://www.auraclinica.com/","Av. Miguel de Cervantes, 45, 30009 Murcia, España","clínicas","Murcia",4.6,316
+"Clínica de Injerto Capilar en Murcia y Cartagena | INJERMUR","","+34 968 35 57 67","https://injertocapilarenmurcia.es/","C. Olof Palme, 9, 11, 30009 Murcia, España","clínicas","Murcia",5,23
+"Eternity love","info@eternityloveestetica.digitalizayemprende.com","+34 664 87 80 39","https://eternityloveestetica.com/","C. Félix Rodríguez de la Fuente, 3, 30011 Murcia, España","masajes","Murcia",4.1,124
+"Masajes Martín Therapy.","","","","C. Pintor Muñoz Barberán, 3, 30120 El Palmar, Murcia, España","masajes","Murcia",4.9,24
+"Rosa Bello. Masajista en Murcia","","+34 611 38 62 11","","C. Mula, 30009 Murcia, España","masajes","Murcia",5,3
+"Quiromasaje Murcia - Masajes en Murcia","sonia@quiromasajemurcia.com","+34 638 28 59 65","https://quiromasajemurcia.com/","C. D Ua II Pp Cab Torres, 30110 Murcia, España","masajes","Murcia",4.6,11
+"Clínica Novovisión Murcia","info@clinicasnovovision.com","+34 968 20 08 88","https://www.clinicasnovovision.com/","Av. de la Libertad, 4, 30008 Murcia, España","clínicas","Murcia",4.8,349
+"Clínica Clemente | Dermatología, Láser y Medicina estética","info@clinicaclemente.es","+34 968 20 00 23","https://www.clinicaclemente.es/","Av. Europa, 23-25, bajo, 30007 Murcia, España","clínicas","Murcia",4.8,519
+"Clínica Lorents","","+34 682 93 89 11","https://www.clinicalorents.es/","Av. Francisco Jiménez Ruiz, 9, 30007 El Puntal, Murcia, España","clínicas","Murcia",5,77
+"Clínica Belsia","","","","C. Teniente Gral. Gutierrez Mellado, 9, Centro Comercial Centrofama 1º Planta, 30008 Murcia, España","clínicas","Murcia",5,13
+"MIMÚ nails beauty Centro de estética","","+34 658 86 03 70","https://www.instagram.com/mimunailsbeauty","C. Oliver, 2, Bajo 3, 30001 Murcia, España","uñas","Murcia",4.9,476
+"Clínica Dorsia Cirugía y Medicina Estética","","+34 968 23 26 90","https://www.dorsia.es/clinicas-dorsia/murcia-constitucion/?utm_campaign=noviembre24&utm_content=sitio-web-gmb&utm_medium=gmb&utm_source=fichadegoogle","Av. de la Constitución, 8, 30008 Murcia, España","clínicas","Murcia",4.6,424
+"Soraya S'Nails","","+34 623 33 81 96","http://sorayasnails.com/","C. Almirez, 3, 30010 San Benito - Patiño, Murcia, España","uñas","Murcia",5,247
+"Nails Murcia","","+34 666 93 42 88","https://m.facebook.com/crystalnails.valera?ref=bookmarks","Calle Puerta Nueva, Número 25, Bajo, 30001 Murcia, España","uñas","Murcia",3.7,161
+"Nails Center Murcia","","+34 968 00 50 50","http://www.nailscenter.es/","C. Junterones, 8, 30008 Murcia, España","uñas","Murcia",4.2,231
+"Rose centro de uñas","","+34 612 42 47 28","","C. las Norias, 6, 30009 Murcia, España","uñas","Murcia",5,24
+"Lin Nails Murcia","jueyuanlin84@gmail.com","+34 688 16 17 86","https://booksy.com/es-es/155157_lin-nails_salon-de-unas_81274_la-albatalia#ba_s=sh_1","C. San Antón, 28, 30009 Murcia, España","uñas","Murcia",4.9,35
+"Mariela Nails Beauty- Salon de Uñas | Manicura, Pedicura y Uñas Acrílicas Murcia","","+34 633 20 47 42","","C. Jara Carrillo, 07, Bajo, Bajo, 30004 Murcia, España","uñas","Murcia",4.7,15
+"Anabell","","+34 603 83 18 71","","C. Mozart, 2, Bajo, 30002 Murcia, España","uñas","Murcia",4.5,131
+"Artemédica","dpo@artemedica.es","+34 968 20 12 22","http://artemedica.es/","P.º Fernández Caballero, 3, 30007 Santiago y Zaraíche, Murcia, España","clínicas","Murcia",4.9,603
+"Venatu beauty | Manicura, Pedicura profunda estetica, Uñas problemáticas Murcia","","+34 645 56 96 62","https://instagram.com/venatu.beauty?igshid=ZWQyN2ExYTkwZQ==","C. Sta. Teresa, 19, 30005 Murcia, España","uñas","Murcia",4.9,70
+"Fisioterapia Osteopatía Pilates Peñarrubia ✅","","+34 968 96 71 63","https://www.fisioterapeutasmurcia.com/","Av. Don Juan de Borbon, 36, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",5,834
+"Anna Nails Centro Estética - Murcia","info@nails.com","+34 685 10 51 88","https://beauty.es.wwwcafe.de/anna-nails-centro-estetica-murcia/","Esquina Av.de, C. del Mediterráneo, 1, Ronda Norte, 4, 30009 Murcia, España","uñas","Murcia",4.6,119
+"Bardot","","+34 605 85 86 36","","C. Manfredi, 8, 30001 Murcia, España","uñas","Murcia",4.7,123
+"Fisioterapia Osteopatía Pilates Peñarrubia San Antón ✅","","+34 868 96 68 36","https://www.fisioterapeutasmurcia.com/clinica_fisioterapia.asp","Las, C. las Norias, 1, 30009 Murcia, España","fisioterapeutas","Murcia",5,646
+"Clínica de Fisioterapia El Carmen","info@fisioterapiaelcarmen.com","+34 603 05 81 01","https://fisioterapiaelcarmen.com/","C. del Rosal, 5, 30002 Murcia, España","fisioterapeutas","Murcia",4.8,339
+"Fisioterapia Thorax Murcia","","+34 623 02 93 18","https://www.fisioterapiathorax.com/","C. Almte. Malaspina, 1, 30007 Murcia, España","fisioterapeutas","Murcia",4.9,809
+"Fisioterapia Osteopatía y Pilates Murcia | DENUEVO Siéntete bien","info@denuevo.com.es","+34 690 15 65 87","https://denuevo.com.es/","Calle Miguel de Unamuno, 4, Calle Ortega y Gasset, 1, 30009 Murcia, España","fisioterapeutas","Murcia",4.9,293
+"FISIOTERAPIA MESEGUER","contacto@fisioterapiameseguer.com","+34 968 90 92 12","http://www.fisioterapiameseguer.com/","C. Periodista Antonio Herrero, nº3, bajo, 30007 Murcia, España","fisioterapeutas","Murcia",5,46
+"New Nails Professional","info@newnails.shop","+34 622 75 99 76","https://newnails.shop/","Av. Primero de Mayo, 1, 30006 Murcia, España","uñas","Murcia",4.9,123
+"Elydy Nails Academy","","+34 661 08 02 24","","Av. del Progreso, 30, BAJO, 30012 San Benito - Progreso, Murcia, España","uñas","Murcia",4.5,53
+"LA BASE NAILS AND BEAUTY","","+34 644 77 06 96","","C. Platería, 7, 30004 Murcia, España","uñas","Murcia",5,46
+"Daniel nails","","+34 691 92 67 86","","DANIEL NAILS, 5, 30001 Murcia, España","uñas","Murcia",4.2,131
+"Centro Avance Fisioterapia y Pilates Reformer","info@centroavance.es","+34 968 23 99 00","https://www.centroavance.es/","C. Parroco Jose Maria Belando, 5, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",4.9,99
+"Uñas 10","","+34 968 96 41 99","https://es-es.facebook.com/nailsdiez/","C. Sánchez Madrigal, 11, 30004 Murcia, España","uñas","Murcia",4.4,52
+"Jenni Studio Nails","","+34 634 43 76 10","","Av. Don Juan de Borbon, 2, 30007 Murcia, España","uñas","Murcia",4.9,88
+"AC Fisioterapia y Osteopatia Murcia","info@acfisioterapiamurcia.com","+34 653 18 54 26","http://acfisioterapiamurcia.com/","Calle Ortega y Gasset, 8, 30009 Murcia, España","fisioterapeutas","Murcia",5,109
+"MiFisio Clínica de Fisioterapia Murcia | Azahara Inés Castaño Ibáñez | Ramón Manzano Mirón","","+34 868 05 86 24","","C. Parroco Jose Maria Belando, 16, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",5,250
+"Fisioterapia y Osteopatía Casado Meseguer","","+34 659 78 07 04","http://www.casadomeseguer.es/","C. de la Gloria, 14, 30003 Murcia, España","fisioterapeutas","Murcia",4.6,69
+"Ángeles Nails Studio","","+34 613 30 29 14","https://angeles-nails-studio.easyweek.es/?ref=google_maps","Pl. de Santo Domingo, 05, 30008 Murcia, España","uñas","Murcia",5,11
+"Fisioterapia Osteopatía y Pilates Murcia Infante | DENUEVO Siéntete bien","info@denuevo.com.es","+34 604 89 60 84","https://www.denuevo.com.es/","Av. Infante Juan Manuel, 2, 30011 Murcia, España","fisioterapeutas","Murcia",5,102
+"Fisioterapia Marta Ramírez","info@fisioterapiamartaramirez.com","+34 611 67 80 11","https://fisioterapiamartaramirez.com/","C. San Rafael, 2, escalera 3, 4ºG, 30007 Santiago y Zaraíche, Murcia, España","fisioterapeutas","Murcia",5,195
+"David López Fisioterapia","davidfisioterapia@gmail.com","+34 616 41 97 61","https://www.davidlopezfisioterapia.com/","Pl. Artesanos del Belen, 2, 30006 Puente Tocinos, Murcia, España","fisioterapeutas","Murcia",4.9,221
+"Mr.Nail Premium","","+34 637 68 21 89","https://www.facebook.com/Mrnail2/","Calle, Rda. de Levante, n6, 30008 Murcia, España","uñas","Murcia",4,93
+"Helen Nails","","+34 651 79 58 70","","C/ Puerta Nueva, 27, 30001 Murcia, España","uñas","Murcia",4.6,53
+"Dynamics | Clínica de fisioterapia en Murcia","dynamics.salud@gmail.com","+34 722 41 20 28","https://dynamicsalud.es/","Pl. Triangular, 2, 30009 Murcia, España","fisioterapeutas","Murcia",5,384
+"Clínica de Fisioterapia y Osteopatía SAGA","","+34 640 87 53 27","https://www.clinicafisiosaga.com/","La Flota, Calle Ing. Bryant, 24, bajo i, 30007 Murcia, España","fisioterapeutas","Murcia",5,117
+"PLENO. Salud en Movimiento","peacefulqode@gmail.com","+34 688 70 16 65","https://www.plenosaludenmovimiento.es/#home","C. Navegante Juan Fernández, 14, 30007 Murcia, España","fisioterapeutas","Murcia",5,187
+"SyG FISIOTERAPIA Y OSTEOPATÍA","","+34 613 54 56 13","http://www.sygfisioterapia.es/","C. La Flota, 1, Bajo, 30008 Murcia, España","fisioterapeutas","Murcia",5,112
+"Láserum Murcia Centro | Depilación Láser Diodo","","+34 656 99 45 13","https://laserum.com/centros-depilacion-laser/murcia/centro/?utm_source=gbp&utm_medium=organic&utm_term=murcia-centro","Pl. de la Fuensanta, 3, Entresuelo B, 30008 Murcia, España","depilación láser","Murcia",4.9,2083
+"Clínica fisioterapia Fisio Sport Murcia","info@fisiosportmurcia.es","+34 608 22 23 57","https://www.fisiosportmurcia.es/","Av. Don Juan de Borbon, 35, 30007 Murcia, España","fisioterapeutas","Murcia",4.8,142
+"Laser King Center | Depilación Láser Murcia","HOLA@LASERKINGCENTER.COM","+34 623 40 38 86","https://laserkingcenter.com/","C. Pintor Almela Costa, 5, 30011 Murcia, España","depilación láser","Murcia",4.8,173
+"Depileo Depilación Láser Murcia","depileodepilacionlaser@gmail.com","+34 630 56 02 16","https://depileo.es/depilacion-laser-en-murcia/","C. Teniente Gral. Gutierrez Mellado, 9, 30008 Murcia, España","depilación láser","Murcia",4.9,189
+"Elha Laser Center Murcia Isaac Albéniz","info@elhadepilacionlaser.com","+34 872 55 06 20","https://www.elhadepilacionlaser.com/","C. Isaac Albéniz, 16, 30009 Murcia, España","depilación láser","Murcia",4.9,608
+"Láserum Murcia - El Carmen | Depilación Láser Diodo","","+34 611 50 16 88","https://laserum.com/centros-depilacion-laser/murcia/el-carmen/?utm_source=gbp&utm_medium=organic&utm_term=murcia-el-carmen","C. Torre de Romo, 11, 30002 Murcia, España","depilación láser","Murcia",4.9,594
+"Delas Murcia Traperia","","+34 637 25 72 25","","C. Trapería, 36, 30001 Murcia, España","depilación láser","Murcia",4.9,163
+"Centro Depilación Láser SHR | Reme Aguilar | Murcia Centro","info@centroremeaguilar.com","+34 656 69 77 20","https://centroremeaguilar.com/","Av. de la Libertad, 3, b, 30009 Murcia, España","depilación láser","Murcia",4.8,216
+"Medicalaser","info@medicalaser.es","+34 968 27 00 21","http://www.medicalaser.es/","En clínica de fisioterapia Aquamed, C. Vista Alegre, 23, 30007 Murcia, España","depilación láser","Murcia",4.7,35
+"SinVello! Murcia | Depilación Láser Diodo","","+34 868 71 07 79","https://sinvelloporlaser.es/depilacion-laser-en-murcia/murcia/","&, Pl. José Esteve Mora, C. Jabonerías, Murcia, España","depilación láser","Murcia",4.9,281
+"Clínica FisioActif Murcia","","+34 621 19 33 17","https://www.clinicafisioactif.com/","C. Don Alfonso Palazón Clemares, 10, bajo, 30009 Murcia, España","fisioterapeutas","Murcia",5,78
+"Söma Salud y Bienestar","info@somasaludybienestar.es","+34 633 20 62 07","http://www.somasaludybienestar.es/","Calle Dr. Alonso de Espejo, 10, 30007 Murcia, España","fisioterapeutas","Murcia",4.9,190
+"LASERPLUS MURCIA","info@laserplusmurcia.com","+34 692 19 56 44","https://www.laserplusmurcia.com/","Av. Marqués de Los Vélez, 30008 Murcia, España","depilación láser","Murcia",5,89
+"Psiqué","","+34 601 05 06 68","https://www.psique.net/","P.º Científico Gabriel Císcar, 20, Bajo 3, 30007 Murcia, España","psicólogos","Murcia",4.9,147
+"Centro de Psicología Pepa Fernández","info@pepafernandezpsicologa.es","+34 661 58 67 21","https://pepafernandezpsicologa.es/","Av. Príncipe de Asturias, 34, Bajo B, 30007 Santiago y Zaraíche, Murcia, España","psicólogos","Murcia",5,110
+"MURCIA TERAPIA","murciaterapia@murciaterapia.es","+34 686 90 59 33","https://murciaterapia.es/","C. San Rafael, 3, Bajo C, 30007 Murcia, España","psicólogos","Murcia",5,55
+"CENTRO MEDICO SANTA CATALINA.(Murcia) Depilación láser Médico Diodo shr","","+34 697 55 56 30","https://www.santacatalinaplaza.es/","Pl. Sta. Catalina, nº6, 5ºA, 30004 Murcia, España","depilación láser","Murcia",5,96
+"Psicólogo Murcia Antonio Viñao, Consulta de psicología en Murcia","","+34 675 13 66 69","http://www.psicologomurcia-antoniovinao.com/","C. González Adalid, Nº13, piso 3º, puerta 6, 30001 Murcia, España","psicólogos","Murcia",5,25
+"Elisa Sánchez Psicóloga","elisasanchezpsicologa@gmail.com","+34 600 31 27 32","https://elisasanchezpsicologa.es/","C. González Adalid, 13, 3o, 30001 Murcia, España","psicólogos","Murcia",5,14
+"Grupostop Murcia Depilación Láser","hola@grupostop.eu","+34 968 21 64 94","https://grupostop.com/centro/grupostop-murcia/","Pl. de San Bartolome, 2, 30004 Murcia, España","depilación láser","Murcia",4.6,252
+"Condiodo Depilación Láser con Diodo","","+34 868 81 29 01","https://condiodo.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb","Carrefour Zaraiche, Av. Miguel de Cervantes, 106, CC Carrefour. Local 13, 30009 Murcia, España","depilación láser","Murcia",4.9,686
+"Corpo Derma Depilacion Laser Alejandrita","","+34 968 83 80 32","","P.º Joaquín Garrigues Walker, 4, 30007 Santiago y Zaraíche, Murcia, España","depilación láser","Murcia",4.8,24
+"Dra. Nieves Martínez-Hidalgo","psicologa@nievesmhidalgo.com","+34 676 02 27 66","https://nievesmhidalgo.com/","C. Trapería, 6, 1ºB, 30001 Murcia, España","psicólogos","Murcia",4.8,71
+"Clara Ortiz - Psicóloga en Murcia","hola@claraortizpsicologa.com","+34 658 67 29 19","https://www.claraortizpsicologa.com/","Gabinete de Psicología Atalayas, C. de Molina de Segura, 5, 3ºB, 30007 Murcia, España","psicólogos","Murcia",4.9,19
+"Estetika Laser","estetikalaser@hotmail.com","+34 968 22 23 89","http://www.estetika-laser.es/","C. Arco de Verónicas, s/no bajo, 30004 Murcia, España","depilación láser","Murcia",5,69
+"Martbella Laser Clinic","","+34 611 52 26 99","https://martbellalaserclinic.com/","C. Alejandro Seiquer, 5, 30001 Murcia, España","depilación láser","Murcia",4.9,47
+"Raquel Sastre Psicóloga","raquel_sastre@hotmail.com","+34 639 12 06 40","http://www.raquelsastrepsicologa.es/","C. Andrés Baquero, 9, 4° B, 30001 Murcia, España","psicólogos","Murcia",5,49
+"PAQUI PELLICER DEPILACIÓN LÁSER","info@paquipellicerdepilacionlaser.com","+34 616 60 25 10","http://paquipellicerdepilacionlaser.com/","Cl. Mayor, 192, 30820 Alcantarilla, Murcia, España","depilación láser","Murcia",5,985
+"Psicólogos Murcia. Araceli González.","contacto@araceligonzalezpsicologa.com","+34 687 44 20 81","https://www.araceligonzalezpsicologa.com/","C. San Patricio, 10, 3ªD, 30004 Murcia, España","psicólogos","Murcia",5,122
+"Proalma Psicología","proalmapsicologia@gmail.com","+34 621 25 66 35","http://www.proalmapsicologia.es/","Calle Serrano Alcázar, 2, 1ºB, 30001 Murcia, España","psicólogos","Murcia",5,101
+"Clínica Moreno - Psicólogos","","+34 686 41 41 30","https://www.clinicamoreno.com/","Av. Juan Pablo II, 17, 1C Escalera 1, 30007 Santiago y Zaraíche, Murcia, España","psicólogos","Murcia",4.6,158
+"Psicologa Aliety Fernández","alietyrep1971@gmail.com","+34 678 67 94 91","http://www.alietypsicologa.es/","C. Vinader, 9, 3º D, 30004 Murcia, España","psicólogos","Murcia",5,45
+"MindUp","info@mindup-psicologos.es","+34 868 24 08 67","https://mindup-psicologos.es/","C. Portillo San Antonio, 6, 30005 Murcia, España","psicólogos","Murcia",5,111
+"Tattoo , piercing Laser Murcia , Todo o Nada","info@todoonadatattoo.com","+34 623 40 44 13","http://todoonadatattoo.com/","C. Virgen de la Esperanza, 5, 30008 Murcia, España","tatuajes","Murcia",4.9,638
+"Black Jack Tattoo By Jaggo","blackjacktattoomurcia@gmail.com","+34 968 90 98 00","https://linktr.ee/blackjacktattoo","Rda. de Garay, 2, 30003 Murcia, España","tatuajes","Murcia",4.9,442
+"Clínica Unitas - Psicología, Psiquiatría y Nutrición","","+34 744 65 32 52","http://www.clinicaunitas.com/","C. Pintor Villacis, 4, Entresuelo 2, 30003 Murcia, España","psicólogos","Murcia",5,57
+"Mutants Tattoo Studio","","+34 604 44 00 04","https://www.instagram.com/mutants_tattoostudio/","C. Montijo, 19, 30001 Murcia, España","tatuajes","Murcia",5,453
+"Exotic Tattoo","","+34 968 07 77 56","","Pl. Prta Nueva, 2, 30001 Murcia, España","tatuajes","Murcia",4.6,333
+"Tattoo StudioT Murcia - Piercings","","","https://www.tatuajesmurcia.com/","C. Mula, 17, 30009 Murcia, España","tatuajes","Murcia",3.9,37
+"Centro Psicológico ""Gran Vía""","psicologosgranvia@gmail.com","+34 649 82 83 18","http://www.psicologosgranvia.com/","C. Apóstoles, 10, 3º B, 30001 Murcia, España","psicólogos","Murcia",4.9,68
+"Energy Art Tattoo","info@energyartattoo.com","+34 868 95 62 89","https://www.energyartattoo.com/","C. Vara de Rey, 19, 30001 Murcia, España","tatuajes","Murcia",4.9,412
+"Amor de Madre Tattoo MURCIA","","+34 695 33 37 80","https://m.facebook.com/profile.php?id=240861579393919","C Sagasta, 37, 30005 Murcia, España","tatuajes","Murcia",4.8,44
+"CENTRO ALMA - ANA PEINADO","","+34 633 08 14 24","https://centroalma.anapeinado.es/","P.º Pedáneo José Marín Serna, 25, 30010 Murcia, España","psicólogos","Murcia",5,27
+"MADRE SANTA Tattoo Studio Murcia Tatuajes Piercing","reservas@madresanta.tattoo","+34 647 25 27 13","http://madresanta.tattoo/","Av. Don Juan de Borbon, 12, 30007 Murcia, España","tatuajes","Murcia",4.9,119
+"Aranda-Séiquer","","+34 968 06 09 02","https://www.arandaseiquer.es/","Gran Vía del Escultor Francisco Salzillo, n°6, Piso 2°D, 30004 Murcia, España","psicólogos","Murcia",5,70
+"Maribel Sánchez. Psicóloga y psicoanalista","","+34 637 71 18 77","http://www.mspsicologamurcia.es/","C. González Adalid, 13, 1º Izq., Puerta 1, 30001 Murcia, España","psicólogos","Murcia",4.5,41
+"Psiro: Centro de Psicología","","+34 644 54 70 07","http://psiro.es/","C. de Molina de Segura, 5, bloque 3, 3ºb, 30007 Murcia, España","psicólogos","Murcia",5,3
+"PSICÓLOGO ARMANDO GALIÁN","","+34 661 23 52 80","http://www.psicologiagalian.com/","Junto Hotel Rincón de Pepe, C. Apóstoles, 26, Entresuelo A, 30001 Murcia, España","psicólogos","Murcia",5,11
+"Losie Tattoo Murcia","losietattooart@gmail.com","+34 681 95 18 57","https://losietattoo.com/","C. Miguel Hernández, 2, 30011 Murcia, España","tatuajes","Murcia",5,225
+"Dr. José Miguel Rubio Pérez, Dietista-Nutricionista","soporte@doctoralia.com","+34 644 60 49 90","https://www.doctoralia.es/jose-miguel-rubio-perez/dietista-nutricionista/murcia?utm_source=google&utm_medium=gmb&utm_campaign=122394&utm_content=website","C. San Patricio, 10, 2ª Planta, nº 4, 30004 Murcia, España","nutricionistas","Murcia",4.9,95
+"Tatuajes Murcia - JhayP tattoo & piercing","juan31mm@gmail.com","+34 624 54 24 65","https://tatuajesmurcia.es/","Av. de la Flota, 30007 Murcia, España","tatuajes","Murcia",4.8,65
+"Alma 13 Tattoo","","+34 649 38 02 08","","C. de la Palmera, 1, Local 2, 30009 Murcia, España","tatuajes","Murcia",5,49
+"13 Lágrimas tattoo","","+34 611 77 06 51","","C. Andorra de Teruel, 4, 30002 Murcia, España","tatuajes","Murcia",4.9,149
+"True Love tattoo piercing","","+34 619 49 00 56","","C. González Adalid, 30001 Murcia, España","tatuajes","Murcia",4.7,129
+"Stick Tattoo Studio","","+34 637 14 60 44","","C/ Esmeralda 1, C. Virgen de la Soledad, 3, 30007 Murcia, España","tatuajes","Murcia",4.9,95
+"NuMurcia Atalayas | Dietistas y Nutricionistas en Murcia","","+34 613 05 24 27","https://numurcia.com/","C. de Molina de Segura, 5, 30007 Puente Tocinos, Murcia, España","nutricionistas","Murcia",5,336
+"Paco Cachadas Tattoo Academy - Estudio y Academia de Tatuajes","","+34 672 91 54 24","https://www.pacocachadas.com/","C. Torre de Romo, 34, 30002 Murcia, España","tatuajes","Murcia",5,340
+"Tatuajes Cuervo Murcia","info@tatuajescuervo.es","+34 620 72 38 19","http://www.discoverinmurcia.com/item/tatuajes-cuervo-murcia-tattoo-piercing","C. Galileo, 2, 30008 Murcia, España","tatuajes","Murcia",4.7,72
+"Slave Tattoo","","+34 676 19 14 22","","C. Reina Doña Violante, 5, 30007 Murcia, España","tatuajes","Murcia",4.9,55
+"Tanta Tinta Tattoo","","+34 603 43 62 26","https://www.instagram.com/tantatinta.murcia","C. Federico Servet, 1, 30151 Murcia, España","tatuajes","Murcia",4.8,108
+"Jacobo Tattoo","","+34 625 72 32 88","","C. Antonio Puig, 4, 30001 Murcia, España","tatuajes","Murcia",4.7,113
+"LÁSER MURCIA","infolasermurcia@gmail.com","+34 614 35 40 53","https://sites.google.com/view/laser-murcia/inicio","Exotic Tattoo, Pl. Prta Nueva, 2, 30001 Murcia, España","tatuajes","Murcia",5,95
+"María García Nutricionista","","+34 667 90 95 60","http://mariagarcianutricionista.es/","C. Vista Alegre, 23, 30007 Murcia, España","nutricionistas","Murcia",4.9,53
+"Dra. Martínez Bautista Centro Médico de Nutrición y Obesidad, Nutricionista en Murcia","doctoramartinezbautista@yahoo.es","+34 968 22 14 40","https://www.doctoramartinezbautista.es/","Av. General Primo de Rivera, 1, 30008 Murcia, España","nutricionistas","Murcia",4.8,20
+"Ana Isabel Gabaldón Dietista-Nutricionista Murcia","","+34 676 13 87 50","https://www.facebook.com/anabelnutricion/?ti=as","C. Infanta Cristina, 17, 30007 Murcia, España","nutricionistas","Murcia",5,16
+"Arias Abellán Nutrición","","+34 633 72 73 01","http://comeyentrena.com/","Calle Nueva de San Antón, Ronda Norte, 29, 2b, 30009 Murcia, España","nutricionistas","Murcia",5,265
+"ACC Legal Abogados | Despacho de Abogados en Murcia","info@acclegal.es","+34 675 96 24 29","https://www.acclegal.es/","C. Platería, 35, 2º D, 30001 Murcia, España","abogados","Murcia",4.9,83
+"Nutrición con Raíz - NUTRICIONISTAS MURCIA","","+34 624 22 02 57","https://consultorio.me/pro/cita-con-raiz","Ctra. de Churra, 96, 30007 Murcia, España","nutricionistas","Murcia",5,106

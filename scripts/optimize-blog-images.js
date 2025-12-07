@@ -129,3 +129,4 @@ async function optimizeAllImages() {
 // Ejecutar
 optimizeAllImages();
 
+

@@ -1,298 +1,234 @@
-# 📧 Mailing HTML - Diseño Franjas ESKALA
+# 📧 Mailing HTML - ESKALA Marketing Digital
 
-## 🎨 Archivos Creados
+## 📁 Catálogo de Emails
 
-### 1. `email-franjas-murcia.html`
-Versión original con:
-- Franjas verticales de colores
-- Logo ESKALA prominente
-- Texto "Somos tu agencia de Marketing Digital"
-- 8 franjas clicables con servicios
-- CTA principal
+### 🎨 Emails de Marca (Presentación General)
 
-### 2. `eskala-franjas-vertical.html`
-Versión mejorada con:
-- Diseño más impactante
-- Mejor compatibilidad con clientes de email
-- Sección de propuesta de valor
-- Footer completo con contacto
-- Responsive mobile
+| Archivo | Descripción | Estilo |
+|---------|-------------|--------|
+| `email-franjas-murcia.html` | Versión original con franjas verticales | Clásico |
+| `eskala-franjas-vertical.html` | Versión mejorada, más impactante | Profesional |
+| `eskala-dia-noche-animado.html` | Con animaciones CSS (luna, sol, estrellas) | Espectacular |
 
-### 3. `eskala-dia-noche-animado.html` 🌟 **RECOMENDADA - CON MOVIMIENTO**
-Versión espectacular con animaciones:
-- ✨ **Animaciones CSS** (fadeIn, slideIn, pulse, twinkle)
-- 🌙 **Luna y estrellas** en el header (parpadean)
-- ☀️ **Sol animado** en la franja naranja (pulsa y sube)
-- 🎨 **Ciclo completo del día** en las franjas:
-  - Noche → Madrugada → Amanecer → Mañana → Mediodía → Tarde → Atardecer → Noche
-- 📊 **Sección "Tu viaje de 24 horas"** con iconos
-- 🎯 **CTA con animación de pulso**
-- 🌟 **Texto animado** que entra suavemente
-- 💫 **Más visual e impactante** que las anteriores
+### 🌅 Emails Día/Noche (5 Versiones)
 
----
+| Archivo | Concepto | Ideal para |
+|---------|----------|------------|
+| `v1-horizonte-completo.html` | Horizonte completo con sol y nubes | Primer contacto |
+| `v2-timeline-24h.html` | Timeline de 24 horas narrativo | Storytelling |
+| `v3-split-dia-noche.html` | Split vertical día/noche | Impacto visual |
+| `v4-viaje-amanecer.html` | Viaje del amanecer con métricas | Resultados |
+| `v5-cielo-completo.html` | Cielo completo con constelaciones | Premium |
 
-## ✨ Características del Diseño
+### 🎯 Campaña Kit Digital (10 Versiones)
 
-### 🎯 Elementos Principales (Versión Animada):
+Emails agresivos para empresas que recibieron un mal servicio del Kit Digital.
 
-1. **Header con Luna y Estrellas** 🌙⭐
-   - ESKALA en grande (56px)
-   - Luna decorativa con sombras realistas
-   - 6 estrellas parpadeantes
-   - Animación fadeIn al cargar
-   - Fondo degradado noche
+#### Estilo Visual (Adaptados de v2-v5)
 
-2. **Mensaje Central Animado**
-   - "De la noche al día con tu Marketing"
-   - Texto con gradiente de colores (día/noche)
-   - Animación slideIn desde la izquierda
-   - CTA con pulso infinito
+| Archivo | Basado en | Descripción |
+|---------|-----------|-------------|
+| `kit-digital-timeline-24h.html` | v2-timeline | Narrativa temporal del problema |
+| `kit-digital-split-dia-noche.html` | v3-split | Contraste problema/solución |
+| `kit-digital-viaje-amanecer.html` | v4-viaje | De la oscuridad al éxito |
+| `kit-digital-cielo-completo.html` | v5-cielo | Servicios en cielo degradado |
 
-3. **8 Franjas: El Ciclo del Día** 🌗→☀️
-   - 🌙 **WEB** (Noche profunda) - Con estrellas
-   - 🌌 **SEO** (Madrugada)
-   - 🌅 **RRSS** (Amanecer azul)
-   - ☀️ **ADS** (Mañana luminosa)
-   - 🌤️ **IA** (Mediodía dorado)
-   - 🌞 **FOTO** (Tarde naranja) - Con sol animado
-   - 🌇 **BRAND** (Atardecer rojo)
-   - 🌃 **EMAIL** (Noche) - Con estrellas
+#### Expresiones Murcianas/Españolas 🇪🇸
 
-4. **Sección "Tu viaje de 24 horas"**
-   - 4 fases con emojis: 🌙🌅☀️🌇
-   - Estrategia → Ejecución → Resultados → Análisis
-   - Concepto visual único
-
-5. **Footer Contacto**
-   - Email principal
-   - Links: Portfolio, Blog, Contacto
-   - Teléfono y ubicación
-
-### 🎬 Animaciones Incluidas:
-
-- **fadeIn**: Logo y header suben suavemente
-- **slideInRight**: Texto central entra desde la izquierda
-- **twinkle**: Estrellas parpadean (2s loop)
-- **sunRise**: Sol sube con fade
-- **pulse**: CTA y sol pulsan (efecto latido)
-
-✅ **Compatible con**: Gmail, Apple Mail, Outlook.com  
-⚠️ **Animaciones no funcionan en**: Outlook desktop (pero se ve igual, solo sin movimiento)
+| Archivo | Expresión | Emoji | Color Principal |
+|---------|-----------|-------|-----------------|
+| `kit-digital-nurdo-murciano.html` | "Te han hecho un ñurdo" | 💩 | Marrón/Naranja |
+| `kit-digital-truno.html` | "Te han hecho un truño" | 💩🪰 | Marrón tierra |
+| `kit-digital-churro-murciano.html` | "Te han hecho un churro" | 🥖 | Beige/Crema |
+| `kit-digital-queso.html` | "Te la han dado con queso" | 🧀 | Amarillo/Dorado |
+| `kit-digital-doblada.html` | "Te la han metido doblada" | 📐 | Rojo oscuro |
+| `kit-digital-moto.html` | "Te han vendido la moto" | 🏍️ | Gris/Naranja |
+| `kit-digital-pelo.html` | "Te han tomado el pelo" | ✂️💇 | Marrón dorado |
+| `kit-digital-cara.html` | "Te han visto la cara" | 👀 | Púrpura |
+| `kit-digital-tangado.html` | "Te han tangado" | 💸 | Negro/Dorado |
+| `kit-digimal.html` | "Kit DigiMAL" (terminal) | 💻 | Verde terminal |
 
 ---
 
-## 📱 Compatibilidad
+## ✅ Compatibilidad con Outlook
 
-✅ **Probado en:**
-- Gmail (web y móvil)
-- Outlook (2016, 2019, 365)
-- Apple Mail (iOS y macOS)
-- Yahoo Mail
-- Thunderbird
+**IMPORTANTE:** Todos los emails de Kit Digital han sido optimizados para Outlook:
 
-✅ **Responsive:**
-- Desktop: Franjas verticales (400px alto)
-- Móvil: Franjas horizontales adaptadas (120px alto)
+- ✅ Sin `linear-gradient()` (usa `bgcolor` sólido)
+- ✅ Fuente Arial (universal)
+- ✅ Tablas HTML para layout
+- ✅ Estilos inline
+- ✅ Condicionales MSO para Outlook
 
 ---
 
-## 🎯 Uso
+## 🔗 Links en Todos los Emails
 
-### Para enviar el mailing:
+Cada email incluye en el footer:
 
-#### Opción 1: Herramienta de Email Marketing
-
-**Mailchimp, SendinBlue, Mailerlite:**
-1. Copia el contenido de `eskala-franjas-vertical.html`
-2. Pega en modo HTML
-3. Reemplaza `{UNSUBSCRIBE}` con su variable
-4. Prueba el envío
-
-#### Opción 2: Gmail directo (no recomendado para masivo)
-1. Abre el HTML en navegador
-2. Ctrl+A (seleccionar todo)
-3. Ctrl+C (copiar)
-4. Pega en Gmail
-5. Funciona pero sin tracking
-
----
-
-## ⚙️ Personalización
-
-### Cambiar email de contacto:
-Email oficial:
 ```html
-contacto@eskaladigital.com
-```
+<!-- Links de navegación -->
+<a href="https://www.eskaladigital.com">Home</a>
+<a href="https://www.eskaladigital.com/quienes-somos">Quiénes Somos</a>
+<a href="https://www.eskaladigital.com/portfolio">Portfolio</a>
+<a href="https://www.eskaladigital.com/blog">Blog</a>
 
-### Cambiar teléfono:
-```html
-+34 626 82 34 04
-```
-
-### Link de cancelar suscripción:
-```html
+<!-- Cancelar suscripción -->
 <a href="mailto:contacto@eskaladigital.com?subject=Quiero%20cancelar%20mi%20suscripci%C3%B3n">
     Cancelar suscripción
 </a>
 ```
-Se abre un email pre-escrito para cancelar fácilmente.
 
-### Cambiar colores:
-Las franjas usan gradientes lineales:
-```html
-style="background: linear-gradient(180deg, #COLOR1 0%, #COLOR2 100%);"
+---
+
+## 📞 Datos de Contacto
+
 ```
-
-### Añadir más servicios:
-Duplica una celda `<td>` y ajusta el `width` (debe sumar 100%)
-
----
-
-## 📊 Métricas a Trackear
-
-Si usas plataforma de email marketing:
-
-- **Open Rate** (tasa de apertura)
-- **Click Rate** en cada franja
-- **CTR del CTA principal** "Hablemos"
-- **Clicks en Portfolio/Blog**
-- **Conversiones** (emails recibidos)
-
----
-
-## 🎨 Variantes Sugeridas
-
-### Variante 1: Estacional
-Cambiar colores según temporada:
-- Verano: Colores cálidos
-- Invierno: Colores fríos
-- Navidad: Rojo y verde
-
-### Variante 2: Por Industria
-Personalizar el mensaje:
-- "Somos tu agencia de Marketing para **Restaurantes**"
-- "Somos tu agencia de Marketing para **E-commerce**"
-
-### Variante 3: Promocional
-Añadir oferta especial:
-- "🎁 Oferta Navidad: -20% en diseño web"
-- "⚡ Black Friday: Consultoría gratuita"
-
----
-
-## 💡 Tips para Mejores Resultados
-
-### Subject Lines (Asuntos):
-✅ "Tu negocio en Murcia merece una mejor web"
-✅ "¿Tu competencia ya está en Google? 🔍"
-✅ "3 formas de conseguir más clientes en Murcia"
-✅ "[Nombre], esto te interesa para tu [industria]"
-
-❌ "Newsletter ESKALA #34"
-❌ "Servicios de marketing digital"
-
-### Timing:
-- **Mejor día:** Martes o Jueves
-- **Mejor hora:** 10:00 - 11:00 AM
-- **Evitar:** Lunes temprano, viernes tarde
-
-### Personalización:
-Usa variables si tu plataforma lo permite:
-```html
-<h1>Hola {FIRST_NAME},</h1>
-<p>Vi que tienes un negocio de {INDUSTRY} en {CITY}...</p>
+Email: contacto@eskaladigital.com
+Teléfono: +34 626 82 34 04
+Ubicación: Murcia, España
+Web: https://www.eskaladigital.com
 ```
 
 ---
 
-## 🚀 Pruebas Antes de Enviar
+## 📱 Compatibilidad Probada
 
-### 1. Prueba de Spam
-- Mail-tester.com
-- Objetivo: Score > 8/10
-
-### 2. Preview en Múltiples Clientes
-- Litmus o Email on Acid
-- Verifica Gmail, Outlook, Apple Mail
-
-### 3. Test A/B
-Prueba 2 versiones:
-- A: Este diseño de franjas
-- B: Diseño tradicional
-- Mide qué convierte mejor
+| Cliente | Soporte |
+|---------|---------|
+| Gmail (web/móvil) | ✅ Completo |
+| Outlook 2016/2019/365 | ✅ Completo (sin animaciones) |
+| Outlook.com | ✅ Completo |
+| Apple Mail (iOS/macOS) | ✅ Completo con animaciones |
+| Yahoo Mail | ✅ Completo |
+| Thunderbird | ✅ Completo |
 
 ---
 
-## 📝 Checklist Pre-Envío
+## 🎯 Recomendaciones de Uso
 
-- [ ] Email de remitente correcto
-- [ ] Subject line atractivo y breve
-- [ ] Preheader optimizado
+### Por Objetivo:
+
+| Objetivo | Email Recomendado |
+|----------|-------------------|
+| Primer contacto frío | `v2-timeline-24h.html` o `v4-viaje-amanecer.html` |
+| Empresas con Kit Digital malo | Cualquiera de la campaña Kit Digital |
+| Impacto visual máximo | `v5-cielo-completo.html` |
+| Tono cercano/murciano | `kit-digital-nurdo-murciano.html` o `churro` |
+| Tono profesional/tech | `kit-digimal.html` |
+| Empresas serias | `kit-digital-tangado.html` |
+
+### Por Industria:
+
+| Industria | Expresión Recomendada |
+|-----------|----------------------|
+| Hostelería/Restauración | "churro", "queso" |
+| Comercio tradicional | "ñurdo", "truño" |
+| Profesionales/Abogados | "tangado", "doblada" |
+| Tech/Startups | "kit-digimal" |
+| General | "moto", "pelo", "cara" |
+
+---
+
+## 📝 Subject Lines Sugeridos
+
+### Para Kit Digital:
+
+```
+❌ "¿Te han hecho un ñurdo con el Kit Digital?"
+🧀 "Te la han dado con queso... ¿y ahora qué?"
+🏍️ "Te vendieron la moto del Kit Digital"
+💇 "Kit Digital: ¿te han tomado el pelo?"
+💸 "¿2.000€ de subvención y esto es lo que tienes?"
+💻 "Kit DigiMAL: el error que todos cometieron"
+```
+
+### Para Marca:
+
+```
+🌅 "Tu negocio, de la noche al día"
+⭐ "El marketing que tu empresa merece"
+🚀 "¿Listo para escalar?"
+```
+
+---
+
+## 🚀 Cómo Usar
+
+### 1. Seleccionar email
+Elige según el objetivo y audiencia.
+
+### 2. Personalizar (opcional)
+- Cambiar nombre de empresa en saludos
+- Ajustar CTA según campaña
+- Modificar subject line
+
+### 3. Enviar
+- **Plataforma recomendada:** Mailchimp, Brevo, Mailerlite
+- **No recomendado:** Gmail directo para envíos masivos
+
+### 4. Trackear
+- Open rate
+- Click rate por sección
+- Conversiones (respuestas al email)
+
+---
+
+## 📊 Estructura de Archivos
+
+```
+mailing/
+├── README.md                          # Este archivo
+├── CATALOGO-COMPLETO.md               # Comparativa detallada
+├── ALTERNATIVA-GIF.md                 # Solución GIF para animaciones
+│
+├── # Marca General
+├── email-franjas-murcia.html
+├── eskala-franjas-vertical.html
+├── eskala-dia-noche-animado.html
+│
+├── # Versiones Día/Noche
+├── v1-horizonte-completo.html
+├── v2-timeline-24h.html
+├── v3-split-dia-noche.html
+├── v4-viaje-amanecer.html
+├── v5-cielo-completo.html
+│
+├── # Kit Digital - Estilo Visual
+├── kit-digital-timeline-24h.html
+├── kit-digital-split-dia-noche.html
+├── kit-digital-viaje-amanecer.html
+├── kit-digital-cielo-completo.html
+│
+└── # Kit Digital - Expresiones
+    ├── kit-digital-nurdo-murciano.html
+    ├── kit-digital-truno.html
+    ├── kit-digital-churro-murciano.html
+    ├── kit-digital-queso.html
+    ├── kit-digital-doblada.html
+    ├── kit-digital-moto.html
+    ├── kit-digital-pelo.html
+    ├── kit-digital-cara.html
+    ├── kit-digital-tangado.html
+    └── kit-digimal.html
+```
+
+---
+
+## ✅ Checklist Pre-Envío
+
+- [ ] Email remitente: `contacto@eskaladigital.com`
+- [ ] Subject line atractivo
 - [ ] Todos los links funcionan
-- [ ] Imágenes cargadas (si añades)
-- [ ] CTA visible y claro
-- [ ] Link de cancelar suscripción
+- [ ] Link "Quiénes Somos" → `/quienes-somos` ✅
+- [ ] Link "Cancelar suscripción" con mailto correcto
+- [ ] Probado en Outlook
 - [ ] Responsive verificado
-- [ ] Sin errores de ortografía
-- [ ] Cumple con RGPD
+- [ ] Sin errores ortográficos
+- [ ] Cumple RGPD
 
 ---
 
-## 🎯 Call to Actions Sugeridos
-
-Según objetivo del email:
-
-### Para Awareness:
-- "Descubre nuestro portfolio"
-- "Lee nuestros casos de éxito"
-
-### Para Engagement:
-- "¿Qué servicio necesitas?"
-- "Explora nuestros servicios"
-
-### Para Conversión:
-- "Solicita presupuesto gratuito"
-- "Hablemos de tu proyecto"
-- "Consultoría gratuita de 30 min"
-
----
-
-## 🔥 Resultado Esperado
-
-Un email que:
-- ✅ Se destaca en la bandeja de entrada
-- ✅ Transmite profesionalidad y diseño
-- ✅ Es fácil de entender
-- ✅ Invita a la acción
-- ✅ Refleja la identidad de marca ESKALA
-- ✅ Funciona perfecto en móvil y desktop
-
----
-
-**Archivos listos en:** `/mailing/`
-- `email-franjas-murcia.html` (original)
-- `eskala-franjas-vertical.html` (mejorada)
-- `eskala-dia-noche-animado.html` (con animaciones) 🌟 **← USAR ESTA**
-
----
-
-## 🎨 Diferencias Entre Versiones
-
-| Característica | Original | Mejorada | Animada 🌟 |
-|---|---|---|---|
-| Franjas verticales | ✅ | ✅ | ✅ |
-| Responsive | ✅ | ✅ | ✅ |
-| Luna y estrellas | ❌ | ❌ | ✅ Animadas |
-| Sol decorativo | ❌ | ❌ | ✅ Animado |
-| Animaciones CSS | ❌ | ❌ | ✅ 5 tipos |
-| Ciclo día/noche | ❌ | ❌ | ✅ Completo |
-| Sección viaje 24h | ❌ | ❌ | ✅ |
-| Propuesta valor | ❌ | ✅ | ✅ Mejorada |
-| Concepto narrativo | ❌ | ❌ | ✅ "De noche a día" |
-
-**Recomendación:** Usa `eskala-dia-noche-animado.html` para máximo impacto visual.
+**Total de emails disponibles:** 22
 
 **¿Listo para enviar?** 🚀
-

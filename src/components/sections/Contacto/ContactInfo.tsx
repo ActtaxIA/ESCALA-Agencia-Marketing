@@ -13,7 +13,7 @@ const contactMethods = [
   {
     icon: '📱',
     title: 'Teléfono',
-    info: '+34 XXX XXX XXX',
+    info: '+34 626 82 34 04',
     desc: 'Lun-Vie 9:00-18:00',
   },
   {

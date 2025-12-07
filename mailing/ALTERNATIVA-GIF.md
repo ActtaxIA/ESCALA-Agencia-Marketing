@@ -60,3 +60,4 @@ Si necesitas animaciones en Outlook Desktop, convierte las animaciones a GIF:
 - Quieres una animación compleja específica
 - No importa el peso del email
 
+

@@ -1,0 +1,91 @@
+.legalPage {
+  padding: 6rem 1.5rem 4rem;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0f1a 0%, #1a1f2e 100%);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.updated {
+  text-align: center;
+  color: #8892a0;
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffb366;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #ffb366;
+}
+
+.section p {
+  color: #c5cdd8;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.section ul {
+  color: #c5cdd8;
+  line-height: 1.8;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+}
+
+.section li strong {
+  color: #fff;
+}
+
+.section a {
+  color: #ffb366;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.section a:hover {
+  color: #ff8c1a;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legalPage {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .section h2 {
+    font-size: 1.15rem;
+  }
+
+  .section p,
+  .section ul {
+    font-size: 0.95rem;
+  }
+}
+
+

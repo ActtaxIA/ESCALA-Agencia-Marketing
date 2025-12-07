@@ -263,3 +263,4 @@ localStorage.removeItem('eskala-contact-consent')
 **Estado:** ✅ Listo para implementar
 **Compatibilidad:** Todos los navegadores modernos
 
+

@@ -118,3 +118,4 @@ UPDATE articles SET featured_image = 'laura-living-room-1.webp' WHERE slug = 'em
 **Completado:** Diciembre 6, 2025, 19:57
 **Estado:** ✅ Listo para actualizar en Supabase
 
+

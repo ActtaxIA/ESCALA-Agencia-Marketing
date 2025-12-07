@@ -271,3 +271,4 @@ Ahora todas tus imágenes se optimizarán automáticamente. Solo tienes que:
 
 **¡No más imágenes pesadas en tu web!** 🚀
 
+

@@ -69,7 +69,7 @@ export function Footer() {
           <ul className={styles.links}>
             <li>📍 Murcia, España</li>
             <li>✉️ contacto@eskaladigital.com</li>
-            <li>📱 +34 XXX XXX XXX</li>
+            <li>📱 +34 626 82 34 04</li>
           </ul>
         </div>
       </div>
@@ -77,6 +77,8 @@ export function Footer() {
       <div className={styles.bottom}>
         <div className={styles.bottomLinks}>
           <span>© {new Date().getFullYear()} ESKALA Marketing Digital. Todos los derechos reservados.</span>
+          <Link href="/politica-privacidad" className={styles.sitemapLink}>Política de Privacidad</Link>
+          <Link href="/aviso-legal" className={styles.sitemapLink}>Aviso Legal</Link>
           <Link href="/sitemap-html" className={styles.sitemapLink}>Mapa del Sitio</Link>
         </div>
         <span>Hecho con 🧡 en Murcia</span>

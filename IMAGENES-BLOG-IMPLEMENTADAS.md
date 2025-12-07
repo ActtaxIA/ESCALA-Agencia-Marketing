@@ -155,3 +155,4 @@ Para aplicar estos cambios en producción:
 **Fecha de implementación:** Diciembre 2025
 **Autor:** ESCALA Marketing
 
+

@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
@@ -135,7 +135,7 @@
 
 /* ===== CONTENT ===== */
 .cardContent {
-  padding: 2.5rem 3rem 2.5rem 2rem;
+  padding: 2.5rem 4rem 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,11 +239,11 @@
 }
 
 .arrowLeft {
-  left: -25px;
+  left: -30px;
 }
 
 .arrowRight {
-  right: -25px;
+  right: -30px;
 }
 
 /* ===== DOTS ===== */

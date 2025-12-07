@@ -12,13 +12,13 @@ interface StripeData {
 }
 
 const stripes: StripeData[] = [
-  { section: 'inicio', icon: '🌙', title: 'Inicio', route: '/' },
-  { section: 'quienes-somos', icon: '✦', title: 'Quiénes Somos', route: '/quienes-somos' },
+  { section: 'inicio', icon: '◐', title: 'Inicio', route: '/' },
+  { section: 'quienes-somos', icon: '◆', title: 'Quiénes Somos', route: '/quienes-somos' },
   { section: 'metodologia', icon: '◈', title: 'Metodología', route: '/metodologia' },
-  { section: 'servicios', icon: '☀', title: 'Servicios', route: '/servicios' },
-  { section: 'portfolio', icon: '◐', title: 'Portfolio', route: '/portfolio' },
+  { section: 'servicios', icon: '◯', title: 'Servicios', route: '/servicios' },
+  { section: 'portfolio', icon: '▣', title: 'Portfolio', route: '/portfolio' },
   { section: 'casos-exito', icon: '▲', title: 'Éxitos', route: '/exitos' },
-  { section: 'blog', icon: '◆', title: 'Blog', route: '/blog' },
+  { section: 'blog', icon: '◼', title: 'Blog', route: '/blog' },
   { section: 'contacto', icon: '★', title: 'Contacto', route: '/contacto' },
 ]
 

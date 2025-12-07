@@ -111,9 +111,6 @@ export default function HomeStripes() {
 
         {/* Hint */}
         <div className={styles.hint}>explora · descubre · escala</div>
-        
-        {/* Hint móvil - instrucciones de navegación */}
-        <div className={styles.mobileHint}>Toca un color para navegar</div>
 
         {/* Contenedor de franjas */}
         <div className={styles.container}>

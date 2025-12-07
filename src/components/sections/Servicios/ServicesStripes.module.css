@@ -402,20 +402,30 @@
   .mobileHint {
     display: block;
     position: fixed;
-    left: 1rem;
+    left: 0.8rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
-    font-size: 0.55rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     color: white;
     text-transform: uppercase;
-    opacity: 0.7;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    opacity: 0.95;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.8),
+                 0 0 20px rgba(255,255,255,0.3);
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    animation: pulse 2s ease-in-out infinite;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.8rem 0.4rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    animation: pulseStrong 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseStrong {
+    0%, 100% { opacity: 0.95; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.7; transform: translateY(-50%) scale(1.05); }
   }
 }
 

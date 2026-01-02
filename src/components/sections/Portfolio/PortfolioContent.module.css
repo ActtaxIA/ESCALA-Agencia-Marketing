@@ -41,13 +41,20 @@
   margin: 0 auto;
 }
 
-/* Filtros */
+/* Filtros horizontales (solo mobile) */
 .filters {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
   padding: 1rem 0;
+}
+
+/* Ocultar filtros horizontales en desktop (1024px+) */
+@media (min-width: 1024px) {
+  .filters {
+    display: none;
+  }
 }
 
 .filterBtn {

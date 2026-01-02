@@ -230,7 +230,7 @@ export default function PortfolioContent() {
           </p>
         </div>
 
-        {/* Filtros */}
+        {/* Filtros horizontales (solo mobile) */}
         <div className={styles.filters}>
           {categories.map(cat => (
             <button

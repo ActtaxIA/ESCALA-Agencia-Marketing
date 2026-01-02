@@ -20,6 +20,7 @@ const PORTFOLIO_WEBS = [
   { url: 'https://www.onprocuradores.com', folder: 'on-procuradores-murcia', name: 'ON Procuradores' },
   { url: 'https://www.ondeon.es', folder: 'ondeon-hilo-musical', name: 'Ondeón' },
   { url: 'https://www.rebecamedina.es', folder: 'rebeca-medina', name: 'Rebeca Medina' },
+  { url: 'https://www.abogadoslaboralistasibiza.com', folder: 'bcm-abogados-ibiza', name: 'BCM Abogados' },
 ];
 
 const PORTFOLIO_DIR = path.join(__dirname, '../public/portfolio');

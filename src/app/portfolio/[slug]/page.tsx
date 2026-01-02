@@ -16,25 +16,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   const { data: project } = await supabase
     .from('portfolio_projects')
-    .select('title, short_description, meta_title, meta_description, keywords')
+    .select('title, short_description, meta_title, meta_description, keywords, featured_image')
     .eq('slug', params.slug)
     .eq('published', true)
     .single()
 
   if (!project) {
     return {
-      title: 'Proyecto no encontrado',
+      title: 'Proyecto no encontrado | ESKALA Marketing',
+      description: 'El proyecto que buscas no está disponible o no existe.',
     }
   }
 
   return {
-    title: project.meta_title || project.title,
+    title: project.meta_title || `${project.title} | ESKALA Portfolio`,
     description: project.meta_description || project.short_description,
     keywords: project.keywords?.join(', '),
     openGraph: {
       title: project.title,
       description: project.short_description,
       type: 'website',
+      images: project.featured_image ? [project.featured_image] : [],
     },
   }
 }
@@ -120,9 +122,9 @@ export default async function ProjectPage({ params }: Props) {
                 <span className={styles.metaItem}>
                   🏢 <strong>Industria:</strong> {project.industry}
                 </span>
-                {project.project_url && (
+                {project.website_url && (
                   <a 
-                    href={project.project_url} 
+                    href={project.website_url} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.projectLink}
@@ -182,6 +184,23 @@ export default async function ProjectPage({ params }: Props) {
                   </div>
                 ))}
               </div>
+              
+              {/* Enlace al sitio web del cliente - SEO */}
+              {project.website_url && (
+                <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+                  <a 
+                    href={project.website_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.websiteButton}
+                    style={{ 
+                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 100%)` 
+                    }}
+                  >
+                    🌐 Visitar {project.client} →
+                  </a>
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -257,6 +276,31 @@ export default async function ProjectPage({ params }: Props) {
                       />
                     </div>
                   ))}
+                </div>
+              </section>
+            )}
+
+            {/* Enlace al proyecto - Call to Action */}
+            {project.website_url && (
+              <section className={styles.section} style={{ textAlign: 'center' }}>
+                <div className={styles.projectCta}>
+                  <h3 style={{ marginBottom: '1rem', fontSize: '1.5rem', color: '#111827' }}>
+                    ¿Quieres ver el resultado?
+                  </h3>
+                  <a 
+                    href={project.website_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.websiteButton}
+                    style={{ 
+                      background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 100%)` 
+                    }}
+                  >
+                    🌐 Visitar {project.client} →
+                  </a>
+                  <p style={{ marginTop: '1rem', fontSize: '0.95rem', color: '#6b7280' }}>
+                    Explora el proyecto en vivo
+                  </p>
                 </div>
               </section>
             )}

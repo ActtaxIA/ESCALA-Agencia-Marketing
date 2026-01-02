@@ -18,6 +18,7 @@ const PORTFOLIO_WEBS = [
   { url: 'https://www.casicinco.com', folder: 'casi-cinco-recomendaciones', name: 'Casi Cinco' },
   { url: 'https://www.hakadogs.com', folder: 'hakadogs-adiestramiento-canino', name: 'Hakadogs' },
   { url: 'https://www.onprocuradores.com', folder: 'on-procuradores-murcia', name: 'ON Procuradores' },
+  { url: 'https://www.ondeon.es', folder: 'ondeon-hilo-musical', name: 'Ondeón' },
 ];
 
 const PORTFOLIO_DIR = path.join(__dirname, '../public/portfolio');

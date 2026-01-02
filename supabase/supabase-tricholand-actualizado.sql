@@ -348,8 +348,8 @@ Tricholand se posiciona como referencia en este nicho con una estrategia digital
   -- Website URL
   'https://www.tricholand.com',
   
-  -- Services (Web multiidioma, Blog, SEO internacional, Redes sociales)
-  ARRAY['diseño-web', 'seo-local', 'redes-sociales'],
+  -- Services (Web multiidioma, Blog, SEO internacional, Redes sociales, Branding)
+  ARRAY['diseño-web', 'branding', 'seo-local', 'redes-sociales'],
   
   -- Metrics
   '{"web": "Multiidioma", "blog": "Técnico potente", "redes": "Instagram activo", "mercado": "B2B Internacional", "año": "2021", "idiomas": "ES/EN/DE", "sector": "Viveros", "exportacion": "UE/UK/USA"}'::jsonb,

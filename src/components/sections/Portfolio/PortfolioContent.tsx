@@ -10,17 +10,18 @@ interface Project {
   id: string
   title: string
   client: string
-  category: string
-  categoryLabel: string
+  categories: string[] // Cambio: ahora múltiples categorías
+  categoryLabels: string[] // Cambio: múltiples labels
   description: string
   results: string[]
-  color: string
-  icon: string
+  colors: string[] // Cambio: múltiples colores
+  icons: string[] // Cambio: múltiples iconos
   year: string
   slug: string
   metrics: any
   featured_image?: string
   website_url?: string
+  services: string[] // Añadido: servicios originales
 }
 
 // Mapeo de servicios a categorías de filtro
@@ -111,8 +112,7 @@ export default function PortfolioContent() {
         const processedProjects = data?.map((project: any) => {
           console.log('🔄 Procesando proyecto:', project.client, project.services)
           
-          // Determinar categoría principal del primer servicio
-          // services puede ser array o string, manejarlo correctamente
+          // Procesar servicios - puede ser array o string
           let servicesArray = project.services
           if (typeof servicesArray === 'string') {
             try {
@@ -122,8 +122,15 @@ export default function PortfolioContent() {
             }
           }
           
-          const mainService = servicesArray?.[0] || 'diseño-web'
-          const category = serviceToCategory[mainService] || 'web'
+          // Convertir TODOS los servicios a categorías
+          const categories = (servicesArray || ['diseño-web']).map(
+            (service: string) => serviceToCategory[service] || 'web'
+          )
+          
+          // Obtener labels, colores e iconos para TODOS los servicios
+          const labels = categories.map((cat: string) => categoryLabels[cat] || 'Diseño Web')
+          const colors = categories.map((cat: string) => categoryColors[cat] || '#4a7c9b')
+          const icons = categories.map((cat: string) => categoryIcons[cat] || '🌐')
           
           // Extraer año del project_date
           const year = project.project_date ? new Date(project.project_date).getFullYear().toString() : '2024'
@@ -138,19 +145,20 @@ export default function PortfolioContent() {
             slug: project.slug,
             title: project.title,
             client: project.client,
-            category,
-            categoryLabel: categoryLabels[category] || 'Diseño Web',
+            categories, // Ahora múltiples
+            categoryLabels: labels, // Ahora múltiples
             description: project.short_description || 'Proyecto de marketing digital',
             results: metricsArray,
-            color: categoryColors[category] || '#4a7c9b',
-            icon: categoryIcons[category] || '🌐',
+            colors, // Ahora múltiples
+            icons, // Ahora múltiples
             year,
             metrics: project.metrics,
             featured_image: project.featured_image,
             website_url: project.website_url,
+            services: servicesArray || [],
           }
           
-          console.log('✅ Proyecto procesado:', processed.client, processed.category)
+          console.log('✅ Proyecto procesado:', processed.client, processed.categories)
           return processed
         }) || []
 
@@ -196,7 +204,7 @@ export default function PortfolioContent() {
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 
-    : projects.filter(p => p.category === activeFilter)
+    : projects.filter(p => p.categories.includes(activeFilter)) // Cambio: buscar en array de categorías
 
   console.log('🔄 PortfolioContent render - projects length:', projects.length, 'filteredProjects:', filteredProjects.length, 'loading:', loading)
 
@@ -269,17 +277,23 @@ export default function PortfolioContent() {
                 ) : (
                   <div 
                     className={styles.projectBg}
-                    style={{ background: `linear-gradient(135deg, ${project.color}33 0%, ${project.color}77 100%)` }}
+                    style={{ background: `linear-gradient(135deg, ${project.colors[0]}33 0%, ${project.colors[0]}77 100%)` }}
                   >
-                    <span className={styles.projectIcon}>{project.icon}</span>
+                    <span className={styles.projectIcon}>{project.icons[0]}</span>
                   </div>
                 )}
-                <span 
-                  className={styles.projectCategory}
-                  style={{ background: project.color }}
-                >
-                  {project.categoryLabel}
-                </span>
+                {/* Múltiples categorías como badges */}
+                <div className={styles.projectCategories}>
+                  {project.categoryLabels.map((label, idx) => (
+                    <span 
+                      key={idx}
+                      className={styles.projectCategory}
+                      style={{ background: project.colors[idx] }}
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
                 <span className={styles.projectYear}>{project.year}</span>
               </div>
 

@@ -140,10 +140,18 @@
   opacity: 0.8;
 }
 
-.projectCategory {
+/* Contenedor para múltiples categorías */
+.projectCategories {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  max-width: calc(100% - 5rem); /* Dejar espacio para el año */
+}
+
+.projectCategory {
   color: white;
   padding: 0.35rem 0.8rem;
   border-radius: 50px;

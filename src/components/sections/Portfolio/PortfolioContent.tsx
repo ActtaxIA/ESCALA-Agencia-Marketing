@@ -264,7 +264,7 @@ export default function PortfolioContent() {
               className={styles.projectCard}
               style={{ 
                 animationDelay: `${index * 0.1}s`,
-                '--project-color': project.color 
+                '--project-color': project.colors[0] 
               } as React.CSSProperties}
             >
               <div className={styles.projectVisual}>

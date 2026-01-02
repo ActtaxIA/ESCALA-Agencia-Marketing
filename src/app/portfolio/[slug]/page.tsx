@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/server'
 import { StandardLayout } from '@/components/layout'
 import styles from './project.module.css'
 import ReactMarkdown from 'react-markdown'
+import ProjectCarousel from './ProjectCarousel'
 
 interface Props {
   params: { slug: string }
@@ -151,22 +152,12 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </header>
 
-        {/* Imagen destacada */}
-        {project.featured_image && (
-          <section className={styles.featuredImage}>
-            <div className={styles.container}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={project.featured_image}
-                  alt={project.title}
-                  width={1920}
-                  height={1080}
-                  className={styles.image}
-                  priority
-                />
-              </div>
-            </div>
-          </section>
+        {/* Carrusel de imágenes del proyecto */}
+        {project.gallery_images && project.gallery_images.length > 0 && (
+          <ProjectCarousel 
+            images={project.gallery_images} 
+            title={project.title}
+          />
         )}
 
         {/* Métricas destacadas */}
@@ -255,26 +246,6 @@ export default async function ProjectPage({ params }: Props) {
                 <div className={styles.technologies}>
                   {project.technologies.map((tech: string, i: number) => (
                     <span key={i} className={styles.techTag}>{tech}</span>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Galería de imágenes */}
-            {project.gallery_images && project.gallery_images.length > 0 && (
-              <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>📸 Galería del Proyecto</h2>
-                <div className={styles.gallery}>
-                  {project.gallery_images.map((image: string, i: number) => (
-                    <div key={i} className={styles.galleryItem}>
-                      <Image
-                        src={image}
-                        alt={`${project.title} - imagen ${i + 1}`}
-                        width={1200}
-                        height={800}
-                        className={styles.galleryImage}
-                      />
-                    </div>
                   ))}
                 </div>
               </section>

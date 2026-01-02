@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styles from './project.module.css'
 
@@ -10,34 +10,36 @@ interface CarouselProps {
 }
 
 export default function ProjectCarousel({ images, title }: CarouselProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % images.length)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  
+  // Tamaño de cada card + gap
+  const cardWidth = 380 // 350px card + 30px gap
+  
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return
+    
+    const container = scrollContainerRef.current
+    const scrollAmount = cardWidth * 2 // Desplazar 2 cards a la vez
+    
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    }
   }
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      setScrollPosition(scrollContainerRef.current.scrollLeft)
+    }
   }
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
-
-  // Auto-play
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 5000) // Cambia cada 5 segundos
-
-    return () => clearInterval(interval)
-  }, [currentSlide])
 
   // Navegación con teclado
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') prevSlide()
-      if (e.key === 'ArrowRight') nextSlide()
+      if (e.key === 'ArrowLeft') scroll('left')
+      if (e.key === 'ArrowRight') scroll('right')
     }
 
     window.addEventListener('keydown', handleKeyDown)
@@ -46,58 +48,55 @@ export default function ProjectCarousel({ images, title }: CarouselProps) {
 
   if (!images || images.length === 0) return null
 
+  const showControls = images.length > 3 // Mostrar controles si hay más de 3 imágenes
+
   return (
-    <section className={styles.carousel}>
-      <div className={styles.carouselContainer}>
+    <section className={styles.galleryCarousel}>
+      <div className={styles.galleryContainer}>
+        {showControls && (
+          <button 
+            className={`${styles.galleryBtn} ${styles.galleryPrev}`}
+            onClick={() => scroll('left')}
+            aria-label="Desplazar izquierda"
+          >
+            ‹
+          </button>
+        )}
+        
         <div 
-          className={styles.carouselTrack}
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          ref={scrollContainerRef}
+          className={styles.galleryScroll}
+          onScroll={handleScroll}
         >
           {images.map((image: string, i: number) => (
-            <div key={i} className={styles.carouselSlide}>
-              <Image
-                src={image}
-                alt={`${title} - imagen ${i + 1}`}
-                width={1920}
-                height={1080}
-                className={styles.carouselImage}
-                priority={i === 0}
-              />
+            <div key={i} className={styles.polaroidCard}>
+              <div className={styles.polaroidInner}>
+                <div className={styles.polaroidImage}>
+                  <Image
+                    src={image}
+                    alt={`${title} - imagen ${i + 1}`}
+                    width={350}
+                    height={280}
+                    className={styles.cardImage}
+                    priority={i < 4}
+                  />
+                </div>
+                <div className={styles.polaroidCaption}>
+                  {i + 1} / {images.length}
+                </div>
+              </div>
             </div>
           ))}
         </div>
         
-        {/* Controles del carrusel - Solo si hay más de 1 imagen */}
-        {images.length > 1 && (
-          <>
-            <button 
-              className={`${styles.carouselBtn} ${styles.carouselPrev}`}
-              onClick={prevSlide}
-              aria-label="Imagen anterior"
-            >
-              ‹
-            </button>
-            <button 
-              className={`${styles.carouselBtn} ${styles.carouselNext}`}
-              onClick={nextSlide}
-              aria-label="Imagen siguiente"
-            >
-              ›
-            </button>
-            
-            {/* Indicadores */}
-            <div className={styles.carouselIndicators}>
-              {images.map((_: string, i: number) => (
-                <button 
-                  key={i} 
-                  className={`${styles.carouselDot} ${i === currentSlide ? 'active' : ''}`}
-                  onClick={() => goToSlide(i)}
-                  aria-label={`Ir a imagen ${i + 1}`}
-                  aria-current={i === currentSlide}
-                />
-              ))}
-            </div>
-          </>
+        {showControls && (
+          <button 
+            className={`${styles.galleryBtn} ${styles.galleryNext}`}
+            onClick={() => scroll('right')}
+            aria-label="Desplazar derecha"
+          >
+            ›
+          </button>
         )}
       </div>
     </section>

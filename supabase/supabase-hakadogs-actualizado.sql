@@ -37,8 +37,8 @@ INSERT INTO portfolio_projects (
   'Hakadogs',
   'Educación Canina y Servicios para Mascotas',
   
-  -- Short Description
-  'Diseño y desarrollo web completo para centro de adiestramiento y educación canina en Archena (Murcia). Blog educativo y landing pages locales para captación de clientes en la Región de Murcia.',
+  -- Short Description (máximo 70 caracteres)
+  'Centro de adiestramiento canino en Archena, Murcia (2018).',
   
   -- Full Description (Markdown)
   '# Hakadogs: Presencia Digital para Educación Canina

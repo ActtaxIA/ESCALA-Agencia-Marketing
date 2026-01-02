@@ -37,8 +37,8 @@ INSERT INTO portfolio_projects (
   'ON Procuradores',
   'Servicios Legales y Procuraduría',
   
-  -- Short Description
-  'Diseño y desarrollo web para despacho de procuradores en Murcia. Web profesional con blog jurídico, SEO local y configuración de Google Business para captación de clientes en la Región de Murcia.',
+  -- Short Description (máximo 70 caracteres)
+  'Web profesional para despacho de procuradores en Murcia (2021).',
   
   -- Full Description (Markdown)
   '# ON Procuradores: Presencia Digital para Despacho de Procuraduría

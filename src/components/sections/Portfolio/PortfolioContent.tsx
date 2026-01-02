@@ -97,7 +97,7 @@ export default function PortfolioContent() {
           .from('portfolio_projects')
           .select('*')
           .eq('published', true)
-          .order('order_position', { ascending: true })
+          .order('project_date', { ascending: false }) // Más recientes primero
 
         if (error) {
           console.error('Error de Supabase:', error)

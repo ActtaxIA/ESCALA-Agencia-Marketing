@@ -287,8 +287,8 @@ La web de ON Procuradores es un ejemplo de cómo un despacho profesional puede a
   -- Order Position
   4,
   
-  -- Meta Title
-  'ON Procuradores | Web para Despacho de Procuradores Murcia | ESKALA Portfolio',
+  -- Meta Title (máximo 70 caracteres = 66 caracteres)
+  'ON Procuradores Murcia | Web Profesional | ESKALA Portfolio',
   
   -- Meta Description
   'Web profesional para ON Procuradores en Murcia. Diseño Joomla, blog jurídico, SEO local y Google Business para captación de clientes.',

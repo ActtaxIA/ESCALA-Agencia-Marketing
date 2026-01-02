@@ -225,8 +225,8 @@ Hakadogs se posiciona en este mercado creciente con una propuesta profesional y 
   -- Order Position
   5,
   
-  -- Meta Title
-  'Hakadogs | Web para Centro de Adiestramiento Canino | ESKALA Portfolio',
+  -- Meta Title (máximo 70 caracteres = 60 caracteres)
+  'Hakadogs Archena | Adiestramiento Canino | ESKALA Portfolio',
   
   -- Meta Description
   'Web completa para Hakadogs, centro de educación canina en Archena. Diseño Joomla, blog educativo y SEO local para captación en Murcia.',

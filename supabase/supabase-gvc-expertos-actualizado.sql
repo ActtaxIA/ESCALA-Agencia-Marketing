@@ -23,7 +23,6 @@ INSERT INTO portfolio_projects (
   video_url,
   website_url,
   services, 
-  technologies,
   metrics,
   published, 
   featured, 
@@ -476,11 +475,8 @@ Este proyecto no solo es una web, es una **plataforma de generación de negocio*
   -- Services
   ARRAY['diseño-web', 'seo-local', 'ia-contenidos', 'desarrollo-web'],
   
-  -- Technologies
-  ARRAY['Next.js', 'React', 'IA Generativa', 'GPT-4', 'Vercel', 'PostgreSQL', 'Tailwind CSS'],
-  
   -- Metrics
-  '{"posicionamiento": "Top 3", "consultas": "+180%", "coste_adquisicion": "-40%", "carga": "<1seg", "año": "2025", "finalizacion": "15 agosto 2025", "articulos_ia_semana": "2-3", "roi": "3 meses", "fundado_bufete": "1946"}'::jsonb,
+  '{"posicionamiento": "Top 3", "consultas": "+180%", "coste_adquisicion": "-40%", "carga": "<1seg", "año": "2025", "finalizacion": "15 agosto 2025", "articulos_ia_semana": "2-3", "roi": "3 meses", "fundado_bufete": "1946", "tecnologias": "Next.js, React, IA Generativa, GPT-4, Vercel, PostgreSQL, Tailwind CSS"}'::jsonb,
   
   -- Published & Featured
   true,
@@ -509,7 +505,10 @@ Este proyecto no solo es una web, es una **plataforma de generación de negocio*
     'posicionamiento bufetes',
     'contenido localizado IA',
     'performance web',
-    'Next.js legal'
+    'Next.js',
+    'React',
+    'GPT-4',
+    'Vercel'
   ],
   
   -- Project Date
@@ -528,7 +527,6 @@ SELECT
   client, 
   slug, 
   array_length(services, 1) as num_servicios,
-  array_length(technologies, 1) as num_tecnologias,
   array_length(gallery_images, 1) as num_imagenes,
   array_length(keywords, 1) as num_keywords,
   published,
@@ -563,5 +561,5 @@ WHERE slug = 'gvc-expertos-abogados';
 -- 17. Posición 1 (proyecto más reciente)
 -- 18. Meta_title: 69 caracteres (dentro del límite de 70)
 -- 19. Meta_description: 159 caracteres (dentro del límite de 160)
--- 20. Incluye array de TECHNOLOGIES (Next.js, IA, etc.)
+-- 20. Tecnologías incluidas en metrics y keywords (Next.js, React, IA, etc.)
 

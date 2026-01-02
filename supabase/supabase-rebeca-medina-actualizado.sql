@@ -1,44 +1,53 @@
--- ============================================
--- PROYECTO: Rebeca Medina - Coordinadora de Intimidad y Coach Actoral
--- ============================================
--- Página web personal para Rebeca Medina
--- Coordinadora de Intimidad certificada internacionalmente
--- y Coach Actoral especializada en cine, televisión y teatro
+-- =====================================================
+-- PROYECTO: REBECA MEDINA - WEB PROFESIONAL
+-- =====================================================
+-- Script completo para insertar el proyecto Rebeca Medina en portfolio
+-- Ejecutar en Supabase SQL Editor
 --
--- FECHA: Abril 2019
 -- CLIENTE: Rebeca Medina
 -- URL: https://www.rebecamedina.es/
---
--- SERVICIOS:
--- - Diseño Web: Página web profesional con blog
--- 
--- NOTA: Proyecto sencillo, sin SEO local ni gestión de redes sociales
--- ============================================
+-- FECHA: Abril 2019
+-- SERVICIOS: Diseño Web con blog
+-- =====================================================
 
+-- Primero eliminamos el registro anterior si existe
+DELETE FROM portfolio_projects WHERE slug = 'rebeca-medina';
+
+-- Insertamos el proyecto completo de Rebeca Medina
 INSERT INTO portfolio_projects (
-  slug,
-  title,
-  short_description,
+  title, 
+  slug, 
+  client, 
+  industry,
+  short_description, 
   full_description,
-  services,
-  colors,
-  client_name,
-  project_date,
-  website_url,
-  featured_image,
+  challenge, 
+  solution, 
+  results,
+  featured_image, 
   gallery_images,
+  video_url,
+  website_url,
+  services, 
   metrics,
-  meta_title,
-  meta_description,
-  is_published,
+  published, 
+  featured, 
   order_position,
-  created_at,
-  updated_at
+  meta_title, 
+  meta_description,
+  project_date, 
+  published_at
 ) VALUES (
-  'rebeca-medina',
   'Rebeca Medina - Coordinadora de Intimidad y Coach Actoral',
-  'Web profesional para coordinadora de intimidad certificada',
-  '# Rebeca Medina - Coordinadora de Intimidad
+  'rebeca-medina',
+  'Rebeca Medina',
+  'Sector Audiovisual - Coordinación de Intimidad',
+  
+  -- Short Description
+  'Web profesional para coordinadora de intimidad certificada internacionalmente (IPA, SAG-AFTRA) y coach actoral. Diseño con blog integrado.',
+  
+  -- Full Description (Markdown)
+  '# Rebeca Medina - Coordinadora de Intimidad y Coach Actoral
 
 ## Sobre el Cliente
 
@@ -48,22 +57,26 @@ Además de su trabajo como coordinadora de intimidad, Rebeca es **Coach Actoral*
 
 ## El Proyecto
 
-En abril de 2019, desarrollamos una **página web profesional** para Rebeca Medina que reflejara su perfil profesional único en la industria audiovisual española.
+En **abril de 2019**, desarrollamos una **página web profesional** para Rebeca Medina que reflejara su perfil profesional único en la industria audiovisual española.
 
 ### Características Principales
 
-- **Diseño Profesional**: Web elegante y minimalista que transmite profesionalidad
-- **Secciones Destacadas**: 
-  - Coordinación de Intimidad
-  - Coach Actoral
-  - Biografía profesional
-  - Portfolio de trabajos
-  - Blog de noticias
-  - Contacto
+🎭 **Diseño Profesional**
+- Web elegante y minimalista que transmite profesionalidad
+- Identidad visual acorde al sector audiovisual
 
-- **Responsive Design**: Adaptada perfectamente a todos los dispositivos
-- **Blog Integrado**: Sección de noticias para compartir proyectos y novedades
-- **Optimización de Rendimiento**: Carga rápida y navegación fluida
+📱 **Secciones Destacadas**
+- Coordinación de Intimidad
+- Coach Actoral
+- Biografía profesional
+- Portfolio de trabajos
+- Blog de noticias
+- Contacto
+
+💻 **Tecnología**
+- Responsive Design adaptado a todos los dispositivos
+- Blog integrado con sistema de publicación
+- Optimización de rendimiento y carga rápida
 
 ## Servicios Desarrollados
 
@@ -71,10 +84,10 @@ En abril de 2019, desarrollamos una **página web profesional** para Rebeca Medi
 
 Creamos una página web que sirve como **tarjeta de presentación profesional** en el sector audiovisual, destacando:
 
-- Su doble perfil: Coordinadora de Intimidad y Coach Actoral
-- Portfolio visual de sus trabajos en producciones destacadas
-- Sección de noticias para mantener actualizada su actividad
-- Información de contacto profesional
+✅ Su doble perfil: Coordinadora de Intimidad y Coach Actoral  
+✅ Portfolio visual de sus trabajos en producciones destacadas  
+✅ Sección de noticias para mantener actualizada su actividad  
+✅ Información de contacto profesional
 
 ### Portfolio de Trabajos
 
@@ -100,10 +113,10 @@ Y producciones teatrales como:
 
 La página web ha servido como **plataforma profesional** para Rebeca Medina, permitiéndole:
 
-- ✅ **Visibilidad Internacional**: Presencia online profesional en el sector audiovisual
-- ✅ **Credibilidad**: Showcase de certificaciones y trabajos de alto perfil
-- ✅ **Contacto Profesional**: Canal directo para producciones y empresas del sector
-- ✅ **Actualización Continua**: Blog para compartir novedades y proyectos
+✅ **Visibilidad Internacional**: Presencia online profesional en el sector audiovisual  
+✅ **Credibilidad**: Showcase de certificaciones y trabajos de alto perfil  
+✅ **Contacto Profesional**: Canal directo para producciones y empresas del sector  
+✅ **Actualización Continua**: Blog para compartir novedades y proyectos
 
 ## Tecnología Utilizada
 
@@ -116,62 +129,76 @@ La página web ha servido como **plataforma profesional** para Rebeca Medina, pe
 
 Una **web profesional y elegante** que refleja el perfil único de Rebeca Medina en el sector audiovisual español, posicionándola como referente en coordinación de intimidad y coaching actoral.',
   
-  ARRAY['diseño-web']::text[],
-  ARRAY['#FF6B6B']::text[],
-  'Rebeca Medina',
-  '2019-04-01',
-  'https://www.rebecamedina.es/',
+  -- Challenge
+  'Rebeca Medina, profesional con una trayectoria única como Coordinadora de Intimidad certificada internacionalmente y Coach Actoral, necesitaba una presencia digital profesional que reflejara su doble perfil en el sector audiovisual y sirviera como tarjeta de presentación para producciones y empresas.',
+  
+  -- Solution
+  'Desarrollamos una página web profesional con diseño elegante y minimalista, que incluye secciones dedicadas para cada área (Coordinación de Intimidad, Coach Actoral, Biografía, Trabajos, Blog, Contacto), con un showcase visual de sus trabajos en producciones de alto perfil y un blog integrado para mantener actualizada su actividad profesional.',
+  
+  -- Results
+  'Plataforma profesional que sirve como canal de contacto directo para producciones nacionales e internacionales, con showcase de más de 400 escenas coordinadas en producciones destacadas como The Walking Dead, El caso Asunta, Veneno y Jaguar. La web se ha convertido en su tarjeta de presentación oficial en el sector audiovisual.',
+  
+  -- Featured Image
   '/portfolio/rebeca-medina/hero.jpg',
   
+  -- Gallery Images
   ARRAY[
     '/portfolio/rebeca-medina/hero.jpg',
     '/portfolio/rebeca-medina/screenshot-full.jpg'
   ]::text[],
   
+  -- Video URL
+  NULL,
+  
+  -- Website URL
+  'https://www.rebecamedina.es/',
+  
+  -- Services
+  ARRAY['diseño-web']::text[],
+  
+  -- Metrics
   '{
     "Certificaciones": "IPA y SAG-AFTRA",
-    "Escenas Coordinadas": "Más de 400 desde 2021",
-    "Tipo de Web": "Página profesional con blog",
-    "Secciones": "6 secciones principales"
+    "Escenas Coordinadas": "+400 desde 2021",
+    "Tipo": "Web profesional con blog",
+    "Secciones": "6 secciones principales",
+    "Producciones Destacadas": "The Walking Dead, El caso Asunta, Veneno, Jaguar"
   }'::jsonb,
   
+  -- Published
+  true,
+  
+  -- Featured
+  false,
+  
+  -- Order Position
+  9,
+  
+  -- Meta Title
   'Rebeca Medina | Web Coordinadora de Intimidad y Coach Actoral',
+  
+  -- Meta Description
   'Página web profesional para Rebeca Medina, Coordinadora de Intimidad certificada por IPA y SAG-AFTRA, y Coach Actoral. Desarrollo web con blog para sector audiovisual.',
   
-  true,
-  9,
-  NOW(),
+  -- Project Date
+  '2019-04-01',
+  
+  -- Published At
   NOW()
-)
-ON CONFLICT (slug) 
-DO UPDATE SET
-  title = EXCLUDED.title,
-  short_description = EXCLUDED.short_description,
-  full_description = EXCLUDED.full_description,
-  services = EXCLUDED.services,
-  colors = EXCLUDED.colors,
-  client_name = EXCLUDED.client_name,
-  project_date = EXCLUDED.project_date,
-  website_url = EXCLUDED.website_url,
-  featured_image = EXCLUDED.featured_image,
-  gallery_images = EXCLUDED.gallery_images,
-  metrics = EXCLUDED.metrics,
-  meta_title = EXCLUDED.meta_title,
-  meta_description = EXCLUDED.meta_description,
-  is_published = EXCLUDED.is_published,
-  order_position = EXCLUDED.order_position,
-  updated_at = NOW();
+);
 
 -- Verificación
 SELECT 
   slug,
   title,
-  LENGTH(short_description) as short_desc_length,
-  LENGTH(meta_title) as meta_title_length,
+  client,
+  industry,
+  LENGTH(short_description) as short_desc_chars,
+  LENGTH(meta_title) as meta_title_chars,
   services,
   project_date,
   website_url,
-  is_published,
+  published,
   order_position
 FROM portfolio_projects 
 WHERE slug = 'rebeca-medina';

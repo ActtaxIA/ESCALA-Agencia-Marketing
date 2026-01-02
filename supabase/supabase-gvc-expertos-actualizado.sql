@@ -482,7 +482,7 @@ Este proyecto no solo es una web, es una **plataforma de generación de negocio*
   true, -- DESTACADO (proyecto innovador con IA)
   
   -- Order Position
-  1, -- Proyecto más reciente (2025)
+  2, -- Segundo proyecto más reciente (Agosto 2025) (2025)
   
   -- Meta Title (máximo 70 caracteres = 69 chars)
   'GVC Expertos | Web con IA Negligencias Médicas | ESKALA Portfolio',

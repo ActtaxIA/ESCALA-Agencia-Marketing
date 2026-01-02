@@ -557,23 +557,23 @@ Es un proyecto que nos enorgullece profundamente y que seguirá evolucionando co
   ARRAY['apps-ia', 'diseño-web', 'desarrollo-web'],
   
   -- Metrics
-  '{"establecimientos": "+50,000", "cobertura": "España completa", "valoracion_minima": "4.7★", "categorias": "Diamante/Oro/Plata", "precio_sub": "9.99€/mes", "tecnologia": "Next.js + IA + PWA", "chatbot": "Tío Viajero IA", "innovacion": "Algoritmo ruta único", "lighthouse": "95+", "año": "2024-2025", "cliente": "Furgocasa"}'::jsonb,
+  '{"establecimientos": "+50,000", "cobertura": "España completa", "valoracion_minima": "4.7★", "categorias": "Diamante/Oro/Plata", "precio_sub": "9.99€/mes", "tecnologia": "Next.js + IA + PWA", "chatbot": "Tío Viajero IA", "innovacion": "Algoritmo ruta único", "lighthouse": "95+", "año": "2025", "lanzamiento": "Octubre 2025", "cliente": "Furgocasa"}'::jsonb,
   
   -- Published & Featured
   true,
   true, -- PROYECTO DESTACADO (innovación técnica extrema)
   
   -- Order Position
-  3, -- Tercer proyecto más reciente
+  1, -- Proyecto MÁS reciente (Octubre 2025)
   
   -- Meta Title (máximo 70 caracteres = 69 chars)
   'Casi Cinco | PWA con IA Restaurantes España | ESKALA Portfolio',
   
-  -- Meta Description (máximo 160 caracteres = 158 chars)
-  'PWA con IA que filtra +50K restaurantes 4.7★+ en España. Google Maps integrado, rutas inteligentes, chatbot IA. Next.js + Supabase. Proyecto 2024-2025.',
+  -- Meta Description (máximo 160 caracteres = 159 chars)
+  'PWA con IA que filtra +50K restaurantes 4.7★+ en España. Google Maps integrado, rutas inteligentes, chatbot IA. Next.js + Supabase. Lanzamiento Oct 2025.',
   
   -- Project Date
-  '2024-12-15',
+  '2025-10-15',
   
   -- Published At
   NOW()

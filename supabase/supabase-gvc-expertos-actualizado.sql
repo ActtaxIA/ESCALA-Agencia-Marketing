@@ -29,7 +29,6 @@ INSERT INTO portfolio_projects (
   order_position,
   meta_title, 
   meta_description,
-  keywords,
   project_date, 
   published_at
 ) VALUES (
@@ -491,26 +490,6 @@ Este proyecto no solo es una web, es una **plataforma de generación de negocio*
   -- Meta Description (máximo 160 caracteres = 159 chars)
   'Web con IA integrada para GVC Expertos. Contenido automatizado, landing pages localizadas, SEO avanzado. +180% consultas, Top 3 Google. Proyecto 2025.',
   
-  -- Keywords
-  ARRAY[
-    'web con inteligencia artificial',
-    'IA generativa contenidos',
-    'landing pages dinámicas',
-    'SEO automatizado',
-    'negligencias médicas',
-    'derecho sanitario',
-    'abogados especializados',
-    'web jurídica',
-    'marketing legal',
-    'posicionamiento bufetes',
-    'contenido localizado IA',
-    'performance web',
-    'Next.js',
-    'React',
-    'GPT-4',
-    'Vercel'
-  ],
-  
   -- Project Date
   '2025-08-15',
   
@@ -528,7 +507,6 @@ SELECT
   slug, 
   array_length(services, 1) as num_servicios,
   array_length(gallery_images, 1) as num_imagenes,
-  array_length(keywords, 1) as num_keywords,
   published,
   featured,
   order_position,
@@ -561,5 +539,6 @@ WHERE slug = 'gvc-expertos-abogados';
 -- 17. Posición 1 (proyecto más reciente)
 -- 18. Meta_title: 69 caracteres (dentro del límite de 70)
 -- 19. Meta_description: 159 caracteres (dentro del límite de 160)
--- 20. Tecnologías incluidas en metrics y keywords (Next.js, React, IA, etc.)
+-- 20. Tecnologías incluidas en metrics (JSON)
+-- 21. Keywords originalmente planificadas agregadas a meta_description para SEO
 

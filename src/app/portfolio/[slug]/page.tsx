@@ -22,10 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Usar EXACTAMENTE la misma consulta que el componente principal
   const { data: project, error } = await supabase
     .from('portfolio_projects')
-    .select('title, short_description, meta_title, meta_description, keywords, featured_image')
+    .select('title, short_description, meta_title, meta_description, keywords, featured_image, client')
     .eq('slug', params.slug)
     .eq('published', true)
     .single()
+
+  // URL base del sitio
+  const siteUrl = 'https://www.eskaladigital.com'
+  const projectUrl = `${siteUrl}/portfolio/${params.slug}`
 
   // Si hay error o no encuentra, usar fallback basado en slug
   if (error || !project) {
@@ -37,19 +41,64 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: `${slugFormatted} | ESKALA Portfolio`,
       description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
+      openGraph: {
+        title: `${slugFormatted} | ESKALA Portfolio`,
+        description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
+        url: projectUrl,
+        siteName: 'ESKALA Marketing Digital',
+        type: 'website',
+        locale: 'es_ES',
+        images: [{
+          url: `${siteUrl}/eskala_digital_opengraph.png`,
+          width: 1200,
+          height: 630,
+          alt: 'ESKALA Marketing Digital'
+        }],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${slugFormatted} | ESKALA Portfolio`,
+        description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
+        images: [`${siteUrl}/eskala_digital_opengraph.png`],
+      }
     }
   }
 
-  // Si encontramos el proyecto, usar sus metadatos
+  // Construir URL absoluta de la imagen
+  const imageUrl = project.featured_image 
+    ? (project.featured_image.startsWith('http') 
+        ? project.featured_image 
+        : `${siteUrl}${project.featured_image}`)
+    : `${siteUrl}/eskala_digital_opengraph.png`
+
+  const pageTitle = project.meta_title || `${project.title} | ESKALA Portfolio`
+  const pageDescription = project.meta_description || project.short_description || `Proyecto ${project.client} del portfolio de ESKALA Marketing Digital`
+
+  // Si encontramos el proyecto, usar sus metadatos completos
   return {
-    title: project.meta_title || `${project.title} | ESKALA Portfolio`,
-    description: project.meta_description || project.short_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
+    title: pageTitle,
+    description: pageDescription,
     keywords: project.keywords?.join(', '),
     openGraph: {
       title: project.title,
-      description: project.short_description || project.meta_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
+      description: pageDescription,
+      url: projectUrl,
+      siteName: 'ESKALA Marketing Digital',
       type: 'website',
-      images: project.featured_image ? [{ url: project.featured_image }] : [],
+      locale: 'es_ES',
+      images: [{
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: project.title,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: pageDescription,
+      images: [imageUrl],
+      creator: '@eskaladigital',
     },
   }
 }

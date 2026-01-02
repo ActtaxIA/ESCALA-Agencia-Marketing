@@ -58,10 +58,52 @@ INSERT INTO portfolio_projects (
 - **Updates**: `update-[tipo]-[descripcion].sql`
 - **Datos generales**: `supabase-[tipo]-data.sql`
 
+## ⚠️ LÍMITES DE CARACTERES IMPORTANTES
+
+Para evitar errores de tipo `value too long for type character varying(X)`, **respeta estos límites**:
+
+### **Campos de Portfolio Projects:**
+- **`meta_title`**: **MÁXIMO 70 caracteres** ⚠️
+- **`meta_description`**: **MÁXIMO 160 caracteres**
+- **`title`**: Máximo 200 caracteres
+- **`slug`**: Máximo 200 caracteres
+- **`client`**: Máximo 150 caracteres
+- **`industry`**: Máximo 100 caracteres
+- **`short_description`**: **SIN LÍMITE** (tipo TEXT)
+- **`full_description`**: SIN LÍMITE (tipo TEXT)
+- **Todos los demás campos de texto largo**: SIN LÍMITE (tipo TEXT)
+
+### **URLs y Medios:**
+- **`featured_image`**: Máximo 500 caracteres
+- **`video_url`**: Máximo 500 caracteres
+- **`website_url`**: Máximo 500 caracteres
+
+### ✅ **Ejemplo Correcto de meta_title:**
+```sql
+-- ✅ BIEN (66 caracteres)
+'ON Procuradores Murcia | Web Profesional | ESKALA Portfolio'
+
+-- ❌ MAL (82 caracteres - SUPERA EL LÍMITE)
+'ON Procuradores | Web para Despacho de Procuradores Murcia | ESKALA Portfolio'
+```
+
+### 💡 **Consejo:**
+Usa esta estructura para meta_title (mantiene < 70 caracteres):
+```
+[Cliente] [Ubicación] | [Servicio Principal] | ESKALA Portfolio
+```
+
+Ejemplos:
+- `Hakadogs Archena | Adiestramiento Canino | ESKALA Portfolio` (60 chars)
+- `Furgocasa | Caso de Éxito Marketing Digital | ESKALA Portfolio` (66 chars)
+- `Acttax | Caso de Éxito Web y SEO B2B | ESKALA Portfolio` (58 chars)
+
 ## ⚠️ IMPORTANTE
 
 - **TODOS los scripts SQL** deben crearse en esta carpeta (`supabase/`)
 - **NO crear scripts SQL** en la carpeta raíz del proyecto
+- **VERIFICAR límites de caracteres** antes de ejecutar (ver sección arriba)
+- **`meta_title` MÁXIMO 70 caracteres** - El error más común
 - Antes de ejecutar un script, **verifica** que no haya conflictos con datos existentes
 - Los scripts de proyectos incluyen `DELETE` para evitar duplicados
 

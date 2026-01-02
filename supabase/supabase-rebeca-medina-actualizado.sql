@@ -177,8 +177,8 @@ Una **web profesional y elegante** que refleja el perfil único de Rebeca Medina
   -- Meta Title
   'Rebeca Medina | Web Coordinadora de Intimidad y Coach Actoral',
   
-  -- Meta Description
-  'Página web profesional para Rebeca Medina, Coordinadora de Intimidad certificada por IPA y SAG-AFTRA, y Coach Actoral. Desarrollo web con blog para sector audiovisual.',
+  -- Meta Description (160 caracteres máximo)
+  'Web profesional para Rebeca Medina, Coordinadora de Intimidad (IPA, SAG-AFTRA) y Coach Actoral. Diseño con blog para el sector audiovisual.',
   
   -- Project Date
   '2019-04-01',
@@ -195,6 +195,7 @@ SELECT
   industry,
   LENGTH(short_description) as short_desc_chars,
   LENGTH(meta_title) as meta_title_chars,
+  LENGTH(meta_description) as meta_desc_chars,
   services,
   project_date,
   website_url,

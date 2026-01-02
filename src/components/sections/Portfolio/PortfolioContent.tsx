@@ -87,7 +87,6 @@ export default function PortfolioContent() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
   const [activeFilter, setActiveFilter] = useState('all')
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   // Cargar proyectos desde Supabase
   useEffect(() => {
@@ -251,14 +250,14 @@ export default function PortfolioContent() {
             {filteredProjects.map((project, index) => {
               console.log('🎨 Renderizando proyecto:', project.client, project)
               return (
-            <article
+            <Link
+              href={`/portfolio/${project.slug}`}
               key={project.id}
               className={styles.projectCard}
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 '--project-color': project.color 
               } as React.CSSProperties}
-              onClick={() => setSelectedProject(project)}
             >
               <div className={styles.projectVisual}>
                 {project.featured_image ? (
@@ -296,8 +295,8 @@ export default function PortfolioContent() {
 
                 <span className={styles.projectCta}>Ver proyecto →</span>
               </div>
-            </article>
-              )
+            </Link>
+            )
             })}
           </div>
         )}
@@ -335,44 +334,6 @@ export default function PortfolioContent() {
           </Link>
         </div>
       </section>
-
-      {/* Modal de proyecto */}
-      {selectedProject && (
-        <div className={styles.modal} onClick={() => setSelectedProject(null)}>
-          <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-            <button className={styles.modalClose} onClick={() => setSelectedProject(null)}>×</button>
-            
-            <div 
-              className={styles.modalHeader}
-              style={{ background: `linear-gradient(135deg, ${selectedProject.color} 0%, ${selectedProject.color}cc 100%)` }}
-            >
-              <span className={styles.modalIcon}>{selectedProject.icon}</span>
-              <span className={styles.modalCategory}>{selectedProject.categoryLabel}</span>
-            </div>
-
-            <div className={styles.modalBody}>
-              <span className={styles.modalClient}>{selectedProject.client}</span>
-              <h2 className={styles.modalTitle}>{selectedProject.title}</h2>
-              <p className={styles.modalDesc}>{selectedProject.description}</p>
-
-              <div className={styles.modalResults}>
-                <h4>Resultados conseguidos</h4>
-                <div className={styles.modalResultsGrid}>
-                  {selectedProject.results.map((result, i) => (
-                    <div key={i} className={styles.modalResult}>
-                      <span className={styles.modalResultValue}>{result}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <Link href="/contacto" className={styles.modalCta}>
-                Quiero resultados similares →
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   )
 }

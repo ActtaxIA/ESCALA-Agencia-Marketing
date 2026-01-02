@@ -8,63 +8,49 @@ import styles from './project.module.css'
 import ReactMarkdown from 'react-markdown'
 import ProjectCarousel from './ProjectCarousel'
 
+// Forzar renderizado dinámico para evitar caché de metadatos
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 interface Props {
   params: { slug: string }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  try {
-    const supabase = createClient()
-    
-    // Intentar primero con published = true
-    let { data: project, error } = await supabase
-      .from('portfolio_projects')
-      .select('title, short_description, meta_title, meta_description, keywords, featured_image')
-      .eq('slug', params.slug)
-      .eq('published', true)
-      .single()
+  const supabase = createClient()
 
-    // Si no encuentra con published=true, intentar sin ese filtro (por si acaso)
-    if (!project && error) {
-      const { data: projectAlt } = await supabase
-        .from('portfolio_projects')
-        .select('title, short_description, meta_title, meta_description, keywords, featured_image')
-        .eq('slug', params.slug)
-        .single()
-      
-      if (projectAlt) {
-        project = projectAlt
-      }
-    }
+  // Usar EXACTAMENTE la misma consulta que el componente principal
+  const { data: project, error } = await supabase
+    .from('portfolio_projects')
+    .select('title, short_description, meta_title, meta_description, keywords, featured_image')
+    .eq('slug', params.slug)
+    .eq('published', true)
+    .single()
 
-    // Si encontramos el proyecto, usar sus metadatos
-    if (project) {
-      return {
-        title: project.meta_title || `${project.title} | ESKALA Portfolio`,
-        description: project.meta_description || project.short_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
-        keywords: project.keywords?.join(', '),
-        openGraph: {
-          title: project.title,
-          description: project.short_description || project.meta_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
-          type: 'website',
-          images: project.featured_image ? [project.featured_image] : [],
-        },
-      }
+  // Si hay error o no encuentra, usar fallback basado en slug
+  if (error || !project) {
+    const slugFormatted = params.slug
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+
+    return {
+      title: `${slugFormatted} | ESKALA Portfolio`,
+      description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
     }
-  } catch (error) {
-    // Si hay error en la consulta, continuar con título genérico
-    console.error('Error fetching project metadata:', error)
   }
 
-  // Fallback: título genérico basado en el slug (mejor que "no encontrado")
-  const slugFormatted = params.slug
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
-
+  // Si encontramos el proyecto, usar sus metadatos
   return {
-    title: `${slugFormatted} | ESKALA Portfolio`,
-    description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
+    title: project.meta_title || `${project.title} | ESKALA Portfolio`,
+    description: project.meta_description || project.short_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
+    keywords: project.keywords?.join(', '),
+    openGraph: {
+      title: project.title,
+      description: project.short_description || project.meta_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
+      type: 'website',
+      images: project.featured_image ? [{ url: project.featured_image }] : [],
+    },
   }
 }
 

@@ -36,6 +36,13 @@
   transition: opacity 0.3s ease;
 }
 
+/* Ocultar en desktop - solo visible en mobile */
+@media (min-width: 769px) {
+  .divider {
+    display: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .divider {

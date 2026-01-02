@@ -336,8 +336,6 @@ export default function PortfolioContent() {
         </div>
       </section>
 
-      <StripeDivider />
-
       {/* CTA */}
       <section className={styles.cta}>
         <div className={styles.ctaContent}>

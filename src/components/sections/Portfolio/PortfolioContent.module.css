@@ -50,12 +50,7 @@
   padding: 1rem 0;
 }
 
-/* Ocultar filtros horizontales en desktop (1024px+) */
-@media (min-width: 1024px) {
-  .filters {
-    display: none;
-  }
-}
+/* Filtros ahora visibles en todos los tamaños */
 
 .filterBtn {
   display: flex;

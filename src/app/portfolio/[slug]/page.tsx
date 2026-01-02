@@ -13,32 +13,58 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const supabase = createClient()
-  
-  const { data: project } = await supabase
-    .from('portfolio_projects')
-    .select('title, short_description, meta_title, meta_description, keywords, featured_image')
-    .eq('slug', params.slug)
-    .eq('published', true)
-    .single()
+  try {
+    const supabase = createClient()
+    
+    // Intentar primero con published = true
+    let { data: project, error } = await supabase
+      .from('portfolio_projects')
+      .select('title, short_description, meta_title, meta_description, keywords, featured_image')
+      .eq('slug', params.slug)
+      .eq('published', true)
+      .single()
 
-  if (!project) {
-    return {
-      title: 'Proyecto no encontrado | ESKALA Marketing',
-      description: 'El proyecto que buscas no está disponible o no existe.',
+    // Si no encuentra con published=true, intentar sin ese filtro (por si acaso)
+    if (!project && error) {
+      const { data: projectAlt } = await supabase
+        .from('portfolio_projects')
+        .select('title, short_description, meta_title, meta_description, keywords, featured_image')
+        .eq('slug', params.slug)
+        .single()
+      
+      if (projectAlt) {
+        project = projectAlt
+      }
     }
+
+    // Si encontramos el proyecto, usar sus metadatos
+    if (project) {
+      return {
+        title: project.meta_title || `${project.title} | ESKALA Portfolio`,
+        description: project.meta_description || project.short_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
+        keywords: project.keywords?.join(', '),
+        openGraph: {
+          title: project.title,
+          description: project.short_description || project.meta_description || 'Proyecto del portfolio de ESKALA Marketing Digital',
+          type: 'website',
+          images: project.featured_image ? [project.featured_image] : [],
+        },
+      }
+    }
+  } catch (error) {
+    // Si hay error en la consulta, continuar con título genérico
+    console.error('Error fetching project metadata:', error)
   }
 
+  // Fallback: título genérico basado en el slug (mejor que "no encontrado")
+  const slugFormatted = params.slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+
   return {
-    title: project.meta_title || `${project.title} | ESKALA Portfolio`,
-    description: project.meta_description || project.short_description,
-    keywords: project.keywords?.join(', '),
-    openGraph: {
-      title: project.title,
-      description: project.short_description,
-      type: 'website',
-      images: project.featured_image ? [project.featured_image] : [],
-    },
+    title: `${slugFormatted} | ESKALA Portfolio`,
+    description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
   }
 }
 

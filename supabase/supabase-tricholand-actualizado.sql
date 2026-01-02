@@ -5,7 +5,7 @@
 -- Ejecutar en Supabase SQL Editor
 
 -- Primero eliminamos el registro anterior si existe
-DELETE FROM portfolio_projects WHERE slug = 'tricholand-vivero-cactus';
+DELETE FROM portfolio_projects WHERE slug = 'tricholand-tienda-cactus';
 
 -- Insertamos el proyecto completo de Tricholand
 INSERT INTO portfolio_projects (
@@ -33,7 +33,7 @@ INSERT INTO portfolio_projects (
   published_at
 ) VALUES (
   'Tricholand: Web Multiidioma para Vivero Especializado B2B',
-  'tricholand-vivero-cactus',
+  'tricholand-tienda-cactus',
   'Tricholand',
   'Agricultura y Viveros Especializados',
   
@@ -389,7 +389,7 @@ SELECT
   website_url,
   LENGTH(meta_title) as longitud_meta_title
 FROM portfolio_projects 
-WHERE slug = 'tricholand-vivero-cactus';
+WHERE slug = 'tricholand-tienda-cactus';
 
 -- =====================================================
 -- NOTAS

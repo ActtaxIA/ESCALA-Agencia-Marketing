@@ -348,13 +348,14 @@
   .chatBox {
     width: calc(100vw - 2rem);
     max-width: 350px;
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px) scale(0.95);
+    right: 1rem;
+    left: 1rem;
+    margin: 0 auto;
     bottom: 70px;
+    transform: translateY(20px) scale(0.95);
   }
 
   .chatOpen {
-    transform: translateX(-50%) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }

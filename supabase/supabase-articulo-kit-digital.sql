@@ -177,11 +177,11 @@ Porque después de lo que has pasado, te mereces que alguien te hable claro.
 ---
 
 *¿Te ha pasado esto? ¿Tienes una historia que contar sobre tu experiencia con el Kit Digital? Escríbenos. Estamos recopilando testimonios reales para ayudar a otras empresas a no caer en la misma trampa.*',
-  '/blog/kit-digital-fraude.png',
-  'ESKALA Marketing',
+  'kit-digital-fraude.png',
+  'ESCALA Marketing',
   (SELECT id FROM categories WHERE slug = 'estrategia-digital' LIMIT 1),
-  'Kit Digital: La verdad que nadie cuenta | ¿Te han estafado?',
-  'Miles de PYMES recibieron webs inservibles con el Kit Digital. Descubre si te han dado gato por liebre y qué puedes hacer al respecto.',
+  'Kit Digital: señales de una web mal hecha y cómo arreglarla (sin tirar dinero)',
+  'Guía práctica para detectar si tu web del Kit Digital es un “churro” y qué hacer: señales claras, checklist de revisión y opciones reales.',
   ARRAY['kit digital', 'estafa kit digital', 'web barata', 'pymes', 'subvención', 'agencia web', 'diseño web murcia'],
   true,
   true,

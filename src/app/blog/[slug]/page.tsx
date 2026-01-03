@@ -2,6 +2,9 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { StandardLayout } from '@/components/layout'
+import ReactMarkdown from 'react-markdown'
+// @ts-expect-error remark-gfm no expone typings en este setup
+import remarkGfm from 'remark-gfm'
 import styles from './article.module.css'
 
 interface Props {
@@ -107,9 +110,75 @@ export default async function ArticlePage({ params }: Props) {
     .eq('category_id', article.category_id)
     .limit(3)
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.eskaladigital.com'
+  const ogImage = article.featured_image
+    ? `${baseUrl}/blog/${article.featured_image}`
+    : `${baseUrl}/eskala_digital_opengraph.png`
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${baseUrl}/blog/${article.slug}`,
+    },
+    headline: article.meta_title || article.title,
+    description: article.meta_description || article.excerpt,
+    image: [ogImage],
+    datePublished: article.published_at,
+    dateModified: article.updated_at || article.published_at,
+    author: {
+      '@type': 'Organization',
+      name: article.author || 'ESCALA Marketing',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ESCALA Marketing',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/images/logo.png`,
+      },
+    },
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${baseUrl}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: article.title,
+        item: `${baseUrl}/blog/${article.slug}`,
+      },
+    ],
+  }
+
   return (
     <StandardLayout>
       <article className={styles.article}>
+        {/* SEO: Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+
         {/* Header del artículo */}
         <header className={styles.header}>
           <div className={styles.container}>
@@ -150,22 +219,11 @@ export default async function ArticlePage({ params }: Props) {
 
         {/* Contenido del artículo */}
         <div className={styles.container}>
-          <div 
-            className={styles.content}
-            dangerouslySetInnerHTML={{ 
-              __html: article.content
-                .replace(/^# /gm, '<h1>')
-                .replace(/\n$/gm, '</h1>\n')
-                .replace(/^## /gm, '<h2>')
-                .replace(/\n$/gm, '</h2>\n')
-                .replace(/^### /gm, '<h3>')
-                .replace(/\n$/gm, '</h3>\n')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-                .replace(/^- /gm, '<li>')
-                .replace(/\n/g, '<br />')
-            }}
-          />
+          <div className={styles.content}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {article.content}
+            </ReactMarkdown>
+          </div>
         </div>
 
         {/* Artículos relacionados */}

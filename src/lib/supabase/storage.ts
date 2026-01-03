@@ -23,26 +23,31 @@ export function getPublicImageUrl(fileName: string | null, bucket: string = 'blo
 
 /**
  * Obtiene la URL pública de una imagen del blog
- * Si la imagen está en Supabase Storage, devuelve la URL de Supabase
- * Si no, devuelve la ruta local /blog/
+ * Prioridad:
+ * 1. Si empieza con http -> URL completa (ya es una URL de Supabase o externa)
+ * 2. Si incluye "/" -> Ruta relativa (ej: /blog/imagen.png)
+ * 3. Si NO incluye "/" -> PRIMERO intenta /blog/{fileName} (compatibilidad con imágenes antiguas)
+ * 4. Si falla, intenta Supabase Storage
  */
 export function getBlogImageUrl(fileName: string | null): string {
   if (!fileName) {
     return '/eskala_digital_opengraph.png'
   }
 
-  // Si fileName incluye dominio de Supabase, devolverlo tal cual
+  // Si fileName incluye dominio de Supabase o es URL completa, devolverlo tal cual
   if (fileName.startsWith('http')) {
     return fileName
   }
 
-  // Si la imagen aún está en /public/blog/ (compatibilidad)
+  // Si la imagen tiene "/" (ruta relativa), devolverla tal cual
   if (fileName.includes('/')) {
     return fileName
   }
 
-  // Por defecto, asumir que está en Supabase Storage
-  return getPublicImageUrl(fileName)
+  // Por defecto, asumir que está en /public/blog/ (compatibilidad con imágenes antiguas)
+  // Las nuevas imágenes subidas por el CMS irán a Supabase Storage y tendrán URLs completas
+  return `/blog/${fileName}`
 }
+
 
 

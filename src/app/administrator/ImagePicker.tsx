@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getPublicBlogImages } from './imageActions'
 import styles from './ImagePicker.module.css'
 
 interface ImagePickerProps {
@@ -31,10 +30,15 @@ export default function ImagePicker({ currentImage, onImageSelected }: ImagePick
   const loadExistingImages = async () => {
     setLoading(true)
     try {
-      const images = await getPublicBlogImages()
+      const response = await fetch('/api/blog-images')
+      if (!response.ok) {
+        throw new Error('Error al cargar imágenes')
+      }
+      const images = await response.json()
       setExistingImages(images)
     } catch (error) {
       console.error('Error al cargar imágenes:', error)
+      setExistingImages([])
     } finally {
       setLoading(false)
     }

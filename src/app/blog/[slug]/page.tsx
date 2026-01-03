@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { StandardLayout } from '@/components/layout'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import ShareButtons from '@/components/blog/ShareButtons'
 import TableOfContents from '@/components/blog/TableOfContents'
 import ArticleCTA from '@/components/blog/ArticleCTA'
@@ -252,6 +253,7 @@ export default async function ArticlePage({ params }: Props) {
               <div className={styles.content}>
                 <ReactMarkdown 
                   remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw]}
                   components={{
                     h2: (props) => <HeadingRenderer level={2} {...props} />,
                     h3: (props) => <HeadingRenderer level={3} {...props} />,

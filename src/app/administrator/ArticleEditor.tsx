@@ -33,6 +33,50 @@ interface ArticleEditorProps {
   categories: Category[]
 }
 
+// Función para convertir Markdown a HTML
+function markdownToHtml(markdown: string): string {
+  if (!markdown) return ''
+  
+  // Si ya parece HTML, devolverlo tal cual
+  if (markdown.trim().startsWith('<') && markdown.includes('</')) {
+    return markdown
+  }
+  
+  let html = markdown
+  
+  // Headings
+  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>')
+  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+  html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+  
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+  
+  // Italic
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>')
+  
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+  
+  // Listas
+  html = html.replace(/^\* (.*$)/gim, '<li>$1</li>')
+  html = html.replace(/^- (.*$)/gim, '<li>$1</li>')
+  
+  // Agrupar listas
+  html = html.replace(/(<li>.*?<\/li>\n?)+/g, (match) => '<ul>' + match + '</ul>')
+  
+  // Line breaks
+  html = html.replace(/\n\n+/g, '</p><p>')
+  html = html.replace(/\n/g, '<br>')
+  
+  // Wrap in paragraphs
+  if (!html.startsWith('<')) {
+    html = '<p>' + html + '</p>'
+  }
+  
+  return html
+}
+
 export default function ArticleEditor({ article, categories }: ArticleEditorProps) {
   const router = useRouter()
   const editorRef = useRef<any>(null)

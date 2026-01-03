@@ -26,6 +26,7 @@ interface Article {
   keywords: string[]
   published: boolean
   featured: boolean
+  published_at?: string
 }
 
 interface ArticleEditorProps {

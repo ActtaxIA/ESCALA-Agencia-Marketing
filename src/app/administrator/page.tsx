@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import LogoutButton from './LogoutButton'
+import ArticlesTable from './ArticlesTable'
 import styles from './admin.module.css'
 
 export default async function AdminDashboard() {
@@ -12,7 +13,7 @@ export default async function AdminDashboard() {
     redirect('/administrator/login')
   }
 
-  // Obtener artículos
+  // Obtener artículos con todos los campos necesarios
   const { data: articles, error } = await supabase
     .from('articles')
     .select(`
@@ -23,10 +24,12 @@ export default async function AdminDashboard() {
       featured,
       views,
       published_at,
+      created_at,
       updated_at,
+      featured_image,
       category:categories(name)
     `)
-    .order('updated_at', { ascending: false })
+    .order('created_at', { ascending: false })
 
   const stats = {
     total: articles?.length || 0,
@@ -89,68 +92,7 @@ export default async function AdminDashboard() {
         )}
 
         {articles && articles.length > 0 ? (
-          <div className={styles.tableContainer}>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Título</th>
-                  <th>Categoría</th>
-                  <th>Estado</th>
-                  <th>Vistas</th>
-                  <th>Fecha</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {articles.map((article) => {
-                  const categoryData = Array.isArray(article.category) 
-                    ? article.category[0] 
-                    : article.category
-                  const categoryName = categoryData?.name || 'Sin categoría'
-                  
-                  return (
-                    <tr key={article.id}>
-                      <td>
-                        <div className={styles.titleCell}>
-                          <strong>{article.title}</strong>
-                          {article.featured && (
-                            <span className={styles.badge}>⭐ Destacado</span>
-                          )}
-                        </div>
-                      </td>
-                      <td>{categoryName}</td>
-                      <td>
-                        <span className={article.published ? styles.statusPublished : styles.statusDraft}>
-                          {article.published ? '✓ Publicado' : '○ Borrador'}
-                        </span>
-                      </td>
-                      <td>{article.views || 0}</td>
-                      <td>
-                        {new Date(article.updated_at).toLocaleDateString('es-ES')}
-                      </td>
-                      <td>
-                        <div className={styles.actions}>
-                          <Link 
-                            href={`/administrator/articles/${article.id}`}
-                            className={styles.btnEdit}
-                          >
-                            Editar
-                          </Link>
-                          <Link 
-                            href={`/blog/${article.slug}`}
-                            target="_blank"
-                            className={styles.btnView}
-                          >
-                            Ver
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
+          <ArticlesTable articles={articles} />
         ) : (
           <div className={styles.empty}>
             <p>No hay artículos todavía.</p>

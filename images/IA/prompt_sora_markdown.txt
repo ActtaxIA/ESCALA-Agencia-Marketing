@@ -1,0 +1,154 @@
+
+# Cómo crear el prompt perfecto para Sora
+
+Un prompt perfecto para Sora no es una frase bonita ni una acumulación de adjetivos, sino una descripción clara, técnica y cinematográfica que indique con precisión qué debe generarse, cómo debe verse y cómo debe moverse la escena. Cuanto más se piense como un director de cine o un director de fotografía, mejores y más coherentes serán los resultados.
+
+---
+
+## 1. Estructura ideal de un prompt para Sora
+
+Un prompt bien construido suele seguir un orden lógico. No es obligatorio, pero funciona especialmente bien para obtener vídeos realistas y cinematográficos.
+
+### 1. Tipo de escena
+Define de forma general qué estamos viendo.
+
+Ejemplos:
+- A cinematic video of…
+- A realistic short film showing…
+- A slow-motion scene of…
+
+### 2. Sujeto principal
+Describe quién o qué aparece y qué está haciendo.
+
+Incluye:
+- Persona, objeto o elemento principal
+- Acción
+- Edad, aspecto o vestimenta si es relevante
+
+Ejemplo:
+- A young woman walking alone through a desert road…
+
+### 3. Entorno y contexto
+Indica dónde ocurre la escena.
+
+Aspectos habituales:
+- Lugar
+- Clima
+- Hora del día
+- Estación del año
+
+Ejemplo:
+- …at sunset, in a vast arid landscape with mountains in the background…
+
+### 4. Estilo visual y cinematográfico
+Aquí se define gran parte del resultado final.
+
+Puedes especificar:
+- Estilo visual (cinematográfico, documental, hiperrealista, película de autor)
+- Sensación de lente o formato
+- Calidad de imagen
+
+Ejemplo:
+- cinematic lighting, shallow depth of field, 35mm lens look, film grain
+
+### 5. Movimiento de cámara
+Sora interpreta lenguaje audiovisual, no solo descripciones visuales.
+
+Ejemplos:
+- Cámara fija
+- Travelling
+- Dron
+- Plano secuencia
+- Cámara en mano
+
+Ejemplo:
+- slow dolly-in, handheld camera, smooth tracking shot
+
+### 6. Iluminación y atmósfera
+Define la luz y el ambiente general de la escena.
+
+Puedes incluir:
+- Luz natural o artificial
+- Contrastes
+- Sensación ambiental
+
+Ejemplo:
+- warm golden light, soft shadows, dusty atmosphere
+
+### 7. Tono emocional o narrativo
+Indica qué debe transmitir la escena.
+
+Ejemplos:
+- quiet, introspective mood
+- sense of freedom and solitude
+
+### 8. Detalles técnicos finales (opcional)
+Sirven para afinar el resultado.
+
+Ejemplos:
+- Resolución
+- Realismo
+- Estilo final
+
+Ejemplo:
+- ultra realistic, 4K quality, cinematic realism
+
+---
+
+## 2. Plantilla de prompt “perfecta” (reutilizable)
+
+A cinematic video of [sujeto principal y acción], 
+set in [entorno y contexto]. 
+The scene takes place during [hora del día / clima / estación].
+
+Visual style: [estilo cinematográfico], 
+with [tipo de lente], [profundidad de campo], [textura o grano].
+
+Camera movement: [movimiento de cámara].
+Lighting: [tipo de luz y atmósfera].
+
+The mood is [emoción o sensación].
+Ultra realistic, highly detailed, cinematic quality.
+
+---
+
+## 3. Ejemplo completo de prompt (nivel alto)
+
+A cinematic video of a lone camper van driving slowly along a coastal road,
+set in a Mediterranean landscape with cliffs and the sea in the background.
+The scene takes place at golden hour, just before sunset.
+
+Visual style: cinematic realism, 35mm lens look, shallow depth of field, subtle film grain.
+Camera movement: smooth aerial drone shot following the van from behind.
+Lighting: warm golden sunlight, long shadows, soft haze in the air.
+
+The mood is calm, free, and contemplative.
+Ultra realistic, highly detailed, cinematic quality.
+
+---
+
+## 4. Ejemplo de prompt corto y efectivo
+
+Cinematic video of a camper van parked by the sea at sunset,
+warm golden light, soft waves, slow camera movement,
+realistic cinematic style, peaceful mood.
+
+---
+
+## 5. Errores comunes a evitar
+
+- Mezclar demasiados estilos contradictorios
+- Usar listas interminables de adjetivos sin sentido visual
+- No indicar movimiento de cámara
+- Pedir elementos físicamente imposibles
+- Redactar el prompt como si fuera para generación de imágenes estáticas
+
+Sora está orientado a vídeo y narrativa visual, no a ilustraciones.
+
+---
+
+## 6. Consejo clave final
+
+“Si este texto se lo leyera a un cámara o a un director, ¿entendería exactamente qué tiene que grabar?”
+
+Si la respuesta es sí, el prompt está bien planteado.

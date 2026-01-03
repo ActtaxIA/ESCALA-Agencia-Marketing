@@ -214,16 +214,17 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                 automatic_uploads: false,
                 file_picker_types: 'image',
                 file_picker_callback: (callback: any, value: any, meta: any) => {
-                  if (meta.filetype === 'image') {
+  if (meta.filetype === 'image') {
                     const input = document.createElement('input')
                     input.setAttribute('type', 'file')
                     input.setAttribute('accept', 'image/*')
                     
-                    input.onchange = function(this: HTMLInputElement) {
-                      const file = this.files?.[0]
+                    input.onchange = (e: Event) => {
+                      const target = e.target as HTMLInputElement
+                      const file = target.files?.[0]
                       if (file) {
                         const reader = new FileReader()
-                        reader.onload = function() {
+                        reader.onload = () => {
                           callback(reader.result as string, { alt: file.name })
                         }
                         reader.readAsDataURL(file)

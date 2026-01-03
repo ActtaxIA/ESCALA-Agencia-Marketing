@@ -33,6 +33,7 @@ const heroData = {
   title: 'Atiende a tus clientes',
   titleHighlight: '24/7 sin parar',
   description: 'Chatbots con inteligencia artificial que responden al instante, reservan citas, califican leads y venden mientras duermes. Atención personalizada, siempre disponible.',
+  stripeColor: 6,
   ctaPrimary: 'Solicitar demo',
   ctaSecondary: 'Ver proyectos',
 }

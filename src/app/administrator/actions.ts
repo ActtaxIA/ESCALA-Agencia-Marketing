@@ -28,10 +28,38 @@ export async function createArticle(formData: FormData) {
     console.log('🔧 SERVER ACTION - createArticle:')
     console.log('- Content length:', content?.length || 0)
     
-    // Si hay archivo de imagen, procesarlo
+    // Subir imagen a Supabase Storage si existe
     const imageFile = formData.get('image') as File | null
     if (imageFile && imageFile.size > 0) {
-      featuredImage = formData.get('featured_image') as string
+      console.log('📸 Subiendo imagen a Supabase Storage...')
+      console.log('- File name:', imageFile.name)
+      console.log('- File size:', imageFile.size)
+      
+      // Convertir File a ArrayBuffer
+      const arrayBuffer = await imageFile.arrayBuffer()
+      const buffer = new Uint8Array(arrayBuffer)
+      
+      // Generar nombre único
+      const timestamp = Date.now()
+      const ext = imageFile.name.split('.').pop()
+      const fileName = `${slug}-${timestamp}.${ext}`
+      
+      // Subir a Supabase Storage bucket 'blog-images'
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('blog-images')
+        .upload(`public/${fileName}`, buffer, {
+          contentType: imageFile.type,
+          cacheControl: '3600',
+          upsert: false
+        })
+      
+      if (uploadError) {
+        console.error('❌ Error subiendo imagen:', uploadError)
+        throw new Error(`Error al subir la imagen: ${uploadError.message}`)
+      }
+      
+      console.log('✅ Imagen subida correctamente:', uploadData)
+      featuredImage = fileName
     }
 
     // Extraer excerpt automáticamente del contenido
@@ -134,10 +162,53 @@ export async function updateArticle(id: string, formData: FormData) {
     console.log('- Content length:', content?.length || 0)
     console.log('- Content preview:', content?.substring(0, 150) || 'NO CONTENT')
 
-    // Si hay archivo de imagen, procesarlo
+    // Subir imagen a Supabase Storage si existe
     const imageFile = formData.get('image') as File | null
     if (imageFile && imageFile.size > 0) {
-      featuredImage = formData.get('featured_image') as string
+      console.log('📸 Subiendo imagen a Supabase Storage...')
+      console.log('- File name:', imageFile.name)
+      console.log('- File size:', imageFile.size)
+      
+      // Convertir File a ArrayBuffer
+      const arrayBuffer = await imageFile.arrayBuffer()
+      const buffer = new Uint8Array(arrayBuffer)
+      
+      // Generar nombre único
+      const timestamp = Date.now()
+      const ext = imageFile.name.split('.').pop()
+      const fileName = `${slug}-${timestamp}.${ext}`
+      
+      // Subir a Supabase Storage bucket 'blog-images'
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('blog-images')
+        .upload(`public/${fileName}`, buffer, {
+          contentType: imageFile.type,
+          cacheControl: '3600',
+          upsert: true // Permitir sobrescribir si ya existe
+        })
+      
+      if (uploadError) {
+        console.error('❌ Error subiendo imagen:', uploadError)
+        throw new Error(`Error al subir la imagen: ${uploadError.message}`)
+      }
+      
+      console.log('✅ Imagen subida correctamente:', uploadData)
+      featuredImage = fileName
+      
+      // Si había una imagen anterior, eliminarla
+      const existingImage = formData.get('existing_featured_image') as string
+      if (existingImage && existingImage !== fileName) {
+        console.log('🗑️ Eliminando imagen anterior:', existingImage)
+        await supabase.storage
+          .from('blog-images')
+          .remove([`public/${existingImage}`])
+      }
+    } else {
+      // Mantener la imagen existente si no hay una nueva
+      const existingImage = formData.get('existing_featured_image') as string
+      if (existingImage) {
+        featuredImage = existingImage
+      }
     }
 
     // Extraer excerpt automáticamente del contenido

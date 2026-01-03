@@ -9,6 +9,7 @@ import ShareButtons from '@/components/blog/ShareButtons'
 import TableOfContents from '@/components/blog/TableOfContents'
 import ArticleCTA from '@/components/blog/ArticleCTA'
 import styles from './article.module.css'
+import { getBlogImageUrl } from '@/lib/supabase/storage'
 
 interface Props {
   params: { slug: string }
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // URL base para las imágenes OpenGraph
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.eskaladigital.com'
   const ogImage = article.featured_image 
-    ? `${baseUrl}/blog/${article.featured_image}`
+    ? getBlogImageUrl(article.featured_image)
     : `${baseUrl}/eskala_digital_opengraph.png`
 
   return {
@@ -114,9 +115,7 @@ export default async function ArticlePage({ params }: Props) {
     .limit(3)
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.eskaladigital.com'
-  const ogImage = article.featured_image
-    ? `${baseUrl}/blog/${article.featured_image}`
-    : `${baseUrl}/eskala_digital_opengraph.png`
+  const ogImage = getBlogImageUrl(article.featured_image)
   const articleUrl = `${baseUrl}/blog/${article.slug}`
 
   const articleJsonLd = {
@@ -227,7 +226,7 @@ export default async function ArticlePage({ params }: Props) {
           {article.featured_image && (
             <div className={styles.featuredImageContainer}>
               <img 
-                src={`/blog/${article.featured_image}`}
+                src={getBlogImageUrl(article.featured_image)}
                 alt={article.title}
                 className={styles.featuredImage}
               />

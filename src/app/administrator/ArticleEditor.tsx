@@ -184,6 +184,11 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       if (imageFile) {
         formDataToSend.append('image', imageFile)
       }
+      
+      // Enviar la imagen existente para referencia
+      if (article?.featured_image && !imageFile) {
+        formDataToSend.append('existing_featured_image', article.featured_image)
+      }
 
       console.log('📤 Enviando a Supabase...')
       

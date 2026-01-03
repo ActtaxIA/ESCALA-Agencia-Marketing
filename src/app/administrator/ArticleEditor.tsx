@@ -143,6 +143,14 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
     setError('')
 
     try {
+      // Obtener contenido del editor TinyMCE PRIMERO
+      const content = editorRef.current?.getContent() || ''
+      
+      console.log('🔍 DEBUG - Guardando artículo:')
+      console.log('- Article ID:', article?.id)
+      console.log('- Content length:', content.length)
+      console.log('- Content preview:', content.substring(0, 200))
+      
       // Validaciones
       if (!formData.title.trim()) {
         throw new Error('El título es obligatorio')
@@ -153,9 +161,9 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       if (!formData.category_id) {
         throw new Error('Debes seleccionar una categoría')
       }
-
-      // Obtener contenido del editor TinyMCE
-      const content = editorRef.current?.getContent() || formData.content
+      if (!content || content.trim().length === 0) {
+        throw new Error('El contenido es obligatorio')
+      }
 
       // Crear FormData para enviar
       const formDataToSend = new FormData()
@@ -177,6 +185,8 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
         formDataToSend.append('image', imageFile)
       }
 
+      console.log('📤 Enviando a Supabase...')
+      
       // Las actions usan redirect() al final, así que solo ejecutamos y esperamos
       if (article?.id) {
         await updateArticle(article.id, formDataToSend)
@@ -186,6 +196,7 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       
       // Si llegamos aquí sin error, las actions redirigirán automáticamente
     } catch (err: any) {
+      console.error('❌ Error al guardar:', err)
       setError(err.message || 'Error al guardar el artículo')
       setLoading(false)
     }

@@ -115,6 +115,13 @@ export async function updateArticle(id: string, formData: FormData) {
   const featured = formData.get('featured') === 'true'
   const publishedAt = formData.get('published_at') as string
 
+  console.log('🔧 SERVER ACTION - updateArticle:')
+  console.log('- ID:', id)
+  console.log('- Title:', title)
+  console.log('- Slug:', slug)
+  console.log('- Content length:', content?.length || 0)
+  console.log('- Content preview:', content?.substring(0, 150) || 'NO CONTENT')
+
   // Si hay archivo de imagen, procesarlo
   const imageFile = formData.get('image') as File | null
   if (imageFile && imageFile.size > 0) {
@@ -124,6 +131,8 @@ export async function updateArticle(id: string, formData: FormData) {
   // Extraer excerpt automáticamente del contenido
   const excerpt = extractExcerpt(content)
 
+  console.log('- Excerpt:', excerpt.substring(0, 100))
+
   // Obtener artículo actual
   const { data: currentArticle } = await supabase
     .from('articles')
@@ -131,28 +140,40 @@ export async function updateArticle(id: string, formData: FormData) {
     .eq('id', id)
     .single()
 
+  console.log('- Current article:', currentArticle)
+
+  const updateData = {
+    title,
+    slug,
+    excerpt,
+    content,
+    category_id: categoryId || null,
+    meta_title: metaTitle,
+    meta_description: metaDescription,
+    keywords,
+    featured_image: featuredImage || null,
+    published,
+    featured,
+    published_at: publishedAt || currentArticle?.published_at,
+    updated_at: new Date().toISOString(),
+  }
+
+  console.log('📝 Datos a actualizar en Supabase:', {
+    ...updateData,
+    content: `${updateData.content?.length || 0} caracteres`
+  })
+
   const { error } = await supabase
     .from('articles')
-    .update({
-      title,
-      slug,
-      excerpt,
-      content,
-      category_id: categoryId || null,
-      meta_title: metaTitle,
-      meta_description: metaDescription,
-      keywords,
-      featured_image: featuredImage || null,
-      published,
-      featured,
-      published_at: publishedAt || currentArticle?.published_at,
-      updated_at: new Date().toISOString(),
-    })
+    .update(updateData)
     .eq('id', id)
 
   if (error) {
+    console.error('❌ Error de Supabase:', error)
     throw new Error(error.message)
   }
+
+  console.log('✅ Artículo actualizado correctamente en Supabase')
 
   revalidatePath('/administrator')
   revalidatePath('/blog')

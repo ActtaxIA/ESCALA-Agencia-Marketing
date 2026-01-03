@@ -42,7 +42,6 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
   const [formData, setFormData] = useState({
     title: article?.title || '',
     slug: article?.slug || '',
-    excerpt: article?.excerpt || '',
     content: article?.content || '',
     featured_image: article?.featured_image || '',
     author: article?.author || 'ESCALA Marketing',
@@ -94,7 +93,6 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       const formDataToSend = new FormData()
       formDataToSend.append('title', formData.title)
       formDataToSend.append('slug', formData.slug)
-      formDataToSend.append('excerpt', formData.excerpt)
       formDataToSend.append('content', content)
       formDataToSend.append('featured_image', formData.featured_image)
       formDataToSend.append('author', formData.author)
@@ -188,19 +186,6 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
             </span>
           </div>
 
-          {/* Extracto */}
-          <div className={styles.field}>
-            <label>Extracto</label>
-            <textarea
-              value={formData.excerpt}
-              onChange={(e) => handleChange('excerpt', e.target.value)}
-              placeholder="Breve resumen del artículo (se muestra en listados)"
-              rows={3}
-              maxLength={300}
-            />
-            <span className={styles.charCount}>{formData.excerpt.length}/300</span>
-          </div>
-
           {/* Editor TinyMCE */}
           <div className={styles.field}>
             <label>Contenido *</label>
@@ -214,15 +199,17 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                 plugins: [
                   'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
                   'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                  'insertdatetime', 'media', 'table', 'help', 'wordcount'
+                  'insertdatetime', 'media', 'table', 'help', 'wordcount', 'pagebreak'
                 ],
                 toolbar: 'undo redo | blocks | ' +
                   'bold italic forecolor | alignleft aligncenter ' +
                   'alignright alignjustify | bullist numlist outdent indent | ' +
-                  'removeformat | image link | code | help',
+                  'pagebreak | removeformat | image link | code | help',
                 content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6 }',
                 language: 'es',
                 block_formats: 'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4',
+                pagebreak_separator: '<!--more-->',
+                pagebreak_split_block: true,
                 image_title: true,
                 automatic_uploads: false,
                 file_picker_types: 'image',
@@ -249,7 +236,10 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
               }}
             />
             <span className={styles.hint}>
-              💡 Usa el botón "Code" para alternar entre modo visual y HTML
+              💡 Usa el botón <strong>"Leer Más"</strong> (pagebreak) para separar el extracto del resto del contenido. Todo antes del separador se mostrará en listados.
+            </span>
+            <span className={styles.hint}>
+              💡 Usa el botón <strong>"Code"</strong> para alternar entre modo visual y HTML
             </span>
           </div>
 

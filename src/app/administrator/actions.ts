@@ -14,7 +14,6 @@ export async function createArticle(formData: FormData) {
 
   const title = formData.get('title') as string
   const slug = formData.get('slug') as string
-  const excerpt = formData.get('excerpt') as string
   const content = formData.get('content') as string
   const categoryId = formData.get('category_id') as string
   const metaTitle = formData.get('meta_title') as string
@@ -23,6 +22,9 @@ export async function createArticle(formData: FormData) {
   const featuredImage = formData.get('featured_image') as string
   const published = formData.get('published') === 'true'
   const featured = formData.get('featured') === 'true'
+
+  // Extraer excerpt automáticamente del contenido
+  const excerpt = extractExcerpt(content)
 
   const { data, error } = await supabase
     .from('articles')
@@ -53,6 +55,32 @@ export async function createArticle(formData: FormData) {
   redirect('/administrator')
 }
 
+// Función helper para extraer excerpt del contenido
+function extractExcerpt(content: string): string {
+  // Si hay separador <!--more-->, usar el texto antes de él
+  if (content.includes('<!--more-->')) {
+    const beforeMore = content.split('<!--more-->')[0]
+    return stripHtml(beforeMore).trim().substring(0, 300)
+  }
+  
+  // Si no hay separador, usar los primeros 250 caracteres del texto limpio
+  const cleanText = stripHtml(content).trim()
+  return cleanText.substring(0, 250) + (cleanText.length > 250 ? '...' : '')
+}
+
+// Función helper para limpiar HTML
+function stripHtml(html: string): string {
+  return html
+    .replace(/<[^>]*>/g, '') // Eliminar tags HTML
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, ' ') // Normalizar espacios
+    .trim()
+}
+
 export async function updateArticle(id: string, formData: FormData) {
   const supabase = createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -63,7 +91,6 @@ export async function updateArticle(id: string, formData: FormData) {
 
   const title = formData.get('title') as string
   const slug = formData.get('slug') as string
-  const excerpt = formData.get('excerpt') as string
   const content = formData.get('content') as string
   const categoryId = formData.get('category_id') as string
   const metaTitle = formData.get('meta_title') as string
@@ -72,6 +99,9 @@ export async function updateArticle(id: string, formData: FormData) {
   const featuredImage = formData.get('featured_image') as string
   const published = formData.get('published') === 'true'
   const featured = formData.get('featured') === 'true'
+
+  // Extraer excerpt automáticamente del contenido
+  const excerpt = extractExcerpt(content)
 
   // Obtener artículo actual para ver si cambió el estado de publicación
   const { data: currentArticle } = await supabase

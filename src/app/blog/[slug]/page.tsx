@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { StandardLayout } from '@/components/layout'
 import ReactMarkdown from 'react-markdown'
-// @ts-expect-error remark-gfm no expone typings en este setup
 import remarkGfm from 'remark-gfm'
 import styles from './article.module.css'
 

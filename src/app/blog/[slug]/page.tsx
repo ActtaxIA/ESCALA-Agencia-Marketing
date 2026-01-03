@@ -34,9 +34,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // URL base para las imágenes OpenGraph
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.eskaladigital.com'
-  const ogImage = article.featured_image 
+  
+  // Obtener URL de imagen (puede ser relativa)
+  const imageRelativeUrl = article.featured_image 
     ? getBlogImageUrl(article.featured_image)
-    : `${baseUrl}/eskala_digital_opengraph.png`
+    : '/eskala_digital_opengraph.png'
+  
+  // Convertir a URL absoluta si es necesaria
+  const ogImage = imageRelativeUrl.startsWith('http') 
+    ? imageRelativeUrl 
+    : `${baseUrl}${imageRelativeUrl}`
 
   return {
     title: article.meta_title || article.title,
@@ -47,6 +54,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.meta_description || article.excerpt,
       type: 'article',
       url: `${baseUrl}/blog/${article.slug}`,
+      siteName: 'ESKALA Marketing Digital',
+      locale: 'es_ES',
       images: [
         {
           url: ogImage,

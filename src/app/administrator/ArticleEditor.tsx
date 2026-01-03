@@ -226,7 +226,7 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                 image_title: true,
                 automatic_uploads: false,
                 file_picker_types: 'image',
-                file_picker_callback: (callback, value, meta) => {
+                file_picker_callback: (callback: any, value: any, meta: any) => {
                   if (meta.filetype === 'image') {
                     const input = document.createElement('input')
                     input.setAttribute('type', 'file')

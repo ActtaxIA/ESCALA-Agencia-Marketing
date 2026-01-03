@@ -205,3 +205,6 @@ Tendrás:
 
 ¿Por dónde empiezas? Te recomiendo: **Imágenes → SQL → Pruebas**
 
+
+
+

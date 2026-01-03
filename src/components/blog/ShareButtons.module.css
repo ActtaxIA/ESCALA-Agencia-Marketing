@@ -1,0 +1,81 @@
+.shareContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+.shareLabel {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.shareButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.shareButton:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #1f2937;
+  transform: translateY(-2px);
+}
+
+.shareButton:active {
+  transform: translateY(0);
+}
+
+.shareButton.copied {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .shareContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .shareButtons {
+    gap: 0.5rem;
+  }
+
+  .shareButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .shareButton svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+

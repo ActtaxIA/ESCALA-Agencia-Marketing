@@ -247,3 +247,6 @@ Si tienes dudas sobre la implementación o necesitas ajustes, consulta los archi
 **Proyecto:** ESKALA Marketing Digital - Portfolio Individual  
 **Estado:** ✅ Implementación completa - Listo para pruebas
 
+
+
+

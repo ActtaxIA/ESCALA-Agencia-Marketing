@@ -401,3 +401,6 @@ WHERE slug = 'gvc-abogados-murcia';
 -- 9. Meta_title: 67 caracteres (dentro del límite de 70)
 -- 10. Meta_description: 153 caracteres (dentro del límite de 160)
 
+
+
+

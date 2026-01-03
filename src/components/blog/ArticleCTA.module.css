@@ -1,0 +1,198 @@
+.ctaContainer {
+  background: linear-gradient(135deg, #ff6b35 0%, #f97316 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 3rem 0;
+  color: white;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ctaIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.ctaIcon svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.ctaText {
+  flex: 1;
+}
+
+.ctaTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: white;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.ctaForm {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.ctaInput {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.ctaInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ctaInput:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ctaButton {
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #f97316;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.ctaSuccess {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.ctaSuccess svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ctaAlternative {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ctaAlternativeText {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ctaAlternativeLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s ease;
+}
+
+.ctaAlternativeLink:hover {
+  gap: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ctaContainer {
+    padding: 2rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaDescription {
+    font-size: 0.9375rem;
+  }
+
+  .ctaForm {
+    flex-direction: column;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+
+  .ctaAlternative {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ctaContainer {
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .ctaTitle {
+    font-size: 1.25rem;
+  }
+
+  .ctaIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ctaIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+

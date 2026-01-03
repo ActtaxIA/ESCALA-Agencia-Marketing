@@ -86,3 +86,6 @@ Pero el script actual ya funciona perfectamente para mostrar las páginas.
 2. ✅ La tabla `portfolio_projects` existe
 3. ✅ Ejecutaste el script completo (no solo una parte)
 
+
+
+

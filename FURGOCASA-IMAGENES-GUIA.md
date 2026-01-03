@@ -163,3 +163,6 @@ Si aún no tienes las imágenes, puedes usar placeholders temporales:
 
 O usar las que ya tienes en `/public/portfolio/` y renombrarlas temporalmente hasta conseguir las definitivas.
 
+
+
+

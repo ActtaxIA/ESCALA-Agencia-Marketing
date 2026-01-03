@@ -4,6 +4,9 @@ import { createClient } from '@/lib/supabase/server'
 import { StandardLayout } from '@/components/layout'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import ShareButtons from '@/components/blog/ShareButtons'
+import TableOfContents from '@/components/blog/TableOfContents'
+import ArticleCTA from '@/components/blog/ArticleCTA'
 import styles from './article.module.css'
 
 interface Props {
@@ -113,13 +116,14 @@ export default async function ArticlePage({ params }: Props) {
   const ogImage = article.featured_image
     ? `${baseUrl}/blog/${article.featured_image}`
     : `${baseUrl}/eskala_digital_opengraph.png`
+  const articleUrl = `${baseUrl}/blog/${article.slug}`
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${baseUrl}/blog/${article.slug}`,
+      '@id': articleUrl,
     },
     headline: article.meta_title || article.title,
     description: article.meta_description || article.excerpt,
@@ -160,9 +164,23 @@ export default async function ArticlePage({ params }: Props) {
         '@type': 'ListItem',
         position: 3,
         name: article.title,
-        item: `${baseUrl}/blog/${article.slug}`,
+        item: articleUrl,
       },
     ],
+  }
+
+  // Componente personalizado para renderizar headings con IDs
+  const HeadingRenderer = ({ level, children, ...props }: any) => {
+    const text = children?.toString() || ''
+    const id = text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+    
+    const Tag = `h${level}` as keyof JSX.IntrinsicElements
+    return <Tag id={id} {...props}>{children}</Tag>
   }
 
   return (
@@ -216,12 +234,36 @@ export default async function ArticlePage({ params }: Props) {
           )}
         </header>
 
-        {/* Contenido del artículo */}
+        {/* Botones de compartir */}
         <div className={styles.container}>
-          <div className={styles.content}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {article.content}
-            </ReactMarkdown>
+          <ShareButtons url={articleUrl} title={article.title} />
+        </div>
+
+        {/* Layout con TOC + Contenido */}
+        <div className={styles.container}>
+          <div className={styles.contentLayout}>
+            {/* Tabla de contenidos (desktop) */}
+            <div className={styles.tocWrapper}>
+              <TableOfContents content={article.content} />
+            </div>
+
+            {/* Contenido principal */}
+            <div className={styles.contentWrapper}>
+              <div className={styles.content}>
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h2: (props) => <HeadingRenderer level={2} {...props} />,
+                    h3: (props) => <HeadingRenderer level={3} {...props} />,
+                  }}
+                >
+                  {article.content}
+                </ReactMarkdown>
+              </div>
+
+              {/* CTA de newsletter/contacto */}
+              <ArticleCTA />
+            </div>
           </div>
         </div>
 
@@ -250,4 +292,3 @@ export default async function ArticlePage({ params }: Props) {
     </StandardLayout>
   )
 }
-

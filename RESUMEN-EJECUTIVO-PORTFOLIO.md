@@ -264,3 +264,6 @@ Si tienes dudas sobre:
 **Estado:** ✅ Implementación completada  
 **Listo para:** Añadir imágenes y probar
 
+
+
+

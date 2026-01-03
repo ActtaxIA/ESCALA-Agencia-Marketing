@@ -206,7 +206,7 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
             <label>Contenido *</label>
             <Editor
               apiKey="no-api-key"
-              onInit={(evt, editor) => (editorRef.current = editor)}
+              onInit={(_evt: any, editor: any) => (editorRef.current = editor)}
               initialValue={formData.content}
               init={{
                 height: 600,

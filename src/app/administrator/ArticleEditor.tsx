@@ -315,6 +315,10 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                   'undo redo | blocks | bold italic forecolor | alignleft aligncenter alignright alignjustify',
                   'bullist numlist outdent indent | readmore pagebreak | removeformat | image link | code | help'
                 ],
+                // Autolink: Convertir URLs automáticamente en enlaces
+                autolink_pattern: /^(https?:\/\/|www\.|(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,})/i,
+                default_link_target: '_blank',
+                link_default_protocol: 'https',
                 content_style: `
                   body { font-family:Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6 }
                   hr.readmore { 
@@ -335,6 +339,10 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                     font-weight: 600;
                     font-size: 11px;
                     letter-spacing: 2px;
+                  }
+                  a {
+                    color: #4a7c9b;
+                    text-decoration: underline;
                   }
                 `,
                 language: 'es',

@@ -18,7 +18,7 @@ const services: ServiceStripe[] = [
   { slug: 'redes-sociales', icon: '◈', title: 'Redes Sociales', route: '/servicios/redes-sociales' },
   { slug: 'google-ads', icon: '◎', title: 'Google Ads', route: '/servicios/google-ads' },
   { slug: 'apps-ia', icon: '◆', title: 'Apps con IA', route: '/servicios/apps-ia' },
-  { slug: 'fotografia', icon: '▣', title: 'Fotografía', route: '/servicios/fotografia' },
+  { slug: 'chatbots', icon: '▣', title: 'Chatbots', route: '/servicios/chatbots' },
   { slug: 'branding', icon: '✦', title: 'Branding', route: '/servicios/branding' },
   { slug: 'email-marketing', icon: '▤', title: 'Email Marketing', route: '/servicios/email-marketing' },
 ]

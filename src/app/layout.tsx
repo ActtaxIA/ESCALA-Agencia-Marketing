@@ -116,7 +116,7 @@ const jsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gestión de Redes Sociales' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Ads' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aplicaciones con IA' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fotografía Profesional' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Chatbots con IA' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Branding' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Email Marketing' } },
     ],

@@ -63,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'redes-sociales',
     'google-ads',
     'apps-ia',
-    'fotografia',
+    'chatbots',
     'branding',
     'email-marketing',
   ]

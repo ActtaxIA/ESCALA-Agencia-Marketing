@@ -1,0 +1,117 @@
+import { StandardLayout } from '@/components/layout'
+import ServiceHero from '@/components/sections/ServicioDetalle/ServiceHero'
+import ServiceFeatures from '@/components/sections/ServicioDetalle/ServiceFeatures'
+import ServiceBenefits from '@/components/sections/ServicioDetalle/ServiceBenefits'
+import ServiceProcess from '@/components/sections/ServicioDetalle/ServiceProcess'
+import ServiceTestimonial from '@/components/sections/ServicioDetalle/ServiceTestimonial'
+import ServiceCTA from '@/components/sections/ServicioDetalle/ServiceCTA'
+
+export const metadata = {
+  title: 'Chatbots con IA en Murcia | Automatización Inteligente',
+  description: 'Chatbots con inteligencia artificial para WhatsApp, web y voz. Atiende a tus clientes 24/7, automatiza respuestas y aumenta ventas. Desarrollo personalizado en Murcia.',
+  keywords: ['chatbot ia murcia', 'chatbot whatsapp murcia', 'bot conversacional murcia', 'automatizacion atencion cliente murcia', 'chatbot para empresas murcia'],
+  openGraph: {
+    title: 'Chatbots con IA en Murcia | ESKALA Marketing',
+    description: 'Chatbots inteligentes para WhatsApp, web y voz. Atención 24/7 automatizada.',
+    url: 'https://www.eskaladigital.com/servicios/chatbots',
+    siteName: 'ESKALA Marketing',
+    locale: 'es_ES',
+    type: 'website',
+    images: [{ url: '/og-chatbots.jpg', width: 1200, height: 630, alt: 'Chatbots ESKALA' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chatbots con IA en Murcia | ESKALA Marketing',
+    description: 'Chatbots inteligentes para WhatsApp, web y voz.',
+    images: ['/og-chatbots.jpg'],
+  },
+  alternates: { canonical: 'https://www.eskaladigital.com/servicios/chatbots' },
+}
+
+const heroData = {
+  badge: '🤖 Chatbots con IA',
+  title: 'Atiende a tus clientes',
+  titleHighlight: '24/7 sin parar',
+  description: 'Chatbots con inteligencia artificial que responden al instante, reservan citas, califican leads y venden mientras duermes. Atención personalizada, siempre disponible.',
+  ctaPrimary: 'Solicitar demo',
+  ctaSecondary: 'Ver proyectos',
+}
+
+const features = [
+  {
+    icon: '💬',
+    title: 'Chatbot para WhatsApp',
+    description: 'Bot inteligente para WhatsApp Business. Responde preguntas, envía catálogos, agenda citas y procesa pedidos automáticamente.',
+  },
+  {
+    icon: '🌐',
+    title: 'Chatbot para Web',
+    description: 'Widget de chat en tu web que resuelve dudas, captura leads y guía a los usuarios. Integrado con tu CRM y base de datos.',
+  },
+  {
+    icon: '🎙️',
+    title: 'Chatbot de Voz',
+    description: 'Asistente de voz que atiende llamadas telefónicas, reserva citas y deriva casos complejos. Como tener un recepcionista 24/7.',
+  },
+  {
+    icon: '📱',
+    title: 'Multicanal',
+    description: 'Un solo bot, múltiples plataformas: WhatsApp, web, Facebook Messenger, Instagram, Telegram. Todo centralizado.',
+  },
+  {
+    icon: '🧠',
+    title: 'IA Conversacional',
+    description: 'Entiende lenguaje natural, no respuestas pre-programadas. Aprende de cada conversación y mejora con el tiempo.',
+  },
+  {
+    icon: '🔗',
+    title: 'Integraciones',
+    description: 'Conecta con tu CRM, calendario, e-commerce, base de datos. Automatiza todo el flujo de atención al cliente.',
+  },
+]
+
+const benefits = [
+  {
+    title: 'Disponibilidad Total',
+    description: 'Tu chatbot nunca duerme, no se enferma y no pide vacaciones. Atiende a tus clientes a las 3 AM como si fueran las 3 PM.',
+  },
+  {
+    title: 'Respuesta Instantánea',
+    description: 'Cero tiempos de espera. El 82% de los clientes esperan respuesta inmediata. Tu bot responde en milisegundos.',
+  },
+  {
+    title: 'Escala sin Límites',
+    description: 'Atiende 1 o 1,000 conversaciones simultáneas. El mismo coste, cero estrés. Crece sin contratar más personal.',
+  },
+]
+
+const process = [
+  { step: '01', title: 'Análisis', description: 'Estudiamos tu negocio, preguntas frecuentes, flujos de atención y objetivos específicos.' },
+  { step: '02', title: 'Diseño', description: 'Creamos los flujos conversacionales, personalidad del bot y entrenamos la IA con tus datos.' },
+  { step: '03', title: 'Desarrollo', description: 'Programamos el chatbot, integramos con tus sistemas y configuramos los canales.' },
+  { step: '04', title: 'Entrenamiento', description: 'Probamos, refinamos respuestas y te enseñamos a gestionar y mejorar el bot continuamente.' },
+]
+
+const testimonial = {
+  quote: 'Nuestro chatbot de WhatsApp atiende el 70% de las consultas automáticamente. Hemos reducido costes y mejorado la satisfacción del cliente. Es como tener 3 personas trabajando 24/7.',
+  author: 'Carlos Martínez',
+  position: 'CEO',
+  company: 'Clínica Dental Martínez',
+}
+
+export default function ChatbotsPage() {
+  return (
+    <StandardLayout>
+      <ServiceHero {...heroData} />
+      <ServiceFeatures features={features} title="Tipos de chatbots" />
+      <ServiceBenefits benefits={benefits} />
+      <ServiceProcess steps={process} />
+      <ServiceTestimonial {...testimonial} />
+      <ServiceCTA 
+        title="¿Listo para automatizar tu atención al cliente?"
+        subtitle="Te mostramos cómo un chatbot puede transformar tu negocio"
+      />
+    </StandardLayout>
+  )
+}
+

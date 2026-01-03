@@ -19,7 +19,7 @@ const SERVICES = [
   { href: '/servicios/redes-sociales', label: 'Gestión de Redes Sociales' },
   { href: '/servicios/google-ads', label: 'Google Ads' },
   { href: '/servicios/apps-ia', label: 'Aplicaciones con IA' },
-  { href: '/servicios/fotografia', label: 'Fotografía Profesional' },
+  { href: '/servicios/chatbots', label: 'Chatbots con IA' },
   { href: '/servicios/branding', label: 'Branding' },
   { href: '/servicios/email-marketing', label: 'Email Marketing' },
 ]

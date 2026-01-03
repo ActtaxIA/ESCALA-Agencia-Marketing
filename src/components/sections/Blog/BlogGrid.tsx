@@ -31,7 +31,24 @@ interface Article {
   content: string
 }
 
-export default function BlogGrid() {
+interface BlogGridProps {
+  searchTerm?: string
+  selectedCategory?: string
+  onCategoryClick?: (categoryId: string) => void
+}
+
+// Mapeo de IDs de categoría a nombres completos
+const categoryMapping: Record<string, string[]> = {
+  'all': [],
+  'seo': ['SEO', 'SEO y Posicionamiento'],
+  'diseno': ['Diseño Web'],
+  'redes': ['Redes Sociales'],
+  'ads': ['Publicidad Digital'],
+  'ia': ['IA', 'Estrategia Digital'],
+  'email': ['Email'],
+}
+
+export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', onCategoryClick }: BlogGridProps) {
   const [allPosts, setAllPosts] = useState<any[]>([])
   const [categories, setCategories] = useState<{ name: string; count: number; icon: string }[]>([])
   const [popularPosts, setPopularPosts] = useState<{ title: string; slug: string }[]>([])
@@ -141,6 +158,11 @@ export default function BlogGrid() {
     loadArticles()
   }, [])
 
+  // Resetear visible posts cuando cambien los filtros
+  useEffect(() => {
+    setVisiblePosts(6)
+  }, [searchTerm, selectedCategory])
+
   useEffect(() => {
     if (loading || allPosts.length === 0) return
     
@@ -169,7 +191,21 @@ export default function BlogGrid() {
     setVisiblePosts((prev) => prev + 3)
   }
 
-  console.log('🔄 BlogGrid render - allPosts length:', allPosts.length, 'loading:', loading)
+  // Filtrar posts según búsqueda y categoría
+  const filteredPosts = allPosts.filter((post) => {
+    // Filtro por búsqueda
+    const matchesSearch = !searchTerm || 
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+    
+    // Filtro por categoría
+    const matchesCategory = selectedCategory === 'all' || 
+      categoryMapping[selectedCategory]?.includes(post.category)
+    
+    return matchesSearch && matchesCategory
+  })
+
+  console.log('🔄 BlogGrid render - allPosts:', allPosts.length, 'filtered:', filteredPosts.length, 'search:', searchTerm, 'category:', selectedCategory)
 
   return (
     <>
@@ -186,19 +222,21 @@ export default function BlogGrid() {
               {/* Main Content */}
               <main className={styles.mainContent}>
                 <div className={styles.sectionHeader}>
-                  <h2 className={styles.sectionTitle}>Últimos Artículos</h2>
+                  <h2 className={styles.sectionTitle}>
+                    {searchTerm ? `Resultados para "${searchTerm}"` : 'Últimos Artículos'}
+                  </h2>
                   <p className={styles.sectionSubtitle}>
-                    Explora nuestro contenido sobre marketing digital
+                    {filteredPosts.length} {filteredPosts.length === 1 ? 'artículo encontrado' : 'artículos encontrados'}
                   </p>
                 </div>
 
-                {allPosts.length === 0 ? (
+                {filteredPosts.length === 0 ? (
                   <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>
-                    <p>No hay artículos disponibles.</p>
+                    <p>No se encontraron artículos con estos filtros.</p>
                   </div>
                 ) : (
                   <div className={styles.postsGrid}>
-                    {allPosts.slice(0, visiblePosts).map((post, index) => {
+                    {filteredPosts.slice(0, visiblePosts).map((post, index) => {
                       console.log('🎨 Renderizando post:', post.title, post)
                       return (
                 <Link
@@ -248,7 +286,7 @@ export default function BlogGrid() {
                   </div>
                 )}
 
-            {visiblePosts < allPosts.length && (
+            {visiblePosts < filteredPosts.length && (
               <button className={styles.loadMore} onClick={loadMore}>
                 Cargar más artículos
               </button>
@@ -261,17 +299,25 @@ export default function BlogGrid() {
             <div className={styles.sidebarWidget}>
               <h3 className={styles.widgetTitle}>📚 Categorías</h3>
               <div className={styles.categoriesList}>
-                {categories.map((cat) => (
-                  <Link
-                    key={cat.name}
-                    href={`/blog?categoria=${cat.name.toLowerCase()}`}
-                    className={styles.categoryItem}
-                  >
-                    <span className={styles.categoryIcon}>{cat.icon}</span>
-                    <span className={styles.categoryName}>{cat.name}</span>
-                    <span className={styles.categoryCount}>{cat.count}</span>
-                  </Link>
-                ))}
+                {categories.map((cat) => {
+                  // Encontrar el ID de categoría basado en el nombre
+                  const categoryId = Object.entries(categoryMapping).find(
+                    ([id, names]) => names.includes(cat.name)
+                  )?.[0] || 'all'
+                  
+                  return (
+                    <button
+                      key={cat.name}
+                      onClick={() => onCategoryClick?.(categoryId)}
+                      className={styles.categoryItem}
+                      style={{ cursor: 'pointer', border: 'none', background: 'transparent', width: '100%', textAlign: 'left' }}
+                    >
+                      <span className={styles.categoryIcon}>{cat.icon}</span>
+                      <span className={styles.categoryName}>{cat.name}</span>
+                      <span className={styles.categoryCount}>{cat.count}</span>
+                    </button>
+                  )
+                })}
               </div>
             </div>
 

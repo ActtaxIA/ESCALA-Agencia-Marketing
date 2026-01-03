@@ -42,33 +42,38 @@
   transition: transform 0.4s ease;
 }
 
-/* Colores de las franjas - gradiente invertido (noche a día) */
+/* Colores de las franjas - mismo orden que HOME pero invertido (día a noche) */
+/* Stripe 1: Mediodía (casi blanco) - como HOME stripe 5 */
 .stripe:nth-child(1) { 
-  background: linear-gradient(180deg, #e84a23 0%, #c0392b 50%, #a02818 100%); 
+  background: #fff5e6;
 }
+/* Stripe 2: Tarde (naranja claro) - como HOME stripe 6 */
 .stripe:nth-child(2) { 
-  background: linear-gradient(180deg, #ff6b35 0%, #ff8c42 50%, #ffaa66 100%); 
+  background: #ffb366;
 }
+/* Stripe 3: Atardecer (naranja) - como HOME stripe 7 */
 .stripe:nth-child(3) { 
-  background: linear-gradient(180deg, #ffb366 0%, #ff9933 50%, #ff7f00 100%); 
+  background: #ff6b35;
 }
-/* Transición al crepúsculo - tonos más oscuros */
+/* Stripe 4: Crepúsculo (rojo) - como HOME stripe 8 */
 .stripe:nth-child(4) { 
-  background: linear-gradient(180deg, #2c1810 0%, #3d2418 50%, #4a2c1f 100%); 
+  background: #e84a23;
 }
-/* Noche profunda con luna - azul oscuro casi negro */
+/* Stripe 5: Noche oscura con luna - como HOME stripe 1 */
 .stripe:nth-child(5) { 
-  background: linear-gradient(180deg, #0a0e1a 0%, #0f1620 50%, #14192b 100%); 
+  background: #0f1729;
 }
-/* Noche profunda - azul marino oscuro */
+/* Stripe 6: Azul noche - como HOME stripe 2 */
 .stripe:nth-child(6) { 
-  background: linear-gradient(180deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%); 
+  background: #1e3a5f;
 }
+/* Stripe 7: Amanecer (azul medio) - como HOME stripe 3 */
 .stripe:nth-child(7) { 
-  background: linear-gradient(180deg, #4a7c9b 0%, #5a9cb8 50%, #7ab4c9 100%); 
+  background: #4a7c9b;
 }
+/* Stripe 8: Mañana (azul claro) - como HOME stripe 4 */
 .stripe:nth-child(8) { 
-  background: linear-gradient(180deg, #87ceeb 0%, #b0e0f0 50%, #e0f4ff 100%); 
+  background: #87ceeb;
 }
 
 /* Efecto hover - expandir franja */

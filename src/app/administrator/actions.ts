@@ -19,9 +19,17 @@ export async function createArticle(formData: FormData) {
   const metaTitle = formData.get('meta_title') as string
   const metaDescription = formData.get('meta_description') as string
   const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
-  const featuredImage = formData.get('featured_image') as string
+  let featuredImage = formData.get('featured_image') as string
   const published = formData.get('published') === 'true'
   const featured = formData.get('featured') === 'true'
+  const publishedAt = formData.get('published_at') as string
+  
+  // Si hay archivo de imagen, procesarlo (aquí simplemente usamos el nombre)
+  // En producción real, subirías a un storage (Supabase Storage, Cloudinary, etc.)
+  const imageFile = formData.get('image') as File | null
+  if (imageFile && imageFile.size > 0) {
+    featuredImage = formData.get('featured_image') as string
+  }
 
   // Extraer excerpt automáticamente del contenido
   const excerpt = extractExcerpt(content)
@@ -40,7 +48,7 @@ export async function createArticle(formData: FormData) {
       featured_image: featuredImage || null,
       published,
       featured,
-      published_at: published ? new Date().toISOString() : null,
+      published_at: publishedAt || (published ? new Date().toISOString() : null),
       author: 'ESCALA Marketing',
     })
     .select()
@@ -96,22 +104,26 @@ export async function updateArticle(id: string, formData: FormData) {
   const metaTitle = formData.get('meta_title') as string
   const metaDescription = formData.get('meta_description') as string
   const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
-  const featuredImage = formData.get('featured_image') as string
+  let featuredImage = formData.get('featured_image') as string
   const published = formData.get('published') === 'true'
   const featured = formData.get('featured') === 'true'
+  const publishedAt = formData.get('published_at') as string
+
+  // Si hay archivo de imagen, procesarlo
+  const imageFile = formData.get('image') as File | null
+  if (imageFile && imageFile.size > 0) {
+    featuredImage = formData.get('featured_image') as string
+  }
 
   // Extraer excerpt automáticamente del contenido
   const excerpt = extractExcerpt(content)
 
-  // Obtener artículo actual para ver si cambió el estado de publicación
+  // Obtener artículo actual
   const { data: currentArticle } = await supabase
     .from('articles')
     .select('published, published_at')
     .eq('id', id)
     .single()
-
-  const wasPublished = currentArticle?.published
-  const newPublishedAt = !wasPublished && published ? new Date().toISOString() : currentArticle?.published_at
 
   const { error } = await supabase
     .from('articles')
@@ -127,7 +139,7 @@ export async function updateArticle(id: string, formData: FormData) {
       featured_image: featuredImage || null,
       published,
       featured,
-      published_at: newPublishedAt,
+      published_at: publishedAt || currentArticle?.published_at,
       updated_at: new Date().toISOString(),
     })
     .eq('id', id)

@@ -51,7 +51,12 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
     keywords: article?.keywords?.join(', ') || '',
     published: article?.published || false,
     featured: article?.featured || false,
+    published_at: article?.published_at ? new Date(article.published_at).toISOString().slice(0, 16) : new Date().toISOString().slice(0, 16),
   })
+  const [imageFile, setImageFile] = useState<File | null>(null)
+  const [imagePreview, setImagePreview] = useState<string>(
+    article?.featured_image ? `/blog/${article.featured_image}` : ''
+  )
 
   const handleChange = (field: string, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -70,7 +75,25 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
     }
   }
 
-  const handleSave = async (publish: boolean = false) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      setImageFile(file)
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string)
+      }
+      reader.readAsDataURL(file)
+      
+      // Generar nombre del archivo
+      const timestamp = Date.now()
+      const ext = file.name.split('.').pop()
+      const fileName = `${formData.slug || 'image'}-${timestamp}.${ext}`
+      setFormData(prev => ({ ...prev, featured_image: fileName }))
+    }
+  }
+
+  const handleSave = async () => {
     setLoading(true)
     setError('')
 
@@ -100,8 +123,14 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       formDataToSend.append('meta_title', formData.meta_title)
       formDataToSend.append('meta_description', formData.meta_description)
       formDataToSend.append('keywords', formData.keywords)
-      formDataToSend.append('published', publish.toString())
+      formDataToSend.append('published', formData.published.toString())
       formDataToSend.append('featured', formData.featured.toString())
+      formDataToSend.append('published_at', formData.published_at)
+      
+      // Añadir imagen si hay una nueva
+      if (imageFile) {
+        formDataToSend.append('image', imageFile)
+      }
 
       // Las actions usan redirect() al final, así que solo ejecutamos y esperamos
       if (article?.id) {
@@ -132,18 +161,11 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
               Cancelar
             </button>
             <button
-              onClick={() => handleSave(false)}
-              className={styles.btnSecondary}
-              disabled={loading}
-            >
-              {loading ? 'Guardando...' : 'Guardar Borrador'}
-            </button>
-            <button
-              onClick={() => handleSave(true)}
+              onClick={handleSave}
               className={styles.btnPrimary}
               disabled={loading}
             >
-              {loading ? 'Publicando...' : 'Publicar'}
+              {loading ? 'Guardando...' : 'Guardar y Cerrar'}
             </button>
           </div>
         </div>
@@ -340,24 +362,30 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
           <div className={styles.sidebarCard}>
             <h3>Imagen Destacada</h3>
             <input
-              type="text"
-              value={formData.featured_image}
-              onChange={(e) => handleChange('featured_image', e.target.value)}
-              placeholder="nombre-imagen.webp"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className={styles.fileInput}
             />
-            <span className={styles.hint}>
-              Solo el nombre del archivo en /public/blog/
-            </span>
-            {formData.featured_image && (
-              <img
-                src={`/blog/${formData.featured_image}`}
-                alt="Preview"
-                className={styles.imagePreview}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none'
-                }}
-              />
+            {imagePreview && (
+              <div className={styles.imagePreview}>
+                <img src={imagePreview} alt="Preview" />
+              </div>
             )}
+            <span className={styles.hint}>
+              Formatos: JPG, PNG, WebP (máx 5MB)
+            </span>
+          </div>
+
+          {/* Fecha de Publicación */}
+          <div className={styles.sidebarCard}>
+            <h3>Fecha de Publicación</h3>
+            <input
+              type="datetime-local"
+              value={formData.published_at}
+              onChange={(e) => handleChange('published_at', e.target.value)}
+              className={styles.dateInput}
+            />
           </div>
         </aside>
       </div>

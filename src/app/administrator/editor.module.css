@@ -251,6 +251,38 @@
   accent-color: #667eea;
 }
 
+/* ===== FILE INPUT ===== */
+.fileInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.fileInput:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+}
+
+/* ===== DATE INPUT ===== */
+.dateInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
 /* ===== IMAGE PREVIEW ===== */
 .imagePreview {
   margin-top: 1rem;

@@ -105,22 +105,16 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       formDataToSend.append('published', publish.toString())
       formDataToSend.append('featured', formData.featured.toString())
 
-      let result
+      // Las actions usan redirect() al final, así que solo ejecutamos y esperamos
       if (article?.id) {
-        result = await updateArticle(article.id, formDataToSend)
+        await updateArticle(article.id, formDataToSend)
       } else {
-        result = await createArticle(formDataToSend)
+        await createArticle(formDataToSend)
       }
-
-      if (result.error) {
-        throw new Error(result.error)
-      }
-
-      router.push('/administrator')
-      router.refresh()
+      
+      // Si llegamos aquí sin error, las actions redirigirán automáticamente
     } catch (err: any) {
       setError(err.message || 'Error al guardar el artículo')
-    } finally {
       setLoading(false)
     }
   }

@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { Editor } from '@tinymce/tinymce-react'
 import { createArticle, updateArticle } from './actions'
+import ImagePicker from './ImagePicker'
 import styles from './editor.module.css'
 
 interface Category {
@@ -135,6 +136,21 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       const ext = file.name.split('.').pop()
       const fileName = `${formData.slug || 'image'}-${timestamp}.${ext}`
       setFormData(prev => ({ ...prev, featured_image: fileName }))
+    }
+  }
+
+  // Nuevo handler para ImagePicker
+  const handleImageSelected = (file: File | null, imageName: string, preview: string) => {
+    if (file) {
+      // Nueva imagen subida
+      setImageFile(file)
+      setImagePreview(preview)
+      setFormData(prev => ({ ...prev, featured_image: imageName }))
+    } else {
+      // Imagen existente seleccionada
+      setImageFile(null)
+      setImagePreview(preview)
+      setFormData(prev => ({ ...prev, featured_image: imageName }))
     }
   }
 

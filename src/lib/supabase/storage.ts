@@ -1,7 +1,6 @@
-import { createClient } from '@/lib/supabase/client'
-
 /**
  * Obtiene la URL pública de una imagen en Supabase Storage
+ * NOTA: Esta función construye la URL manualmente para evitar problemas de SSR/Client
  * @param fileName - Nombre del archivo (ej: "mi-imagen.png")
  * @param bucket - Nombre del bucket (por defecto "blog-images")
  * @returns URL pública de la imagen
@@ -11,13 +10,15 @@ export function getPublicImageUrl(fileName: string | null, bucket: string = 'blo
     return '/eskala_digital_opengraph.png' // Imagen por defecto
   }
 
-  const supabase = createClient()
+  // Construir URL pública manualmente (sin usar cliente de Supabase)
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   
-  const { data } = supabase.storage
-    .from(bucket)
-    .getPublicUrl(`public/${fileName}`)
-  
-  return data.publicUrl
+  if (!supabaseUrl) {
+    console.error('❌ NEXT_PUBLIC_SUPABASE_URL no está definida')
+    return '/eskala_digital_opengraph.png'
+  }
+
+  return `${supabaseUrl}/storage/v1/object/public/${bucket}/public/${fileName}`
 }
 
 /**
@@ -43,4 +44,5 @@ export function getBlogImageUrl(fileName: string | null): string {
   // Por defecto, asumir que está en Supabase Storage
   return getPublicImageUrl(fileName)
 }
+
 

@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-// @ts-expect-error - remark-gfm types not available
 import remarkGfm from 'remark-gfm'
 import { createArticle, updateArticle, deleteArticle } from './actions'
 import styles from './editor.module.css'

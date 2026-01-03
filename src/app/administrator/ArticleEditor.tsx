@@ -90,18 +90,26 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       // Obtener contenido del editor TinyMCE
       const content = editorRef.current?.getContent() || formData.content
 
-      const dataToSave = {
-        ...formData,
-        content,
-        keywords: formData.keywords.split(',').map(k => k.trim()).filter(Boolean),
-        published: publish,
-      }
+      // Crear FormData para enviar
+      const formDataToSend = new FormData()
+      formDataToSend.append('title', formData.title)
+      formDataToSend.append('slug', formData.slug)
+      formDataToSend.append('excerpt', formData.excerpt)
+      formDataToSend.append('content', content)
+      formDataToSend.append('featured_image', formData.featured_image)
+      formDataToSend.append('author', formData.author)
+      formDataToSend.append('category_id', formData.category_id)
+      formDataToSend.append('meta_title', formData.meta_title)
+      formDataToSend.append('meta_description', formData.meta_description)
+      formDataToSend.append('keywords', formData.keywords)
+      formDataToSend.append('published', publish.toString())
+      formDataToSend.append('featured', formData.featured.toString())
 
       let result
       if (article?.id) {
-        result = await updateArticle(article.id, dataToSave)
+        result = await updateArticle(article.id, formDataToSend)
       } else {
-        result = await createArticle(dataToSave)
+        result = await createArticle(formDataToSend)
       }
 
       if (result.error) {

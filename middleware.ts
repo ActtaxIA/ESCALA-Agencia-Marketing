@@ -2,6 +2,11 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
+  // Solo procesar rutas /administrator
+  if (!request.nextUrl.pathname.startsWith('/administrator')) {
+    return NextResponse.next()
+  }
+
   let response = NextResponse.next({
     request: {
       headers: request.headers,
@@ -57,25 +62,24 @@ export async function middleware(request: NextRequest) {
   // Refresh session si existe
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Proteger rutas /administrator
-  if (request.nextUrl.pathname.startsWith('/administrator')) {
-    // Si no hay usuario y no es la página de login, redirigir
-    if (!user && request.nextUrl.pathname !== '/administrator/login') {
-      return NextResponse.redirect(new URL('/administrator/login', request.url))
-    }
-    // Si hay usuario y está en /administrator/login, redirigir al dashboard
-    if (user && request.nextUrl.pathname === '/administrator/login') {
-      return NextResponse.redirect(new URL('/administrator', request.url))
-    }
+  const isLoginPage = request.nextUrl.pathname === '/administrator/login'
+
+  // Si no hay usuario y NO está en login, redirigir a login
+  if (!user && !isLoginPage) {
+    const loginUrl = new URL('/administrator/login', request.url)
+    return NextResponse.redirect(loginUrl)
+  }
+
+  // Si hay usuario y ESTÁ en login, redirigir al dashboard
+  if (user && isLoginPage) {
+    const dashboardUrl = new URL('/administrator', request.url)
+    return NextResponse.redirect(dashboardUrl)
   }
 
   return response
 }
 
 export const config = {
-  matcher: [
-    '/administrator/:path*',
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+  matcher: '/administrator/:path*',
 }
 

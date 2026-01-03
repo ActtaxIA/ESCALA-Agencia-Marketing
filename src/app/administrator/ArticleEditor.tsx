@@ -165,7 +165,6 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       console.log('🔍 DEBUG - Guardando artículo:')
       console.log('- Article ID:', article?.id)
       console.log('- Content length:', content.length)
-      console.log('- Content preview:', content.substring(0, 200))
       
       // Validaciones
       if (!formData.title.trim()) {
@@ -181,12 +180,35 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
         throw new Error('El contenido es obligatorio')
       }
 
-      // Crear FormData para enviar
+      // Si hay una nueva imagen, subirla primero a /public/blog/
+      let finalImageName = formData.featured_image
+      
+      if (imageFile) {
+        console.log('📸 Subiendo imagen a /public/blog/...')
+        const uploadFormData = new FormData()
+        uploadFormData.append('file', imageFile)
+        uploadFormData.append('slug', formData.slug)
+        
+        const uploadResponse = await fetch('/api/upload-image', {
+          method: 'POST',
+          body: uploadFormData
+        })
+        
+        if (!uploadResponse.ok) {
+          throw new Error('Error al subir la imagen')
+        }
+        
+        const uploadResult = await uploadResponse.json()
+        finalImageName = uploadResult.fileName
+        console.log('✅ Imagen subida:', finalImageName)
+      }
+
+      // Crear FormData para enviar a Supabase
       const formDataToSend = new FormData()
       formDataToSend.append('title', formData.title)
       formDataToSend.append('slug', formData.slug)
       formDataToSend.append('content', content)
-      formDataToSend.append('featured_image', formData.featured_image)
+      formDataToSend.append('featured_image', finalImageName)
       formDataToSend.append('author', formData.author)
       formDataToSend.append('category_id', formData.category_id)
       formDataToSend.append('meta_title', formData.meta_title)
@@ -195,39 +217,23 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       formDataToSend.append('published', formData.published.toString())
       formDataToSend.append('featured', formData.featured.toString())
       formDataToSend.append('published_at', formData.published_at)
-      
-      // Añadir imagen si hay una nueva
-      if (imageFile) {
-        formDataToSend.append('image', imageFile)
-      }
-      
-      // Enviar la imagen existente para referencia
-      if (article?.featured_image && !imageFile) {
-        formDataToSend.append('existing_featured_image', article.featured_image)
-      }
 
-      console.log('📤 Enviando a Supabase...')
+      console.log('📤 Guardando en Supabase...')
       
-      // Llamar a las Server Actions y esperar el resultado
+      // Llamar a las Server Actions
       let result
-      try {
-        if (article?.id) {
-          console.log('🔄 Llamando a updateArticle con ID:', article.id)
-          result = await updateArticle(article.id, formDataToSend)
-        } else {
-          console.log('🔄 Llamando a createArticle')
-          result = await createArticle(formDataToSend)
-        }
-        
-        console.log('✅ Resultado de Server Action:', result)
-      } catch (actionError: any) {
-        console.error('💥 Error en Server Action:', actionError)
-        throw new Error(`Error en Server Action: ${actionError.message}`)
+      if (article?.id) {
+        console.log('🔄 Llamando a updateArticle con ID:', article.id)
+        result = await updateArticle(article.id, formDataToSend)
+      } else {
+        console.log('🔄 Llamando a createArticle')
+        result = await createArticle(formDataToSend)
       }
       
-      // Si llegamos aquí, todo fue bien - hacer redirect manualmente
+      console.log('✅ Resultado:', result)
+      
+      // Redirect
       if (result.success) {
-        console.log('🔄 Redirigiendo a /administrator...')
         router.push('/administrator')
         router.refresh()
       }

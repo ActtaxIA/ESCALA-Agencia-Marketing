@@ -20,49 +20,14 @@ export async function createArticle(formData: FormData) {
     const metaTitle = formData.get('meta_title') as string
     const metaDescription = formData.get('meta_description') as string
     const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
-    let featuredImage = formData.get('featured_image') as string
+    const featuredImage = formData.get('featured_image') as string
     const published = formData.get('published') === 'true'
     const featured = formData.get('featured') === 'true'
     const publishedAt = formData.get('published_at') as string
     
     console.log('🔧 SERVER ACTION - createArticle:')
     console.log('- Content length:', content?.length || 0)
-    
-    // Subir imagen a Supabase Storage si existe
-    const imageFile = formData.get('image') as File | null
-    if (imageFile && imageFile.size > 0) {
-      console.log('📸 Subiendo imagen a Supabase Storage...')
-      console.log('- File name:', imageFile.name)
-      console.log('- File size:', imageFile.size)
-      
-      // Convertir File a ArrayBuffer
-      const arrayBuffer = await imageFile.arrayBuffer()
-      const buffer = new Uint8Array(arrayBuffer)
-      
-      // Generar nombre único
-      const timestamp = Date.now()
-      const ext = imageFile.name.split('.').pop()
-      const fileName = `${slug}-${timestamp}.${ext}`
-      
-      // Subir a Supabase Storage bucket 'blog-images'
-      const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('blog-images')
-        .upload(`public/${fileName}`, buffer, {
-          contentType: imageFile.type,
-          cacheControl: '3600',
-          upsert: false
-        })
-      
-      if (uploadError) {
-        console.error('❌ Error subiendo imagen:', uploadError)
-        throw new Error(`Error al subir la imagen: ${uploadError.message}`)
-      }
-      
-      console.log('✅ Imagen subida correctamente:', uploadData)
-      // Guardar la URL COMPLETA de Supabase Storage (no solo el nombre)
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-      featuredImage = `${supabaseUrl}/storage/v1/object/public/blog-images/public/${fileName}`
-    }
+    console.log('- Featured image:', featuredImage)
 
     // Extraer excerpt automáticamente del contenido
     const excerpt = extractExcerpt(content)
@@ -238,73 +203,18 @@ export async function updateArticle(id: string, formData: FormData) {
     const metaTitle = formData.get('meta_title') as string
     const metaDescription = formData.get('meta_description') as string
     const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
-    let featuredImage = formData.get('featured_image') as string
+    const featuredImage = formData.get('featured_image') as string
     const published = formData.get('published') === 'true'
     const featured = formData.get('featured') === 'true'
     const publishedAt = formData.get('published_at') as string
 
     console.log('🔧 SERVER ACTION - updateArticle:')
     console.log('- ID:', id)
-    console.log('- Title:', title)
-    console.log('- Slug:', slug)
     console.log('- Content length:', content?.length || 0)
-    console.log('- Content preview:', content?.substring(0, 150) || 'NO CONTENT')
-
-    // Subir imagen a Supabase Storage si existe
-    const imageFile = formData.get('image') as File | null
-    if (imageFile && imageFile.size > 0) {
-      console.log('📸 Subiendo imagen a Supabase Storage...')
-      console.log('- File name:', imageFile.name)
-      console.log('- File size:', imageFile.size)
-      
-      // Convertir File a ArrayBuffer
-      const arrayBuffer = await imageFile.arrayBuffer()
-      const buffer = new Uint8Array(arrayBuffer)
-      
-      // Generar nombre único
-      const timestamp = Date.now()
-      const ext = imageFile.name.split('.').pop()
-      const fileName = `${slug}-${timestamp}.${ext}`
-      
-      // Subir a Supabase Storage bucket 'blog-images'
-      const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('blog-images')
-        .upload(`public/${fileName}`, buffer, {
-          contentType: imageFile.type,
-          cacheControl: '3600',
-          upsert: true // Permitir sobrescribir si ya existe
-        })
-      
-      if (uploadError) {
-        console.error('❌ Error subiendo imagen:', uploadError)
-        throw new Error(`Error al subir la imagen: ${uploadError.message}`)
-      }
-      
-      console.log('✅ Imagen subida correctamente:', uploadData)
-      // Guardar la URL COMPLETA de Supabase Storage (no solo el nombre)
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-      featuredImage = `${supabaseUrl}/storage/v1/object/public/blog-images/public/${fileName}`
-      
-      // Si había una imagen anterior, eliminarla
-      const existingImage = formData.get('existing_featured_image') as string
-      if (existingImage && existingImage !== fileName) {
-        console.log('🗑️ Eliminando imagen anterior:', existingImage)
-        await supabase.storage
-          .from('blog-images')
-          .remove([`public/${existingImage}`])
-      }
-    } else {
-      // Mantener la imagen existente si no hay una nueva
-      const existingImage = formData.get('existing_featured_image') as string
-      if (existingImage) {
-        featuredImage = existingImage
-      }
-    }
+    console.log('- Featured image:', featuredImage)
 
     // Extraer excerpt automáticamente del contenido
     const excerpt = extractExcerpt(content)
-
-    console.log('- Excerpt:', excerpt.substring(0, 100))
 
     // Obtener artículo actual
     const { data: currentArticle } = await supabase
@@ -312,8 +222,6 @@ export async function updateArticle(id: string, formData: FormData) {
       .select('published, published_at')
       .eq('id', id)
       .single()
-
-    console.log('- Current article:', currentArticle)
 
     const updateData = {
       title,
@@ -330,11 +238,6 @@ export async function updateArticle(id: string, formData: FormData) {
       published_at: publishedAt || currentArticle?.published_at,
       updated_at: new Date().toISOString(),
     }
-
-    console.log('📝 Datos a actualizar en Supabase:', {
-      ...updateData,
-      content: `${updateData.content?.length || 0} caracteres`
-    })
 
     const { error, data } = await supabase
       .from('articles')

@@ -184,9 +184,22 @@
   padding-left: 2rem;
 }
 
+.content ul {
+  list-style-type: disc;
+}
+
+.content ul ul {
+  list-style-type: circle;
+}
+
+.content ol {
+  list-style-type: decimal;
+}
+
 .content li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
+  display: list-item;
 }
 
 .content a {

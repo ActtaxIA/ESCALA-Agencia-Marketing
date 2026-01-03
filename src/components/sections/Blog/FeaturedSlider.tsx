@@ -55,8 +55,9 @@ export default function FeaturedSlider() {
             category:categories(name)
           `)
           .eq('published', true)
+          .eq('featured', true)
           .order('published_at', { ascending: false })
-          .limit(3) // 3 artículos más recientes
+          .limit(6) // Máximo 6 destacados
 
         if (error) throw error
 
@@ -71,9 +72,16 @@ export default function FeaturedSlider() {
             const wordsPerMinute = 200
             const wordCount = article.content.split(/\s+/).length
             const minutes = Math.ceil(wordCount / wordsPerMinute)
+            
+            // Truncar excerpt a máximo 150 caracteres
+            let excerpt = article.excerpt || ''
+            if (excerpt.length > 150) {
+              excerpt = excerpt.substring(0, 147) + '...'
+            }
 
             return {
               ...article,
+              excerpt, // Usar el excerpt truncado
               category: categoryName,
               categoryColor: categoryColors[categoryName] || '#4a7c9b',
               icon: categoryIcons[categoryName] || '📄',

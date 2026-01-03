@@ -5,10 +5,10 @@ import { join } from 'path'
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
-    const file = formData.get('file') as File
+    const file = formData.get('image') as File
     
     if (!file) {
-      return NextResponse.json({ error: 'No file provided' }, { status: 400 })
+      return NextResponse.json({ error: 'No se proporcionó ningún archivo' }, { status: 400 })
     }
 
     // Convertir el archivo a buffer
@@ -24,15 +24,17 @@ export async function POST(request: NextRequest) {
     const path = join(process.cwd(), 'public', 'blog', fileName)
     await writeFile(path, buffer)
 
+    console.log('✅ Imagen guardada en:', path)
+
     return NextResponse.json({ 
       success: true, 
       fileName,
       url: `/blog/${fileName}`
     })
   } catch (error: any) {
-    console.error('Error uploading image:', error)
+    console.error('❌ Error uploading image:', error)
     return NextResponse.json({ 
-      error: error.message || 'Error uploading image' 
+      error: error.message || 'Error al subir la imagen' 
     }, { status: 500 })
   }
 }

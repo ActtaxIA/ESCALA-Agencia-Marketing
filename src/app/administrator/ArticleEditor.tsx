@@ -185,22 +185,28 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       
       if (imageFile) {
         console.log('📸 Subiendo imagen a /public/blog/...')
-        const uploadFormData = new FormData()
-        uploadFormData.append('file', imageFile)
-        uploadFormData.append('slug', formData.slug)
-        
-        const uploadResponse = await fetch('/api/upload-image', {
-          method: 'POST',
-          body: uploadFormData
-        })
-        
-        if (!uploadResponse.ok) {
-          throw new Error('Error al subir la imagen')
+        try {
+          const uploadFormData = new FormData()
+          uploadFormData.append('image', imageFile)
+          uploadFormData.append('slug', formData.slug)
+          
+          const uploadResponse = await fetch('/api/upload-image', {
+            method: 'POST',
+            body: uploadFormData
+          })
+          
+          if (!uploadResponse.ok) {
+            const errorData = await uploadResponse.json()
+            throw new Error(errorData.error || 'Error al subir la imagen')
+          }
+          
+          const uploadResult = await uploadResponse.json()
+          finalImageName = uploadResult.fileName
+          console.log('✅ Imagen subida:', finalImageName)
+        } catch (uploadError: any) {
+          console.error('❌ Error subiendo imagen:', uploadError)
+          throw new Error(`Error al subir imagen: ${uploadError.message}`)
         }
-        
-        const uploadResult = await uploadResponse.json()
-        finalImageName = uploadResult.fileName
-        console.log('✅ Imagen subida:', finalImageName)
       }
 
       // Crear FormData para enviar a Supabase
@@ -220,34 +226,41 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
 
       console.log('📤 Guardando en Supabase...')
       
-      // Llamar a las Server Actions
+      // Llamar a las Server Actions con try-catch
       let result
-      if (article?.id) {
-        console.log('🔄 Llamando a updateArticle con ID:', article.id)
-        result = await updateArticle(article.id, formDataToSend)
-      } else {
-        console.log('🔄 Llamando a createArticle')
-        result = await createArticle(formDataToSend)
+      try {
+        if (article?.id) {
+          console.log('🔄 Llamando a updateArticle con ID:', article.id)
+          result = await updateArticle(article.id, formDataToSend)
+        } else {
+          console.log('🔄 Llamando a createArticle')
+          result = await createArticle(formDataToSend)
+        }
+      } catch (actionError: any) {
+        console.error('💥 Error llamando a Server Action:', actionError)
+        throw new Error('Error al comunicarse con el servidor. Por favor, intenta de nuevo.')
       }
       
-      console.log('✅ Resultado:', result)
+      console.log('✅ Resultado de Server Action:', result)
       
       // Verificar resultado
-      if (!result) {
-        throw new Error('No se recibió respuesta del servidor')
+      if (!result || typeof result !== 'object') {
+        throw new Error('Respuesta inválida del servidor')
       }
       
       if (result.error) {
         throw new Error(result.error)
       }
       
-      // Redirect si todo fue bien
-      if (result.success) {
-        router.push('/administrator')
-        router.refresh()
-      } else {
-        throw new Error('Error desconocido al guardar')
+      if (!result.success) {
+        throw new Error('El servidor no confirmó que se guardó correctamente')
       }
+      
+      // Todo OK - Redirect
+      console.log('🎉 Artículo guardado exitosamente')
+      router.push('/administrator')
+      router.refresh()
+      
     } catch (err: any) {
       console.error('❌ Error al guardar:', err)
       setError(err.message || 'Error al guardar el artículo')

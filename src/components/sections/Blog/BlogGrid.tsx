@@ -222,7 +222,7 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
     <>
       <StripeDivider />
 
-      <section className={styles.blogSection}>
+      <section className={styles.blogSection} data-results-section>
         <div className={styles.container}>
           {loading ? (
             <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>

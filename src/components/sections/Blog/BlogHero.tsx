@@ -25,6 +25,17 @@ export default function BlogHero({ onSearch, onCategoryChange }: BlogHeroProps) 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     onSearch?.(searchTerm)
+    
+    // Scroll suave hacia los resultados
+    const resultsSection = document.querySelector('[data-results-section]')
+    if (resultsSection) {
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const handleClearSearch = () => {
+    setSearchTerm('')
+    onSearch?.('')
   }
 
   const handleCategoryClick = (categoryId: string) => {
@@ -65,6 +76,16 @@ export default function BlogHero({ onSearch, onCategoryChange }: BlogHeroProps) 
             onChange={(e) => setSearchTerm(e.target.value)}
             className={styles.searchInput}
           />
+          {searchTerm && (
+            <button 
+              type="button" 
+              onClick={handleClearSearch}
+              className={styles.clearBtn}
+              aria-label="Limpiar búsqueda"
+            >
+              ✕
+            </button>
+          )}
           <button type="submit" className={styles.searchBtn}>
             Buscar
           </button>

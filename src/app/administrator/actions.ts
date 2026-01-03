@@ -65,13 +65,19 @@ export async function createArticle(formData: FormData) {
 
 // Función helper para extraer excerpt del contenido
 function extractExcerpt(content: string): string {
-  // Si hay separador <!--more-->, usar el texto antes de él
+  // 1. Buscar separador "Leer Más" de Joomla: <hr class="readmore" />
+  if (content.includes('<hr class="readmore"')) {
+    const beforeMore = content.split(/<hr class="readmore"[^>]*>/)[0]
+    return stripHtml(beforeMore).trim().substring(0, 300)
+  }
+  
+  // 2. Buscar separador antiguo de Markdown: <!--more-->
   if (content.includes('<!--more-->')) {
     const beforeMore = content.split('<!--more-->')[0]
     return stripHtml(beforeMore).trim().substring(0, 300)
   }
   
-  // Si no hay separador, usar los primeros 250 caracteres del texto limpio
+  // 3. Si no hay separador, usar los primeros 250 caracteres del texto limpio
   const cleanText = stripHtml(content).trim()
   return cleanText.substring(0, 250) + (cleanText.length > 250 ? '...' : '')
 }

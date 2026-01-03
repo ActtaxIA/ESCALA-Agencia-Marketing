@@ -258,7 +258,18 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
             <label>Contenido *</label>
             <Editor
               apiKey="zrk3s1w79rec2a3r59r0li1sejv9ou010c726epw91pen7kc"
-              onInit={(_evt: any, editor: any) => (editorRef.current = editor)}
+              onInit={(_evt: any, editor: any) => {
+                editorRef.current = editor
+                
+                // Registrar botón personalizado "Leer Más" (como en Joomla)
+                editor.ui.registry.addButton('readmore', {
+                  text: '📖 Leer Más',
+                  tooltip: 'Insertar separador "Leer Más" (como Joomla)',
+                  onAction: () => {
+                    editor.insertContent('<hr class="readmore" />')
+                  }
+                })
+              }}
               initialValue={formData.content}
               init={{
                 height: 600,
@@ -271,11 +282,31 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                 toolbar: 'undo redo | blocks | ' +
                   'bold italic forecolor | alignleft aligncenter ' +
                   'alignright alignjustify | bullist numlist outdent indent | ' +
-                  'pagebreak | removeformat | image link | code | help',
-                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6 }',
+                  'readmore pagebreak | removeformat | image link | code | help',
+                content_style: `
+                  body { font-family:Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6 }
+                  hr.readmore { 
+                    border: none; 
+                    border-top: 3px dashed #e63946; 
+                    margin: 20px 0;
+                    position: relative;
+                  }
+                  hr.readmore::after {
+                    content: "📖 LEER MÁS (Joomla)";
+                    position: absolute;
+                    top: -12px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: white;
+                    padding: 0 10px;
+                    color: #e63946;
+                    font-weight: bold;
+                    font-size: 12px;
+                  }
+                `,
                 language: 'es',
                 block_formats: 'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4',
-                pagebreak_separator: '<!--more-->',
+                pagebreak_separator: '<!-- pagebreak -->',
                 pagebreak_split_block: true,
                 image_title: true,
                 automatic_uploads: false,
@@ -304,7 +335,10 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
               }}
             />
             <span className={styles.hint}>
-              💡 Usa el botón <strong>"Leer Más"</strong> (pagebreak) para separar el extracto del resto del contenido. Todo antes del separador se mostrará en listados.
+              📖 <strong>Leer Más</strong>: Separa el extracto del contenido completo (lo que se ve en listados)
+            </span>
+            <span className={styles.hint}>
+              📄 <strong>Salto de Página</strong>: Divide un artículo largo en múltiples páginas
             </span>
             <span className={styles.hint}>
               💡 Usa el botón <strong>"Code"</strong> para alternar entre modo visual y HTML

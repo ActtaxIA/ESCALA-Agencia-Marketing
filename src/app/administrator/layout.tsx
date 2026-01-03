@@ -1,22 +1,6 @@
-import { createClient } from '@/lib/supabase/server'
-import { redirect } from 'next/navigation'
+import { PropsWithChildren } from 'react'
 
-export default async function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const supabase = createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (!user) {
-    redirect('/administrator/login')
-  }
-
-  return (
-    <div>
-      {children}
-    </div>
-  )
+export default function AdminLayout({ children }: PropsWithChildren) {
+  // No verificar auth aquí, lo haremos en las páginas individuales
+  return <>{children}</>
 }
-

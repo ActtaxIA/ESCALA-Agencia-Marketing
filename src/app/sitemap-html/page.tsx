@@ -42,6 +42,7 @@ export default async function SitemapPage() {
     .from('articles')
     .select('slug, title')
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .order('published_at', { ascending: false })
 
   // Obtener proyectos del portfolio
@@ -88,7 +89,7 @@ export default async function SitemapPage() {
                 <li>
                   <Link href="/blog">Ver todos los artículos</Link>
                 </li>
-                {articles && articles.slice(0, 10).map((article) => (
+                {articles && articles.map((article) => (
                   <li key={article.slug}>
                     <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                   </li>

@@ -37,10 +37,10 @@ const services = [
     slug: 'apps-ia',
   },
   {
-    icon: '📸',
-    title: 'Fotografía',
-    desc: 'Fotografía profesional de producto, corporativa y para redes sociales.',
-    slug: 'fotografia',
+    icon: '🤖',
+    title: 'Chatbots',
+    desc: 'Chatbots inteligentes para WhatsApp, web y voz. Atención 24/7 automatizada.',
+    slug: 'chatbots',
   },
   {
     icon: '✏️',

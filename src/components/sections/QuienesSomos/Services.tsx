@@ -8,7 +8,7 @@ const services = [
   { icon: '📱', title: 'Redes Sociales', desc: 'Contenido que conecta con tu audiencia.' },
   { icon: '🎯', title: 'Google Ads', desc: 'Campañas optimizadas para máximo ROI.' },
   { icon: '🤖', title: 'Apps con IA', desc: 'Automatización inteligente para tu negocio.' },
-  { icon: '📸', title: 'Fotografía', desc: 'Imágenes profesionales que venden.' },
+  { icon: '🤖', title: 'Chatbots', desc: 'Atención al cliente 24/7 con inteligencia artificial.' },
   { icon: '✏️', title: 'Branding', desc: 'Identidades de marca memorables.' },
   { icon: '📧', title: 'Email Marketing', desc: 'Emails que se abren y convierten.' },
 ]

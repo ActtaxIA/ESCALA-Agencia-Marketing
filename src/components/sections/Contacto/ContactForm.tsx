@@ -135,7 +135,7 @@ export default function ContactForm() {
               <option value="redes-sociales">Redes Sociales</option>
               <option value="google-ads">Google Ads</option>
               <option value="apps-ia">Apps con IA</option>
-              <option value="fotografia">Fotografía</option>
+              <option value="chatbots">Chatbots</option>
               <option value="branding">Branding</option>
               <option value="email-marketing">Email Marketing</option>
               <option value="otro">Otro</option>

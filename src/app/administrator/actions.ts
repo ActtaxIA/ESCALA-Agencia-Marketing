@@ -338,3 +338,42 @@ export async function deleteArticle(id: string) {
   revalidatePath('/blog')
 }
 
+// Toggle estado de publicación de un artículo
+export async function togglePublished(id: string, currentState: boolean) {
+  try {
+    const supabase = createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      throw new Error('No autenticado')
+    }
+
+    const newState = !currentState
+    const publishedAt = newState && !currentState ? new Date().toISOString() : null
+
+    const { error } = await supabase
+      .from('articles')
+      .update({ 
+        published: newState,
+        published_at: publishedAt,
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', id)
+
+    if (error) {
+      console.error('❌ Error al cambiar estado:', error)
+      throw new Error(`Error al cambiar estado: ${error.message}`)
+    }
+
+    console.log(`✅ Artículo ${newState ? 'publicado' : 'despublicado'} correctamente`)
+
+    revalidatePath('/administrator')
+    revalidatePath('/blog')
+    
+    return { success: true, published: newState }
+  } catch (error: any) {
+    console.error('💥 Error en togglePublished:', error)
+    throw error
+  }
+}
+

@@ -2,7 +2,9 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { getBlogImageUrl } from '@/lib/supabase/storage'
+import { togglePublished } from './actions'
 import styles from './ArticlesTable.module.css'
 
 interface Article {
@@ -27,10 +29,25 @@ type SortField = 'title' | 'views' | 'published_at' | 'created_at'
 type SortDirection = 'asc' | 'desc'
 
 export default function ArticlesTable({ articles }: ArticlesTableProps) {
+  const router = useRouter()
   const [sortField, setSortField] = useState<SortField>('created_at')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(10)
+  const [togglingId, setTogglingId] = useState<string | null>(null)
+
+  // Función para toggle publicación
+  const handleTogglePublished = async (id: string, currentState: boolean) => {
+    setTogglingId(id)
+    try {
+      await togglePublished(id, currentState)
+      router.refresh()
+    } catch (error: any) {
+      alert('Error al cambiar el estado: ' + error.message)
+    } finally {
+      setTogglingId(null)
+    }
+  }
 
   // Función para ordenar
   const handleSort = (field: SortField) => {
@@ -156,9 +173,20 @@ export default function ArticlesTable({ articles }: ArticlesTableProps) {
                   </td>
                   <td>{categoryName}</td>
                   <td>
-                    <span className={article.published ? styles.statusPublished : styles.statusDraft}>
-                      {article.published ? '✓ Publicado' : '○ Borrador'}
-                    </span>
+                    <label className={styles.checkboxLabel}>
+                      <input 
+                        type="checkbox" 
+                        checked={article.published}
+                        onChange={() => handleTogglePublished(article.id, article.published)}
+                        disabled={togglingId === article.id}
+                        className={styles.checkbox}
+                      />
+                      <span className={article.published ? styles.statusPublished : styles.statusDraft}>
+                        {togglingId === article.id 
+                          ? '⏳ Cambiando...' 
+                          : article.published ? '✓ Publicado' : '○ Borrador'}
+                      </span>
+                    </label>
                   </td>
                   <td className={styles.views}>{article.views || 0}</td>
                   <td className={styles.date}>

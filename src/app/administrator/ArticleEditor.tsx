@@ -194,13 +194,20 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       
       // Llamar a las Server Actions y esperar el resultado
       let result
-      if (article?.id) {
-        result = await updateArticle(article.id, formDataToSend)
-      } else {
-        result = await createArticle(formDataToSend)
+      try {
+        if (article?.id) {
+          console.log('🔄 Llamando a updateArticle con ID:', article.id)
+          result = await updateArticle(article.id, formDataToSend)
+        } else {
+          console.log('🔄 Llamando a createArticle')
+          result = await createArticle(formDataToSend)
+        }
+        
+        console.log('✅ Resultado de Server Action:', result)
+      } catch (actionError: any) {
+        console.error('💥 Error en Server Action:', actionError)
+        throw new Error(`Error en Server Action: ${actionError.message}`)
       }
-      
-      console.log('✅ Resultado de Server Action:', result)
       
       // Si llegamos aquí, todo fue bien - hacer redirect manualmente
       if (result.success) {

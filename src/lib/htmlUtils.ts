@@ -45,8 +45,8 @@ export function decodeHtmlEntities(text: string): string {
       // Comillas
       .replace(/&ldquo;/g, '"')
       .replace(/&rdquo;/g, '"')
-      .replace(/&lsquo;/g, ''')
-      .replace(/&rsquo;/g, ''')
+      .replace(/&lsquo;/g, '\u2018')
+      .replace(/&rsquo;/g, '\u2019')
       .replace(/&sbquo;/g, '‚')
       .replace(/&bdquo;/g, '„')
       // Guiones

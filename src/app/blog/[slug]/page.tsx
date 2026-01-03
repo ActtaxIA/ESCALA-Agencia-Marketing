@@ -19,11 +19,13 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const supabase = createClient()
   
+  // Solo generar metadatos si el artículo está publicado Y la fecha es <= ahora
   const { data: article } = await supabase
     .from('articles')
     .select('title, excerpt, meta_title, meta_description, keywords, featured_image, slug')
     .eq('slug', params.slug)
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .single()
 
   if (!article) {
@@ -78,6 +80,7 @@ export default async function ArticlePage({ params }: Props) {
   const supabase = createClient()
 
   // Fetch el artículo con su categoría
+  // Solo mostrar si está publicado Y la fecha es <= ahora
   const { data: article, error } = await supabase
     .from('articles')
     .select(`
@@ -86,6 +89,7 @@ export default async function ArticlePage({ params }: Props) {
     `)
     .eq('slug', params.slug)
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .single()
 
   if (error || !article) {
@@ -115,11 +119,12 @@ export default async function ArticlePage({ params }: Props) {
   const wordCount = article.content.split(/\s+/).length
   const readTime = Math.ceil(wordCount / wordsPerMinute)
 
-  // Obtener artículos relacionados
+  // Obtener artículos relacionados (también con fecha <= ahora)
   const { data: relatedArticles } = await supabase
     .from('articles')
     .select('slug, title, excerpt')
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .neq('id', article.id)
     .eq('category_id', article.category_id)
     .limit(3)

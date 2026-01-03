@@ -41,6 +41,7 @@ export default function FeaturedSlider() {
     async function loadFeaturedPosts() {
       try {
         const supabase = createClient()
+        // Solo mostrar artículos destacados con fecha <= ahora (publicaciones programadas)
         const { data, error } = await supabase
           .from('articles')
           .select(`
@@ -56,6 +57,7 @@ export default function FeaturedSlider() {
           `)
           .eq('published', true)
           .eq('featured', true)
+          .lte('published_at', new Date().toISOString())
           .order('published_at', { ascending: false })
           .limit(6) // Máximo 6 destacados
 

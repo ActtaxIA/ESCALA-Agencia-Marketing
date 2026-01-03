@@ -78,6 +78,7 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
       try {
         const supabase = createClient()
         // Fetch artículos publicados con su categoría
+        // Solo mostrar artículos con fecha <= ahora (publicaciones programadas)
         const { data: articles, error } = await supabase
           .from('articles')
           .select(`
@@ -92,6 +93,7 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
             category:categories(name)
           `)
           .eq('published', true)
+          .lte('published_at', new Date().toISOString())
           .order('published_at', { ascending: false })
 
         if (error) {

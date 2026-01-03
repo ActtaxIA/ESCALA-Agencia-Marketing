@@ -211,8 +211,8 @@ function stripHtml(html: string): string {
     // Entidades numéricas comunes
     .replace(/&#8211;/g, '–')
     .replace(/&#8212;/g, '—')
-    .replace(/&#8216;/g, ''')
-    .replace(/&#8217;/g, ''')
+    .replace(/&#8216;/g, '\u2018')
+    .replace(/&#8217;/g, '\u2019')
     .replace(/&#8220;/g, '"')
     .replace(/&#8221;/g, '"')
     .replace(/&#8230;/g, '...')

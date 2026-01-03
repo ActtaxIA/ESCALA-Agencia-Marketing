@@ -87,7 +87,7 @@ export default function AdminLoginPage() {
         </form>
 
         <div className={styles.footer}>
-          <a href="/">← Volver al sitio</a>
+          <a href="/blog">← Volver al blog</a>
         </div>
       </div>
     </div>

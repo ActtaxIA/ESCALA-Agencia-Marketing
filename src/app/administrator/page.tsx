@@ -48,8 +48,8 @@ export default async function AdminDashboard() {
             <p>{user.email}</p>
           </div>
           <div className={styles.headerActions}>
-            <Link href="/" className={styles.btnSecondary}>
-              Ver Sitio
+            <Link href="/blog" className={styles.btnSecondary}>
+              Ver Blog
             </Link>
             <Link href="/administrator/articles/new" className={styles.btnPrimary}>
               + Nuevo Artículo

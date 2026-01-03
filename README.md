@@ -249,6 +249,14 @@ src/
 │   ├── page.tsx                # Home (HomeStripes)
 │   ├── globals.css             # Variables CSS
 │   │
+│   ├── administrator/          # ✅ Panel de administración
+│   │   ├── page.tsx            # Dashboard con búsqueda
+│   │   ├── ArticlesTable.tsx   # Tabla de artículos
+│   │   ├── ArticleEditor.tsx   # Editor de artículos
+│   │   ├── ImagePicker.tsx     # Selector de imágenes con modal
+│   │   ├── actions.ts          # Server actions
+│   │   └── login/              # Login de administrador
+│   │
 │   ├── quienes-somos/
 │   ├── metodologia/
 │   ├── portfolio/
@@ -258,11 +266,14 @@ src/
 │   │       └── project.module.css
 │   ├── exitos/
 │   ├── blog/
-│   │   ├── page.tsx            # Listado de artículos
+│   │   ├── page.tsx            # Listado de artículos con búsqueda
 │   │   └── [slug]/             # ✅ Detalle de cada artículo
 │   │       ├── page.tsx
 │   │       └── article.module.css
 │   ├── contacto/
+│   ├── sitemap.ts              # Sitemap XML automático
+│   ├── sitemap-html/           # Sitemap HTML visual
+│   │   └── page.tsx
 │   │
 │   └── servicios/
 │       ├── page.tsx            # ServicesStripes
@@ -282,30 +293,43 @@ src/
 │       ├── Home/
 │       ├── Servicios/
 │       ├── Blog/
-│       │   ├── BlogHero.tsx
-│       │   ├── FeaturedPost.tsx  # ✅ Lee desde Supabase
-│       │   └── BlogGrid.tsx      # ✅ Lee desde Supabase
+│       │   ├── BlogHero.tsx        # ✅ Con buscador
+│       │   ├── FeaturedSlider.tsx  # ✅ Artículos destacados
+│       │   └── BlogGrid.tsx        # ✅ Con filtros y búsqueda
 │       ├── Portfolio/
 │       │   └── PortfolioContent.tsx  # ✅ Lee desde Supabase
 │       └── ServicioDetalle/
 │
 ├── lib/
-│   └── supabase/
-│       ├── client.ts           # Cliente browser (componentes 'use client')
-│       └── server.ts           # Cliente server (Server Components)
+│   ├── supabase/
+│   │   ├── client.ts           # Cliente browser (componentes 'use client')
+│   │   └── server.ts           # Cliente server (Server Components)
+│   └── htmlUtils.ts            # ✅ Utilidades para HTML
 │
 public/
+├── blog/                       # ✅ 72 imágenes WebP optimizadas
 ├── portfolio/                  # Imágenes de proyectos
 │   ├── README.md              # Instrucciones de estructura
 │   ├── furgocasa-alquiler-camper/
 │   ├── tricholand-tienda-cactus/
-│   └── ... (9 carpetas totales)
+│   └── ... (12 carpetas totales)
 │
-Archivos SQL:
+scripts/
+├── convert-images-to-webp.js   # ✅ Conversión automática a WebP
+├── convert-single-image.js     # ✅ Convertir imagen individual
+└── delete-non-webp-images.js   # ✅ Limpiar imágenes antiguas
+│
+supabase/
 ├── supabase-schema.sql         # Schema completo de la BD
-├── supabase-blog-data.sql      # 9 artículos + categorías
-├── supabase-portfolio-data.sql # 9 proyectos reales
-└── update-portfolio-images.sql # UPDATE de imágenes
+├── supabase-blog-data.sql      # Artículos + categorías
+├── supabase-portfolio-data.sql # Proyectos reales
+├── update-images-to-webp.sql   # ✅ Actualizar refs a WebP
+├── check-article-metadata.sql  # ✅ Verificar metadatos
+├── check-blog-categories.sql   # ✅ Verificar categorías
+└── regenerate-excerpts-smart.sql # ✅ Regenerar excerpts
+│
+docs/
+└── CATEGORIAS-BLOG.md          # ✅ Documentación de categorías
 ```
 
 ---
@@ -406,15 +430,16 @@ Crear imágenes de 1200x630px en `/public/`:
 9. **ON Procuradores** - Web profesional para procuradores
 
 ### Artículos del Blog:
-- Email marketing que convierte
-- IA en marketing
-- Cómo mejorar el SEO local
-- Guía Completa de SEO Local para 2025
-- Redes sociales para empresas locales
-- Optimiza tu Google My Business
-- 7 errores de diseño web
-- Google Ads vs Facebook Ads
-- 10 tendencias de diseño web para 2025
+- **Estado**: Sistema completo de gestión y publicación
+- **Artículos publicados**: +40 artículos
+- **Categorías**: SEO, Diseño Web, Redes Sociales, Publicidad Digital, IA, Email, Copywriting, Casos de Estudio
+- **Características**:
+  - 🔍 Búsqueda por texto en tiempo real
+  - 📅 Publicación programada automática
+  - 🎯 Filtros por categoría
+  - ✨ Artículos destacados con slider
+  - 📊 Panel de administración completo
+  - 🖼️ 72 imágenes WebP optimizadas (93% más ligeras)
 
 ---
 
@@ -429,4 +454,4 @@ Ver `public/portfolio/README.md` para instrucciones detalladas.
 
 ---
 
-*Última actualización: 5 Diciembre 2024*
+*Última actualización: 3 Enero 2025*

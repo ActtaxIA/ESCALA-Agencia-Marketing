@@ -214,11 +214,99 @@ import { StripeDivider } from '@/components/layout'
 - [ ] Crear `src/app/[ruta]/page.tsx`
 - [ ] Añadir metadata (title, description)
 - [ ] Usar `StandardLayout` si tiene header/footer
-- [ ] Añadir `StripeDivider` entre secciones
+- [ ] Añadir `StripeDivider` entre secciones (máx 1)
 - [ ] Añadir animaciones `fade-up`
 - [ ] Comprobar responsive
 - [ ] Añadir a navegación si es necesario
+- [ ] Verificar SEO (meta tags, OpenGraph)
+- [ ] Optimizar imágenes a WebP
 
 ---
 
-*Última actualización: Diciembre 2024*
+## 🖼️ Gestión de Imágenes
+
+### Convertir imágenes a WebP
+
+1. **Añadir imagen** original a `/images/IA/` (PNG, JPG, GIF)
+2. **Ejecutar script:**
+   ```bash
+   node scripts/convert-images-to-webp.js
+   ```
+3. La imagen WebP se genera automáticamente en `/public/blog/`
+4. **Reducción promedio:** 93% del tamaño original
+5. Disponible inmediatamente en el selector del administrador
+
+### Script para imagen individual
+
+```bash
+node scripts/convert-single-image.js
+```
+
+---
+
+## 📝 Gestión del Blog
+
+### Panel de Administración
+
+**URL:** `/administrator`
+
+**Funcionalidades:**
+- 🔍 Buscar artículos por texto
+- ➕ Crear nuevo artículo
+- ✏️ Editar artículos existentes
+- 👁️ Vista previa de artículos
+- 🗑️ Eliminar artículos (con confirmación)
+- 📊 Ver estadísticas
+- 🖼️ Selector de imágenes con modal de galería
+
+### Publicación Programada
+
+Los artículos con `published_at` en el futuro:
+- ❌ No aparecen en `/blog`
+- ❌ No aparecen en el slider de destacados
+- ❌ No son accesibles por URL directa
+- ✅ Se publican automáticamente en la fecha programada
+
+### Categorías del Blog
+
+Ver documentación completa en: `docs/CATEGORIAS-BLOG.md`
+
+Categorías disponibles:
+- 📈 SEO y Posicionamiento
+- 🎨 Diseño Web
+- 📱 Redes Sociales
+- 🎯 Publicidad Digital
+- 🤖 IA / Estrategia Digital
+- 📧 Email Marketing
+- ✍️ Copywriting
+- 📋 Casos de Estudio
+
+---
+
+## 🔧 Scripts Útiles
+
+### Desarrollo
+```bash
+npm run dev              # Servidor de desarrollo
+npm run build            # Build de producción
+npm run start            # Servidor de producción
+npm run lint             # Linter
+```
+
+### Imágenes
+```bash
+node scripts/convert-images-to-webp.js     # Convertir todas
+node scripts/convert-single-image.js       # Convertir una
+node scripts/delete-non-webp-images.js     # Limpiar antiguas
+```
+
+### Base de datos (Supabase)
+Ver scripts SQL en carpeta `supabase/`:
+- `check-article-metadata.sql` - Verificar metadatos
+- `check-blog-categories.sql` - Verificar categorías
+- `update-images-to-webp.sql` - Actualizar referencias
+- `regenerate-excerpts-smart.sql` - Regenerar excerpts
+
+---
+
+*Última actualización: 3 Enero 2025*

@@ -59,16 +59,18 @@ Estado actual de todas las páginas de la web.
 
 ### ✅ BLOG (`/blog`)
 - **Layout**: StandardLayout
-- **Componente**: `BlogHero` + `FeaturedPost` + `BlogGrid`
-- **Base de datos**: ✅ Supabase (9 artículos + 6 categorías)
+- **Componente**: `BlogHero` + `FeaturedSlider` + `BlogGrid`
+- **Base de datos**: ✅ Supabase (40+ artículos + 8 categorías)
 - **Features**:
-  - Buscador
-  - Filtros por categoría
-  - Post destacado (campo `featured = true`)
-  - Grid de posts (lee desde `articles` table)
-  - Sidebar con categorías dinámicas, posts populares por views
-  - Newsletter subscription form
-  - Botón "Cargar más"
+  - 🔍 Buscador en tiempo real (filtra por título y excerpt)
+  - 🎯 Filtros por categoría con contador
+  - 📅 Publicación programada (artículos futuros ocultos)
+  - ✨ Slider de artículos destacados (featured = true)
+  - 📊 Grid de artículos ordenados por fecha (más recientes primero)
+  - 📱 Sidebar con categorías dinámicas y posts populares por views
+  - 📧 Newsletter subscription form
+  - 🔄 Botón "Cargar más"
+  - 🖼️ Imágenes WebP optimizadas (93% más ligeras)
 
 ### ✅ CONTACTO (`/contacto`)
 - **Layout**: StandardLayout
@@ -127,8 +129,14 @@ Todas usan `StandardLayout` con los componentes de `ServicioDetalle`:
 ## ✅ Páginas Dinámicas
 
 ### Blog
-- **`/blog`** - Listado de artículos (BlogHero + FeaturedPost + BlogGrid)
-- **`/blog/[slug]`** - ✅ Artículo completo con contenido, autor, métricas
+- **`/blog`** - Listado de artículos con búsqueda y filtros en tiempo real
+- **`/blog/[slug]`** - ✅ Artículo completo con:
+  - Contenido HTML con formato correcto (listas, negritas, enlaces)
+  - Autor, fecha de publicación, tiempo de lectura
+  - Métricas (views, shares)
+  - Imagen destacada WebP optimizada
+  - Meta tags OpenGraph para redes sociales
+  - Publicación programada (ocultos hasta fecha de publicación)
   - Ejemplos: `/blog/guia-seo-local-2025`, `/blog/ia-en-marketing`
 
 ### Portfolio
@@ -136,11 +144,32 @@ Todas usan `StandardLayout` con los componentes de `ServicioDetalle`:
 - **`/portfolio/[slug]`** - ✅ Proyecto completo con desafío, solución, resultados
   - Ejemplos: `/portfolio/furgocasa-alquiler-camper`, `/portfolio/tricholand-tienda-cactus`
 
+### Panel de Administración
+- **`/administrator`** - ✅ Dashboard de administración con:
+  - 🔍 Búsqueda de artículos por texto
+  - 📊 Estadísticas de artículos
+  - 📝 Tabla de artículos con acciones (editar, ver, borrar)
+  - 🎨 Iconos para acciones (más compacto)
+  - 💾 Persistencia de preferencias (sort, filtros, búsqueda)
+- **`/administrator/new`** - ✅ Crear nuevo artículo
+- **`/administrator/edit/[slug]`** - ✅ Editar artículo existente
+  - 🖼️ ImagePicker con modal de galería (72 imágenes WebP)
+  - 📅 Programación de publicación futura
+  - ✏️ Editor de contenido HTML
+  - 🏷️ Selector de categorías
+  - ⭐ Marcar como destacado
+
 ## ⏳ Páginas Pendientes
 
 - [ ] `/politica-privacidad` - Política de privacidad
 - [ ] `/aviso-legal` - Aviso legal
 - [ ] `/cookies` - Política de cookies
+
+## 📄 Páginas Auxiliares
+
+- ✅ `/sitemap.xml` - Sitemap XML automático (incluye todos los artículos y páginas)
+- ✅ `/sitemap-html` - Mapa del sitio visual HTML
+- ✅ `/robots.txt` - Configuración para crawlers
 
 ---
 
@@ -148,15 +177,17 @@ Todas usan `StandardLayout` con los componentes de `ServicioDetalle`:
 
 | Métrica | Valor |
 |---------|-------|
-| Total páginas | ~22 |
-| Páginas completadas | 19 (+ 2 dinámicas) |
-| Páginas dinámicas | 2 ([slug]) |
+| Total páginas | ~30 |
+| Páginas completadas | 22 (+ 5 dinámicas) |
+| Páginas dinámicas | 5 (blog, portfolio, admin) |
 | Layouts | 3 |
-| Componentes reutilizables | ~25 |
-| Artículos en BD | 9 |
-| Proyectos en BD | 9 |
-| Categorías | 6 |
+| Componentes reutilizables | ~30 |
+| Artículos en BD | 40+ |
+| Proyectos en BD | 12 |
+| Categorías blog | 8 |
+| Imágenes WebP blog | 72 |
+| Scripts automatización | 3 |
 
 ---
 
-*Última actualización: 5 Diciembre 2024*
+*Última actualización: 3 Enero 2025*

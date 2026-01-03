@@ -190,7 +190,7 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
           <div className={styles.field}>
             <label>Contenido *</label>
             <Editor
-              apiKey="no-api-key"
+              apiKey="zrk3s1w79rec2a3r59r0li1sejv9ou010c726epw91pen7kc"
               onInit={(_evt: any, editor: any) => (editorRef.current = editor)}
               initialValue={formData.content}
               init={{

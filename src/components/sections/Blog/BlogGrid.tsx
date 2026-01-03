@@ -308,6 +308,24 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
             <div className={styles.sidebarWidget}>
               <h3 className={styles.widgetTitle}>📚 Categorías</h3>
               <div className={styles.categoriesList}>
+                {/* Botón "Todos" */}
+                <button
+                  onClick={() => onCategoryClick?.('all')}
+                  className={styles.categoryItem}
+                  style={{ 
+                    cursor: 'pointer', 
+                    border: 'none', 
+                    background: selectedCategory === 'all' ? '#f0f0f0' : 'transparent', 
+                    width: '100%', 
+                    textAlign: 'left',
+                    fontWeight: selectedCategory === 'all' ? 'bold' : 'normal'
+                  }}
+                >
+                  <span className={styles.categoryIcon}>📚</span>
+                  <span className={styles.categoryName}>Todos</span>
+                  <span className={styles.categoryCount}>{allPosts.length}</span>
+                </button>
+                
                 {categories.map((cat) => {
                   // Encontrar el ID de categoría basado en el nombre
                   const categoryId = Object.entries(categoryMapping).find(
@@ -319,7 +337,14 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
                       key={cat.name}
                       onClick={() => onCategoryClick?.(categoryId)}
                       className={styles.categoryItem}
-                      style={{ cursor: 'pointer', border: 'none', background: 'transparent', width: '100%', textAlign: 'left' }}
+                      style={{ 
+                        cursor: 'pointer', 
+                        border: 'none', 
+                        background: selectedCategory === categoryId ? '#f0f0f0' : 'transparent', 
+                        width: '100%', 
+                        textAlign: 'left',
+                        fontWeight: selectedCategory === categoryId ? 'bold' : 'normal'
+                      }}
                     >
                       <span className={styles.categoryIcon}>{cat.icon}</span>
                       <span className={styles.categoryName}>{cat.name}</span>

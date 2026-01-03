@@ -109,31 +109,72 @@ function extractExcerpt(content: string): string {
   // 1. Buscar separador "Leer Más" de Joomla: <hr class="readmore" />
   if (content.includes('<hr class="readmore"')) {
     const beforeMore = content.split(/<hr class="readmore"[^>]*>/)[0]
-    return stripHtml(beforeMore).trim().substring(0, 300)
+    const cleanText = stripHtml(beforeMore).trim()
+    // Si el excerpt es muy largo, cortarlo a 300 caracteres
+    if (cleanText.length > 300) {
+      return cleanText.substring(0, 297) + '...'
+    }
+    return cleanText
   }
   
   // 2. Buscar separador antiguo de Markdown: <!--more-->
   if (content.includes('<!--more-->')) {
     const beforeMore = content.split('<!--more-->')[0]
-    return stripHtml(beforeMore).trim().substring(0, 300)
+    const cleanText = stripHtml(beforeMore).trim()
+    // Si el excerpt es muy largo, cortarlo a 300 caracteres
+    if (cleanText.length > 300) {
+      return cleanText.substring(0, 297) + '...'
+    }
+    return cleanText
   }
   
   // 3. Si no hay separador, usar los primeros 250 caracteres del texto limpio
   const cleanText = stripHtml(content).trim()
-  return cleanText.substring(0, 250) + (cleanText.length > 250 ? '...' : '')
+  if (cleanText.length > 250) {
+    return cleanText.substring(0, 247) + '...'
+  }
+  return cleanText
 }
 
-// Función helper para limpiar HTML
+// Función helper para limpiar HTML y decodificar entities
 function stripHtml(html: string): string {
-  return html
+  let text = html
     .replace(/<[^>]*>/g, '') // Eliminar tags HTML
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
+    // Caracteres españoles comunes
+    .replace(/&aacute;/g, 'á')
+    .replace(/&eacute;/g, 'é')
+    .replace(/&iacute;/g, 'í')
+    .replace(/&oacute;/g, 'ó')
+    .replace(/&uacute;/g, 'ú')
+    .replace(/&ntilde;/g, 'ñ')
+    .replace(/&Aacute;/g, 'Á')
+    .replace(/&Eacute;/g, 'É')
+    .replace(/&Iacute;/g, 'Í')
+    .replace(/&Oacute;/g, 'Ó')
+    .replace(/&Uacute;/g, 'Ú')
+    .replace(/&Ntilde;/g, 'Ñ')
+    .replace(/&uuml;/g, 'ü')
+    .replace(/&Uuml;/g, 'Ü')
+    .replace(/&iexcl;/g, '¡')
+    .replace(/&iquest;/g, '¿')
+    .replace(/&ldquo;/g, '"')
+    .replace(/&rdquo;/g, '"')
+    .replace(/&lsquo;/g, ''')
+    .replace(/&rsquo;/g, ''')
+    .replace(/&hellip;/g, '...')
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
     .replace(/\s+/g, ' ') // Normalizar espacios
     .trim()
+  
+  return text
 }
 
 export async function updateArticle(id: string, formData: FormData) {

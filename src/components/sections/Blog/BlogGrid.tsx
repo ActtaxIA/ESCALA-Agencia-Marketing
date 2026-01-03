@@ -192,18 +192,25 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
   }
 
   // Filtrar posts según búsqueda y categoría
-  const filteredPosts = allPosts.filter((post) => {
-    // Filtro por búsqueda
-    const matchesSearch = !searchTerm || 
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
-    
-    // Filtro por categoría
-    const matchesCategory = selectedCategory === 'all' || 
-      categoryMapping[selectedCategory]?.includes(post.category)
-    
-    return matchesSearch && matchesCategory
-  })
+  const filteredPosts = allPosts
+    .filter((post) => {
+      // Filtro por búsqueda
+      const matchesSearch = !searchTerm || 
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+      
+      // Filtro por categoría
+      const matchesCategory = selectedCategory === 'all' || 
+        categoryMapping[selectedCategory]?.includes(post.category)
+      
+      return matchesSearch && matchesCategory
+    })
+    .sort((a, b) => {
+      // Ordenar por fecha de publicación: más recientes primero
+      const dateA = new Date(a.published_at).getTime()
+      const dateB = new Date(b.published_at).getTime()
+      return dateB - dateA // descendente (más nuevo primero)
+    })
 
   console.log('🔄 BlogGrid render - allPosts:', allPosts.length, 'filtered:', filteredPosts.length, 'search:', searchTerm, 'category:', selectedCategory)
 

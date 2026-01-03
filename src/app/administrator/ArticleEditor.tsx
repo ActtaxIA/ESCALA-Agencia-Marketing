@@ -42,7 +42,7 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
   const [formData, setFormData] = useState({
     title: article?.title || '',
     slug: article?.slug || '',
-    content: article?.content || '',
+    content: article?.content ? markdownToHtml(article.content) : '',
     featured_image: article?.featured_image || '',
     author: article?.author || 'ESCALA Marketing',
     category_id: article?.category_id || '',

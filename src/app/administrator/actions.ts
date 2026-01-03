@@ -5,62 +5,73 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 export async function createArticle(formData: FormData) {
-  const supabase = createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  try {
+    const supabase = createClient()
+    const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user) {
-    throw new Error('No autenticado')
+    if (!user) {
+      throw new Error('No autenticado')
+    }
+
+    const title = formData.get('title') as string
+    const slug = formData.get('slug') as string
+    const content = formData.get('content') as string
+    const categoryId = formData.get('category_id') as string
+    const metaTitle = formData.get('meta_title') as string
+    const metaDescription = formData.get('meta_description') as string
+    const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
+    let featuredImage = formData.get('featured_image') as string
+    const published = formData.get('published') === 'true'
+    const featured = formData.get('featured') === 'true'
+    const publishedAt = formData.get('published_at') as string
+    
+    console.log('🔧 SERVER ACTION - createArticle:')
+    console.log('- Content length:', content?.length || 0)
+    
+    // Si hay archivo de imagen, procesarlo
+    const imageFile = formData.get('image') as File | null
+    if (imageFile && imageFile.size > 0) {
+      featuredImage = formData.get('featured_image') as string
+    }
+
+    // Extraer excerpt automáticamente del contenido
+    const excerpt = extractExcerpt(content)
+
+    const { data, error } = await supabase
+      .from('articles')
+      .insert({
+        title,
+        slug,
+        excerpt,
+        content,
+        category_id: categoryId || null,
+        meta_title: metaTitle,
+        meta_description: metaDescription,
+        keywords,
+        featured_image: featuredImage || null,
+        published,
+        featured,
+        published_at: publishedAt || (published ? new Date().toISOString() : null),
+        author: 'ESCALA Marketing',
+      })
+      .select()
+      .single()
+
+    if (error) {
+      console.error('❌ Error de Supabase:', error)
+      throw new Error(`Error de Supabase: ${error.message}`)
+    }
+
+    console.log('✅ Artículo creado correctamente en Supabase:', data)
+
+    revalidatePath('/administrator')
+    revalidatePath('/blog')
+    
+    return { success: true, slug }
+  } catch (error: any) {
+    console.error('💥 Error en createArticle:', error)
+    throw error
   }
-
-  const title = formData.get('title') as string
-  const slug = formData.get('slug') as string
-  const content = formData.get('content') as string
-  const categoryId = formData.get('category_id') as string
-  const metaTitle = formData.get('meta_title') as string
-  const metaDescription = formData.get('meta_description') as string
-  const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
-  let featuredImage = formData.get('featured_image') as string
-  const published = formData.get('published') === 'true'
-  const featured = formData.get('featured') === 'true'
-  const publishedAt = formData.get('published_at') as string
-  
-  // Si hay archivo de imagen, procesarlo (aquí simplemente usamos el nombre)
-  // En producción real, subirías a un storage (Supabase Storage, Cloudinary, etc.)
-  const imageFile = formData.get('image') as File | null
-  if (imageFile && imageFile.size > 0) {
-    featuredImage = formData.get('featured_image') as string
-  }
-
-  // Extraer excerpt automáticamente del contenido
-  const excerpt = extractExcerpt(content)
-
-  const { data, error } = await supabase
-    .from('articles')
-    .insert({
-      title,
-      slug,
-      excerpt,
-      content,
-      category_id: categoryId || null,
-      meta_title: metaTitle,
-      meta_description: metaDescription,
-      keywords,
-      featured_image: featuredImage || null,
-      published,
-      featured,
-      published_at: publishedAt || (published ? new Date().toISOString() : null),
-      author: 'ESCALA Marketing',
-    })
-    .select()
-    .single()
-
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  revalidatePath('/administrator')
-  revalidatePath('/blog')
-  redirect('/administrator')
 }
 
 // Función helper para extraer excerpt del contenido
@@ -96,89 +107,98 @@ function stripHtml(html: string): string {
 }
 
 export async function updateArticle(id: string, formData: FormData) {
-  const supabase = createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  try {
+    const supabase = createClient()
+    const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user) {
-    throw new Error('No autenticado')
+    if (!user) {
+      throw new Error('No autenticado')
+    }
+
+    const title = formData.get('title') as string
+    const slug = formData.get('slug') as string
+    const content = formData.get('content') as string
+    const categoryId = formData.get('category_id') as string
+    const metaTitle = formData.get('meta_title') as string
+    const metaDescription = formData.get('meta_description') as string
+    const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
+    let featuredImage = formData.get('featured_image') as string
+    const published = formData.get('published') === 'true'
+    const featured = formData.get('featured') === 'true'
+    const publishedAt = formData.get('published_at') as string
+
+    console.log('🔧 SERVER ACTION - updateArticle:')
+    console.log('- ID:', id)
+    console.log('- Title:', title)
+    console.log('- Slug:', slug)
+    console.log('- Content length:', content?.length || 0)
+    console.log('- Content preview:', content?.substring(0, 150) || 'NO CONTENT')
+
+    // Si hay archivo de imagen, procesarlo
+    const imageFile = formData.get('image') as File | null
+    if (imageFile && imageFile.size > 0) {
+      featuredImage = formData.get('featured_image') as string
+    }
+
+    // Extraer excerpt automáticamente del contenido
+    const excerpt = extractExcerpt(content)
+
+    console.log('- Excerpt:', excerpt.substring(0, 100))
+
+    // Obtener artículo actual
+    const { data: currentArticle } = await supabase
+      .from('articles')
+      .select('published, published_at')
+      .eq('id', id)
+      .single()
+
+    console.log('- Current article:', currentArticle)
+
+    const updateData = {
+      title,
+      slug,
+      excerpt,
+      content,
+      category_id: categoryId || null,
+      meta_title: metaTitle,
+      meta_description: metaDescription,
+      keywords,
+      featured_image: featuredImage || null,
+      published,
+      featured,
+      published_at: publishedAt || currentArticle?.published_at,
+      updated_at: new Date().toISOString(),
+    }
+
+    console.log('📝 Datos a actualizar en Supabase:', {
+      ...updateData,
+      content: `${updateData.content?.length || 0} caracteres`
+    })
+
+    const { error, data } = await supabase
+      .from('articles')
+      .update(updateData)
+      .eq('id', id)
+      .select()
+
+    if (error) {
+      console.error('❌ Error de Supabase:', error)
+      throw new Error(`Error de Supabase: ${error.message}`)
+    }
+
+    console.log('✅ Artículo actualizado correctamente en Supabase:', data)
+
+    // Revalidar rutas
+    revalidatePath('/administrator')
+    revalidatePath('/blog')
+    revalidatePath(`/blog/${slug}`)
+
+    // Devolver éxito (NO usar redirect aquí)
+    return { success: true, slug }
+  } catch (error: any) {
+    console.error('💥 Error en updateArticle:', error)
+    throw error
   }
-
-  const title = formData.get('title') as string
-  const slug = formData.get('slug') as string
-  const content = formData.get('content') as string
-  const categoryId = formData.get('category_id') as string
-  const metaTitle = formData.get('meta_title') as string
-  const metaDescription = formData.get('meta_description') as string
-  const keywords = (formData.get('keywords') as string).split(',').map(k => k.trim()).filter(Boolean)
-  let featuredImage = formData.get('featured_image') as string
-  const published = formData.get('published') === 'true'
-  const featured = formData.get('featured') === 'true'
-  const publishedAt = formData.get('published_at') as string
-
-  console.log('🔧 SERVER ACTION - updateArticle:')
-  console.log('- ID:', id)
-  console.log('- Title:', title)
-  console.log('- Slug:', slug)
-  console.log('- Content length:', content?.length || 0)
-  console.log('- Content preview:', content?.substring(0, 150) || 'NO CONTENT')
-
-  // Si hay archivo de imagen, procesarlo
-  const imageFile = formData.get('image') as File | null
-  if (imageFile && imageFile.size > 0) {
-    featuredImage = formData.get('featured_image') as string
-  }
-
-  // Extraer excerpt automáticamente del contenido
-  const excerpt = extractExcerpt(content)
-
-  console.log('- Excerpt:', excerpt.substring(0, 100))
-
-  // Obtener artículo actual
-  const { data: currentArticle } = await supabase
-    .from('articles')
-    .select('published, published_at')
-    .eq('id', id)
-    .single()
-
-  console.log('- Current article:', currentArticle)
-
-  const updateData = {
-    title,
-    slug,
-    excerpt,
-    content,
-    category_id: categoryId || null,
-    meta_title: metaTitle,
-    meta_description: metaDescription,
-    keywords,
-    featured_image: featuredImage || null,
-    published,
-    featured,
-    published_at: publishedAt || currentArticle?.published_at,
-    updated_at: new Date().toISOString(),
-  }
-
-  console.log('📝 Datos a actualizar en Supabase:', {
-    ...updateData,
-    content: `${updateData.content?.length || 0} caracteres`
-  })
-
-  const { error } = await supabase
-    .from('articles')
-    .update(updateData)
-    .eq('id', id)
-
-  if (error) {
-    console.error('❌ Error de Supabase:', error)
-    throw new Error(error.message)
-  }
-
-  console.log('✅ Artículo actualizado correctamente en Supabase')
-
-  revalidatePath('/administrator')
-  revalidatePath('/blog')
-  revalidatePath(`/blog/${slug}`)
-  redirect('/administrator')
 }
 
 export async function deleteArticle(id: string) {

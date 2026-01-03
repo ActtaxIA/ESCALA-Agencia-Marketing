@@ -187,14 +187,22 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
 
       console.log('📤 Enviando a Supabase...')
       
-      // Las actions usan redirect() al final, así que solo ejecutamos y esperamos
+      // Llamar a las Server Actions y esperar el resultado
+      let result
       if (article?.id) {
-        await updateArticle(article.id, formDataToSend)
+        result = await updateArticle(article.id, formDataToSend)
       } else {
-        await createArticle(formDataToSend)
+        result = await createArticle(formDataToSend)
       }
       
-      // Si llegamos aquí sin error, las actions redirigirán automáticamente
+      console.log('✅ Resultado de Server Action:', result)
+      
+      // Si llegamos aquí, todo fue bien - hacer redirect manualmente
+      if (result.success) {
+        console.log('🔄 Redirigiendo a /administrator...')
+        router.push('/administrator')
+        router.refresh()
+      }
     } catch (err: any) {
       console.error('❌ Error al guardar:', err)
       setError(err.message || 'Error al guardar el artículo')

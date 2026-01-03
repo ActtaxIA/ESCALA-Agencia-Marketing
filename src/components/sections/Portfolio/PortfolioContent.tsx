@@ -88,6 +88,10 @@ export default function PortfolioContent() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
   const [activeFilter, setActiveFilter] = useState('all')
+  const [stats, setStats] = useState({
+    totalProjects: 0,
+    totalClients: 0,
+  })
 
   // Cargar proyectos desde Supabase
   useEffect(() => {
@@ -107,6 +111,17 @@ export default function PortfolioContent() {
 
         console.log('✅ Proyectos cargados desde Supabase:', data?.length || 0)
         console.log('📄 Primer proyecto raw:', data?.[0])
+
+        // Calcular estadísticas reales
+        const totalProjects = data?.length || 0
+        // Contar clientes únicos
+        const uniqueClients = new Set(data?.map((p: any) => p.client) || [])
+        const totalClients = uniqueClients.size
+
+        setStats({
+          totalProjects,
+          totalClients,
+        })
 
         // Procesar proyectos
         const processedProjects = data?.map((project: any) => {
@@ -319,11 +334,11 @@ export default function PortfolioContent() {
       {/* Stats bar */}
       <section className={styles.statsBar}>
         <div className={styles.stat}>
-          <span className={styles.statNumber}>+50</span>
+          <span className={styles.statNumber}>{stats.totalProjects}</span>
           <span className={styles.statLabel}>Proyectos</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statNumber}>+40</span>
+          <span className={styles.statNumber}>{stats.totalClients}</span>
           <span className={styles.statLabel}>Clientes</span>
         </div>
         <div className={styles.stat}>

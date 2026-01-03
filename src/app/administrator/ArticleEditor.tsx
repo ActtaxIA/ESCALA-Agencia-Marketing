@@ -279,20 +279,21 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                   'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
                   'insertdatetime', 'media', 'table', 'help', 'wordcount', 'pagebreak'
                 ],
-                toolbar: 'undo redo | blocks | ' +
-                  'bold italic forecolor | alignleft aligncenter ' +
-                  'alignright alignjustify | bullist numlist outdent indent | ' +
-                  'readmore pagebreak | removeformat | image link | code | help',
+                toolbar_mode: 'wrap',
+                toolbar: [
+                  'undo redo | blocks | bold italic forecolor | alignleft aligncenter alignright alignjustify',
+                  'bullist numlist outdent indent | readmore pagebreak | removeformat | image link | code | help'
+                ],
                 content_style: `
                   body { font-family:Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6 }
                   hr.readmore { 
                     border: none; 
-                    border-top: 3px dashed #e63946; 
-                    margin: 20px 0;
+                    border-top: 2px solid #e63946; 
+                    margin: 30px 0;
                     position: relative;
                   }
                   hr.readmore::after {
-                    content: "📖 LEER MÁS (Joomla)";
+                    content: "· · · · · Leer Más · · · · ·";
                     position: absolute;
                     top: -12px;
                     left: 50%;
@@ -300,8 +301,9 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
                     background: white;
                     padding: 0 10px;
                     color: #e63946;
-                    font-weight: bold;
-                    font-size: 12px;
+                    font-weight: 600;
+                    font-size: 11px;
+                    letter-spacing: 2px;
                   }
                 `,
                 language: 'es',

@@ -59,7 +59,9 @@ export async function createArticle(formData: FormData) {
       }
       
       console.log('✅ Imagen subida correctamente:', uploadData)
-      featuredImage = fileName
+      // Guardar la URL COMPLETA de Supabase Storage (no solo el nombre)
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+      featuredImage = `${supabaseUrl}/storage/v1/object/public/blog-images/public/${fileName}`
     }
 
     // Extraer excerpt automáticamente del contenido
@@ -193,7 +195,9 @@ export async function updateArticle(id: string, formData: FormData) {
       }
       
       console.log('✅ Imagen subida correctamente:', uploadData)
-      featuredImage = fileName
+      // Guardar la URL COMPLETA de Supabase Storage (no solo el nombre)
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+      featuredImage = `${supabaseUrl}/storage/v1/object/public/blog-images/public/${fileName}`
       
       // Si había una imagen anterior, eliminarla
       const existingImage = formData.get('existing_featured_image') as string

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { getBlogImageUrl } from '@/lib/supabase/storage'
@@ -30,11 +30,58 @@ type SortDirection = 'asc' | 'desc'
 
 export default function ArticlesTable({ articles }: ArticlesTableProps) {
   const router = useRouter()
-  const [sortField, setSortField] = useState<SortField>('created_at')
-  const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
-  const [page, setPage] = useState(1)
-  const [perPage, setPerPage] = useState(10)
+  
+  // Cargar preferencias desde localStorage
+  const [sortField, setSortField] = useState<SortField>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('admin_sort_field')
+      return (saved as SortField) || 'created_at'
+    }
+    return 'created_at'
+  })
+  
+  const [sortDirection, setSortDirection] = useState<SortDirection>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('admin_sort_direction')
+      return (saved as SortDirection) || 'desc'
+    }
+    return 'desc'
+  })
+  
+  const [page, setPage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('admin_page')
+      return saved ? parseInt(saved) : 1
+    }
+    return 1
+  })
+  
+  const [perPage, setPerPage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('admin_per_page')
+      return saved ? parseInt(saved) : 10
+    }
+    return 10
+  })
+  
   const [togglingId, setTogglingId] = useState<string | null>(null)
+
+  // Guardar preferencias en localStorage cuando cambien
+  useEffect(() => {
+    localStorage.setItem('admin_sort_field', sortField)
+  }, [sortField])
+
+  useEffect(() => {
+    localStorage.setItem('admin_sort_direction', sortDirection)
+  }, [sortDirection])
+
+  useEffect(() => {
+    localStorage.setItem('admin_page', page.toString())
+  }, [page])
+
+  useEffect(() => {
+    localStorage.setItem('admin_per_page', perPage.toString())
+  }, [perPage])
 
   // Función para toggle publicación
   const handleTogglePublished = async (id: string, currentState: boolean) => {

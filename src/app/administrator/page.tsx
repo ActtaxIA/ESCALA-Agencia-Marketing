@@ -13,9 +13,24 @@ export default function AdminDashboard() {
   const [user, setUser] = useState<any>(null)
   const [articles, setArticles] = useState<any[]>([])
   const [filteredArticles, setFilteredArticles] = useState<any[]>([])
-  const [searchTerm, setSearchTerm] = useState('')
+  
+  // Cargar término de búsqueda desde localStorage
+  const [searchTerm, setSearchTerm] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('admin_search_term') || ''
+    }
+    return ''
+  })
+  
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  // Guardar término de búsqueda en localStorage cuando cambie
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('admin_search_term', searchTerm)
+    }
+  }, [searchTerm])
 
   useEffect(() => {
     async function loadData() {

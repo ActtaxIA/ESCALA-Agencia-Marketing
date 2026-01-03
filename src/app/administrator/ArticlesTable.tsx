@@ -267,15 +267,17 @@ export default function ArticlesTable({ articles }: ArticlesTableProps) {
                       <Link 
                         href={`/administrator/articles/${article.id}`}
                         className={styles.btnEdit}
+                        title="Editar artículo"
                       >
-                        Editar
+                        ✏️
                       </Link>
                       <Link 
                         href={`/blog/${article.slug}`}
                         target="_blank"
                         className={styles.btnView}
+                        title="Ver artículo en el blog"
                       >
-                        Ver
+                        👁️
                       </Link>
                       <button
                         onClick={() => handleDelete(article.id, article.title)}

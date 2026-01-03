@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import ArticleEditor from '../ArticleEditor'
+import ArticleEditor from '../../ArticleEditor'
 
 export default async function NewArticlePage() {
   const supabase = createClient()

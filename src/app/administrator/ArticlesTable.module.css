@@ -164,6 +164,29 @@
   text-decoration: underline;
 }
 
+.btnDelete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  color: #dc2626;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnDelete:hover:not(:disabled) {
+  transform: scale(1.2);
+  color: #991b1b;
+}
+
+.btnDelete:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Pagination */
 .pagination {
   display: flex;

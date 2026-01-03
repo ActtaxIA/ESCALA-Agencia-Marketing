@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { getBlogImageUrl } from '@/lib/supabase/storage'
-import { togglePublished } from './actions'
+import { togglePublished, deleteArticle } from './actions'
 import styles from './ArticlesTable.module.css'
 
 interface Article {
@@ -65,6 +65,7 @@ export default function ArticlesTable({ articles }: ArticlesTableProps) {
   })
   
   const [togglingId, setTogglingId] = useState<string | null>(null)
+  const [deletingId, setDeletingId] = useState<string | null>(null)
 
   // Guardar preferencias en localStorage cuando cambien
   useEffect(() => {
@@ -93,6 +94,23 @@ export default function ArticlesTable({ articles }: ArticlesTableProps) {
       alert('Error al cambiar el estado: ' + error.message)
     } finally {
       setTogglingId(null)
+    }
+  }
+
+  // Función para borrar artículo
+  const handleDelete = async (id: string, title: string) => {
+    if (!confirm(`¿Estás seguro de que quieres borrar el artículo "${title}"?\n\nEsta acción no se puede deshacer.`)) {
+      return
+    }
+
+    setDeletingId(id)
+    try {
+      await deleteArticle(id)
+      router.refresh()
+    } catch (error: any) {
+      alert('Error al borrar el artículo: ' + error.message)
+    } finally {
+      setDeletingId(null)
     }
   }
 
@@ -259,6 +277,14 @@ export default function ArticlesTable({ articles }: ArticlesTableProps) {
                       >
                         Ver
                       </Link>
+                      <button
+                        onClick={() => handleDelete(article.id, article.title)}
+                        disabled={deletingId === article.id}
+                        className={styles.btnDelete}
+                        title="Borrar artículo"
+                      >
+                        {deletingId === article.id ? '⏳' : '🗑️'}
+                      </button>
                     </div>
                   </td>
                 </tr>

@@ -10,7 +10,7 @@ export async function createArticle(formData: FormData) {
     const { data: { user } } = await supabase.auth.getUser()
 
     if (!user) {
-      throw new Error('No autenticado')
+      return { success: false, error: 'No autenticado' }
     }
 
     const title = formData.get('title') as string
@@ -54,7 +54,7 @@ export async function createArticle(formData: FormData) {
 
     if (error) {
       console.error('❌ Error de Supabase:', error)
-      throw new Error(`Error de Supabase: ${error.message}`)
+      return { success: false, error: `Error de Supabase: ${error.message}` }
     }
 
     console.log('✅ Artículo creado correctamente en Supabase:', data)
@@ -65,7 +65,7 @@ export async function createArticle(formData: FormData) {
     return { success: true, slug }
   } catch (error: any) {
     console.error('💥 Error en createArticle:', error)
-    throw error
+    return { success: false, error: error.message || 'Error desconocido' }
   }
 }
 
@@ -193,7 +193,7 @@ export async function updateArticle(id: string, formData: FormData) {
     const { data: { user } } = await supabase.auth.getUser()
 
     if (!user) {
-      throw new Error('No autenticado')
+      return { success: false, error: 'No autenticado' }
     }
 
     const title = formData.get('title') as string
@@ -247,7 +247,7 @@ export async function updateArticle(id: string, formData: FormData) {
 
     if (error) {
       console.error('❌ Error de Supabase:', error)
-      throw new Error(`Error de Supabase: ${error.message}`)
+      return { success: false, error: `Error de Supabase: ${error.message}` }
     }
 
     console.log('✅ Artículo actualizado correctamente en Supabase:', data)
@@ -257,11 +257,10 @@ export async function updateArticle(id: string, formData: FormData) {
     revalidatePath('/blog')
     revalidatePath(`/blog/${slug}`)
 
-    // Devolver éxito (NO usar redirect aquí)
     return { success: true, slug }
   } catch (error: any) {
     console.error('💥 Error en updateArticle:', error)
-    throw error
+    return { success: false, error: error.message || 'Error desconocido' }
   }
 }
 

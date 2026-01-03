@@ -232,10 +232,21 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
       
       console.log('✅ Resultado:', result)
       
-      // Redirect
+      // Verificar resultado
+      if (!result) {
+        throw new Error('No se recibió respuesta del servidor')
+      }
+      
+      if (result.error) {
+        throw new Error(result.error)
+      }
+      
+      // Redirect si todo fue bien
       if (result.success) {
         router.push('/administrator')
         router.refresh()
+      } else {
+        throw new Error('Error desconocido al guardar')
       }
     } catch (err: any) {
       console.error('❌ Error al guardar:', err)

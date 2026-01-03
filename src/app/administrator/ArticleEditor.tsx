@@ -97,7 +97,7 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
     keywords: article?.keywords?.join(', ') || '',
     published: article?.published || false,
     featured: article?.featured || false,
-    published_at: article?.published_at ? new Date(article.published_at).toISOString().slice(0, 16) : new Date().toISOString().slice(0, 16),
+    published_at: (article && 'published_at' in article && article.published_at) ? new Date(article.published_at).toISOString().slice(0, 16) : new Date().toISOString().slice(0, 16),
   })
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string>(
@@ -497,20 +497,15 @@ export default function ArticleEditor({ article, categories }: ArticleEditorProp
           {/* Imagen Destacada */}
           <div className={styles.sidebarCard}>
             <h3>Imagen Destacada</h3>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className={styles.fileInput}
+            <ImagePicker
+              currentImage={formData.featured_image}
+              onImageSelected={handleImageSelected}
             />
             {imagePreview && (
               <div className={styles.imagePreview}>
                 <img src={imagePreview} alt="Preview" />
               </div>
             )}
-            <span className={styles.hint}>
-              Formatos: JPG, PNG, WebP (máx 5MB)
-            </span>
           </div>
 
           {/* Fecha de Publicación */}

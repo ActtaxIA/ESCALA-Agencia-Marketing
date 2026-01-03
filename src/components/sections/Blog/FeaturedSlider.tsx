@@ -10,6 +10,7 @@ import Link from 'next/link'
 import styles from './FeaturedSlider.module.css'
 import { StripeDivider } from '@/components/layout'
 import { createClient } from '@/lib/supabase/client'
+import { decodeHtmlEntities } from '@/lib/htmlUtils'
 
 // Mapeo de categorías a colores
 const categoryColors: Record<string, string> = {
@@ -178,7 +179,7 @@ export default function FeaturedSlider() {
                     </div>
 
                     <h2 className={styles.title}>{post.title}</h2>
-                    <p className={styles.excerpt}>{post.excerpt}</p>
+                    <p className={styles.excerpt}>{decodeHtmlEntities(post.excerpt)}</p>
 
                     <div className={styles.footer}>
                       <div className={styles.author}>

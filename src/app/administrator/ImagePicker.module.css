@@ -42,6 +42,53 @@
   padding: 1rem 0;
 }
 
+.dropZone {
+  border: 3px dashed #e5e7eb;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.dropZone:hover {
+  border-color: #4a7c9b;
+  background: #f0f9ff;
+}
+
+.dropZoneDragging {
+  border-color: #4a7c9b;
+  background: #e0f2fe;
+  transform: scale(1.02);
+}
+
+.fileInputHidden {
+  display: none;
+}
+
+.dropZoneLabel {
+  cursor: pointer;
+  display: block;
+}
+
+.dropZoneIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.dropZoneText {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.dropZoneLink {
+  color: #4a7c9b;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 .fileInput {
   width: 100%;
   padding: 0.75rem;
@@ -67,6 +114,34 @@
   padding: 1rem 0;
 }
 
+.searchBox {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #4a7c9b;
+  box-shadow: 0 0 0 3px rgba(74, 124, 155, 0.1);
+}
+
+.resultCount {
+  font-size: 0.85rem;
+  color: #6b7280;
+  padding: 0 0.25rem;
+}
+
 .loading {
   text-align: center;
   padding: 2rem;
@@ -89,6 +164,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
+  position: relative;
 }
 
 .imageCard:hover {
@@ -101,6 +177,23 @@
   border-color: #4a7c9b;
   background: #f0f9ff;
   box-shadow: 0 0 0 2px #4a7c9b;
+}
+
+.selectedBadge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #4a7c9b;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .imageThumb {

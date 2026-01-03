@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from './BlogGrid.module.css'
 import { StripeDivider } from '@/components/layout'
 import { createClient } from '@/lib/supabase/client'
+import { decodeHtmlEntities } from '@/lib/htmlUtils'
 
 // Mapeo de categorías a colores e iconos
 const categoryStyles: Record<string, { color: string; icon: string }> = {
@@ -238,7 +239,7 @@ export default function BlogGrid() {
                       <span>{post.readTime}</span>
                     </div>
                     <h3 className={styles.postTitle}>{post.title}</h3>
-                    <p className={styles.postExcerpt}>{post.excerpt}</p>
+                    <p className={styles.postExcerpt}>{decodeHtmlEntities(post.excerpt)}</p>
                     <span className={styles.postLink}>Leer más →</span>
                   </div>
                 </Link>

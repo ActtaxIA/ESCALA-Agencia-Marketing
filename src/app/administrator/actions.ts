@@ -104,15 +104,33 @@ export async function createArticle(formData: FormData) {
   }
 }
 
+// Función helper para truncar texto sin cortar palabras
+function truncateText(text: string, maxLength: number): string {
+  if (text.length <= maxLength) {
+    return text
+  }
+  
+  // Buscar el último espacio antes del límite
+  const truncated = text.substring(0, maxLength)
+  const lastSpace = truncated.lastIndexOf(' ')
+  
+  // Si hay un espacio, cortar ahí; si no, cortar en el límite
+  if (lastSpace > maxLength * 0.8) { // Solo si el espacio está cerca del límite (80%)
+    return truncated.substring(0, lastSpace).trim() + '...'
+  }
+  
+  return truncated.trim() + '...'
+}
+
 // Función helper para extraer excerpt del contenido
 function extractExcerpt(content: string): string {
   // 1. Buscar separador "Leer Más" de Joomla: <hr class="readmore" />
   if (content.includes('<hr class="readmore"')) {
     const beforeMore = content.split(/<hr class="readmore"[^>]*>/)[0]
     const cleanText = stripHtml(beforeMore).trim()
-    // Si el excerpt es muy largo, cortarlo a 300 caracteres
-    if (cleanText.length > 300) {
-      return cleanText.substring(0, 297) + '...'
+    // Si el excerpt es muy largo, cortarlo inteligentemente
+    if (cleanText.length > 350) {
+      return truncateText(cleanText, 350)
     }
     return cleanText
   }
@@ -121,17 +139,17 @@ function extractExcerpt(content: string): string {
   if (content.includes('<!--more-->')) {
     const beforeMore = content.split('<!--more-->')[0]
     const cleanText = stripHtml(beforeMore).trim()
-    // Si el excerpt es muy largo, cortarlo a 300 caracteres
-    if (cleanText.length > 300) {
-      return cleanText.substring(0, 297) + '...'
+    // Si el excerpt es muy largo, cortarlo inteligentemente
+    if (cleanText.length > 350) {
+      return truncateText(cleanText, 350)
     }
     return cleanText
   }
   
-  // 3. Si no hay separador, usar los primeros 250 caracteres del texto limpio
+  // 3. Si no hay separador, usar los primeros 300 caracteres del texto limpio
   const cleanText = stripHtml(content).trim()
-  if (cleanText.length > 250) {
-    return cleanText.substring(0, 247) + '...'
+  if (cleanText.length > 300) {
+    return truncateText(cleanText, 300)
   }
   return cleanText
 }
@@ -147,6 +165,7 @@ function stripHtml(html: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&apos;/g, "'")
     .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
     // Caracteres españoles comunes
     .replace(/&aacute;/g, 'á')
     .replace(/&eacute;/g, 'é')
@@ -162,15 +181,41 @@ function stripHtml(html: string): string {
     .replace(/&Ntilde;/g, 'Ñ')
     .replace(/&uuml;/g, 'ü')
     .replace(/&Uuml;/g, 'Ü')
+    .replace(/&auml;/g, 'ä')
+    .replace(/&euml;/g, 'ë')
+    .replace(/&iuml;/g, 'ï')
+    .replace(/&ouml;/g, 'ö')
+    .replace(/&Auml;/g, 'Ä')
+    .replace(/&Euml;/g, 'Ë')
+    .replace(/&Iuml;/g, 'Ï')
+    .replace(/&Ouml;/g, 'Ö')
     .replace(/&iexcl;/g, '¡')
     .replace(/&iquest;/g, '¿')
     .replace(/&ldquo;/g, '"')
     .replace(/&rdquo;/g, '"')
     .replace(/&lsquo;/g, ''')
     .replace(/&rsquo;/g, ''')
+    .replace(/&sbquo;/g, '‚')
+    .replace(/&bdquo;/g, '„')
     .replace(/&hellip;/g, '...')
     .replace(/&mdash;/g, '—')
     .replace(/&ndash;/g, '–')
+    .replace(/&bull;/g, '•')
+    .replace(/&middot;/g, '·')
+    .replace(/&deg;/g, '°')
+    .replace(/&euro;/g, '€')
+    .replace(/&pound;/g, '£')
+    .replace(/&copy;/g, '©')
+    .replace(/&reg;/g, '®')
+    .replace(/&trade;/g, '™')
+    // Entidades numéricas comunes
+    .replace(/&#8211;/g, '–')
+    .replace(/&#8212;/g, '—')
+    .replace(/&#8216;/g, ''')
+    .replace(/&#8217;/g, ''')
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&#8230;/g, '...')
     .replace(/\s+/g, ' ') // Normalizar espacios
     .trim()
   

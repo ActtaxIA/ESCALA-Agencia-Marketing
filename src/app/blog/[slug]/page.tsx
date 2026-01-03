@@ -10,6 +10,7 @@ import TableOfContents from '@/components/blog/TableOfContents'
 import ArticleCTA from '@/components/blog/ArticleCTA'
 import styles from './article.module.css'
 import { getBlogImageUrl } from '@/lib/supabase/storage'
+import { decodeHtmlEntities } from '@/lib/htmlUtils'
 
 interface Props {
   params: { slug: string }
@@ -210,7 +211,7 @@ export default async function ArticlePage({ params }: Props) {
             <h1 className={styles.title}>{article.title}</h1>
 
             {article.excerpt && (
-              <p className={styles.excerpt}>{article.excerpt}</p>
+              <p className={styles.excerpt}>{decodeHtmlEntities(article.excerpt)}</p>
             )}
 
             <div className={styles.authorInfo}>

@@ -5,7 +5,11 @@ const SERVICES = [
   { href: '/servicios/diseno-web', label: 'Diseño Web' },
   { href: '/servicios/seo-local', label: 'SEO Local' },
   { href: '/servicios/redes-sociales', label: 'Redes Sociales' },
+  { href: '/servicios/google-ads', label: 'Google Ads' },
   { href: '/servicios/apps-ia', label: 'Apps con IA' },
+  { href: '/servicios/chatbots', label: 'Chatbots' },
+  { href: '/servicios/branding', label: 'Branding' },
+  { href: '/servicios/email-marketing', label: 'Email Marketing' },
 ]
 
 const COMPANY = [

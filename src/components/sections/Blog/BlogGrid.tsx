@@ -18,6 +18,7 @@ const categoryStyles: Record<string, { color: string; icon: string }> = {
   'IA': { color: '#1e3a5f', icon: '🤖' },
   'Email': { color: '#e84a23', icon: '📧' },
   'Copywriting': { color: '#9b59b6', icon: '✍️' },
+  'Casos de Estudio': { color: '#27ae60', icon: '📋' },
 }
 
 interface Article {
@@ -46,6 +47,7 @@ const categoryMapping: Record<string, string[]> = {
   'ads': ['Publicidad Digital'],
   'ia': ['IA', 'Estrategia Digital'],
   'email': ['Email'],
+  'casos': ['Casos de Estudio'],
 }
 
 export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', onCategoryClick }: BlogGridProps) {

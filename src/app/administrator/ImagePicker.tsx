@@ -20,9 +20,10 @@ export default function ImagePicker({ currentImage, onImageSelected }: ImagePick
   const [loading, setLoading] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [isDragging, setIsDragging] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
-    if (mode === 'select') {
+    if (mode === 'select' && !existingImages.length) {
       loadExistingImages()
     }
   }, [mode])
@@ -97,6 +98,16 @@ export default function ImagePicker({ currentImage, onImageSelected }: ImagePick
   const handleSelectExisting = (image: ExistingImage) => {
     setSelectedExisting(image.name)
     onImageSelected(null, image.name, image.url)
+    setShowModal(false) // Cerrar modal al seleccionar
+    setSearchTerm('') // Limpiar búsqueda
+  }
+
+  const openGalleryModal = () => {
+    setMode('select')
+    if (!existingImages.length) {
+      loadExistingImages()
+    }
+    setShowModal(true)
   }
 
   // Filtrar imágenes según búsqueda
@@ -104,103 +115,118 @@ export default function ImagePicker({ currentImage, onImageSelected }: ImagePick
     img.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
+  // Preview de imagen actual
+  const currentImageUrl = currentImage ? `/blog/${currentImage}` : null
+
   return (
     <div className={styles.imagePicker}>
-      {/* Tabs */}
-      <div className={styles.tabs}>
+      {/* Vista compacta: Botones principales */}
+      <div className={styles.mainActions}>
+        <div
+          className={`${styles.dropZone} ${isDragging ? styles.dropZoneDragging : ''}`}
+          onDragEnter={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+        >
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/png, image/jpeg, image/webp, image/gif"
+            onChange={handleFileChange}
+            className={styles.fileInputHidden}
+          />
+          <label htmlFor="file-upload" className={styles.dropZoneLabel}>
+            <div className={styles.dropZoneIcon}>📁</div>
+            <p className={styles.dropZoneText}>
+              Arrastra una imagen aquí o <span className={styles.dropZoneLink}>haz clic para seleccionar</span>
+            </p>
+            <small className={styles.hint}>Formatos: JPG, PNG, WebP, GIF (máx 5MB)</small>
+          </label>
+        </div>
+
         <button
           type="button"
-          className={mode === 'upload' ? styles.tabActive : styles.tab}
-          onClick={() => setMode('upload')}
+          className={styles.btnGallery}
+          onClick={openGalleryModal}
         >
-          📤 Subir Nueva
-        </button>
-        <button
-          type="button"
-          className={mode === 'select' ? styles.tabActive : styles.tab}
-          onClick={() => setMode('select')}
-        >
-          🖼️ Seleccionar Existente
+          🖼️ Seleccionar de Galería ({existingImages.length || '...'})
         </button>
       </div>
 
-      {/* Contenido según modo */}
-      {mode === 'upload' ? (
-        <div className={styles.uploadMode}>
-          <div
-            className={`${styles.dropZone} ${isDragging ? styles.dropZoneDragging : ''}`}
-            onDragEnter={handleDragEnter}
-            onDragLeave={handleDragLeave}
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            <input
-              id="file-upload"
-              type="file"
-              accept="image/png, image/jpeg, image/webp, image/gif"
-              onChange={handleFileChange}
-              className={styles.fileInputHidden}
-            />
-            <label htmlFor="file-upload" className={styles.dropZoneLabel}>
-              <div className={styles.dropZoneIcon}>📁</div>
-              <p className={styles.dropZoneText}>
-                Arrastra una imagen aquí o <span className={styles.dropZoneLink}>haz clic para seleccionar</span>
-              </p>
-              <small className={styles.hint}>Formatos: JPG, PNG, WebP, GIF (máx 5MB)</small>
-            </label>
-          </div>
+      {/* Preview de imagen actual */}
+      {currentImageUrl && (
+        <div className={styles.currentImagePreview}>
+          <small>Imagen actual:</small>
+          <img src={currentImageUrl} alt="Preview" className={styles.currentImageThumb} />
+          <span className={styles.currentImageName}>{currentImage}</span>
         </div>
-      ) : (
-        <div className={styles.selectMode}>
-          {loading ? (
-            <div className={styles.loading}>Cargando imágenes...</div>
-          ) : existingImages.length > 0 ? (
-            <>
-              {/* Buscador */}
-              <div className={styles.searchBox}>
-                <input
-                  type="text"
-                  placeholder="🔍 Buscar por nombre..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className={styles.searchInput}
-                />
-                <span className={styles.resultCount}>
-                  {filteredImages.length} de {existingImages.length} imágenes
-                </span>
-              </div>
+      )}
 
-              {/* Grid de imágenes */}
-              <div className={styles.imageGrid}>
-                {filteredImages.map((image) => (
-                  <div
-                    key={image.name}
-                    className={`${styles.imageCard} ${selectedExisting === image.name ? styles.imageCardSelected : ''}`}
-                    onClick={() => handleSelectExisting(image)}
-                    title={image.name}
-                  >
-                    <img src={image.url} alt={image.name} className={styles.imageThumb} />
-                    <span className={styles.imageName}>{image.name}</span>
-                    {selectedExisting === image.name && (
-                      <div className={styles.selectedBadge}>✓</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {filteredImages.length === 0 && (
-                <div className={styles.empty}>
-                  <p>No se encontraron imágenes</p>
-                  <small>Intenta con otro término de búsqueda</small>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className={styles.empty}>
-              <p>No hay imágenes en /public/blog/</p>
-              <small>Sube algunas imágenes primero</small>
+      {/* Modal de Galería */}
+      {showModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              <h3>Seleccionar Imagen</h3>
+              <button
+                type="button"
+                className={styles.modalClose}
+                onClick={() => setShowModal(false)}
+                title="Cerrar"
+              >
+                ✕
+              </button>
             </div>
-          )}
+
+            {loading ? (
+              <div className={styles.loading}>Cargando imágenes...</div>
+            ) : (
+              <>
+                {/* Buscador */}
+                <div className={styles.modalSearch}>
+                  <input
+                    type="text"
+                    placeholder="🔍 Buscar por nombre..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className={styles.searchInput}
+                    autoFocus
+                  />
+                  <span className={styles.resultCount}>
+                    {filteredImages.length} de {existingImages.length} imágenes
+                  </span>
+                </div>
+
+                {/* Grid de imágenes con scroll */}
+                <div className={styles.modalImageGrid}>
+                  {filteredImages.map((image) => (
+                    <div
+                      key={image.name}
+                      className={`${styles.modalImageCard} ${selectedExisting === image.name ? styles.modalImageCardSelected : ''}`}
+                      onClick={() => handleSelectExisting(image)}
+                      title={image.name}
+                    >
+                      <div className={styles.modalImageThumbWrapper}>
+                        <img src={image.url} alt={image.name} className={styles.modalImageThumb} />
+                        {selectedExisting === image.name && (
+                          <div className={styles.selectedBadge}>✓</div>
+                        )}
+                      </div>
+                      <span className={styles.modalImageName}>{image.name}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {filteredImages.length === 0 && (
+                  <div className={styles.modalEmpty}>
+                    <p>No se encontraron imágenes</p>
+                    <small>Intenta con otro término de búsqueda</small>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
       )}
     </div>

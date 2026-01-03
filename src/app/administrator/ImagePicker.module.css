@@ -2,50 +2,17 @@
   width: 100%;
 }
 
-/* Tabs */
-.tabs {
+/* Main Actions - Vista compacta */
+.mainActions {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #e5e7eb;
-}
-
-.tab {
-  padding: 0.75rem 1.5rem;
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  font-weight: 600;
-  color: #6b7280;
-  transition: all 0.2s ease;
-  margin-bottom: -2px;
-}
-
-.tab:hover {
-  color: #4a7c9b;
-}
-
-.tabActive {
-  padding: 0.75rem 1.5rem;
-  background: none;
-  border: none;
-  border-bottom: 2px solid #4a7c9b;
-  cursor: pointer;
-  font-weight: 600;
-  color: #4a7c9b;
-  margin-bottom: -2px;
-}
-
-/* Upload Mode */
-.uploadMode {
-  padding: 1rem 0;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .dropZone {
   border: 3px dashed #e5e7eb;
   border-radius: 12px;
-  padding: 3rem 2rem;
+  padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
   background: #fafafa;
@@ -73,12 +40,12 @@
 }
 
 .dropZoneIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .dropZoneText {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #374151;
   margin-bottom: 0.5rem;
 }
@@ -89,19 +56,6 @@
   font-weight: 600;
 }
 
-.fileInput {
-  width: 100%;
-  padding: 0.75rem;
-  border: 2px dashed #e5e7eb;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-}
-
-.fileInput:hover {
-  border-color: #4a7c9b;
-}
-
 .hint {
   display: block;
   margin-top: 0.5rem;
@@ -109,13 +63,147 @@
   font-size: 0.85rem;
 }
 
-/* Select Mode */
-.selectMode {
-  padding: 1rem 0;
+/* Botón de Galería */
+.btnGallery {
+  width: 100%;
+  padding: 1rem;
+  background: #4a7c9b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.searchBox {
-  margin-bottom: 1rem;
+.btnGallery:hover {
+  background: #3a6c8b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(74, 124, 155, 0.3);
+}
+
+/* Preview de imagen actual */
+.currentImagePreview {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.currentImagePreview small {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.currentImageThumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid #e5e7eb;
+}
+
+.currentImageName {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #374151;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modalContent {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.modalClose {
+  background: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalClose:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* Modal Search */
+.modalSearch {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -139,111 +227,147 @@
 .resultCount {
   font-size: 0.85rem;
   color: #6b7280;
-  padding: 0 0.25rem;
+  font-weight: 500;
 }
 
-.loading {
-  text-align: center;
-  padding: 2rem;
-  color: #6b7280;
-}
-
-.imageGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 1rem;
-  max-height: 400px;
+/* Modal Image Grid */
+.modalImageGrid {
+  padding: 1.5rem;
   overflow-y: auto;
-  padding: 0.5rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  align-content: start;
 }
 
-.imageCard {
+.modalImageCard {
   border: 2px solid #e5e7eb;
   border-radius: 8px;
   padding: 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
-  position: relative;
+  background: white;
 }
 
-.imageCard:hover {
+.modalImageCard:hover {
   border-color: #4a7c9b;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.imageCardSelected {
+.modalImageCardSelected {
   border-color: #4a7c9b;
   background: #f0f9ff;
   box-shadow: 0 0 0 2px #4a7c9b;
 }
 
+.modalImageThumbWrapper {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.modalImageThumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
 .selectedBadge {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.25rem;
+  right: 0.25rem;
   background: #4a7c9b;
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 0.85rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-.imageThumb {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-}
-
-.imageName {
+.modalImageName {
   display: block;
   font-size: 0.75rem;
   color: #6b7280;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.3;
 }
 
-.empty {
+/* Loading & Empty states */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.modalEmpty {
   text-align: center;
   padding: 3rem 1rem;
   color: #6b7280;
 }
 
-.empty p {
+.modalEmpty p {
   margin-bottom: 0.5rem;
   font-weight: 600;
+  font-size: 1rem;
 }
 
-.empty small {
+.modalEmpty small {
   font-size: 0.85rem;
 }
 
-/* Scrollbar */
-.imageGrid::-webkit-scrollbar {
-  width: 8px;
+/* Scrollbar personalizado */
+.modalImageGrid::-webkit-scrollbar {
+  width: 10px;
 }
 
-.imageGrid::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+.modalImageGrid::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 5px;
 }
 
-.imageGrid::-webkit-scrollbar-thumb {
+.modalImageGrid::-webkit-scrollbar-thumb {
   background: #4a7c9b;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.imageGrid::-webkit-scrollbar-thumb:hover {
+.modalImageGrid::-webkit-scrollbar-thumb:hover {
   background: #3a6c8b;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .modalImageGrid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .modalImageThumb {
+    height: 100px;
+  }
+
+  .modalHeader {
+    padding: 1rem;
+  }
+
+  .modalHeader h3 {
+    font-size: 1.1rem;
+  }
+}

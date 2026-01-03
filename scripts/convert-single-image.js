@@ -2,9 +2,9 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const SOURCE_FILE = 'images/IA/20260103_1439_Optimiza Google My Business_simple_compose_01ke21agydezkse32qk28qctkx.png';
+const SOURCE_FILE = 'images/IA/20260103_1449_Marketing Clínicas Dentales_simple_compose_01ke21v7che5s9nvzy0t8khhxp.png';
 const DEST_DIR = path.join(process.cwd(), 'public', 'blog');
-const OUTPUT_NAME = 'optimiza-google-my-business-30-minutos.webp';
+const OUTPUT_NAME = 'marketing-clinicas-dentales-agenda-lista-espera.webp';
 
 async function convertSingleImage() {
   console.log('🎨 Convirtiendo imagen a WebP...\n');

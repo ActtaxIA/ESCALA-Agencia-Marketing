@@ -60,7 +60,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${slugFormatted} | ESKALA Portfolio`,
         description: `Proyecto ${slugFormatted} del portfolio de ESKALA Marketing Digital`,
         images: [`${siteUrl}/eskala_digital_opengraph.png`],
-      }
+      },
+      alternates: {
+        canonical: projectUrl,
+      },
     }
   }
 
@@ -99,6 +102,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: pageDescription,
       images: [imageUrl],
       creator: '@eskaladigital',
+    },
+    alternates: {
+      canonical: projectUrl,
     },
   }
 }

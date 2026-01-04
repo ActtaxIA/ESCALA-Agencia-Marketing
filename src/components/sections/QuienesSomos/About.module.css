@@ -79,11 +79,25 @@
   -webkit-text-fill-color: transparent;
 }
 
+.aboutContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--stripe-6);
+}
+
 .aboutContent p {
   font-size: 1.05rem;
   line-height: 1.9;
   opacity: 0.8;
   margin-bottom: 1.5rem;
+}
+
+.aboutContent strong {
+  color: var(--stripe-7);
+  font-weight: 600;
+  opacity: 1;
 }
 
 .aboutStats {

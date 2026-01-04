@@ -1,0 +1,165 @@
+/* ===== WHY MURCIA SECTION ===== */
+.whyMurcia {
+  padding: 8rem 5%;
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--stripe-1);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.title span {
+  background: linear-gradient(135deg, var(--stripe-7), var(--stripe-8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== REASONS GRID ===== */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.reason {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reason:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--stripe-7);
+}
+
+.reasonIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.reason h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--stripe-1);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.reason p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.reason strong {
+  color: var(--stripe-7);
+  font-weight: 600;
+}
+
+/* ===== CTA ===== */
+.cta {
+  margin-top: 5rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--stripe-1), var(--stripe-2));
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+
+.cta h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--stripe-6), var(--stripe-7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .whyMurcia {
+    padding: 5rem 5%;
+  }
+
+  .reasons {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reason {
+    padding: 2rem;
+  }
+
+  .reasonIcon {
+    font-size: 2.5rem;
+  }
+
+  .reason h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta {
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyMurcia {
+    padding: 4rem 5%;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .reasons {
+    gap: 1.5rem;
+  }
+
+  .reason {
+    padding: 1.5rem;
+  }
+}
+

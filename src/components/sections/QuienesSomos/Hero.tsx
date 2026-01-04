@@ -27,20 +27,23 @@ export default function Hero() {
       </div>
 
       <div className={styles.heroContent}>
-        <div className={styles.heroBadge}>📍 Agencia de Marketing en Murcia</div>
+        <div className={styles.heroBadge}>📍 Agencia de Marketing Digital en Murcia</div>
         <h1 className={styles.heroTitle}>
-          Llevamos tu negocio al <span>siguiente nivel</span>
+          Tu <span>Agencia de Marketing Digital</span> en Murcia
         </h1>
         <p className={styles.heroDesc}>
-          Marketing digital, desarrollo web y estrategias que generan resultados reales. 
-          Escalamos tu presencia online con soluciones a medida.
+          Somos ESKALA, la <strong>agencia de marketing digital en Murcia</strong> que impulsa 
+          negocios locales con estrategias digitales que funcionan. Desde 2020 ayudamos a empresas 
+          murcianas a crecer online con <strong>SEO local</strong>, <strong>diseño web</strong>, 
+          <strong>redes sociales</strong> y <strong>publicidad en Google</strong>. Trabajamos codo a codo 
+          contigo para conseguir resultados reales y medibles.
         </p>
         <div className={styles.heroButtons}>
           <Link href="/contacto" className={`${styles.btn} ${styles.btnPrimary}`}>
-            Empezar ahora →
+            Hablemos de tu proyecto →
           </Link>
           <Link href="/servicios" className={`${styles.btn} ${styles.btnSecondary}`}>
-            Ver servicios
+            Nuestros servicios
           </Link>
         </div>
       </div>

@@ -12,7 +12,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'escalamarketing.es',
+        hostname: 'www.eskaladigital.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'eskaladigital.com',
       },
     ],
     // Formatos optimizados
@@ -46,14 +50,14 @@ const nextConfig = {
     ]
   },
 
-  // Redirecciones SEO
+  // Redirecciones SEO: forzar www como canónico
   async redirects() {
     return [
-      // Redirigir www a no-www
+      // Redirigir sin www a con www (URL canónica)
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.escalamarketing.es' }],
-        destination: 'https://escalamarketing.es/:path*',
+        has: [{ type: 'host', value: 'eskaladigital.com' }],
+        destination: 'https://www.eskaladigital.com/:path*',
         permanent: true,
       },
     ]

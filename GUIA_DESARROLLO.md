@@ -212,7 +212,12 @@ import { StripeDivider } from '@/components/layout'
 ## ✅ Checklist Nueva Página
 
 - [ ] Crear `src/app/[ruta]/page.tsx`
-- [ ] Añadir metadata (title, description)
+- [ ] Añadir metadata completa:
+  - [ ] `title` único y descriptivo
+  - [ ] `description` optimizada para SEO (150-160 caracteres)
+  - [ ] `keywords` relevantes
+  - [ ] **`alternates.canonical`** con URL completa (ej: `https://www.eskaladigital.com/ruta`)
+  - [ ] OpenGraph y Twitter Cards
 - [ ] Usar `StandardLayout` si tiene header/footer
 - [ ] Añadir `StripeDivider` entre secciones (máx 1)
 - [ ] Añadir animaciones `fade-up`
@@ -220,6 +225,78 @@ import { StripeDivider } from '@/components/layout'
 - [ ] Añadir a navegación si es necesario
 - [ ] Verificar SEO (meta tags, OpenGraph)
 - [ ] Optimizar imágenes a WebP
+
+### Ejemplo de Metadata Completa
+
+```tsx
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Título de la Página | ESKALA',
+  description: 'Descripción breve y atractiva para SEO (150-160 caracteres)',
+  keywords: ['keyword1', 'keyword2', 'keyword3'],
+  alternates: {
+    canonical: 'https://www.eskaladigital.com/ruta-de-la-pagina',
+  },
+  openGraph: {
+    title: 'Título de la Página',
+    description: 'Descripción para redes sociales',
+    url: 'https://www.eskaladigital.com/ruta-de-la-pagina',
+    images: [
+      {
+        url: '/og-imagen.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Descripción de la imagen',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Título de la Página',
+    description: 'Descripción para Twitter',
+    images: ['/og-imagen.jpg'],
+  },
+}
+```
+
+---
+
+## 🔗 URLs Canónicas
+
+**⚠️ IMPORTANTE**: Todas las páginas deben incluir `alternates.canonical` en su metadata.
+
+### Configuración Global
+- **Dominio canónico**: `https://www.eskaladigital.com` (con www)
+- **metadataBase**: Configurado en `src/app/layout.tsx`
+- **Redirects 301**: Configurados en `next.config.js`
+  - `eskaladigital.com` → `www.eskaladigital.com`
+  - `escalamarketing.es` → `www.eskaladigital.com`
+
+### Para Páginas Estáticas
+Añadir siempre:
+```tsx
+alternates: {
+  canonical: 'https://www.eskaladigital.com/ruta-completa',
+}
+```
+
+### Para Páginas Dinámicas (Blog, Portfolio)
+Usar la variable de entorno:
+```tsx
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.eskaladigital.com'
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+  return {
+    // ... otros metadatos
+    alternates: {
+      canonical: `${baseUrl}/blog/${params.slug}`,
+    },
+  }
+}
+```
+
+📖 **Documentación completa**: Ver `CANONICAL-URLS-SEO.md`
 
 ---
 
@@ -309,4 +386,4 @@ Ver scripts SQL en carpeta `supabase/`:
 
 ---
 
-*Última actualización: 3 Enero 2025*
+*Última actualización: 4 Enero 2025*

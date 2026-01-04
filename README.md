@@ -367,8 +367,64 @@ Todas las páginas incluyen:
 - `keywords` relevantes por página
 - **OpenGraph** para redes sociales (Facebook, LinkedIn)
 - **Twitter Cards** con imágenes 1200x630
-- **URLs canónicas** para evitar duplicados
+- **URLs canónicas** ✅ **100% implementadas en TODA la web**
 - **JSON-LD Schema** (tipo `MarketingAgency`) en el layout global
+
+### URLs Canónicas - Configuración Completa ✅
+
+#### Dominio Canónico
+**www.eskaladigital.com** es el dominio oficial y canónico en todo el sitio.
+
+#### Redirects Implementados (next.config.js)
+```javascript
+// ✅ Redirect de no-www a www
+eskaladigital.com → https://www.eskaladigital.com
+
+// ✅ Redirect del dominio antiguo
+escalamarketing.es → https://www.eskaladigital.com
+www.escalamarketing.es → https://www.eskaladigital.com
+```
+
+#### Canonical URLs por Tipo de Página
+| Tipo | Estado | Implementación |
+|------|--------|----------------|
+| **Páginas estáticas** | ✅ 16/16 | `alternates.canonical` en metadata |
+| **Artículos blog** | ✅ Dinámico | `alternates.canonical` con `baseUrl` |
+| **Proyectos portfolio** | ✅ Dinámico | `alternates.canonical` con `siteUrl` |
+| **metadataBase global** | ✅ Configurado | `https://www.eskaladigital.com` |
+
+#### Páginas Verificadas
+- ✅ Home (`/`)
+- ✅ Quiénes Somos (`/quienes-somos`)
+- ✅ Metodología (`/metodologia`)
+- ✅ Servicios (`/servicios`)
+- ✅ Portfolio (`/portfolio`)
+- ✅ Blog (`/blog`)
+- ✅ Contacto (`/contacto`)
+- ✅ 8 Landings de servicios individuales
+- ✅ Todos los artículos del blog (dinámico)
+- ✅ Todos los proyectos del portfolio (dinámico)
+
+### Robots.txt y Sitemap ✅
+
+#### Robots.txt Configurado
+- ✅ Acceso general permitido para todos los bots
+- 🚫 **`/administrator` bloqueado** (no se indexa en Google)
+- 🚫 Rutas técnicas bloqueadas: `/api/`, `/_next/`, archivos JSON/XML
+- ✅ Blog, portfolio y servicios explícitamente permitidos
+- 🐌 Bots SEO (Ahrefs, Semrush) con `Crawl-delay: 10`
+- 🚫 Bots maliciosos bloqueados completamente
+- 📍 Sitemap declarado: `https://www.eskaladigital.com/sitemap.xml`
+
+#### Sitemap XML Dinámico
+- ✅ **8 páginas estáticas** (Home, Quiénes somos, etc.)
+- ✅ **8 servicios** individuales
+- ✅ **+40 artículos del blog** (actualización automática desde Supabase)
+- ✅ **9 proyectos del portfolio** (actualización automática desde Supabase)
+- 📊 **Total**: ~65+ URLs indexables
+- 🔄 Se actualiza automáticamente cuando se publican nuevos artículos/proyectos
+
+📖 **Documentación completa**: Ver `ROBOTS-SITEMAP-SEO.md`
 
 ### Imágenes OpenGraph Pendientes
 Crear imágenes de 1200x630px en `/public/`:
@@ -454,4 +510,23 @@ Ver `public/portfolio/README.md` para instrucciones detalladas.
 
 ---
 
-*Última actualización: 3 Enero 2025*
+---
+
+## 📝 Historial de Cambios Importantes
+
+### 4 Enero 2025 - URLs Canónicas 100% Implementadas ✅
+- ✅ Configurado `metadataBase` global: `https://www.eskaladigital.com`
+- ✅ Implementados redirects 301 permanentes: `eskaladigital.com` → `www.eskaladigital.com`
+- ✅ Redirect del dominio antiguo: `escalamarketing.es` → `www.eskaladigital.com`
+- ✅ Añadido `alternates.canonical` en todas las páginas estáticas (16/16)
+- ✅ Añadido `alternates.canonical` en artículos del blog (dinámico)
+- ✅ Añadido `alternates.canonical` en proyectos del portfolio (dinámico)
+- ✅ Corregido error de sintaxis en `servicios/google-ads/page.tsx`
+- ✅ Actualizado canonical del layout del blog de `escalamarketing.es` a `www.eskaladigital.com`
+- ✅ **Creado `robots.txt`** con bloqueo de `/administrator` y configuración óptima
+- ✅ **Verificado `sitemap.xml`** con todas las URLs correctas y dominio canónico
+- 🎯 **Resultado**: SEO canónico 100% completo + robots.txt perfecto para indexación
+
+---
+
+*Última actualización: 4 Enero 2025*

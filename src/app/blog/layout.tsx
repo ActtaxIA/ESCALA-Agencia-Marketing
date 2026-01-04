@@ -11,29 +11,29 @@ export const metadata: Metadata = {
     'consejos redes sociales',
   ],
   openGraph: {
-    title: 'Blog | ESCALA Marketing Murcia',
+    title: 'Blog | ESKALA Marketing Digital Murcia',
     description: 'Artículos, guías y recursos sobre marketing digital, SEO y diseño web.',
-    url: 'https://escalamarketing.es/blog',
-    siteName: 'ESCALA Marketing',
+    url: 'https://www.eskaladigital.com/blog',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
     images: [
       {
-        url: '/og-blog.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
-        alt: 'Blog ESCALA Marketing',
+        alt: 'Blog ESKALA Marketing Digital',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | ESCALA Marketing Murcia',
+    title: 'Blog | ESKALA Marketing Digital Murcia',
     description: 'Artículos, guías y recursos sobre marketing digital, SEO y diseño web.',
-    images: ['/og-blog.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
-    canonical: 'https://escalamarketing.es/blog',
+    canonical: 'https://www.eskaladigital.com/blog',
   },
 }
 

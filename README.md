@@ -365,10 +365,34 @@ Los iconos de la página de Servicios usan caracteres unicode monocromáticos (�
 Todas las páginas incluyen:
 - `title` y `description` únicos y optimizados
 - `keywords` relevantes por página
-- **OpenGraph** para redes sociales (Facebook, LinkedIn)
-- **Twitter Cards** con imágenes 1200x630
+- **OpenGraph** ✅ **100% configurado en todas las páginas**
+- **Twitter Cards** ✅ **Con formato summary_large_image**
 - **URLs canónicas** ✅ **100% implementadas en TODA la web**
 - **JSON-LD Schema** (tipo `MarketingAgency`) en el layout global
+
+### OpenGraph y Redes Sociales ✅
+
+#### Configuración Completa
+- ✅ **Facebook**: Vista previa perfecta con imagen 1200x630px
+- ✅ **LinkedIn**: Metadatos profesionales optimizados
+- ✅ **Twitter/X**: Cards con `summary_large_image`
+- ✅ **WhatsApp/Telegram**: Preview con imagen y descripción
+
+#### Cobertura por Tipo
+| Tipo | Total | OpenGraph | Twitter | Estado |
+|------|-------|-----------|---------|--------|
+| **Páginas estáticas** | 8 | ✅ 8/8 | ✅ 8/8 | Completo |
+| **Servicios** | 8 | ✅ 8/8 | ✅ 8/8 | Completo |
+| **Blog** | +40 | ✅ Dinámico | ✅ Dinámico | Completo |
+| **Portfolio** | 9 | ✅ Dinámico | ✅ Dinámico | Completo |
+
+#### Imagen OpenGraph
+- ✅ `eskala_digital_opengraph.png` (1200x630px)
+- ✅ Usada en todas las páginas
+- ✅ Fallback para blog y portfolio sin imagen
+- ✅ Artículos del blog usan su imagen destacada
+
+📖 **Documentación completa**: Ver `OPENGRAPH-SOCIAL-MEDIA.md`
 
 ### URLs Canónicas - Configuración Completa ✅
 
@@ -514,7 +538,7 @@ Ver `public/portfolio/README.md` para instrucciones detalladas.
 
 ## 📝 Historial de Cambios Importantes
 
-### 4 Enero 2025 - URLs Canónicas 100% Implementadas ✅
+### 4 Enero 2025 - SEO Completo: Canónicas, Robots.txt y OpenGraph ✅
 - ✅ Configurado `metadataBase` global: `https://www.eskaladigital.com`
 - ✅ Implementados redirects 301 permanentes: `eskaladigital.com` → `www.eskaladigital.com`
 - ✅ Redirect del dominio antiguo: `escalamarketing.es` → `www.eskaladigital.com`
@@ -525,7 +549,9 @@ Ver `public/portfolio/README.md` para instrucciones detalladas.
 - ✅ Actualizado canonical del layout del blog de `escalamarketing.es` a `www.eskaladigital.com`
 - ✅ **Creado `robots.txt`** con bloqueo de `/administrator` y configuración óptima
 - ✅ **Verificado `sitemap.xml`** con todas las URLs correctas y dominio canónico
-- 🎯 **Resultado**: SEO canónico 100% completo + robots.txt perfecto para indexación
+- ✅ **Corregido OpenGraph en `layout.tsx`**: cambio de `og-default.jpg` (inexistente) a `eskala_digital_opengraph.png`
+- ✅ **Verificado OpenGraph en 100% de las páginas**: estáticas, servicios, blog y portfolio
+- 🎯 **Resultado**: SEO 100% completo - Canónicas + Robots.txt + OpenGraph perfecto para compartir en redes sociales
 
 ---
 

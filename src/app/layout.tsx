@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'Agencia de marketing digital en Murcia. Llevamos tu negocio al siguiente nivel.',
     images: [
       {
-        url: '/og-default.jpg',
+        url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
         alt: 'ESKALA - Agencia de Marketing Digital en Murcia',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Agencia de marketing digital en Murcia. Llevamos tu negocio al siguiente nivel.',
     site: '@eskaladigital',
     creator: '@eskaladigital',
-    images: ['/og-default.jpg'],
+    images: ['/eskala_digital_opengraph.png'],
   },
   robots: {
     index: true,
@@ -91,7 +91,7 @@ const jsonLd = {
   description: 'Agencia de marketing digital en Murcia especializada en diseño web, SEO, redes sociales, Google Ads y aplicaciones con inteligencia artificial.',
   url: 'https://www.eskaladigital.com',
   logo: 'https://www.eskaladigital.com/logo.png',
-  image: 'https://www.eskaladigital.com/og-default.jpg',
+  image: 'https://www.eskaladigital.com/eskala_digital_opengraph.png',
   telephone: '+34626823404',
   email: 'contacto@eskaladigital.com',
   address: {

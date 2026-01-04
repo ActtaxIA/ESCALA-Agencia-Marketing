@@ -139,7 +139,7 @@ export default function GoogleAdsPage() {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType': 'Google Ads Management',
+    serviceType: 'Google Ads Management',
     name: 'Gestión de Google Ads y Campañas SEM en Murcia',
     description: 'Servicio profesional de gestión de Google Ads en Murcia. Campañas SEM de búsqueda, display, shopping y YouTube optimizadas para máximo ROI. Agencia Google Partner certificada.',
     provider: {

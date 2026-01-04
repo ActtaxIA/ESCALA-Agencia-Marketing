@@ -7,32 +7,49 @@ import ServiceTestimonial from '@/components/sections/ServicioDetalle/ServiceTes
 import ServiceCTA from '@/components/sections/ServicioDetalle/ServiceCTA'
 
 export const metadata = {
-  title: 'Chatbots con IA en Murcia | Automatización Inteligente',
-  description: 'Chatbots con inteligencia artificial para WhatsApp, web y voz. Atiende a tus clientes 24/7, automatiza respuestas y aumenta ventas. Desarrollo personalizado en Murcia.',
-  keywords: ['chatbot ia murcia', 'chatbot whatsapp murcia', 'bot conversacional murcia', 'automatizacion atencion cliente murcia', 'chatbot para empresas murcia'],
+  title: 'Chatbots con IA en Murcia | WhatsApp, Web y Voz | ESKALA',
+  description: 'Desarrollo de chatbots inteligentes para empresas en Murcia. Chatbots para WhatsApp Business, web y voz con IA conversacional. Atiende clientes 24/7, automatiza respuestas, agenda citas y aumenta ventas. Trabajamos con empresas de Murcia, Cartagena y toda la Región. Powered by GPT-4. Demo gratuita.',
+  keywords: [
+    'chatbot ia murcia',
+    'chatbot whatsapp murcia',
+    'bot conversacional murcia',
+    'automatizacion atencion cliente murcia',
+    'chatbot para empresas murcia',
+    'chatbot murcia',
+    'asistente virtual murcia',
+    'bot whatsapp business murcia',
+    'desarrollo chatbot murcia',
+  ],
   openGraph: {
-    title: 'Chatbots con IA en Murcia | ESKALA Marketing',
-    description: 'Chatbots inteligentes para WhatsApp, web y voz. Atención 24/7 automatizada.',
+    title: 'Chatbots con IA en Murcia | WhatsApp, Web y Voz | ESKALA',
+    description: 'Chatbots inteligentes con IA para WhatsApp, web y voz. Atención al cliente 24/7 automatizada.',
     url: 'https://www.eskaladigital.com/servicios/chatbots',
-    siteName: 'ESKALA Marketing',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
-    images: [{ url: '/og-chatbots.jpg', width: 1200, height: 630, alt: 'Chatbots ESKALA' }],
+    images: [{ 
+      url: '/eskala_digital_opengraph.png', 
+      width: 1200, 
+      height: 630, 
+      alt: 'Chatbots con IA en Murcia - ESKALA' 
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chatbots con IA en Murcia | ESKALA Marketing',
-    description: 'Chatbots inteligentes para WhatsApp, web y voz.',
-    images: ['/og-chatbots.jpg'],
+    title: 'Chatbots con IA en Murcia | ESKALA Marketing Digital',
+    description: 'Chatbots inteligentes para WhatsApp, web y voz. Atención 24/7 automatizada.',
+    images: ['/eskala_digital_opengraph.png'],
   },
-  alternates: { canonical: 'https://www.eskaladigital.com/servicios/chatbots' },
+  alternates: { 
+    canonical: 'https://www.eskaladigital.com/servicios/chatbots' 
+  },
 }
 
 const heroData = {
-  badge: '🤖 Chatbots con IA',
-  title: 'Atiende a tus clientes',
-  titleHighlight: '24/7 sin parar',
-  description: 'Chatbots con inteligencia artificial que responden al instante, reservan citas, califican leads y venden mientras duermes. Atención personalizada, siempre disponible.',
+  badge: '🤖 Chatbots con IA en Murcia',
+  title: 'Atención al Cliente 24/7',
+  titleHighlight: 'con Chatbots Inteligentes',
+  description: 'Desarrollamos chatbots con inteligencia artificial avanzada para empresas en Murcia. Chatbots para WhatsApp Business, web, Facebook Messenger, Instagram y llamadas de voz. Powered by GPT-4 y Claude. No son bots simples con respuestas prefabricadas: entienden lenguaje natural, contexto y aprenden de cada conversación. Atienden a tus clientes 24/7, responden al instante, reservan citas, califican leads y venden mientras duermes. Trabajamos con clínicas, despachos, tiendas online y empresas de servicios en Murcia, Cartagena y toda la Región. Atención personalizada, siempre disponible.',
   stripeColor: 6,
   ctaPrimary: 'Solicitar demo',
   ctaSecondary: 'Ver proyectos',

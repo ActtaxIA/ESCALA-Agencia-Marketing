@@ -7,88 +7,124 @@ import ServiceTestimonial from '@/components/sections/ServicioDetalle/ServiceTes
 import ServiceCTA from '@/components/sections/ServicioDetalle/ServiceCTA'
 
 export const metadata = {
-  title: 'Google Ads en Murcia | Campañas SEM Profesionales',
-  description: 'Gestión de Google Ads en Murcia. Campañas de búsqueda, display y shopping optimizadas para máximo ROI. Partner de Google. Consulta gratuita.',
-  keywords: ['google ads murcia', 'sem murcia', 'publicidad google murcia', 'adwords murcia'],
+  title: 'Google Ads en Murcia | Campañas SEM y Publicidad Google | ESKALA',
+  description: 'Agencia Google Ads en Murcia. Gestión profesional de campañas SEM: búsqueda, display, shopping y YouTube. Optimizamos tu inversión publicitaria para máximo ROI. Trabajamos con empresas de Murcia, Cartagena y toda la Región. Certificados Google Partner. Resultados medibles y transparentes. Auditoría gratuita.',
+  keywords: [
+    'google ads murcia',
+    'sem murcia',
+    'publicidad google murcia',
+    'adwords murcia',
+    'campañas google murcia',
+    'agencia google ads murcia',
+    'google shopping murcia',
+    'ppc murcia',
+    'publicidad online murcia',
+    'marketing sem murcia',
+    'google ads cartagena',
+    'gestión google ads murcia',
+  ],
   openGraph: {
-    title: 'Google Ads en Murcia | ESCALA Marketing',
-    description: 'Campañas de Google Ads optimizadas para máximo ROI. Gestión SEM profesional.',
-    url: 'https://escalamarketing.es/servicios/google-ads',
-    siteName: 'ESCALA Marketing',
+    title: 'Google Ads en Murcia | Campañas SEM Profesionales | ESKALA',
+    description: 'Agencia Google Ads certificada en Murcia. Campañas SEM optimizadas para máximo ROI y conversiones.',
+    url: 'https://www.eskaladigital.com/servicios/google-ads',
+    siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
     type: 'website',
-    images: [{ url: '/og-google-ads.jpg', width: 1200, height: 630, alt: 'Google Ads ESCALA' }],
+    images: [{ 
+      url: '/eskala_digital_opengraph.png', 
+      width: 1200, 
+      height: 630, 
+      alt: 'Google Ads en Murcia - ESKALA' 
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Google Ads en Murcia | ESCALA Marketing',
-    description: 'Campañas de Google Ads optimizadas para máximo ROI.',
-    images: ['/og-google-ads.jpg'],
+    title: 'Google Ads en Murcia | ESKALA Marketing Digital',
+    description: 'Campañas de Google Ads optimizadas. Más clics, más conversiones, mejor ROI.',
+    images: ['/eskala_digital_opengraph.png'],
   },
-  alternates: { canonical: 'https://escalamarketing.es/servicios/google-ads' },
+  alternates: { 
+    canonical: 'https://www.eskaladigital.com/servicios/google-ads' 
+  },
 }
 
 const heroData = {
-  badge: '🎯 Google Ads',
-  title: 'Aparece primero en Google',
-  titleHighlight: 'cuando te buscan',
-  description: 'Llega a clientes que buscan activamente lo que ofreces. Campañas de Google Ads optimizadas para conseguir el máximo retorno de tu inversión publicitaria.',
+  badge: '🎯 Google Ads en Murcia',
+  title: 'Campañas de Google Ads',
+  titleHighlight: 'que Generan Clientes Reales',
+  description: 'Somos agencia Google Ads certificada en Murcia. Aparece en la primera posición de Google cuando tus clientes potenciales buscan tus servicios. Gestionamos campañas SEM de búsqueda, display, shopping y YouTube optimizadas para conseguir el máximo retorno de tu inversión publicitaria. Trabajamos con empresas de Murcia, Cartagena, Lorca y toda la Región. No malgastes presupuesto: cada euro invertido en Google Ads está optimizado para generar conversiones. Resultados medibles desde el primer día. Google Partner certificado.',
   stripeColor: 4,
 }
 
 const features = [
   {
     icon: '🔍',
-    title: 'Campañas de Búsqueda',
-    description: 'Anuncios de texto en los resultados de Google. Apareces cuando buscan exactamente lo que ofreces.',
+    title: 'Campañas de Búsqueda (Search)',
+    description: 'Anuncios de texto en los resultados de búsqueda de Google. Tu negocio aparece cuando alguien busca exactamente lo que ofreces: "abogado Murcia", "fontanero urgente", "clínica dental Cartagena". Solo pagas por clic (PPC). Selección estratégica de keywords con intención de compra alta. Extensiones de anuncio para mayor visibilidad: llamadas, ubicación, enlaces adicionales. El 65% de clics con intención de compra van a anuncios, no a resultados orgánicos.',
   },
   {
     icon: '🖼️',
     title: 'Display y Remarketing',
-    description: 'Banners en millones de webs. Recuerda a los visitantes de tu web que vuelvan y conviertan.',
+    description: 'Banners visuales en millones de webs de la Red de Display de Google. Ideal para branding y remarketing: recuerda a los visitantes de tu web que vuelvan y completen la compra. El 70% de usuarios que abandonan tu web sin comprar pueden convertirse con remarketing. Segmentación por intereses, demografía y comportamiento. Diseño de banners profesionales en todos los tamaños.',
   },
   {
     icon: '🛒',
-    title: 'Google Shopping',
-    description: 'Para e-commerce: tus productos con foto y precio directamente en los resultados de búsqueda.',
+    title: 'Google Shopping (E-commerce)',
+    description: 'Para tiendas online: tus productos aparecen con foto, precio y valoraciones directamente en Google. Imprescindible si vendes productos. Feed de productos optimizado. Campañas Performance Max para máximo alcance. Sincronización con tu catálogo. El shopping representa el 76% de gasto publicitario retail en Google. Aumenta ventas online significativamente.',
   },
   {
     icon: '📱',
-    title: 'YouTube Ads',
-    description: 'Vídeo publicitario en YouTube. Alcanza audiencias masivas con contenido audiovisual.',
+    title: 'YouTube Ads (Vídeo Publicidad)',
+    description: 'Anuncios en vídeo en YouTube y Google Video Partners. Alcanza audiencias masivas con contenido audiovisual. Formatos: in-stream (skippable/non-skippable), bumper ads (6 segundos), discovery ads. Segmentación precisa por intereses y demografía. Creación de vídeos publicitarios profesionales. YouTube es el segundo buscador más grande del mundo después de Google.',
   },
   {
     icon: '📈',
-    title: 'Optimización Continua',
-    description: 'Ajustamos pujas, palabras clave y anuncios a diario para mejorar el rendimiento.',
+    title: 'Optimización y Testing Continuo',
+    description: 'Ajustamos pujas, keywords y anuncios diariamente para mejorar rendimiento. Testing A/B de copys y páginas de destino. Negativización de keywords que no convierten (ahorro de presupuesto). Ajuste de pujas por dispositivo, ubicación y horario. Optimización de Quality Score para reducir CPC. Análisis semanal de competencia. Las cuentas bien gestionadas mejoran ROI un 30-50% en 3 meses.',
   },
   {
     icon: '📊',
-    title: 'Reporting Detallado',
-    description: 'Informes claros con métricas que importan: coste por lead, conversiones, ROI real.',
+    title: 'Reporting Transparente y Métricas Reales',
+    description: 'Informes mensuales claros con métricas que realmente importan: coste por lead (CPL), coste por adquisición (CPA), tasa de conversión, ROI real, ROAS (retorno de inversión publicitaria). Dashboard personalizado con Google Data Studio. Tracking de conversiones configurado (llamadas, formularios, compras). Acceso total a tu cuenta de Google Ads. Transparencia absoluta: sabes exactamente dónde va cada euro.',
   },
 ]
 
 const benefits = [
   {
-    title: 'Resultados Inmediatos',
-    description: 'A diferencia del SEO, los anuncios aparecen desde el primer día. Tráfico y leads desde la primera semana.',
+    title: 'Resultados Inmediatos y Medibles',
+    description: 'A diferencia del SEO orgánico (que tarda meses), los anuncios de Google Ads aparecen desde el primer día. Tráfico cualificado y leads desde la primera semana. Resultados 100% medibles: sabes exactamente cuánto inviertes y cuánto ganas. El 41% de clics van a los 3 primeros anuncios de Google. Si no estás ahí, tu competencia sí. Google Ads es la forma más rápida de validar demanda y conseguir clientes.',
   },
   {
-    title: 'Control Total del Presupuesto',
-    description: 'Tú decides cuánto invertir. Puedes pausar, aumentar o reducir en cualquier momento sin penalización.',
+    title: 'Control Total del Presupuesto Publicitario',
+    description: 'Tú decides cuánto invertir diariamente. Puedes pausar, aumentar o reducir el presupuesto en cualquier momento sin penalización ni permanencia. Empezar desde 300€/mes es viable. No hay mínimos. Escalas cuando ves resultados. Control total: sabes el coste de cada clic, cada conversión, cada cliente. A diferencia de medios tradicionales (radio, prensa), en Google Ads pagas solo por resultados (clics).',
   },
   {
-    title: 'Audiencia Cualificada',
-    description: 'Solo pagas cuando alguien hace clic. Y ese clic viene de alguien que buscaba activamente tu servicio.',
+    title: 'Audiencia Hiper-Cualificada con Intención de Compra',
+    description: 'Solo pagas cuando alguien hace clic en tu anuncio. Y ese clic viene de alguien que buscaba activamente tu servicio en ese momento. Intención de compra alta. No es publicidad invasiva que interrumpe: es responder a demanda real. Segmentación geográfica: muestra anuncios solo en Murcia, Cartagena o el radio que necesites. Segmentación por dispositivo, horario, idioma. Llegas exactamente a quien necesitas.',
   },
 ]
 
 const process = [
-  { step: '01', title: 'Análisis', description: 'Estudiamos tu negocio, competencia, keywords y presupuesto óptimo.' },
-  { step: '02', title: 'Configuración', description: 'Estructuramos campañas, grupos de anuncios y creamos los textos.' },
-  { step: '03', title: 'Lanzamiento', description: 'Activamos las campañas con tracking de conversiones configurado.' },
-  { step: '04', title: 'Optimización', description: 'Mejoramos a diario: ajustes de pujas, negativización, tests A/B.' },
+  { 
+    step: '01', 
+    title: 'Análisis y Estrategia', 
+    description: 'Estudiamos tu negocio, sector, competencia en Murcia, público objetivo y presupuesto óptimo. Investigación exhaustiva de keywords con herramientas profesionales (Google Keyword Planner, SEMrush). Definimos objetivos SMART: leads, ventas, llamadas, visitas a web. Análisis de competencia: qué anuncios usan, qué keywords pujan, sus páginas de destino.' 
+  },
+  { 
+    step: '02', 
+    title: 'Configuración de Campañas', 
+    description: 'Estructuramos campañas por tipo (búsqueda, display, shopping), grupos de anuncios por temas y keywords. Creamos los textos de anuncios con copys persuasivos y CTAs efectivos. Configuración de extensiones (llamada, ubicación, enlaces). Configuración de tracking de conversiones (Google Analytics 4, Google Tag Manager). Configuración de audiencias y segmentación geográfica Murcia/Cartagena.' 
+  },
+  { 
+    step: '03', 
+    title: 'Lanzamiento y Monitorización', 
+    description: 'Activamos las campañas con presupuesto inicial conservador. Tracking de conversiones verificado: llamadas telefónicas, formularios, compras online. Monitorización diaria los primeros 7 días para detectar problemas. Ajustes rápidos según primeros datos. Configuración de alertas automáticas. Tu cuenta de Google Ads lista para generar resultados desde día 1.' 
+  },
+  { 
+    step: '04', 
+    title: 'Optimización Continua (Mensual)', 
+    description: 'Mejoramos el rendimiento constantemente: ajustes de pujas automáticas y manuales, negativización de keywords sin conversión, pausado de anuncios con bajo CTR, testing A/B de copys y landing pages, ajustes de segmentación. Análisis mensual completo: qué funciona, qué no, por qué. Reportes con recomendaciones de mejora. Reunión mensual de seguimiento. Las cuentas bien gestionadas mejoran mes a mes.' 
+  },
 ]
 
 const testimonial = {
@@ -99,8 +135,83 @@ const testimonial = {
 }
 
 export default function GoogleAdsPage() {
+  // Schema Service para SEO
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType': 'Google Ads Management',
+    name: 'Gestión de Google Ads y Campañas SEM en Murcia',
+    description: 'Servicio profesional de gestión de Google Ads en Murcia. Campañas SEM de búsqueda, display, shopping y YouTube optimizadas para máximo ROI. Agencia Google Partner certificada.',
+    provider: {
+      '@type': 'MarketingAgency',
+      name: 'ESKALA Marketing Digital',
+      image: 'https://www.eskaladigital.com/logo.png',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Murcia',
+        addressRegion: 'Región de Murcia',
+        addressCountry: 'ES',
+      },
+      telephone: '+34626823404',
+      priceRange: '€€',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Murcia' },
+      { '@type': 'City', name: 'Cartagena' },
+      { '@type': 'City', name: 'Lorca' },
+      { '@type': 'State', name: 'Región de Murcia' },
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Google Ads',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Campañas de Búsqueda Google Ads',
+            description: 'Anuncios de texto en resultados de búsqueda de Google',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Display y Remarketing',
+            description: 'Banners publicitarios en la Red de Display de Google',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Google Shopping',
+            description: 'Campañas de shopping para e-commerce',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'YouTube Ads',
+            description: 'Publicidad en vídeo en YouTube',
+          },
+        },
+      ],
+    },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'EUR',
+    },
+  }
+
   return (
     <StandardLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <ServiceHero {...heroData} />
       <ServiceFeatures features={features} title="Tipos de campañas" />
       <ServiceBenefits benefits={benefits} />

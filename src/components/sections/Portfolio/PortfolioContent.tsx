@@ -223,7 +223,14 @@ export default function PortfolioContent() {
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 
-    : projects.filter(p => p.categories.includes(activeFilter)) // Cambio: buscar en array de categorías
+    : projects.filter(p => {
+        // Si se filtra por 'web', incluir tanto diseño-web como desarrollo-web
+        if (activeFilter === 'web') {
+          return p.categories.includes('web') || p.categories.includes('dev')
+        }
+        // Para otros filtros, comportamiento normal
+        return p.categories.includes(activeFilter)
+      })
 
   console.log('🔄 PortfolioContent render - projects length:', projects.length, 'filteredProjects:', filteredProjects.length, 'loading:', loading)
 

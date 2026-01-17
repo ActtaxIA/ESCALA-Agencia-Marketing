@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Usar EXACTAMENTE la misma consulta que el componente principal
   const { data: project, error } = await supabase
     .from('portfolio_projects')
-    .select('title, short_description, meta_title, meta_description, keywords, featured_image, client')
+    .select('title, short_description, meta_title, meta_description, keywords, featured_image, og_image, client')
     .eq('slug', params.slug)
     .eq('published', true)
     .single()
@@ -67,11 +67,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
-  // Construir URL absoluta de la imagen
-  const imageUrl = project.featured_image 
-    ? (project.featured_image.startsWith('http') 
-        ? project.featured_image 
-        : `${siteUrl}${project.featured_image}`)
+  // Construir URL absoluta de la imagen Open Graph
+  // Prioridad: og_image > featured_image > fallback
+  const ogImagePath = project.og_image || project.featured_image
+  const imageUrl = ogImagePath
+    ? (ogImagePath.startsWith('http') 
+        ? ogImagePath 
+        : `${siteUrl}${ogImagePath}`)
     : `${siteUrl}/eskala_digital_opengraph.png`
 
   const pageTitle = project.meta_title || `${project.title} | ESKALA Portfolio`

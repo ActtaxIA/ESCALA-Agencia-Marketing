@@ -52,7 +52,7 @@ El resultado es una web moderna, rápida y que convierte visitantes en reservas.
   '{"reservas_online": "+150%", "trafico_web": "+180%", "conversion": "+45%", "tiempo_respuesta": "-70%"}'::jsonb,
   true,
   true,
-  1,
+  2,
   'Furgocasa: Diseño Web para Alquiler de Furgonetas Camper',
   'Proyecto completo de diseño web, fotografía y SEO local para Furgocasa. Sistema de reservas online que multiplicó las conversiones.',
   '2024-06-15',
@@ -98,7 +98,7 @@ Desarrollamos una tienda online con catálogo visual detallado, fichas de produc
   '{"ventas_online": "+240%", "alcance_geografico": "Nacional", "ticket_medio": "+35%", "trafico_organico": "+190%"}'::jsonb,
   true,
   false,
-  2,
+  3,
   'Tricholand: Tienda Online de Cactus | Caso de Éxito',
   'E-commerce especializado en cactus Trichocereus. De venta local a ventas nacionales con SEO de nicho.',
   '2024-04-20',
@@ -146,7 +146,7 @@ Desarrollamos una web corporativa que transmite profesionalidad y especializaci�
   '{"leads_cualificados": "+160%", "visibilidad_organica": "+200%", "consultas_entrantes": "+145%"}'::jsonb,
   true,
   false,
-  3,
+  4,
   'Acttax: Web Corporativa para Asesoría Fiscal Especializada',
   'Diseño web y estrategia de contenidos para asesoría fiscal especializada. Generación de leads B2B.',
   '2024-03-10',
@@ -192,7 +192,7 @@ Web que equilibra expertise legal con cercanía humana. Sección educativa sobre
   '{"consultas_online": "+180%", "posicionamiento": "Top 3", "coste_adquisicion": "-40%"}'::jsonb,
   true,
   false,
-  4,
+  5,
   'GVC Expertos: Web para Bufete de Negligencias Médicas',
   'Diseño web y SEO local para bufete especializado en derecho sanitario. Aumento de consultas cualificadas.',
   '2024-02-15',
@@ -238,7 +238,7 @@ Web corporativa elegante con secciones por especialidades, perfiles de abogados,
   '{"consultas_digitales": "+320%", "visitas_web": "+400%", "rejuvenecimiento_clientela": "35%"}'::jsonb,
   true,
   false,
-  5,
+  6,
   'García-Válcarcel & Cáceres: Web Bufete Abogados Murcia',
   'Modernización digital de bufete tradicional. Diseño web corporativo y estrategia de contenidos.',
   '2024-01-20',
@@ -286,7 +286,7 @@ Crear una plataforma de descubrimiento que ahorra tiempo a los usuarios al mostr
   '{"lugares_curados": "+5000", "usuarios_activos": "+15K", "recurrencia": "60%", "ahorro_tiempo": "80%"}'::jsonb,
   true,
   true,
-  6,
+  7,
   'Casi Cinco: Plataforma de Lugares Premium 4.7+ Estrellas',
   'Desarrollo de plataforma web de curación de experiencias premium. Solo los mejores lugares de España.',
   '2023-11-10',
@@ -332,14 +332,14 @@ Una herramienta indispensable para propietarios de autocaravanas que centraliza 
   '{"usuarios_activos": "+20K", "ubicaciones": "+3600", "valoraciones_ia": "+5K", "ahorro_mantenimiento": "30%"}'::jsonb,
   true,
   true,
-  7,
+  8,
   'Mapa Furgocasa: Plataforma IA para Autocaravanas',
   'Desarrollo de plataforma con IA para gestión de autocaravanas. GPT-4, sistema anti-robos y +3600 áreas.',
   '2023-09-15',
   NOW()
 );
 
--- Proyecto 8: HAKADOGS
+-- Proyecto 8: HAKADOGS - RENOVACIÓN 2026 CON ESCUELA ONLINE
 INSERT INTO portfolio_projects (
   title, slug, client, industry,
   short_description, full_description,
@@ -350,38 +350,57 @@ INSERT INTO portfolio_projects (
   meta_title, meta_description,
   project_date, published_at
 ) VALUES (
-  'Hakadogs: Centro de Adiestramiento Canino',
-  'hakadogs-adiestramiento-canino',
+  'Hakadogs: Renovación Completa con Next.js y Escuela Online con IA',
+  'hakadogs-escuela-online-ia',
   'Hakadogs',
-  'Servicios/Adiestramiento',
-  'Web para centro de adiestramiento y educación canina en Murcia con sistema de reservas de clases.',
-  '# Hakadogs: Presencia Digital para Adiestramiento Canino
+  'Educación/Tecnología/Adiestramiento',
+  'Renovación completa del sitio web con Next.js incluyendo blog con CMS, escuela online con cursos generados por IA, y sistema de pagos.',
+  '# Hakadogs: Plataforma Educativa Canina con Inteligencia Artificial
 
-Hakadogs es un centro especializado en educación y adiestramiento canino en Archena, Murcia, con filosofía basada en el respeto y comunicación clara con los animales.
+Hakadogs es un centro especializado en educación y adiestramiento canino en Archena, Murcia. En enero de 2026 realizamos una transformación digital completa, convirtiéndolo en una plataforma educativa de última generación.
 
 ## El Proyecto
 
-Desarrollar una web que transmita la filosofía del centro, facilite la reserva de clases y eduque a los propietarios sobre adiestramiento positivo.
+Renovación integral con tecnología Next.js, incluyendo un blog dinámico, CMS personalizado y, lo más innovador: una escuela online completa con cursos generados mediante inteligencia artificial.
 
-## Servicios Destacados
+## Innovación Tecnológica
 
-Web con información clara de servicios, calendario de clases grupales, sistema de reservas online y blog educativo sobre comportamiento canino.',
+### Escuela Online Inteligente
+
+- **Cursos Estructurados**: Sistema modular con cursos organizados en módulos y lecciones
+- **Generación con IA**: Utilización de inteligencia artificial para la creación automática de contenido educativo de calidad
+- **Gestión Administrativa**: Panel completo para que el administrador cree y gestione cursos, módulos y lecciones
+- **E-commerce Educativo**: Sistema de compra de cursos a precios accesibles con pasarela de pagos integrada
+- **Área de Usuario**: Dashboard para que los estudiantes accedan a sus cursos, realicen seguimiento de su progreso y gestionen sus compras
+
+### Blog y CMS
+
+- **Blog Educativo**: Artículos sobre adiestramiento canino, comportamiento, cuidados
+- **CMS Potente**: Gestor de contenidos que permite al equipo de Hakadogs publicar y editar fácilmente
+- **SEO Optimizado**: Estructura pensada para posicionamiento orgánico
+
+### Tecnología Next.js
+
+- **Rendimiento Superior**: Carga ultrarrápida con Server-Side Rendering
+- **Experiencia Móvil**: Diseño 100% responsive optimizado para todos los dispositivos
+- **Escalabilidad**: Arquitectura preparada para crecer sin límites',
   
-  'Hakadogs tenía gran reputación local pero limitada presencia online. Las reservas eran solo telefónicas, perdiendo muchos clientes potenciales. No había forma de mostrar su metodología y diferenciarse de competencia. Necesitaban llegar a propietarios de perros en toda la Región de Murcia.',
+  'La versión anterior de Hakadogs había quedado obsoleta tecnológicamente. No podían monetizar su conocimiento mediante cursos online. El contenido educativo estaba disperso sin un CMS eficiente. Necesitaban una plataforma que les permitiera crear y vender formaciones de forma ágil, escalable y con soporte de IA para generar contenido de calidad rápidamente.',
   
-  'Diseñamos una web cercana que refleja la filosofía del centro. Creamos sección educativa sobre adiestramiento positivo. Implementamos sistema de reservas online para clases. Desarrollamos calendario de clases grupales. Añadimos galería de casos de éxito. Optimizamos SEO local para "adiestramiento canino Murcia".',
+  'Migramos completamente la web a Next.js para máximo rendimiento. Desarrollamos un CMS a medida para gestión del blog. Creamos desde cero una plataforma de escuela online con arquitectura modular (cursos > módulos > lecciones). Integramos IA (GPT) para asistir en la generación de contenidos educativos. Implementamos sistema de pagos para venta de cursos. Desarrollamos panel administrativo completo. Creamos área de usuario con seguimiento de progreso. Optimizamos toda la experiencia UX/UI.',
   
-  'Hakadogs multiplicó su alcance geográfico significativamente. Las reservas online representan el 65% del total. El número de alumnos en clases grupales aumentó un 150%. La web posiciona en primera página para búsquedas locales. El contenido educativo ha generado +2000 visitas mensuales orgánicas. Tasa de conversión del 40% en consultas.',
+  'Hakadogs ahora cuenta con una plataforma educativa profesional que les permite monetizar su expertise. El administrador puede crear cursos completos en una fracción del tiempo gracias a la asistencia de IA. Los estudiantes pueden comprar y acceder a formaciones estructuradas a precios módicos. El blog genera tráfico orgánico constante. La nueva arquitectura en Next.js ha mejorado la velocidad de carga en un 70%. La plataforma está preparada para escalar a cientos de cursos y miles de estudiantes.',
   
+  '/portfolio/hakadogs-escuela-online-ia/hero.jpg',
   'https://www.hakadogs.com',
-  ARRAY['diseño-web', 'seo-local', 'fotografia'],
-  '{"reservas_online": "+150%", "alumnos": "+150%", "alcance": "+200%", "conversion": "40%"}'::jsonb,
+  ARRAY['diseño-web', 'apps-ia', 'desarrollo-web'],
+  '{"velocidad_carga": "+70%", "plataforma": "Next.js", "cursos_ia": "Generación automática", "monetizacion": "Nueva fuente de ingresos", "escalabilidad": "Ilimitada"}'::jsonb,
   true,
-  false,
-  8,
-  'Hakadogs: Web Adiestramiento Canino Murcia',
-  'Diseño web y sistema de reservas para centro de adiestramiento canino. SEO local y contenido educativo.',
-  '2023-08-20',
+  true,
+  1,
+  'Hakadogs: Escuela Online Canina con IA | Next.js',
+  'Renovación completa con Next.js: blog, CMS y escuela online con cursos generados por IA. Plataforma educativa de última generación.',
+  '2026-01-15',
   NOW()
 );
 

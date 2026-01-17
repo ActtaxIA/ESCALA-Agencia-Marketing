@@ -9,6 +9,7 @@ const fs = require('fs');
 
 // Webs del portfolio
 const PORTFOLIO_WEBS = [
+  { url: 'https://www.hakadogs.com', folder: 'hakadogs-escuela-online-ia', name: 'Hakadogs' },
   { url: 'https://www.furgocasa.com', folder: 'furgocasa-alquiler-camper', name: 'Furgocasa' },
   { url: 'https://www.mapafurgocasa.com', folder: 'mapa-furgocasa-ia', name: 'Mapa Furgocasa' },
   { url: 'https://www.tricholand.com', folder: 'tricholand-tienda-cactus', name: 'Tricholand' },
@@ -16,7 +17,6 @@ const PORTFOLIO_WEBS = [
   { url: 'https://www.gvcexpertos.com', folder: 'gvc-expertos-abogados', name: 'GVC Expertos' },
   { url: 'https://www.gvcabogados.com', folder: 'gvc-abogados-murcia', name: 'GVC Abogados' },
   { url: 'https://www.casicinco.com', folder: 'casi-cinco-recomendaciones', name: 'Casi Cinco' },
-  { url: 'https://www.hakadogs.com', folder: 'hakadogs-adiestramiento-canino', name: 'Hakadogs' },
   { url: 'https://www.onprocuradores.com', folder: 'on-procuradores-murcia', name: 'ON Procuradores' },
   { url: 'https://www.ondeon.es', folder: 'ondeon-hilo-musical', name: 'Ondeón' },
   { url: 'https://www.rebecamedina.es', folder: 'rebeca-medina', name: 'Rebeca Medina' },

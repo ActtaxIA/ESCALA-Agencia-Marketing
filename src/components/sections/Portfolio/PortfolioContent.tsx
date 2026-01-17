@@ -28,6 +28,7 @@ interface Project {
 const serviceToCategory: Record<string, string> = {
   'diseño-web': 'web',
   'diseno-web': 'web',
+  'desarrollo-web': 'dev', // Añadido: desarrollo web como categoría separada
   'seo-local': 'seo',
   'seo': 'seo',
   'redes-sociales': 'social',
@@ -41,6 +42,7 @@ const serviceToCategory: Record<string, string> = {
 // Colores por categoría
 const categoryColors: Record<string, string> = {
   'web': '#4a7c9b',
+  'dev': '#2d5f7f', // Azul más oscuro para desarrollo
   'seo': '#1e3a5f',
   'social': '#ffb366',
   'ads': '#ff6b35',
@@ -53,6 +55,7 @@ const categoryColors: Record<string, string> = {
 // Iconos por categoría
 const categoryIcons: Record<string, string> = {
   'web': '🌐',
+  'dev': '💻', // Icono laptop para desarrollo
   'seo': '📈',
   'social': '📱',
   'ads': '🎯',
@@ -65,6 +68,7 @@ const categoryIcons: Record<string, string> = {
 // Labels por categoría
 const categoryLabels: Record<string, string> = {
   'web': 'Diseño Web',
+  'dev': 'Desarrollo Web', // Label específico para desarrollo
   'seo': 'SEO Local',
   'social': 'Redes Sociales',
   'ads': 'Google Ads',

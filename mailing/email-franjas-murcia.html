@@ -33,27 +33,8 @@
             mso-table-rspace: 0pt;
         }
         
-        /* Fuente personalizada */
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
-        
         body {
-            font-family: 'Outfit', 'Arial', sans-serif;
-        }
-
-        /* Animación sutil del texto (funciona en algunos clientes) */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-text {
-            animation: slideIn 1s ease-out;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
         }
 
         /* Responsive */
@@ -71,7 +52,6 @@
             .stripe-text {
                 font-size: 14px !important;
                 writing-mode: horizontal-tb !important;
-                transform: none !important;
                 padding: 10px !important;
             }
             
@@ -100,8 +80,9 @@
                     
                     <!-- LOGO HEADER -->
                     <tr>
-                        <td colspan="8" style="background: linear-gradient(135deg, #0f1729 0%, #1e3a5f 100%); padding: 40px 20px; text-align: center;">
-                            <div style="color: #ffffff; font-family: 'Outfit', Arial, sans-serif;">
+                        <td colspan="8" bgcolor="#0f1729" style="background-color: #0f1729; padding: 0; text-align: center;">
+                            <a href="https://www.eskaladigital.com" style="text-decoration: none; display: block; padding: 40px 20px;">
+                            <div style="color: #ffffff; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                 <div style="font-size: 42px; font-weight: 800; letter-spacing: 0.3em; margin-bottom: 8px;" class="logo-text">
                                     ESKALA
                                 </div>
@@ -109,26 +90,27 @@
                                     Agencia de Marketing Digital
                                 </div>
                             </div>
+                            </a>
                         </td>
                     </tr>
 
                     <!-- MENSAJE PRINCIPAL -->
                     <tr>
-                        <td colspan="8" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%); padding: 50px 30px; text-align: center;" class="main-message">
-                            <h1 style="margin: 0 0 20px 0; font-size: 36px; font-weight: 800; color: #0f1729; line-height: 1.2; font-family: 'Outfit', Arial, sans-serif;">
+                        <td colspan="8" bgcolor="#ffffff" style="background-color: #ffffff; padding: 50px 30px; text-align: center;" class="main-message">
+                            <h1 style="margin: 0 0 20px 0; font-size: 36px; font-weight: 800; color: #0f1729; line-height: 1.2; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                 Somos tu agencia de<br>
-                                <span style="background: linear-gradient(135deg, #4a7c9b 0%, #87ceeb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                                <span style="color: #4a7c9b;">
                                     Marketing Digital
                                 </span>
                             </h1>
-                            <p style="margin: 0 0 30px 0; font-size: 18px; color: #6b7280; line-height: 1.6; font-family: 'Outfit', Arial, sans-serif;">
+                            <p style="margin: 0 0 30px 0; font-size: 18px; color: #6b7280; line-height: 1.6; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                 Hacemos crecer negocios como el tuyo en <strong>Murcia</strong><br>
                                 con estrategias que realmente funcionan.
                             </p>
                             <table cellpadding="0" cellspacing="0" border="0" align="center">
                                 <tr>
-                                    <td align="center" style="border-radius: 50px; background: linear-gradient(135deg, #ff6b35 0%, #ffb366 100%); padding: 16px 40px;">
-                                        <a href="https://www.eskaladigital.com/contacto" style="color: #ffffff; text-decoration: none; font-weight: 700; font-size: 16px; font-family: 'Outfit', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
+                                    <td align="center" bgcolor="#ff6b35" style="border-radius: 50px; background-color: #ff6b35; padding: 16px 40px;">
+                                        <a href="https://www.eskaladigital.com/contacto" style="color: #ffffff; text-decoration: none; font-weight: 700; font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
                                             Hablemos →
                                         </a>
                                     </td>
@@ -140,121 +122,97 @@
                     <!-- FRANJAS VERTICALES CON SERVICIOS -->
                     <tr>
                         <!-- Franja 1: Diseño Web -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #0f1729 0%, #1a2744 50%, #2d3a52 100%); position: relative;">
-                            <a href="https://www.eskaladigital.com/servicios/diseno-web" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        WEB
-                                    </div>
-                                </div>
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#0f1729" style="background-color: #0f1729;">
+                            <a href="https://www.eskaladigital.com/servicios/diseno-web" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">WEB</div>
                             </a>
                         </td>
-
-                        <!-- Franja 2: SEO Local -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6f 50%, #3d5a7f 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/seo-local" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        SEO
-                                    </div>
-                                </div>
+                        <!-- Franja 2: SEO -->
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#1e3a5f" style="background-color: #1e3a5f;">
+                            <a href="https://www.eskaladigital.com/servicios/seo-local" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">SEO</div>
                             </a>
                         </td>
-
-                        <!-- Franja 3: Redes Sociales -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #4a7c9b 0%, #5a9cb8 50%, #7ab4c9 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/redes-sociales" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #1a1a2e; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(255,255,255,0.3); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        RRSS
-                                    </div>
-                                </div>
+                        <!-- Franja 3: RRSS -->
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#4a7c9b" style="background-color: #4a7c9b;">
+                            <a href="https://www.eskaladigital.com/servicios/redes-sociales" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">RRSS</div>
                             </a>
                         </td>
-
-                        <!-- Franja 4: Google Ads -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #87ceeb 0%, #b0e0f0 50%, #e0f4ff 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/google-ads" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #1a1a2e; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(255,255,255,0.3); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        ADS
-                                    </div>
-                                </div>
+                        <!-- Franja 4: ADS -->
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#87ceeb" style="background-color: #87ceeb;">
+                            <a href="https://www.eskaladigital.com/servicios/google-ads" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #0f1729; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">ADS</div>
                             </a>
                         </td>
-
                         <!-- Franja 5: IA -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #fff5e6 0%, #ffecd2 50%, #ffd9b3 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/apps-ia" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #1a1a2e; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(255,255,255,0.3); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        IA
-                                    </div>
-                                </div>
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#fff5e6" style="background-color: #fff5e6;">
+                            <a href="https://www.eskaladigital.com/servicios/apps-ia" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #0f1729; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">IA</div>
                             </a>
                         </td>
-
-                        <!-- Franja 6: Fotografía -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #ffb366 0%, #ff9933 50%, #ff7f00 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/fotografia" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #1a1a2e; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(255,255,255,0.3); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        FOTO
-                                    </div>
-                                </div>
+                        <!-- Franja 6: FOTO -->
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#ffb366" style="background-color: #ffb366;">
+                            <a href="https://www.eskaladigital.com/servicios/fotografia" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #0f1729; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">FOTO</div>
                             </a>
                         </td>
-
-                        <!-- Franja 7: Branding -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #ff6b35 0%, #e84a23 50%, #c0392b 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/branding" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        BRAND
-                                    </div>
-                                </div>
+                        <!-- Franja 7: BRAND -->
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#ff6b35" style="background-color: #ff6b35;">
+                            <a href="https://www.eskaladigital.com/servicios/branding" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">BRAND</div>
                             </a>
                         </td>
-
-                        <!-- Franja 8: Email -->
-                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" style="background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);">
-                            <a href="https://www.eskaladigital.com/servicios/email-marketing" style="text-decoration: none; display: block; height: 100%; width: 100%; position: relative;">
-                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg); text-align: center; width: 100%;" class="stripe-text">
-                                    <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); white-space: nowrap; font-family: 'Outfit', Arial, sans-serif;">
-                                        EMAIL
-                                    </div>
-                                </div>
+                        <!-- Franja 8: EMAIL -->
+                        <td width="12.5%" height="350" align="center" valign="middle" class="stripe-cell" bgcolor="#1a1a2e" style="background-color: #1a1a2e;">
+                            <a href="https://www.eskaladigital.com/servicios/email-marketing" style="text-decoration: none; display: block; width: 100%; height: 100%;">
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; font-family: Arial, sans-serif; margin: 0 auto;" class="stripe-text">EMAIL</div>
                             </a>
                         </td>
                     </tr>
 
                     <!-- CTA FINAL -->
                     <tr>
-                        <td colspan="8" style="background: linear-gradient(135deg, #0f1729 0%, #1e3a5f 100%); padding: 40px 30px; text-align: center;">
-                            <p style="margin: 0 0 20px 0; font-size: 20px; font-weight: 600; color: #ffffff; font-family: 'Outfit', Arial, sans-serif;">
+                        <td colspan="8" bgcolor="#0f1729" style="background-color: #0f1729; padding: 40px 30px; text-align: center;">
+                            <p style="margin: 0 0 20px 0; font-size: 20px; font-weight: 600; color: #ffffff; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                 ¿Hablamos de tu proyecto?
                             </p>
-                            <p style="margin: 0 0 30px 0; font-size: 14px; color: #b0e0f0; font-family: 'Outfit', Arial, sans-serif;">
+                            <p style="margin: 0 0 30px 0; font-size: 14px; color: #b0e0f0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                 📍 Murcia, España<br>
                                 ✉️ contacto@eskaladigital.com<br>
                                 📱 +34 626 82 34 04
                             </p>
+                            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto 25px auto;">
+                                <tr>
+                                    <td align="center" bgcolor="#ff6b35" style="border-radius: 50px; background-color: #ff6b35;">
+                                        <a href="https://www.eskaladigital.com" style="display: block; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 16px 40px; text-transform: uppercase; letter-spacing: 0.1em;">
+                                            Visita eskala.com →
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                             <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
                                 <tr>
                                     <td style="padding: 0 5px;">
-                                        <a href="https://www.eskaladigital.com/portfolio" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Outfit', Arial, sans-serif;">
+                                        <a href="https://www.eskaladigital.com" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                                            Home
+                                        </a>
+                                    </td>
+                                    <td style="color: #4a7c9b; padding: 0 5px;">•</td>
+                                    <td style="padding: 0 5px;">
+                                        <a href="https://www.eskaladigital.com/portfolio" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                             Portfolio
                                         </a>
                                     </td>
                                     <td style="color: #4a7c9b; padding: 0 5px;">•</td>
                                     <td style="padding: 0 5px;">
-                                        <a href="https://www.eskaladigital.com/blog" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Outfit', Arial, sans-serif;">
+                                        <a href="https://www.eskaladigital.com/blog" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                             Blog
                                         </a>
                                     </td>
                                     <td style="color: #4a7c9b; padding: 0 5px;">•</td>
                                     <td style="padding: 0 5px;">
-                                        <a href="https://www.eskaladigital.com/contacto" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Outfit', Arial, sans-serif;">
+                                        <a href="https://www.eskaladigital.com/contacto" style="color: #87ceeb; text-decoration: none; font-size: 13px; font-weight: 600; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                             Contacto
                                         </a>
                                     </td>
@@ -265,9 +223,9 @@
 
                     <!-- FOOTER -->
                     <tr>
-                        <td colspan="8" style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 11px; color: #9ca3af; font-family: 'Outfit', Arial, sans-serif; line-height: 1.6;">
+                        <td colspan="8" style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 11px; color: #9ca3af; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.6;">
                             © 2025 ESKALA Marketing Digital. Todos los derechos reservados.<br>
-                            <a href="mailto:contacto@eskaladigital.com?subject=Quiero%20cancelar%20mi%20suscripci%C3%B3n" style="color: #4a7c9b; text-decoration: underline;">Cancelar suscripción</a>
+                            <a href="mailto:contacto@eskaladigital.com?subject=Quiero%20cancelar%20mi%20suscripci%C3%B3n%20a%20ESKALA%20MARKETING%20DIGITAL" style="color: #4a7c9b; text-decoration: underline;">Cancelar suscripción</a>
                         </td>
                     </tr>
 

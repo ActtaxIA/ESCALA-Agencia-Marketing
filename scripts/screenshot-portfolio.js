@@ -10,6 +10,7 @@ const fs = require('fs');
 // Webs del portfolio
 const PORTFOLIO_WEBS = [
   { url: 'https://www.hakadogs.com', folder: 'hakadogs-escuela-online-ia', name: 'Hakadogs' },
+  { url: 'https://www.alemanypajaron.es', folder: 'aleman-pajaron-gestion-obras', name: 'Alemán y Pajarón' },
   { url: 'https://www.furgocasa.com', folder: 'furgocasa-alquiler-camper', name: 'Furgocasa' },
   { url: 'https://www.mapafurgocasa.com', folder: 'mapa-furgocasa-ia', name: 'Mapa Furgocasa' },
   { url: 'https://www.tricholand.com', folder: 'tricholand-tienda-cactus', name: 'Tricholand' },
@@ -21,6 +22,8 @@ const PORTFOLIO_WEBS = [
   { url: 'https://www.ondeon.es', folder: 'ondeon-hilo-musical', name: 'Ondeón' },
   { url: 'https://www.rebecamedina.es', folder: 'rebeca-medina', name: 'Rebeca Medina' },
   { url: 'https://www.abogadoslaboralistasibiza.com', folder: 'bcm-abogados-ibiza', name: 'BCM Abogados' },
+  { url: 'https://www.health4spain.com/es', folder: 'health4spain-marketplace-extranjeros', name: 'Health4Spain' },
+  { url: 'https://www.retiru.com/es', folder: 'retiru-marketplace-retiros-wellness', name: 'Retiru' },
 ];
 
 const PORTFOLIO_DIR = path.join(__dirname, '../public/portfolio');

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Outfit } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -9,22 +9,56 @@ const outfit = Outfit({
   display: 'swap',
 })
 
+export const viewport: Viewport = {
+  themeColor: '#ff6b35',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.eskaladigital.com'),
+  
   title: {
     default: 'ESKALA | Agencia de Marketing Digital en Murcia',
     template: '%s | ESKALA Marketing Digital',
   },
+  
   description: 'Agencia de marketing digital en Murcia. Diseño web, SEO, redes sociales, Google Ads y aplicaciones con IA. Llevamos tu negocio al siguiente nivel.',
+  
   keywords: ['agencia marketing murcia', 'marketing digital murcia', 'diseño web murcia', 'seo murcia', 'redes sociales murcia', 'google ads murcia', 'community manager murcia'],
+  
   authors: [{ name: 'ESKALA Marketing Digital', url: 'https://www.eskaladigital.com' }],
   creator: 'ESKALA Marketing Digital',
   publisher: 'ESKALA Marketing Digital',
+  
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+  
+  // CONFIGURACIÓN DE ICONOS (CRÍTICO PARA GOOGLE)
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  
+  // PWA MANIFEST (CRÍTICO)
+  manifest: '/manifest.json',
+  
+  // APPLE WEB APP
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'ESKALA',
+  },
+  
   openGraph: {
     type: 'website',
     locale: 'es_ES',
@@ -41,6 +75,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  
   twitter: {
     card: 'summary_large_image',
     title: 'ESKALA | Agencia de Marketing Digital en Murcia',
@@ -49,6 +84,8 @@ export const metadata: Metadata = {
     creator: '@eskaladigital',
     images: ['/eskala_digital_opengraph.png'],
   },
+  
+  // ROBOTS (CRÍTICO PARA INDEXACIÓN)
   robots: {
     index: true,
     follow: true,
@@ -60,27 +97,13 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  
   verification: {
     // google: 'tu-codigo-verificacion-google',
     // yandex: 'tu-codigo-yandex',
   },
+  
   category: 'marketing',
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
-  },
-  manifest: '/site.webmanifest',
 }
 
 // Schema JSON-LD para datos estructurados
@@ -146,14 +169,12 @@ export default function RootLayout({
   return (
     <html lang="es" className={outfit.variable}>
       <head>
-        {/* Favicon y manifest */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#ff6b35" />
+        {/* PWA Meta Tags */}
+        <meta name="application-name" content="ESKALA Marketing Digital" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="ESKALA" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#0f1729" />
         
         {/* JSON-LD Schema */}

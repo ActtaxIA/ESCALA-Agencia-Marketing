@@ -404,7 +404,103 @@ Renovación integral con tecnología Next.js, incluyendo un blog dinámico, CMS 
   NOW()
 );
 
--- Proyecto 9: ON PROCURADORES
+-- Proyecto 9: ALEMÁN Y PAJARÓN
+INSERT INTO portfolio_projects (
+  title, slug, client, industry,
+  short_description, full_description,
+  challenge, solution, results,
+  featured_image, website_url,
+  services, metrics,
+  published, featured, order_position,
+  meta_title, meta_description,
+  project_date, published_at
+) VALUES (
+  'Alemán y Pajarón: Plataforma PWA para Gestión de Obras con IA',
+  'aleman-pajaron-gestion-obras',
+  'Alemán y Pajarón',
+  'Construcción/Ingeniería/Tecnología',
+  'PWA completa con Next.js para ingeniero de obras en Murcia. Blog con IA, notificaciones push, panel de administración y gestión de presupuestos.',
+  '# Alemán y Pajarón: Transformación Digital para Gestión de Obras
+
+Alemán y Pajarón es una empresa de gestión técnica de obras y proyectos en Murcia, dirigida por ingenieros especializados con más de 15 años de experiencia en dirección de obra, coordinación y licencias.
+
+## El Proyecto
+
+Desarrollo de una plataforma web progresiva (PWA) completa con Next.js, que no solo presenta los servicios, sino que funciona como herramienta de gestión y comunicación en tiempo real con los clientes.
+
+## Innovación Tecnológica
+
+### Progressive Web App (PWA)
+
+- **Instalable**: Los usuarios pueden instalar la web como aplicación en su móvil
+- **Offline Ready**: Funciona sin conexión para consultar información
+- **Experiencia Nativa**: Comportamiento similar a una app móvil
+- **Actualizaciones Automáticas**: Siempre la última versión disponible
+
+### Notificaciones Push en Tiempo Real
+
+- **Alertas Instantáneas**: El administrador recibe notificaciones push cuando alguien contacta
+- **Gestión desde Móvil**: Notificaciones directas en el teléfono móvil
+- **Sin Perder Clientes**: Respuesta inmediata a solicitudes de presupuesto
+- **Multicanal**: Funciona en escritorio y móvil
+
+### Panel de Administración Avanzado
+
+- **Gestión de Contactos**: Visualización de todos los contactos y presupuestos
+- **Sistema de Estados**: Pendiente, Respondido, Aceptado, Presupuesto, etc.
+- **Backend Completo**: Control total desde interfaz intuitiva
+- **Histórico**: Seguimiento de todas las interacciones
+
+### Blog con Inteligencia Artificial
+
+- **Contenido Generado por IA**: Artículos de calidad sobre construcción y reformas
+- **SEO Optimizado**: Posicionamiento orgánico para términos del sector
+- **Actualización Constante**: Nuevo contenido de forma ágil
+- **Autoridad Digital**: Establecimiento como expertos del sector
+
+### Múltiples Landing Pages
+
+- **Páginas Específicas**: Landing para cada servicio
+- **Conversión Optimizada**: Diseñadas para captar presupuestos
+- **SEO Local**: Optimización para "reformas Murcia", "licencias Murcia", etc.
+- **Experiencia Personalizada**: Contenido adaptado a cada necesidad
+
+## Servicios Destacados en la Web
+
+- Dirección de Obra
+- Gestión de Proyectos
+- Asesoramiento Técnico
+- Licencias y Permisos
+- Diseño de Espacios
+- Reformas Integrales
+
+## Tecnología Next.js
+
+- **Rendimiento Excepcional**: Carga ultrarrápida
+- **SEO Avanzado**: Estructura optimizada para buscadores
+- **Escalabilidad**: Preparado para crecer
+- **Mantenimiento Sencillo**: Código moderno y actualizable',
+  
+  'Alemán y Pajarón necesitaba una presencia digital profesional que reflejara sus 15 años de experiencia. Perdían clientes potenciales al no poder responder inmediatamente a solicitudes de presupuesto fuera de horario. No tenían sistema para gestionar y hacer seguimiento de contactos. El contenido educativo requería mucho tiempo de creación. Necesitaban diferenciarse de competencia local.',
+  
+  'Desarrollamos una PWA completa con Next.js que funciona como app móvil instalable. Implementamos sistema de notificaciones push para alertas instantáneas en móvil del administrador. Creamos panel de administración completo para gestionar contactos con sistema de estados. Desarrollamos blog con contenido generado por IA sobre construcción y reformas. Diseñamos múltiples landing pages optimizadas para servicios específicos. Implementamos formularios de presupuesto que se integran con el backend. Aplicamos estrategia SEO local para Murcia. Optimizamos toda la experiencia de usuario y conversión.',
+  
+  'Alemán y Pajarón ahora cuenta con una plataforma tecnológica avanzada que les da ventaja competitiva. Las notificaciones push permiten responder en minutos a cualquier solicitud. El panel de administración centraliza toda la gestión de clientes. El blog con IA genera contenido de calidad constantemente para SEO. Las múltiples landing pages captan tráfico cualificado por servicio. La PWA ofrece experiencia de app sin necesidad de tiendas. El posicionamiento local ha mejorado significativamente. Los clientes perciben innovación y profesionalidad.',
+  
+  '/portfolio/aleman-pajaron-gestion-obras/hero.jpg',
+  'https://www.alemanypajaron.es',
+  ARRAY['diseño-web', 'apps-ia', 'seo-local', 'desarrollo-web'],
+  '{"pwa": "Progressive Web App", "notificaciones": "Push en tiempo real", "admin_panel": "Gestión completa", "blog_ia": "Contenido automatizado", "landing_pages": "Múltiples servicios"}'::jsonb,
+  true,
+  true,
+  2,
+  'Alemán y Pajarón: PWA Gestión Obras Murcia | Next.js + IA',
+  'PWA con Next.js para gestión de obras: notificaciones push, panel admin, blog con IA y landing pages. Tecnología avanzada para ingeniería.',
+  '2025-12-10',
+  NOW()
+);
+
+-- Proyecto 10: ON PROCURADORES
 INSERT INTO portfolio_projects (
   title, slug, client, industry,
   short_description, full_description,

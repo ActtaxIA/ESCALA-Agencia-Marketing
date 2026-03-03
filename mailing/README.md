@@ -50,21 +50,29 @@ Emails agresivos para empresas que recibieron un mal servicio del Kit Digital.
 
 ---
 
-## ✅ Compatibilidad con Outlook
+## ✅ Compatibilidad con Outlook y Clientes Tradicionales
 
-**IMPORTANTE:** Todos los emails de Kit Digital han sido optimizados para Outlook:
+**TODOS los emails están optimizados para Outlook, Gmail, Apple Mail y clientes tradicionales:**
 
-- ✅ Sin `linear-gradient()` (usa `bgcolor` sólido)
-- ✅ Fuente Arial (universal)
-- ✅ Tablas HTML para layout
-- ✅ Estilos inline
-- ✅ Condicionales MSO para Outlook
+- ✅ **Sin linear-gradient()** — Usa `bgcolor` y `background-color` sólidos
+- ✅ **Sin radial-gradient** — Elementos decorativos eliminados o reemplazados
+- ✅ **Sin position: absolute** — Layout basado en tablas
+- ✅ **Sin @keyframes/animaciones** — Compatible con todos los clientes
+- ✅ **Fuente Arial** — Universal, sin dependencia de Google Fonts
+- ✅ **Tablas HTML** — Layout clásico para máxima compatibilidad
+- ✅ **Estilos inline** — Donde sea necesario
+- ✅ **Condicionales MSO** — `<!--[if mso]>` para Outlook
+- ✅ **Responsive** — Media queries para móviles (600px)
 
 ---
 
-## 🔗 Links en Todos los Emails
+## 🔗 Links y CTAs en Todos los Emails
 
-Cada email incluye en el footer:
+**Cada email incluye:**
+- **CTA principal** (botón o enlace destacado) que dirige a la web o contacto
+- **Link "Visita nuestra web"** en emails Kit Digital (además del mailto)
+- **Logo/header** con enlace a https://www.eskaladigital.com
+- **Footer** con navegación completa:
 
 ```html
 <!-- Links de navegación -->
@@ -72,9 +80,10 @@ Cada email incluye en el footer:
 <a href="https://www.eskaladigital.com/quienes-somos">Quiénes Somos</a>
 <a href="https://www.eskaladigital.com/portfolio">Portfolio</a>
 <a href="https://www.eskaladigital.com/blog">Blog</a>
+<a href="https://www.eskaladigital.com/contacto">Contacto</a>
 
 <!-- Cancelar suscripción -->
-<a href="mailto:contacto@eskaladigital.com?subject=Quiero%20cancelar%20mi%20suscripci%C3%B3n">
+<a href="mailto:contacto@eskaladigital.com?subject=Quiero%20cancelar%20mi%20suscripci%C3%B3n%20a%20ESKALA%20MARKETING%20DIGITAL">
     Cancelar suscripción
 </a>
 ```
@@ -96,12 +105,13 @@ Web: https://www.eskaladigital.com
 
 | Cliente | Soporte |
 |---------|---------|
+| Outlook 2016/2019/365 Desktop | ✅ Completo |
+| Outlook.com (web) | ✅ Completo |
 | Gmail (web/móvil) | ✅ Completo |
-| Outlook 2016/2019/365 | ✅ Completo (sin animaciones) |
-| Outlook.com | ✅ Completo |
-| Apple Mail (iOS/macOS) | ✅ Completo con animaciones |
+| Apple Mail (iOS/macOS) | ✅ Completo |
 | Yahoo Mail | ✅ Completo |
 | Thunderbird | ✅ Completo |
+| Samsung Mail | ✅ Completo |
 
 ---
 
@@ -219,11 +229,11 @@ mailing/
 
 - [ ] Email remitente: `contacto@eskaladigital.com`
 - [ ] Subject line atractivo
-- [ ] Todos los links funcionan
-- [ ] Link "Quiénes Somos" → `/quienes-somos` ✅
+- [ ] Todos los links funcionan (Home, Quiénes Somos, Portfolio, Blog, Contacto)
 - [ ] Link "Cancelar suscripción" con mailto correcto
-- [ ] Probado en Outlook
-- [ ] Responsive verificado
+- [ ] **Probado en Outlook** (Desktop y web)
+- [ ] **Probado en Gmail** (web y app)
+- [ ] Responsive verificado (móvil 600px)
 - [ ] Sin errores ortográficos
 - [ ] Cumple RGPD
 

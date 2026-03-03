@@ -23,9 +23,20 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
 
-  // Headers de seguridad
+  // Headers de seguridad y cache
   async headers() {
     return [
+      // Cache headers para favicons (1 año)
+      {
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Headers de seguridad
       {
         source: '/:path*',
         headers: [

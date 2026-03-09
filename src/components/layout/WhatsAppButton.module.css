@@ -346,13 +346,15 @@
   }
 
   .chatBox {
-    width: calc(100vw - 2rem);
-    max-width: 350px;
-    right: 1rem;
+    /* En móvil: posición fija respecto al viewport para encajar correctamente */
+    position: fixed;
     left: 1rem;
-    margin: 0 auto;
+    right: 1rem;
+    width: auto;
+    max-width: none;
     bottom: 70px;
     transform: translateY(20px) scale(0.95);
+    box-sizing: border-box;
   }
 
   .chatOpen {

@@ -1,14 +1,26 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './WhatsAppButton.module.css'
 
 const PHONE_NUMBER = '34626823404'
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const check = () => setIsMobile(typeof window !== 'undefined' && window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+  return isMobile
+}
 
 export default function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState('')
   const [step, setStep] = useState<'greeting' | 'writing'>('greeting')
+  const isMobile = useIsMobile()
 
   const handleOpen = () => {
     setIsOpen(true)
@@ -99,7 +111,7 @@ export default function WhatsAppButton() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                autoFocus
+                autoFocus={!isMobile}
                 rows={2}
               />
               <button 

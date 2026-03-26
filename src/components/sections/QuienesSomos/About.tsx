@@ -1,17 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect } from 'react'
 import styles from './About.module.css'
-import Link from 'next/link'
-
-const stripes = [
-  { label: 'Nosotros', href: '/quienes-somos' },
-  { label: 'Método', href: '/metodologia' },
-  { label: 'Servicios', href: '/servicios' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Éxitos', href: '/exitos' },
-  { label: 'Contacto', href: '/contacto' },
-]
 
 export default function About() {
   useEffect(() => {
@@ -36,13 +27,16 @@ export default function About() {
   return (
     <section className={styles.about} id="about">
         <div className={styles.aboutGrid}>
-          {/* Visual con franjas interactivas */}
-          <div className={styles.aboutVisual}>
-            {stripes.map((stripe, index) => (
-              <Link key={index} href={stripe.href}>
-                <span>{stripe.label}</span>
-              </Link>
-            ))}
+          {/* Imagen optimizada para SEO en lugar del carrusel repetido */}
+          <div className={`${styles.aboutImageContainer} fade-up`}>
+            <Image 
+              src="/images/oficina-creativa-murcia.png" 
+              alt="Equipo de la Agencia de Marketing Digital ESKALA trabajando en estrategias SEO en su oficina de Murcia" 
+              fill
+              className={styles.aboutImage}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className={styles.imageOverlay}></div>
           </div>
 
           <div className={`${styles.aboutContent} fade-up`}>
@@ -51,38 +45,38 @@ export default function About() {
             </h2>
             
             <p>
-              <strong>ESKALA</strong> es una <strong>agencia de marketing digital con sede en Murcia</strong> especializada 
-              en ayudar a empresas locales y nacionales a crecer en el entorno digital. Desde nuestra oficina en el corazón 
-              de la <strong>Región de Murcia</strong>, trabajamos con negocios de todos los sectores: abogados, asesorías, 
-              clínicas, comercios, restaurantes, inmobiliarias y empresas de servicios.
+              <strong>ESKALA</strong> es una <strong>agencia de marketing digital con sede en Murcia</strong>, pero con mentalidad global. Nos especializamos 
+              en ayudar a empresas locales y pymes de ámbito nacional a multiplicar su visibilidad y facturación en el entorno digital. Desde nuestra oficina en el corazón 
+              de la <strong>Región de Murcia</strong>, impulsamos negocios de todos los sectores: despachos de abogados, asesorías, 
+              clínicas de salud, e-commerce, restaurantes, inmobiliarias y empresas de servicios profesionales.
             </p>
 
             <h3>¿Por qué elegir una agencia local en Murcia?</h3>
             <p>
-              Conocemos el mercado murciano. Entendemos las necesidades de los negocios de <strong>Murcia capital</strong>, 
-              <strong>Cartagena</strong>, <strong>Lorca</strong>, <strong>Molina de Segura</strong> y toda la región. 
-              Esta cercanía nos permite crear estrategias de <strong>marketing digital personalizadas</strong> que conectan 
-              con tu audiencia local y te ayudan a destacar frente a tu competencia.
+              Conocemos a fondo el tejido empresarial y el mercado murciano. Entendemos perfectamente las necesidades, retos y el comportamiento del consumidor de negocios en <strong>Murcia capital</strong>, 
+              <strong> Cartagena</strong>, <strong>Lorca</strong>, <strong>Molina de Segura</strong> y toda la región. 
+              Esta cercanía territorial y cultural nos permite diseñar <strong>estrategias de marketing digital personalizadas</strong> que conectan genuinamente 
+              con tu audiencia local y te hacen destacar indiscutiblemente frente a tu competencia más directa.
             </p>
 
-            <h3>Nuestro enfoque: Resultados reales</h3>
+            <h3>Nuestro enfoque: Resultados reales orientados al retorno</h3>
             <p>
-              No vendemos humo. En ESKALA combinamos <strong>creatividad, tecnología y estrategia</strong> para impulsar 
-              tu negocio. Aplicamos las últimas tendencias en <strong>marketing digital e inteligencia artificial</strong> 
-              para maximizar cada euro invertido. Cada proyecto es único, cada estrategia es personalizada, y cada resultado 
-              es medible.
+              No vendemos humo ni métricas vanidosas. En ESKALA combinamos <strong>creatividad, tecnología avanzada y visión de negocio</strong> para impulsar 
+              tu empresa. Aplicamos las últimas tendencias en <strong>marketing digital e inteligencia artificial</strong> 
+              para optimizar procesos y maximizar cada euro que inviertes. Cada proyecto es único, cada estrategia es a medida, y cada resultado 
+              es 100% medible a través de KPIs concretos.
             </p>
 
             <p>
-              Ya sea que necesites <strong>posicionarte en Google</strong> con SEO local, crear una <strong>web profesional</strong>, 
-              gestionar tus <strong>redes sociales</strong> o lanzar campañas de <strong>Google Ads</strong>, estamos aquí para 
-              acompañarte en cada paso del camino. Somos más que una agencia: somos tu <strong>partner estratégico digital</strong>.
+              Ya sea que necesites <strong>posicionar tu web en lo más alto de Google</strong> mediante SEO local, desarrollar un <strong>diseño web corporativo de alto rendimiento</strong>, 
+              gestionar estratégicamente tus <strong>redes sociales</strong>, o lanzar campañas hiper-segmentadas de <strong>Google Ads y Meta Ads</strong>, nuestro equipo de expertos está aquí para 
+              acompañarte como tu <strong>partner tecnológico y estratégico de confianza</strong>.
             </p>
 
             <div className={styles.aboutStats}>
               <div className={styles.stat}>
                 <div className={styles.statNumber}>50+</div>
-                <div className={styles.statLabel}>Proyectos</div>
+                <div className={styles.statLabel}>Proyectos Exitosos</div>
               </div>
               <div className={styles.stat}>
                 <div className={styles.statNumber}>98%</div>

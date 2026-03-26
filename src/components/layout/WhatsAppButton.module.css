@@ -92,6 +92,7 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .chatOpen {
@@ -249,10 +250,12 @@
   display: flex;
   gap: 0.5rem;
   align-items: flex-end;
+  min-width: 0;
 }
 
 .chatInput {
   flex: 1;
+  min-width: 0;
   border: none;
   border-radius: 20px;
   padding: 0.8rem 1rem;
@@ -270,6 +273,7 @@
 
 .startChatBtn {
   flex: 1;
+  min-width: 0;
   background: white;
   border: none;
   border-radius: 20px;
@@ -331,7 +335,7 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .whatsappContainer {
-    bottom: 1.5rem;
+    bottom: 1rem;
     right: 1rem;
   }
 
@@ -346,18 +350,96 @@
   }
 
   .chatBox {
-    /* En móvil: posición fija respecto al viewport para encajar correctamente */
+    /* Móvil: 100% ancho, sin scroll horizontal, como app nativa */
     position: fixed;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    max-width: none;
-    bottom: 70px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    bottom: 0;
+    top: auto;
+    height: 85dvh;
+    max-height: 600px;
+    border-radius: 16px 16px 0 0;
     transform: translateY(20px) scale(0.95);
     box-sizing: border-box;
+    overflow: hidden;
+    touch-action: pan-y;
   }
 
   .chatOpen {
     transform: translateY(0) scale(1);
+  }
+
+  .chatHeader {
+    padding: 0.75rem 1rem;
+    flex-shrink: 0;
+  }
+
+  .chatHeaderText strong {
+    font-size: 0.9rem;
+  }
+
+  .chatBody {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.75rem 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .messageBubble {
+    max-width: 95%;
+  }
+
+  .messageBubble p {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .quickReplies {
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .quickReplies button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .chatFooter {
+    padding: 0.6rem 0.75rem;
+    flex-shrink: 0;
+  }
+
+  /* 16px evita zoom automático en iOS al enfocar input */
+  .chatInput,
+  .startChatBtn {
+    font-size: 16px !important;
+  }
+
+  .chatInput {
+    padding: 0.7rem 1rem;
+  }
+
+  .startChatBtn {
+    padding: 0.8rem 1rem;
+  }
+
+  .sendBtn {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .chatPowered {
+    padding: 0.4rem;
+    font-size: 0.65rem;
+    flex-shrink: 0;
   }
 }

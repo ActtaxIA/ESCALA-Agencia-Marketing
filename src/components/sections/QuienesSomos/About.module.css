@@ -13,58 +13,29 @@
   align-items: center;
 }
 
-.aboutVisual {
+.aboutImageContainer {
   position: relative;
-  height: 450px;
-  display: flex;
-  border-radius: 20px;
+  height: 600px;
+  border-radius: 24px;
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.aboutVisual a {
-  flex: 1;
-  transition: all 0.4s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+.aboutImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.aboutVisual a:hover {
-  flex: 2.5;
+.aboutImageContainer:hover .aboutImage {
+  transform: scale(1.05);
 }
 
-.aboutVisual a span {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  color: white;
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 17, 23, 0.8) 0%, rgba(14, 17, 23, 0) 50%);
+  pointer-events: none;
 }
-
-.aboutVisual a:nth-child(3) span,
-.aboutVisual a:nth-child(4) span {
-  color: var(--text);
-}
-
-.aboutVisual a:hover span {
-  opacity: 1;
-}
-
-.aboutVisual:hover a:not(:hover) {
-  filter: brightness(0.6);
-}
-
-.aboutVisual a:nth-child(1) { background: var(--stripe-2); }
-.aboutVisual a:nth-child(2) { background: var(--stripe-3); }
-.aboutVisual a:nth-child(3) { background: var(--stripe-4); }
-.aboutVisual a:nth-child(4) { background: var(--stripe-5); }
-.aboutVisual a:nth-child(5) { background: var(--stripe-6); }
-.aboutVisual a:nth-child(6) { background: var(--stripe-7); }
 
 .aboutContent h2 {
   font-size: 2.5rem;
@@ -135,8 +106,8 @@
     grid-template-columns: 1fr;
   }
 
-  .aboutVisual {
-    height: 300px;
+  .aboutImageContainer {
+    height: 400px;
   }
 }
 

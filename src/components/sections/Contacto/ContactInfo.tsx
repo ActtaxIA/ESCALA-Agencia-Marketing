@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './ContactInfo.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const contactMethods = [
   {
@@ -27,7 +26,6 @@ const contactMethods = [
 export default function ContactInfo() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.contactInfo}>
         <div className={`${styles.sectionHeader} fade-up`}>

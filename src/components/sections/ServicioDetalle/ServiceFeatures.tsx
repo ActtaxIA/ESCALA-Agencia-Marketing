@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import styles from './ServiceFeatures.module.css'
-import { StripeDivider } from '@/components/layout'
 
 interface Feature {
   icon: string
@@ -35,7 +34,6 @@ export default function ServiceFeatures({ features, title }: ServiceFeaturesProp
 
   return (
     <>
-      <StripeDivider />
       
       <section className={styles.features}>
         <div className={`${styles.sectionHeader} fade-up`}>

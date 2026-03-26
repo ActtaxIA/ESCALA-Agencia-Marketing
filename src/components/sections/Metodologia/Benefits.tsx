@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Benefits.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const benefits = [
   {
@@ -24,7 +23,6 @@ const benefits = [
 export default function Benefits() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.benefits}>
         <div className={`${styles.sectionHeader} fade-up`}>

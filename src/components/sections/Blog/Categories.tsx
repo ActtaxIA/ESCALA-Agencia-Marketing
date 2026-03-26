@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Categories.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const categories = [
   { name: 'SEO', count: 12, icon: '📈' },
@@ -15,7 +14,6 @@ const categories = [
 export default function Categories() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.categories}>
         <div className={`${styles.sectionHeader} fade-up`}>

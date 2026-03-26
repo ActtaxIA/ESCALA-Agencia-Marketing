@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './BlogGrid.module.css'
-import { StripeDivider } from '@/components/layout'
 import { createClient } from '@/lib/supabase/client'
 import { decodeHtmlEntities } from '@/lib/htmlUtils'
 
@@ -220,7 +219,6 @@ export default function BlogGrid({ searchTerm = '', selectedCategory = 'all', on
 
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.blogSection} data-results-section>
         <div className={styles.container}>

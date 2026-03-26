@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Results.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const results = [
   { metric: '+250%', label: 'Crecimiento medio en tráfico web' },
@@ -13,7 +12,6 @@ const results = [
 export default function Results() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.results}>
         <div className={`${styles.sectionHeader} fade-up`}>

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import styles from './ServiceCTA.module.css'
-import { StripeDivider } from '@/components/layout'
 
 interface ServiceCTAProps {
   title: string
@@ -12,7 +11,6 @@ interface ServiceCTAProps {
 export default function ServiceCTA({ title, subtitle }: ServiceCTAProps) {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.cta}>
         <div className={styles.ctaDecor}></div>

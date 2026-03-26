@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './ServiceProcess.module.css'
-import { StripeDivider } from '@/components/layout'
 
 interface Step {
   step: string
@@ -16,7 +15,6 @@ interface ServiceProcessProps {
 export default function ServiceProcess({ steps }: ServiceProcessProps) {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.process}>
         <div className={`${styles.sectionHeader} fade-up`}>

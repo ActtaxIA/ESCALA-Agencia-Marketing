@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Stats.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const stats = [
   { number: '50+', label: 'Proyectos completados' },
@@ -13,7 +12,6 @@ const stats = [
 export default function Stats() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.stats}>
         <div className={`${styles.sectionHeader} fade-up`}>

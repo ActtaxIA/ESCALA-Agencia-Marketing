@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import styles from './PostsGrid.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const posts = [
   {
@@ -69,7 +68,6 @@ export default function PostsGrid() {
 
   return (
     <>
-      <StripeDivider />
       
       <section className={styles.posts} id="posts">
         <div className={`${styles.sectionHeader} fade-up`}>

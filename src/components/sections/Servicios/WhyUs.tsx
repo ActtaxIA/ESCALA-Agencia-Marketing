@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './WhyUs.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const reasons = [
   {
@@ -21,7 +20,6 @@ const reasons = [
 export default function WhyUs() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.whyUs}>
         <div className={`${styles.sectionHeader} fade-up`}>

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { StripeDivider } from '@/components/layout/StripeDivider'
 import ServiceCTA from '@/components/sections/ServicioDetalle/ServiceCTA'
 import { STRIPE_COLORS } from '@/types'
 import styles from './servicio.module.css'
@@ -96,7 +95,6 @@ export function ServicioPage({ service, data }: Props) {
         </div>
       </section>
 
-      <StripeDivider />
 
       {/* BENEFICIOS Y CARACTERÍSTICAS */}
       <section className="section">
@@ -139,7 +137,6 @@ export function ServicioPage({ service, data }: Props) {
         </div>
       </section>
 
-      <StripeDivider />
 
       {/* PROCESO */}
       <section className={`section ${styles.procesoSection}`}>
@@ -183,7 +180,6 @@ export function ServicioPage({ service, data }: Props) {
         </div>
       </section>
 
-      <StripeDivider />
 
       {/* OTROS SERVICIOS */}
       <section className="section">

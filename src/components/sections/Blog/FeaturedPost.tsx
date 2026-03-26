@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './FeaturedPost.module.css'
-import { StripeDivider } from '@/components/layout'
 import { createClient } from '@/lib/supabase/client'
 
 // Mapeo de categorías a colores
@@ -97,7 +96,6 @@ export default function FeaturedPost() {
 
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.featured}>
         <div className={styles.container}>

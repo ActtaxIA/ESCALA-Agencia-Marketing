@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import styles from './ProjectsGrid.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const projects = [
   {
@@ -63,7 +62,6 @@ export default function ProjectsGrid() {
 
   return (
     <>
-      <StripeDivider />
       
       <section className={styles.projects}>
         <div className={`${styles.sectionHeader} fade-up`}>

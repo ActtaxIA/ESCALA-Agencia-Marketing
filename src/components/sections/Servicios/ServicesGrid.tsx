@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import styles from './ServicesGrid.module.css'
-import { StripeDivider } from '@/components/layout'
 import Link from 'next/link'
 
 const services = [
@@ -76,7 +75,6 @@ export default function ServicesGrid() {
 
   return (
     <>
-      <StripeDivider />
       
       <section className={styles.services}>
         <div className={`${styles.sectionHeader} fade-up`}>

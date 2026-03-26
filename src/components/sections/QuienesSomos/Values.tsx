@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Values.module.css'
-import { StripeDivider } from '@/components/layout'
 
 const values = [
   {
@@ -24,7 +23,6 @@ const values = [
 export default function Values() {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.values} id="valores">
         <div className={`${styles.sectionHeader} fade-up`}>

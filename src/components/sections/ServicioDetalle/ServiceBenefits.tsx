@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './ServiceBenefits.module.css'
-import { StripeDivider } from '@/components/layout'
 
 interface Benefit {
   title: string
@@ -15,7 +14,6 @@ interface ServiceBenefitsProps {
 export default function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.benefits}>
         <div className={`${styles.sectionHeader} fade-up`}>

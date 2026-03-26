@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './ServiceTestimonial.module.css'
-import { StripeDivider } from '@/components/layout'
 
 interface ServiceTestimonialProps {
   quote: string
@@ -13,7 +12,6 @@ interface ServiceTestimonialProps {
 export default function ServiceTestimonial({ quote, author, position, company }: ServiceTestimonialProps) {
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.testimonial}>
         <div className={`${styles.testimonialContent} fade-up`}>

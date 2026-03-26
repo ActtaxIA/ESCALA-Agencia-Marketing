@@ -8,7 +8,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from './FeaturedSlider.module.css'
-import { StripeDivider } from '@/components/layout'
 import { createClient } from '@/lib/supabase/client'
 import { decodeHtmlEntities } from '@/lib/htmlUtils'
 
@@ -137,7 +136,6 @@ export default function FeaturedSlider() {
 
   return (
     <>
-      <StripeDivider />
 
       <section className={styles.featured}>
         <div className={styles.container}>

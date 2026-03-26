@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './PortfolioContent.module.css'
-import { StripeDivider } from '@/components/layout'
 import { createClient } from '@/lib/supabase/client'
 
 interface Project {
@@ -271,7 +270,6 @@ export default function PortfolioContent() {
         </div>
       </section>
 
-      <StripeDivider />
 
       {/* Grid de proyectos */}
       <section className={styles.projectsSection}>

@@ -1,5 +1,6 @@
 /* ===== HERO ===== */
 .hero {
+  --hero-accent: var(--stripe-3);
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -28,14 +29,14 @@
   overflow: hidden;
 }
 
-.heroStripes a:nth-child(1) { background: linear-gradient(180deg, var(--stripe-1) 0%, var(--stripe-2) 100%); }
-.heroStripes a:nth-child(2) { background: linear-gradient(180deg, var(--stripe-2) 0%, var(--stripe-3) 100%); }
-.heroStripes a:nth-child(3) { background: linear-gradient(180deg, var(--stripe-3) 0%, var(--stripe-4) 100%); }
-.heroStripes a:nth-child(4) { background: linear-gradient(180deg, var(--stripe-4) 0%, var(--stripe-5) 100%); }
-.heroStripes a:nth-child(5) { background: linear-gradient(180deg, var(--stripe-5) 0%, var(--stripe-6) 100%); }
-.heroStripes a:nth-child(6) { background: linear-gradient(180deg, var(--stripe-6) 0%, var(--stripe-7) 100%); }
-.heroStripes a:nth-child(7) { background: linear-gradient(180deg, var(--stripe-7) 0%, var(--stripe-8) 100%); }
-.heroStripes a:nth-child(8) { background: linear-gradient(180deg, var(--stripe-8) 0%, var(--stripe-1) 100%); }
+.heroStripes a:nth-child(1) { background: color-mix(in srgb, var(--hero-accent) 16%, var(--stripe-1)); }
+.heroStripes a:nth-child(2) { background: color-mix(in srgb, var(--hero-accent) 24%, var(--stripe-1)); }
+.heroStripes a:nth-child(3) { background: color-mix(in srgb, var(--hero-accent) 32%, var(--stripe-1)); }
+.heroStripes a:nth-child(4) { background: color-mix(in srgb, var(--hero-accent) 42%, var(--stripe-1)); }
+.heroStripes a:nth-child(5) { background: color-mix(in srgb, var(--hero-accent) 52%, var(--stripe-1)); }
+.heroStripes a:nth-child(6) { background: color-mix(in srgb, var(--hero-accent) 62%, var(--stripe-1)); }
+.heroStripes a:nth-child(7) { background: color-mix(in srgb, var(--hero-accent) 72%, var(--stripe-1)); }
+.heroStripes a:nth-child(8) { background: color-mix(in srgb, var(--hero-accent) 82%, var(--stripe-1)); }
 
 .heroStripeLabel {
   writing-mode: vertical-rl;
@@ -49,12 +50,6 @@
   transition: opacity 0.4s ease;
   color: white;
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.heroStripes a:nth-child(4) .heroStripeLabel,
-.heroStripes a:nth-child(5) .heroStripeLabel {
-  color: var(--text);
-  text-shadow: none;
 }
 
 .heroStripes a:hover {

@@ -1,4 +1,8 @@
-import ServicesStripes from '@/components/sections/Servicios/ServicesStripes'
+import { StandardLayout } from '@/components/layout'
+import Hero from '@/components/sections/Servicios/Hero'
+import ServicesGrid from '@/components/sections/Servicios/ServicesGrid'
+import WhyUs from '@/components/sections/Servicios/WhyUs'
+import CTA from '@/components/sections/Servicios/CTA'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -43,5 +47,12 @@ export const metadata: Metadata = {
 }
 
 export default function ServiciosPage() {
-  return <ServicesStripes />
+  return (
+    <StandardLayout>
+      <Hero />
+      <ServicesGrid />
+      <WhyUs />
+      <CTA />
+    </StandardLayout>
+  )
 }

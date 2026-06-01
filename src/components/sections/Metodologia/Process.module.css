@@ -50,9 +50,15 @@
 }
 
 .stepIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  color: var(--stripe-7);
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(232, 74, 35, 0.12));
 }
 
 .stepNumber {

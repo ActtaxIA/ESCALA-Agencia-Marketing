@@ -1,22 +1,23 @@
 'use client'
 
 import styles from './ContactInfo.module.css'
+import { Mail, Phone, MapPin, type LucideIcon } from 'lucide-react'
 
-const contactMethods = [
+const contactMethods: { Icon: LucideIcon; title: string; info: string; desc: string }[] = [
   {
-    icon: '📧',
+    Icon: Mail,
     title: 'Email',
     info: 'contacto@eskaladigital.com',
     desc: 'Respuesta en menos de 24h',
   },
   {
-    icon: '📱',
+    Icon: Phone,
     title: 'Teléfono',
     info: '+34 626 82 34 04',
     desc: 'Lun-Vie 9:00-18:00',
   },
   {
-    icon: '📍',
+    Icon: MapPin,
     title: 'Ubicación',
     info: 'Murcia, España',
     desc: 'Atención presencial con cita',
@@ -35,7 +36,9 @@ export default function ContactInfo() {
         <div className={styles.methodsGrid}>
           {contactMethods.map((method, index) => (
             <div key={index} className={`${styles.methodCard} fade-up`}>
-              <div className={styles.methodIcon}>{method.icon}</div>
+              <div className={styles.methodIcon}>
+                <method.Icon size={30} strokeWidth={2} aria-hidden="true" />
+              </div>
               <h3 className={styles.methodTitle}>{method.title}</h3>
               <p className={styles.methodInfo}>{method.info}</p>
               <p className={styles.methodDesc}>{method.desc}</p>

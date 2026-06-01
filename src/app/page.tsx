@@ -1,4 +1,5 @@
 import HomeStripes from '@/components/sections/Home/HomeStripes'
+import { Footer } from '@/components/layout/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -39,6 +40,11 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  return <HomeStripes />
+  return (
+    <>
+      <HomeStripes />
+      <Footer />
+    </>
+  )
 }
 

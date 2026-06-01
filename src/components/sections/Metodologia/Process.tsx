@@ -2,43 +2,44 @@
 
 import { useEffect } from 'react'
 import styles from './Process.module.css'
+import { Search, Target, Zap, BarChart3, Rocket, RefreshCw, type LucideIcon } from 'lucide-react'
 
-const steps = [
+const steps: { number: string; title: string; desc: string; Icon: LucideIcon }[] = [
   {
     number: '01',
     title: 'Análisis',
     desc: 'Estudiamos tu negocio, competencia y audiencia para entender tu situación actual y objetivos.',
-    icon: '🔍',
+    Icon: Search,
   },
   {
     number: '02',
     title: 'Estrategia',
     desc: 'Diseñamos un plan personalizado con KPIs claros y acciones concretas para alcanzar tus metas.',
-    icon: '🎯',
+    Icon: Target,
   },
   {
     number: '03',
     title: 'Ejecución',
     desc: 'Implementamos la estrategia con agilidad, creatividad y las mejores herramientas del mercado.',
-    icon: '⚡',
+    Icon: Zap,
   },
   {
     number: '04',
     title: 'Medición',
     desc: 'Monitorizamos resultados en tiempo real y optimizamos continuamente para maximizar el ROI.',
-    icon: '📊',
+    Icon: BarChart3,
   },
   {
     number: '05',
     title: 'Escalado',
     desc: 'Identificamos oportunidades de crecimiento y escalamos las acciones que más funcionan.',
-    icon: '🚀',
+    Icon: Rocket,
   },
   {
     number: '06',
     title: 'Mejora',
     desc: 'Iteramos constantemente basándonos en datos para seguir mejorando tus resultados.',
-    icon: '🔄',
+    Icon: RefreshCw,
   },
 ]
 
@@ -69,7 +70,9 @@ export default function Process() {
       <div className={styles.processGrid}>
         {steps.map((step, index) => (
           <div key={index} className={`${styles.stepCard} fade-up`}>
-            <div className={styles.stepIcon}>{step.icon}</div>
+            <div className={styles.stepIcon}>
+              <step.Icon size={36} strokeWidth={2} aria-hidden="true" />
+            </div>
             <div className={styles.stepNumber}>{step.number}</div>
             <h3 className={styles.stepTitle}>{step.title}</h3>
             <p className={styles.stepDesc}>{step.desc}</p>

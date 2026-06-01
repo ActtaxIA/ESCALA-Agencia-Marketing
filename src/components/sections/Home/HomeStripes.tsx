@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Monitor, Search, Share2, Target, Cpu, Bot, Palette, Mail, type LucideIcon } from 'lucide-react'
 import styles from './HomeStripes.module.css'
 
 interface StripeData {
@@ -23,15 +24,15 @@ const stripes: StripeData[] = [
   { section: 'contacto', icon: '★', title: 'Contacto', route: '/contacto' },
 ]
 
-const services = [
-  { slug: 'diseno-web', icon: '▦', title: 'Diseño Web', desc: 'Webs rápidas, modernas y optimizadas para convertir visitas en clientes.' },
-  { slug: 'seo-local', icon: '◉', title: 'SEO Local', desc: 'Aparece en Google cuando buscan tu negocio en Murcia y alrededores.' },
-  { slug: 'redes-sociales', icon: '◈', title: 'Redes Sociales', desc: 'Contenido y gestión que conecta con tu audiencia y construye marca.' },
-  { slug: 'google-ads', icon: '◎', title: 'Google Ads', desc: 'Campañas rentables que atraen clientes desde el primer día.' },
-  { slug: 'apps-ia', icon: '◆', title: 'Apps con IA', desc: 'Aplicaciones a medida que automatizan y potencian tu negocio.' },
-  { slug: 'chatbots', icon: '▣', title: 'Chatbots', desc: 'Atención 24/7 que responde y capta clientes de forma automática.' },
-  { slug: 'branding', icon: '✦', title: 'Branding', desc: 'Identidad de marca memorable que te diferencia de la competencia.' },
-  { slug: 'email-marketing', icon: '▤', title: 'Email Marketing', desc: 'Campañas de email que fidelizan y aumentan tus ventas.' },
+const services: { slug: string; Icon: LucideIcon; title: string; desc: string }[] = [
+  { slug: 'diseno-web', Icon: Monitor, title: 'Diseño Web', desc: 'Webs rápidas, modernas y optimizadas para convertir visitas en clientes.' },
+  { slug: 'seo-local', Icon: Search, title: 'SEO Local', desc: 'Aparece en Google cuando buscan tu negocio en Murcia y alrededores.' },
+  { slug: 'redes-sociales', Icon: Share2, title: 'Redes Sociales', desc: 'Contenido y gestión que conecta con tu audiencia y construye marca.' },
+  { slug: 'google-ads', Icon: Target, title: 'Google Ads', desc: 'Campañas rentables que atraen clientes desde el primer día.' },
+  { slug: 'apps-ia', Icon: Cpu, title: 'Apps con IA', desc: 'Aplicaciones a medida que automatizan y potencian tu negocio.' },
+  { slug: 'chatbots', Icon: Bot, title: 'Chatbots', desc: 'Atención 24/7 que responde y capta clientes de forma automática.' },
+  { slug: 'branding', Icon: Palette, title: 'Branding', desc: 'Identidad de marca memorable que te diferencia de la competencia.' },
+  { slug: 'email-marketing', Icon: Mail, title: 'Email Marketing', desc: 'Campañas de email que fidelizan y aumentan tus ventas.' },
 ]
 
 const reasons = [
@@ -201,7 +202,9 @@ export default function HomeStripes() {
                   href={`/servicios/${service.slug}`}
                   className={styles.serviceCard}
                 >
-                  <span className={styles.serviceIcon}>{service.icon}</span>
+                  <span className={styles.serviceIcon}>
+                    <service.Icon size={22} strokeWidth={2} aria-hidden="true" />
+                  </span>
                   <h3 className={styles.serviceTitle}>{service.title}</h3>
                   <p className={styles.serviceDesc}>{service.desc}</p>
                 </Link>

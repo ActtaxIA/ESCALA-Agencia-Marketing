@@ -5,27 +5,36 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import styles from './ContactOptions.module.css'
 import EmailContactButton from '@/components/ui/EmailContactButton'
+import { Mail, MessageCircle, Phone, Instagram, Facebook, Linkedin, Twitter, Zap, type LucideIcon } from 'lucide-react'
 
-const contactOptions = [
+const contactOptions: {
+  Icon: LucideIcon
+  title: string
+  description: string
+  action: string
+  email?: string
+  link?: string
+  info?: string
+}[] = [
   {
-    icon: '📧',
+    Icon: Mail,
     title: 'Email Directo',
     description: 'Escríbenos un email y te respondemos en menos de 24h',
     action: 'email',
     email: 'contacto@eskaladigital.com',
   },
   {
-    icon: '💬',
+    Icon: MessageCircle,
     title: 'WhatsApp',
     description: 'Chatea con nosotros de forma rápida y directa',
     action: 'whatsapp',
     link: 'https://wa.me/34626823404?text=Hola,%20me%20gustaría%20información%20sobre...',
   },
   {
-    icon: '📞',
+    Icon: Phone,
     title: 'Teléfono',
     description: 'Llámanos de Lun-Vie de 9:00 a 18:00',
     action: 'phone',
@@ -34,28 +43,28 @@ const contactOptions = [
   },
 ]
 
-const socialLinks = [
+const socialLinks: { name: string; Icon: LucideIcon; url: string; color: string }[] = [
   {
     name: 'Instagram',
-    icon: '📸',
+    Icon: Instagram,
     url: 'https://instagram.com/eskalamarketing',
     color: '#E1306C',
   },
   {
     name: 'Facebook',
-    icon: '👍',
+    Icon: Facebook,
     url: 'https://facebook.com/eskalamarketing',
     color: '#1877F2',
   },
   {
     name: 'LinkedIn',
-    icon: '💼',
+    Icon: Linkedin,
     url: 'https://linkedin.com/company/eskala-marketing',
     color: '#0A66C2',
   },
   {
     name: 'Twitter',
-    icon: '🐦',
+    Icon: Twitter,
     url: 'https://twitter.com/eskalamarketing',
     color: '#1DA1F2',
   },
@@ -96,7 +105,9 @@ export default function ContactOptions() {
       <div className={styles.optionsGrid}>
         {contactOptions.map((option, index) => (
           <div key={index} className={`${styles.optionCard} fade-up`}>
-            <div className={styles.optionIcon}>{option.icon}</div>
+            <div className={styles.optionIcon}>
+              <option.Icon size={32} strokeWidth={2} aria-hidden="true" />
+            </div>
             <h3 className={styles.optionTitle}>{option.title}</h3>
             <p className={styles.optionDescription}>{option.description}</p>
             
@@ -156,7 +167,9 @@ export default function ContactOptions() {
               className={styles.socialCard}
               style={{ '--social-color': social.color } as React.CSSProperties}
             >
-              <span className={styles.socialIcon}>{social.icon}</span>
+              <span className={styles.socialIcon}>
+                <social.Icon size={26} strokeWidth={2} aria-hidden="true" />
+              </span>
               <span className={styles.socialName}>{social.name}</span>
             </a>
           ))}
@@ -165,7 +178,9 @@ export default function ContactOptions() {
 
       {/* Info adicional */}
       <div className={`${styles.infoBox} fade-up`}>
-        <div className={styles.infoIcon}>⚡</div>
+        <div className={styles.infoIcon}>
+          <Zap size={28} strokeWidth={2} aria-hidden="true" />
+        </div>
         <div className={styles.infoContent}>
           <h4>Respuesta rápida garantizada</h4>
           <p>

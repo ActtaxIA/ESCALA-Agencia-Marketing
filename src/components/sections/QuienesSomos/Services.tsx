@@ -1,16 +1,17 @@
 'use client'
 
 import styles from './Services.module.css'
+import { Monitor, Search, Share2, Target, Cpu, Bot, Palette, Mail, type LucideIcon } from 'lucide-react'
 
-const services = [
-  { icon: '🌐', title: 'Diseño Web', desc: 'Webs modernas que convierten visitantes en clientes.' },
-  { icon: '📈', title: 'SEO Local', desc: 'Domina las búsquedas en Murcia y alrededores.' },
-  { icon: '📱', title: 'Redes Sociales', desc: 'Contenido que conecta con tu audiencia.' },
-  { icon: '🎯', title: 'Google Ads', desc: 'Campañas optimizadas para máximo ROI.' },
-  { icon: '🤖', title: 'Apps con IA', desc: 'Automatización inteligente para tu negocio.' },
-  { icon: '🤖', title: 'Chatbots', desc: 'Atención al cliente 24/7 con inteligencia artificial.' },
-  { icon: '✏️', title: 'Branding', desc: 'Identidades de marca memorables.' },
-  { icon: '📧', title: 'Email Marketing', desc: 'Emails que se abren y convierten.' },
+const services: { Icon: LucideIcon; title: string; desc: string }[] = [
+  { Icon: Monitor, title: 'Diseño Web', desc: 'Webs modernas que convierten visitantes en clientes.' },
+  { Icon: Search, title: 'SEO Local', desc: 'Domina las búsquedas en Murcia y alrededores.' },
+  { Icon: Share2, title: 'Redes Sociales', desc: 'Contenido que conecta con tu audiencia.' },
+  { Icon: Target, title: 'Google Ads', desc: 'Campañas optimizadas para máximo ROI.' },
+  { Icon: Cpu, title: 'Apps con IA', desc: 'Automatización inteligente para tu negocio.' },
+  { Icon: Bot, title: 'Chatbots', desc: 'Atención al cliente 24/7 con inteligencia artificial.' },
+  { Icon: Palette, title: 'Branding', desc: 'Identidades de marca memorables.' },
+  { Icon: Mail, title: 'Email Marketing', desc: 'Emails que se abren y convierten.' },
 ]
 
 export default function Services() {
@@ -23,7 +24,9 @@ export default function Services() {
       <div className={styles.servicesGrid}>
         {services.map((service, index) => (
           <div key={index} className={`${styles.serviceCard} fade-up`}>
-            <div className={styles.serviceIcon}>{service.icon}</div>
+            <div className={styles.serviceIcon}>
+              <service.Icon size={24} strokeWidth={2} aria-hidden="true" />
+            </div>
             <h3 className={styles.serviceTitle}>{service.title}</h3>
             <p className={styles.serviceDesc}>{service.desc}</p>
           </div>

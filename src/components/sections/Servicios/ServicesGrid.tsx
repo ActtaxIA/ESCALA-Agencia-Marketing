@@ -3,52 +3,53 @@
 import { useEffect } from 'react'
 import styles from './ServicesGrid.module.css'
 import Link from 'next/link'
+import { Monitor, Search, Share2, Target, Cpu, Bot, Palette, Mail, type LucideIcon } from 'lucide-react'
 
-const services = [
+const services: { Icon: LucideIcon; title: string; desc: string; slug: string }[] = [
   {
-    icon: '🌐',
+    Icon: Monitor,
     title: 'Diseño Web',
     desc: 'Webs modernas, rápidas y optimizadas que convierten visitantes en clientes.',
     slug: 'diseno-web',
   },
   {
-    icon: '📈',
+    Icon: Search,
     title: 'SEO Local',
     desc: 'Posicionamiento en Google para dominar las búsquedas en Murcia y alrededores.',
     slug: 'seo-local',
   },
   {
-    icon: '📱',
+    Icon: Share2,
     title: 'Redes Sociales',
     desc: 'Gestión completa de redes: contenido, community management y publicidad.',
     slug: 'redes-sociales',
   },
   {
-    icon: '🎯',
+    Icon: Target,
     title: 'Google Ads',
     desc: 'Campañas de publicidad optimizadas para máximo ROI y conversiones.',
     slug: 'google-ads',
   },
   {
-    icon: '🤖',
+    Icon: Cpu,
     title: 'Apps con IA',
     desc: 'Desarrollo de aplicaciones inteligentes y automatizaciones con IA.',
     slug: 'apps-ia',
   },
   {
-    icon: '🤖',
+    Icon: Bot,
     title: 'Chatbots',
     desc: 'Chatbots inteligentes para WhatsApp, web y voz. Atención 24/7 automatizada.',
     slug: 'chatbots',
   },
   {
-    icon: '✏️',
+    Icon: Palette,
     title: 'Branding',
     desc: 'Identidad visual completa: logo, paleta de colores, tipografía y más.',
     slug: 'branding',
   },
   {
-    icon: '📧',
+    Icon: Mail,
     title: 'Email Marketing',
     desc: 'Campañas de email automatizadas que generan ventas recurrentes.',
     slug: 'email-marketing',
@@ -88,7 +89,9 @@ export default function ServicesGrid() {
               href={`/servicios/${service.slug}`}
               className={`${styles.serviceCard} fade-up`}
             >
-              <div className={styles.serviceIcon}>{service.icon}</div>
+              <div className={styles.serviceIcon}>
+                <service.Icon size={24} strokeWidth={2} aria-hidden="true" />
+              </div>
               <h3 className={styles.serviceTitle}>{service.title}</h3>
               <p className={styles.serviceDesc}>{service.desc}</p>
               <span className={styles.serviceLink}>Ver más →</span>

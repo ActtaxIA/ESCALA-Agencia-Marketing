@@ -518,14 +518,16 @@ export function initUniversoScene(
 
     if (dest && scrollRoot.contains(dest)) {
       const destTop = dest.getBoundingClientRect().top + window.scrollY - rootTop
-      const destHeight = dest.offsetHeight
-      const finalRange = Math.max(destHeight - window.innerHeight * 0.45, window.innerHeight * 0.5)
+      const landingStart = Math.max(destTop - window.innerHeight, 0)
+      const landingEnd = destTop
 
-      if (scrolled < destTop) {
-        target = destTop > 0 ? (scrolled / destTop) * WORLD_PROGRESS_END : 0
+      if (scrolled <= landingStart) {
+        target = landingStart > 0 ? (scrolled / landingStart) * WORLD_PROGRESS_END : 0
+      } else if (scrolled <= landingEnd) {
+        const land = (scrolled - landingStart) / Math.max(landingEnd - landingStart, 1)
+        target = WORLD_PROGRESS_END + land * (1 - WORLD_PROGRESS_END)
       } else {
-        const inFinal = scrolled - destTop
-        target = WORLD_PROGRESS_END + Math.min(1, inFinal / finalRange) * (1 - WORLD_PROGRESS_END)
+        target = 1
       }
     } else {
       target = scrolled / maxScroll
@@ -547,8 +549,9 @@ export function initUniversoScene(
 
   function animate() {
     const t = clock.getElapsedTime()
-    const ease = target > 0.7 ? 0.16 : 0.06
+    const ease = target >= 0.99 ? 0.35 : target > 0.7 ? 0.16 : 0.06
     smooth += (target - smooth) * (reduced ? 1 : ease)
+    if (target >= 0.999) smooth = 1
 
     updateCamera(smooth, mx, my, camera)
 

@@ -148,13 +148,22 @@ export default function Universo3D() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
+    document.body.style.overflowX = 'hidden'
+    document.documentElement.style.overscrollBehavior = 'none'
+    return () => {
+      document.body.style.overflowX = ''
+      document.documentElement.style.overscrollBehavior = ''
+    }
+  }, [])
+
+  useEffect(() => {
     const canvas = canvasRef.current
     const main = mainRef.current
     if (!canvas || !main) return
 
     const scene = initUniversoScene(canvas, main, (value) => {
-      setProgress(value)
-      if (shipRef.current) shipRef.current.style.top = `${value * 100}%`
+      setProgress(value >= 0.995 ? 1 : value)
+      if (shipRef.current) shipRef.current.style.top = `${(value >= 0.995 ? 1 : value) * 100}%`
     })
 
     return () => scene.dispose()
@@ -264,8 +273,6 @@ export default function Universo3D() {
             </div>
           </div>
         </section>
-
-        <div className={styles.endHold} aria-hidden="true" />
       </main>
     </div>
   )

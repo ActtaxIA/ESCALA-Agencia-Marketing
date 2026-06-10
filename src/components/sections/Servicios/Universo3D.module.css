@@ -91,7 +91,6 @@
 .main {
   position: relative;
   z-index: 1;
-  padding-bottom: 15vh;
 }
 
 .section {
@@ -283,35 +282,17 @@
 }
 
 .final {
-  min-height: 240vh !important;
-  justify-content: flex-start !important;
+  min-height: 100vh !important;
+  height: 100vh;
+  justify-content: center !important;
   align-items: center !important;
   text-align: center;
-  padding-top: 12vh;
 }
 
 .final .card {
-  position: sticky;
-  top: 50%;
-  transform: translateY(-50%);
   width: 100%;
   max-width: 560px;
   pointer-events: auto;
-}
-
-.endHold {
-  min-height: 70vh;
-  pointer-events: none;
-}
-
-@media (min-width: 1024px) {
-  .final {
-    min-height: 300vh !important;
-  }
-
-  .endHold {
-    min-height: 85vh;
-  }
 }
 
 .finalTitle {

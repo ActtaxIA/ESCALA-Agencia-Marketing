@@ -264,6 +264,8 @@ export default function Universo3D() {
             </div>
           </div>
         </section>
+
+        <div className={styles.endHold} aria-hidden="true" />
       </main>
     </div>
   )

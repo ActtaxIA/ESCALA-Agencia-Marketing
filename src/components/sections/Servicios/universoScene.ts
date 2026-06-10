@@ -7,6 +7,44 @@ export type UniversoSceneApi = {
   dispose: () => void
 }
 
+const SUN_Z = -790
+const CAM_END_Z = -748
+const WORLD_PROGRESS_END = 0.82
+const CRUISE_TRAVEL = 0.9
+const TRAVEL_RANGE = 785
+
+function easeOutCubic(t: number) {
+  return 1 - (1 - t) ** 3
+}
+
+function updateCamera(
+  p: number,
+  mx: number,
+  my: number,
+  camera: THREE.PerspectiveCamera
+) {
+  if (p >= WORLD_PROGRESS_END) {
+    const land = easeOutCubic(Math.min(1, (p - WORLD_PROGRESS_END) / (1 - WORLD_PROGRESS_END)))
+    const zCruise = 20 - CRUISE_TRAVEL * TRAVEL_RANGE
+    const z = zCruise + (CAM_END_Z - zCruise) * land
+    const sway = Math.sin(CRUISE_TRAVEL * Math.PI * 3.2) * 8 * (1 - land)
+    const mouse = 1 - land * 0.92
+    camera.position.set(
+      sway + mx * 1.5 * mouse,
+      Math.cos(CRUISE_TRAVEL * Math.PI * 2.1) * 3 * (1 - land) - my * 1.2 * mouse,
+      z
+    )
+    camera.lookAt(sway * 0.4 * (1 - land), 0, THREE.MathUtils.lerp(z - 30, SUN_Z, land))
+    return
+  }
+
+  const travel = (p / WORLD_PROGRESS_END) * CRUISE_TRAVEL
+  const z = 20 - travel * TRAVEL_RANGE
+  const sway = Math.sin(travel * Math.PI * 3.2) * 8
+  camera.position.set(sway + mx * 1.5, Math.cos(travel * Math.PI * 2.1) * 3 - my * 1.2, z)
+  camera.lookAt(sway * 0.4, 0, z - 30)
+}
+
 export function initUniversoScene(
   canvas: HTMLCanvasElement,
   scrollRoot: HTMLElement,
@@ -474,8 +512,26 @@ export function initUniversoScene(
       target = 0
       return
     }
-    const scrolled = window.scrollY - rootTop
-    target = Math.min(1, Math.max(0, scrolled / maxScroll))
+
+    const scrolled = Math.min(Math.max(0, window.scrollY - rootTop), maxScroll)
+    const dest = document.getElementById('destino')
+
+    if (dest && scrollRoot.contains(dest)) {
+      const destTop = dest.getBoundingClientRect().top + window.scrollY - rootTop
+      const destHeight = dest.offsetHeight
+      const finalRange = Math.max(destHeight - window.innerHeight * 0.45, window.innerHeight * 0.5)
+
+      if (scrolled < destTop) {
+        target = destTop > 0 ? (scrolled / destTop) * WORLD_PROGRESS_END : 0
+      } else {
+        const inFinal = scrolled - destTop
+        target = WORLD_PROGRESS_END + Math.min(1, inFinal / finalRange) * (1 - WORLD_PROGRESS_END)
+      }
+    } else {
+      target = scrolled / maxScroll
+    }
+
+    target = Math.min(1, Math.max(0, target))
   }
 
   function onPointerMove(e: PointerEvent) {
@@ -491,14 +547,10 @@ export function initUniversoScene(
 
   function animate() {
     const t = clock.getElapsedTime()
-    smooth += (target - smooth) * (reduced ? 1 : 0.06)
+    const ease = target > 0.7 ? 0.16 : 0.06
+    smooth += (target - smooth) * (reduced ? 1 : ease)
 
-    // La cámara llega a la estrella (~88%) y el último tramo es “aterrizaje”
-    const travel = Math.min(1, smooth / 0.88)
-    const z = 20 - travel * 785
-    const sway = Math.sin(travel * Math.PI * 3.2) * 8
-    camera.position.set(sway + mx * 1.5, Math.cos(travel * Math.PI * 2.1) * 3 - my * 1.2, z)
-    camera.lookAt(sway * 0.4, 0, z - 30)
+    updateCamera(smooth, mx, my, camera)
 
     if (!reduced) animated.forEach((a) => a.fn(t))
 

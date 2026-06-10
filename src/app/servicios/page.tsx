@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { Footer } from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import type { Metadata } from 'next'
 
@@ -72,7 +71,6 @@ export default function ServiciosPage() {
   return (
     <>
       <Universo3D />
-      <Footer />
       <WhatsAppButton />
     </>
   )

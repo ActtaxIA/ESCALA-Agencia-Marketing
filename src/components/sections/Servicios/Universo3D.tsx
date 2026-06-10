@@ -143,14 +143,16 @@ const WORLDS: ServiceWorld[] = [
 
 export default function Universo3D() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const mainRef = useRef<HTMLElement>(null)
   const shipRef = useRef<HTMLDivElement>(null)
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    const main = mainRef.current
+    if (!canvas || !main) return
 
-    const scene = initUniversoScene(canvas, (value) => {
+    const scene = initUniversoScene(canvas, main, (value) => {
       setProgress(value)
       if (shipRef.current) shipRef.current.style.top = `${value * 100}%`
     })
@@ -185,7 +187,7 @@ export default function Universo3D() {
         <div className={styles.pct}>{pctLabel}</div>
       </div>
 
-      <main className={styles.main}>
+      <main ref={mainRef} className={styles.main}>
         <section className={`${styles.section} ${styles.hero}`}>
           <div className={styles.card}>
             <span className={styles.eyebrow} style={{ color: 'var(--orange)' }}>

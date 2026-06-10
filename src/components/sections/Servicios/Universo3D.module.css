@@ -91,6 +91,7 @@
 .main {
   position: relative;
   z-index: 1;
+  padding-bottom: 30vh;
 }
 
 .section {
@@ -282,8 +283,18 @@
 }
 
 .final {
-  justify-content: center !important;
+  min-height: 200vh !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
   text-align: center;
+  padding-top: 18vh;
+}
+
+.final .card {
+  position: sticky;
+  top: 22vh;
+  width: 100%;
+  max-width: 560px;
 }
 
 .finalTitle {

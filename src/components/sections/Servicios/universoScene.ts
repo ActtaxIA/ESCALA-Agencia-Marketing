@@ -9,6 +9,7 @@ export type UniversoSceneApi = {
 
 export function initUniversoScene(
   canvas: HTMLCanvasElement,
+  scrollRoot: HTMLElement,
   onProgress: (value: number) => void
 ): UniversoSceneApi {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true })
@@ -466,8 +467,15 @@ export function initUniversoScene(
   const clock = new THREE.Clock()
 
   function onScroll() {
-    const m = document.documentElement.scrollHeight - window.innerHeight
-    target = m > 0 ? window.scrollY / m : 0
+    const rootTop = scrollRoot.getBoundingClientRect().top + window.scrollY
+    const rootHeight = scrollRoot.offsetHeight
+    const maxScroll = rootHeight - window.innerHeight
+    if (maxScroll <= 0) {
+      target = 0
+      return
+    }
+    const scrolled = window.scrollY - rootTop
+    target = Math.min(1, Math.max(0, scrolled / maxScroll))
   }
 
   function onPointerMove(e: PointerEvent) {
@@ -485,9 +493,11 @@ export function initUniversoScene(
     const t = clock.getElapsedTime()
     smooth += (target - smooth) * (reduced ? 1 : 0.06)
 
-    const z = 20 - smooth * 785
-    const sway = Math.sin(smooth * Math.PI * 3.2) * 8
-    camera.position.set(sway + mx * 1.5, Math.cos(smooth * Math.PI * 2.1) * 3 - my * 1.2, z)
+    // La cámara llega a la estrella (~88%) y el último tramo es “aterrizaje”
+    const travel = Math.min(1, smooth / 0.88)
+    const z = 20 - travel * 785
+    const sway = Math.sin(travel * Math.PI * 3.2) * 8
+    camera.position.set(sway + mx * 1.5, Math.cos(travel * Math.PI * 2.1) * 3 - my * 1.2, z)
     camera.lookAt(sway * 0.4, 0, z - 30)
 
     if (!reduced) animated.forEach((a) => a.fn(t))

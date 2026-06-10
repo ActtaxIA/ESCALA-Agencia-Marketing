@@ -1,13 +1,34 @@
-import { StandardLayout } from '@/components/layout'
-import Hero from '@/components/sections/Servicios/Hero'
-import ServicesGrid from '@/components/sections/Servicios/ServicesGrid'
-import WhyUs from '@/components/sections/Servicios/WhyUs'
-import CTA from '@/components/sections/Servicios/CTA'
+import dynamic from 'next/dynamic'
+import { Footer } from '@/components/layout/Footer'
+import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import type { Metadata } from 'next'
+
+const Universo3D = dynamic(() => import('@/components/sections/Servicios/Universo3D'), {
+  ssr: false,
+  loading: () => (
+    <div
+      style={{
+        minHeight: '100vh',
+        background: '#0F1729',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#F4F2EE',
+        fontFamily: 'system-ui, sans-serif',
+        letterSpacing: '0.3em',
+        textTransform: 'uppercase',
+        fontSize: '0.75rem',
+      }}
+    >
+      Despegando…
+    </div>
+  ),
+})
 
 export const metadata: Metadata = {
   title: 'Servicios | ESCALA Marketing Digital',
-  description: 'Diseño web, SEO local, redes sociales, Google Ads, apps con IA, fotografía, branding y email marketing. 8 servicios especializados para hacer crecer tu negocio en Murcia.',
+  description:
+    'Explora el universo ESKALA: 8 servicios de marketing digital en 3D. Diseño web, SEO local, redes sociales, Google Ads, apps con IA, chatbots, branding y email marketing en Murcia.',
   keywords: [
     'servicios marketing digital murcia',
     'diseño web murcia',
@@ -15,13 +36,14 @@ export const metadata: Metadata = {
     'redes sociales murcia',
     'google ads murcia',
     'apps ia murcia',
-    'fotografía murcia',
+    'chatbots murcia',
     'branding murcia',
     'email marketing murcia',
   ],
   openGraph: {
-    title: 'Nuestros Servicios | ESKALA Marketing',
-    description: '8 servicios de marketing digital para impulsar tu negocio: diseño web, SEO, redes sociales, publicidad, IA y más.',
+    title: 'El Universo ESKALA | Servicios de Marketing Digital',
+    description:
+      'Travesía 3D por nuestros 8 servicios de marketing digital. Cada planeta es un servicio real para hacer crecer tu negocio en Murcia.',
     url: 'https://www.eskaladigital.com/servicios',
     siteName: 'ESKALA Marketing Digital',
     locale: 'es_ES',
@@ -31,14 +53,14 @@ export const metadata: Metadata = {
         url: '/eskala_digital_opengraph.png',
         width: 1200,
         height: 630,
-        alt: 'ESKALA - Servicios de Marketing Digital',
+        alt: 'ESKALA - Universo de Servicios de Marketing Digital',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nuestros Servicios | ESKALA Marketing',
-    description: '8 servicios de marketing digital para impulsar tu negocio.',
+    title: 'El Universo ESKALA | Servicios de Marketing Digital',
+    description: 'Travesía 3D por nuestros 8 servicios de marketing digital en Murcia.',
     images: ['/eskala_digital_opengraph.png'],
   },
   alternates: {
@@ -48,11 +70,10 @@ export const metadata: Metadata = {
 
 export default function ServiciosPage() {
   return (
-    <StandardLayout>
-      <Hero />
-      <ServicesGrid />
-      <WhyUs />
-      <CTA />
-    </StandardLayout>
+    <>
+      <Universo3D />
+      <Footer />
+      <WhatsAppButton />
+    </>
   )
 }

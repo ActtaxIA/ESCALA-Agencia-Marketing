@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESKALA — Home · Un día completo en franjas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#FF6B35;--bone:#F4F2EE;--inkDark:#23303F}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden}
+  body{background:#0F1B33;color:var(--bone);font-family:'Inter',sans-serif;font-weight:300}
+  ::selection{background:var(--orange);color:#fff}
+  a{color:inherit}
+  button{font-family:inherit}
+
+  /* ---------- TÍTULO CENTRAL (como la home real) ---------- */
+  .center-brand{
+    position:fixed;top:8vh;left:50%;transform:translateX(-50%);z-index:30;
+    text-align:center;pointer-events:none;transition:opacity .5s;
+  }
+  .center-brand h1{font-family:'Sora';font-weight:800;font-size:clamp(1.6rem,3.4vw,2.6rem);
+    letter-spacing:.55em;color:#2B2418;text-indent:.55em}
+  .center-brand p{font-family:'Sora';font-weight:700;font-size:.66rem;letter-spacing:.5em;
+    text-transform:uppercase;color:#B4581E;margin-top:.7rem;text-indent:.5em}
+  .tagline{
+    position:fixed;bottom:5.5vh;left:50%;transform:translateX(-50%);z-index:30;
+    font-family:'Sora';font-weight:600;font-size:.72rem;letter-spacing:.55em;
+    text-transform:uppercase;color:rgba(244,242,238,.85);text-indent:.55em;
+    text-shadow:0 2px 14px rgba(0,0,0,.4);pointer-events:none;transition:opacity .5s;
+  }
+  .stage[data-open] ~ .center-brand,.stage[data-open] ~ .tagline{opacity:0}
+
+  /* ---------- ESCENARIO ---------- */
+  .stage{display:flex;height:100vh;width:100vw}
+  .stripe{
+    position:relative;flex:1 1 0;min-width:0;cursor:pointer;overflow:hidden;outline:none;
+    background:linear-gradient(180deg,var(--top),var(--bot));
+    transition:flex .7s cubic-bezier(.66,0,.2,1);
+  }
+  .stripe:focus-visible{box-shadow:inset 0 0 0 3px rgba(244,242,238,.7)}
+
+  /* etiqueta en reposo: discreta, abajo, vertical */
+  .idle{position:absolute;inset:0;display:flex;flex-direction:column;
+    justify-content:flex-end;align-items:center;padding-bottom:12vh;transition:opacity .4s}
+  .idle .t{
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:'Sora';font-weight:700;font-size:.95rem;letter-spacing:.22em;
+    color:var(--lab);opacity:.55;white-space:nowrap;
+    transition:opacity .35s,letter-spacing .35s;
+  }
+  .idle .n{font-family:'Sora';font-weight:600;font-size:.62rem;letter-spacing:.2em;
+    color:var(--lab);opacity:.45;margin-top:1.2rem}
+  .stage:not([data-open]) .stripe:hover{flex:1.9}
+  .stage:not([data-open]) .stripe:hover .idle .t{opacity:1;letter-spacing:.32em}
+  .stage:not([data-open]) .stripe:hover .idle .n{opacity:.85}
+
+  /* ---------- SOL Y ESTRELLAS ---------- */
+  .sun{position:absolute;left:50%;top:72%;width:90px;height:90px;border-radius:50%;
+    transform:translate(-50%,-50%);pointer-events:none;
+    background:radial-gradient(circle,#FFE9A8 0%,#FFC95C 35%,rgba(255,178,62,.35) 60%,transparent 72%);
+    animation:sunpulse 5s ease-in-out infinite}
+  @keyframes sunpulse{50%{transform:translate(-50%,-50%) scale(1.18)}}
+  .star{position:absolute;border-radius:50%;background:#EAF2FF;pointer-events:none;
+    animation:tw 3.4s ease-in-out infinite}
+  @keyframes tw{50%{opacity:.15}}
+
+  /* ---------- EXPANDIDO ---------- */
+  .stage[data-open] .stripe{flex:0 0 54px}
+  .stage[data-open] .stripe.open{flex:1;cursor:default}
+  .stage[data-open] .stripe:not(.open) .idle .t{font-size:.78rem;opacity:.6}
+  .stage[data-open] .stripe:not(.open):hover .idle .t{opacity:1}
+
+  .full{position:absolute;inset:0;display:flex;align-items:center;
+    padding:0 clamp(2rem,7vw,7rem);opacity:0;pointer-events:none;transition:opacity .5s;color:var(--ink)}
+  .stripe.open .full{opacity:1;pointer-events:auto;transition:opacity .6s .35s}
+  .stripe.open .idle{opacity:0}
+  .full .inner{max-width:620px}
+  .full .crumb{font-family:'Sora';font-weight:700;font-size:.7rem;letter-spacing:.4em;
+    text-transform:uppercase;opacity:.75;margin-bottom:1.3rem;display:block}
+  .full h2{font-family:'Sora';font-weight:800;font-size:clamp(2.2rem,5.2vw,4.2rem);
+    line-height:1.04;margin-bottom:1.3rem;letter-spacing:-.01em}
+  .full p{font-size:1.02rem;line-height:1.85;opacity:.92;max-width:56ch}
+  .full .feat{margin-top:1.4rem;font-size:.92rem;line-height:2;opacity:.85}
+  .full .feat b{font-weight:700}
+  .ctas{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+  .cta{
+    display:inline-block;padding:1rem 2.4rem;font-family:'Sora';font-weight:700;
+    font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
+    border-radius:99px;background:var(--ink);color:var(--top);
+    transition:transform .25s,box-shadow .25s;box-shadow:0 12px 30px rgba(0,0,0,.22);
+  }
+  .cta:hover{transform:translateY(-3px)}
+  .cta.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);box-shadow:none}
+  .cta:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+  /* ---------- CONTROLES ---------- */
+  .nav{
+    position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:50;
+    display:flex;align-items:center;gap:1rem;
+    background:rgba(15,23,41,.6);backdrop-filter:blur(12px);
+    border:1px solid rgba(244,242,238,.16);border-radius:99px;padding:.55rem .8rem;
+    opacity:0;pointer-events:none;transition:opacity .45s;color:var(--bone);
+  }
+  .stage[data-open] ~ .nav{opacity:1;pointer-events:auto}
+  .nav button{background:transparent;border:0;color:inherit;cursor:pointer;
+    width:38px;height:38px;border-radius:50%;font-size:1rem;display:grid;place-items:center;
+    transition:background .25s}
+  .nav button:hover{background:rgba(244,242,238,.12)}
+  .nav button:focus-visible{outline:2px solid var(--orange)}
+  .nav .dots{display:flex;gap:.5rem}
+  .nav .dot{width:7px;height:7px;border-radius:50%;background:rgba(244,242,238,.25);
+    border:0;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+  .nav .dot.on{background:var(--orange);transform:scale(1.35)}
+  .nav .close{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;width:auto;
+    padding:0 1rem;border-radius:99px}
+
+  .hint{position:fixed;bottom:1.6vh;left:50%;transform:translateX(-50%);z-index:29;
+    font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(244,242,238,.5);
+    transition:opacity .4s;pointer-events:none}
+  .stage[data-open] ~ .hint{opacity:0}
+
+  /* ---------- MÓVIL ---------- */
+  @media (max-width:760px){
+    .stage{flex-direction:column}
+    .idle{flex-direction:row;justify-content:space-between;align-items:center;
+      padding:0 1.4rem}
+    .idle .t{writing-mode:horizontal-tb;transform:none;font-size:1rem}
+    .idle .n{margin-top:0}
+    .stage:not([data-open]) .stripe:hover{flex:1.6}
+    .stage[data-open] .stripe{flex:0 0 42px}
+    .stage[data-open] .stripe.open{flex:1}
+    .full{padding:1.4rem;align-items:flex-start;padding-top:4rem;overflow-y:auto}
+    .full h2{font-size:1.9rem}
+    .center-brand{top:auto;bottom:14vh}
+    .center-brand h1{font-size:1.3rem}
+    .tagline{display:none}
+    .nav{bottom:1rem;gap:.5rem}
+    .nav .dots{display:none}
+    .sun{width:60px;height:60px;left:78%;top:50%}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage"></div>
+
+<div class="center-brand">
+  <h1>ESKALA</h1>
+  <p>Marketing Digital</p>
+</div>
+<div class="tagline">Explora · Descubre · Escala</div>
+
+<div class="nav" id="nav" aria-label="Navegación de secciones">
+  <button id="prev" aria-label="Sección anterior">←</button>
+  <div class="dots" id="dots"></div>
+  <button id="next" aria-label="Sección siguiente">→</button>
+  <button class="close" id="close">✕ Cerrar</button>
+</div>
+
+<p class="hint">Cada franja es una sección · Click para entrar</p>
+
+<script>
+// Un día completo, de noche a noche — paleta de la home real
+const SECCIONES=[
+  {
+    id:'quienes-somos', t:'Quiénes somos', n:'01',
+    top:'#1A2C49', bot:'#0F1B33', ink:'#F4F2EE', lab:'#9FB6D6', stars:8,
+    h:'Murcianos.<br>Digitales.<br>Directos.',
+    p:'Desde 2020 ayudamos a empresas de Murcia, Cartagena, Lorca y toda la Región a crecer online. No somos una agencia más: somos tu partner estratégico, con reuniones presenciales cuando hagan falta y un conocimiento del mercado local que no se aprende en remoto.',
+    feat:'<b>→</b> Sede en Murcia, clientes en toda España &nbsp;·&nbsp; <b>→</b> Abogados, clínicas, comercios, restaurantes, inmobiliarias',
+    links:[
+      {label:'Conócenos ↗',href:'https://www.eskaladigital.com/quienes-somos',ext:true},
+    ]
+  },
+  {
+    id:'metodologia', t:'Metodología', n:'02',
+    top:'#2E4E70', bot:'#24405E', ink:'#F4F2EE', lab:'#A8C6E0', stars:0,
+    h:'Primero el diagnóstico.<br>Luego, el despegue.',
+    p:'Nada de plantillas: cada negocio arranca con una auditoría de dónde está y a dónde quiere llegar. Después construimos las bases, lanzamos la estrategia y medimos cada semana para ajustar. Sin humo: objetivos, plazos y números encima de la mesa.',
+    feat:'<b>1.</b> Diagnóstico &nbsp;·&nbsp; <b>2.</b> Estrategia &nbsp;·&nbsp; <b>3.</b> Ejecución &nbsp;·&nbsp; <b>4.</b> Medición y mejora continua',
+    links:[
+      {label:'Cómo trabajamos ↗',href:'https://www.eskaladigital.com/metodologia',ext:true},
+    ]
+  },
+  {
+    id:'servicios', t:'Servicios', n:'03',
+    top:'#6FA3BC', bot:'#5E92AC', ink:'#13202E', lab:'#13202E', stars:0,
+    h:'Ocho formas<br>de crecer.',
+    p:'Diseño web, SEO local, redes sociales, Google Ads, apps con IA, chatbots, branding y email marketing. Puedes verlos en franjas interactivas o, si te apetece volar, recorrerlos planeta a planeta en nuestro universo 3D.',
+    feat:'<b>→</b> Cada servicio con su equipo y su métrica &nbsp;·&nbsp; <b>→</b> Combinables según tu objetivo',
+    links:[
+      {label:'Franjas de servicios',href:'11-eskala-franjas.html'},
+      {label:'El universo 3D 🚀',href:'12-eskala-universo-3d.html',ghost:true},
+      {label:'eskaladigital.com ↗',href:'https://www.eskaladigital.com/servicios',ext:true,ghost:true},
+    ]
+  },
+  {
+    id:'exitos', t:'Casos de éxito', n:'04',
+    top:'#BFE0EF', bot:'#A9D2E6', ink:'#13202E', lab:'#1E3346', stars:0,
+    h:'+300% ventas.<br>+200% tráfico.',
+    p:'No lo decimos nosotros: lo dicen los números de nuestros clientes. Negocios murcianos que duplicaron su tráfico web y triplicaron sus ventas con estrategias medibles. Cada caso con su antes, su después y su cómo.',
+    feat:'<b>→</b> Resultados verificables, no promesas &nbsp;·&nbsp; <b>→</b> Testimonios con nombre y apellido',
+    links:[
+      {label:'Ver los casos ↗',href:'https://www.eskaladigital.com/exitos',ext:true},
+    ]
+  },
+  {
+    id:'portfolio', t:'Portfolio', n:'05',
+    top:'#FAEEDC', bot:'#F4E2C4', ink:'#3A2A18', lab:'#7A5A36', stars:0,
+    h:'Proyectos que<br>hablan solos.',
+    p:'Como Health4Spain: el primer marketplace de España que centraliza seguros, abogados, inmobiliarias y gestorías para extranjeros — multiidioma en 5 lenguas, formulario inteligente de 4 pasos y +150 profesionales en 19 ciudades. Diseñado y desarrollado por ESKALA.',
+    feat:'<b>→</b> Webs, plataformas y apps reales &nbsp;·&nbsp; <b>→</b> De la idea al lanzamiento',
+    links:[
+      {label:'Ver portfolio ↗',href:'https://www.eskaladigital.com/portfolio',ext:true},
+    ]
+  },
+  {
+    id:'blog', t:'Blog', n:'06',
+    top:'#FFB23E', bot:'#F99B2A', ink:'#3A2208', lab:'#5A3508', stars:0, sun:true,
+    h:'Ideas que<br>iluminan.',
+    p:'Guías prácticas sin paja: cómo optimizar tu Google Business Profile en 30 minutos, qué publicar cuando no sabes qué publicar, cuánto invertir en Ads según tu sector. Lo que aprendemos con clientes reales, contado para que lo apliques tú.',
+    feat:'<b>→</b> Checklists accionables &nbsp;·&nbsp; <b>→</b> Cero teoría que no sirva mañana',
+    links:[
+      {label:'Leer el blog ↗',href:'https://www.eskaladigital.com/blog',ext:true},
+    ]
+  },
+  {
+    id:'contacto', t:'Contacto', n:'07',
+    top:'#E55A28', bot:'#D14A1E', ink:'#FFF4EA', lab:'#FFD9C2', stars:0,
+    h:'Hablemos antes<br>de que anochezca.',
+    p:'Cuéntanos tu negocio y te decimos, sin compromiso y sin jerga, qué haríamos primero y qué resultados puedes esperar. Respondemos rápido, presupuestamos claro y si no somos tu mejor opción, también te lo diremos.',
+    feat:'<b>→</b> Respuesta en menos de 24 h &nbsp;·&nbsp; <b>→</b> Primera consultoría gratuita',
+    links:[
+      {label:'Contactar ↗',href:'https://www.eskaladigital.com/contacto',ext:true},
+    ]
+  },
+  {
+    id:'universo', t:'El Universo', n:'08',
+    top:'#16203E', bot:'#0D1430', ink:'#F4F2EE', lab:'#8FA8D6', stars:26,
+    h:'¿Y si los servicios<br>fueran planetas?',
+    p:'Nuestra cara más juguetona: una travesía espacial en 3D donde cada servicio es un mundo — un planeta wireframe, una constelación, una gema, un cometa con una carta dentro. Hecha con WebGL, renderizada en tu pantalla. Abróchate.',
+    feat:'<b>→</b> 8 mundos · 1 estrella · 0 plugins',
+    links:[
+      {label:'Despegar 🚀',href:'12-eskala-universo-3d.html'},
+    ]
+  },
+];
+
+const stage=document.getElementById('stage');
+const dotsEl=document.getElementById('dots');
+let open=-1;
+
+SECCIONES.forEach((s,i)=>{
+  const el=document.createElement('div');
+  el.className='stripe';
+  el.style.setProperty('--top',s.top);
+  el.style.setProperty('--bot',s.bot);
+  el.style.setProperty('--ink',s.ink);
+  el.style.setProperty('--lab',s.lab);
+  el.setAttribute('tabindex','0');
+  el.setAttribute('role','button');
+  el.setAttribute('aria-label',s.t);
+  const ctas=s.links.map(l=>
+    `<a class="cta${l.ghost?' ghost':''}" href="${l.href}"${l.ext?' target="_blank" rel="noopener"':''}>${l.label}</a>`
+  ).join('');
+  el.innerHTML=`
+    ${s.sun?'<div class="sun"></div>':''}
+    <div class="idle">
+      <span class="t">${s.t}</span>
+      <span class="n">${s.n}</span>
+    </div>
+    <div class="full">
+      <div class="inner">
+        <span class="crumb">${s.n} / ${s.t}</span>
+        <h2>${s.h}</h2>
+        <p>${s.p}</p>
+        <p class="feat">${s.feat}</p>
+        <div class="ctas">${ctas}</div>
+      </div>
+    </div>`;
+  // estrellas titilantes en las franjas nocturnas
+  for(let k=0;k<s.stars;k++){
+    const st=document.createElement('span');
+    st.className='star';
+    const sz=Math.random()*2.2+1;
+    st.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*92+4}%;top:${Math.random()*90+4}%;
+      opacity:${.4+Math.random()*.6};animation-delay:${(Math.random()*3).toFixed(2)}s`;
+    el.appendChild(st);
+  }
+  el.addEventListener('click',e=>{
+    if(e.target.closest('.cta'))return;
+    if(open===i)return;
+    openStripe(i);
+  });
+  el.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();openStripe(i);}
+  });
+  stage.appendChild(el);
+
+  const d=document.createElement('button');
+  d.className='dot';d.setAttribute('aria-label','Ir a '+s.t);
+  d.addEventListener('click',()=>openStripe(i));
+  dotsEl.appendChild(d);
+});
+const stripes=[...stage.children];
+const dots=[...dotsEl.children];
+
+function openStripe(i){
+  open=((i%SECCIONES.length)+SECCIONES.length)%SECCIONES.length;
+  stage.setAttribute('data-open','');
+  stripes.forEach((el,j)=>el.classList.toggle('open',j===open));
+  dots.forEach((d,j)=>d.classList.toggle('on',j===open));
+}
+function closeAll(){
+  open=-1;
+  stage.removeAttribute('data-open');
+  stripes.forEach(el=>el.classList.remove('open'));
+  dots.forEach(d=>d.classList.remove('on'));
+}
+
+// apertura por enlace (#seccion)
+{
+  const h=location.hash.slice(1);
+  const idx=SECCIONES.findIndex(s=>s.id===h);
+  if(idx>=0)openStripe(idx);
+}
+
+document.getElementById('prev').addEventListener('click',()=>openStripe(open-1));
+document.getElementById('next').addEventListener('click',()=>openStripe(open+1));
+document.getElementById('close').addEventListener('click',closeAll);
+
+addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeAll();
+  if(open<0)return;
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();openStripe(open+1);}
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();openStripe(open-1);}
+});
+
+let wheelLock=0;
+addEventListener('wheel',e=>{
+  if(open<0)return;
+  const now=Date.now();
+  if(now-wheelLock<650)return;
+  if(Math.abs(e.deltaY)<18)return;
+  wheelLock=now;
+  openStripe(open+(e.deltaY>0?1:-1));
+},{passive:true});
+
+let touchY=null,touchX=null;
+addEventListener('touchstart',e=>{touchY=e.touches[0].clientY;touchX=e.touches[0].clientX;},{passive:true});
+addEventListener('touchend',e=>{
+  if(open<0||touchY===null)return;
+  const dy=e.changedTouches[0].clientY-touchY;
+  const dx=e.changedTouches[0].clientX-touchX;
+  const d=Math.abs(dy)>Math.abs(dx)?dy:dx;
+  if(Math.abs(d)>48)openStripe(open+(d<0?1:-1));
+  touchY=touchX=null;
+},{passive:true});
+</script>
+</body>
+</html>

@@ -2,8 +2,15 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname
+
+  // Demos HTML estáticas para clientes — sin auth ni cookies
+  if (pathname.startsWith('/pruebas/')) {
+    return NextResponse.next()
+  }
+
   // Excluir /administrator/login del middleware (evitar loops)
-  if (request.nextUrl.pathname === '/administrator/login') {
+  if (pathname === '/administrator/login') {
     return NextResponse.next()
   }
 

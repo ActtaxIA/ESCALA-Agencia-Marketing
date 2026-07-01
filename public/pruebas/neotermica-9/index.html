@@ -14,7 +14,14 @@
   --ink:#16202b;--slate:#597D95;--slate-d:#41617a;--slate-l:#8aa8bf;--red:#CB0A3D;--red-d:#a80832;
   --bg:#f5f8fb;--panel:#ffffff;--soft:#eef3f8;--muted:#5c6b7a;--line:#e2e9f0;--white:#fff;
   --nav-h:74px;--radius:20px;--shadow:0 24px 60px rgba(28,50,72,.12);--shadow-sm:0 10px 30px rgba(28,50,72,.08);
+  /* glow y tintes derivados del color activo (el termostato reasigna --slate y --red) */
+  --glow:color-mix(in srgb,var(--red) 34%,transparent);
+  --red-l:color-mix(in srgb,var(--red) 62%,#fff);
+  --slate-soft:color-mix(in srgb,var(--slate) 22%,transparent);
 }
+/* recoloreado suave al girar el termostato */
+.btn.primary,.serv .ic,.serv .ic svg,.serv .more,.feat .ic svg,.eyebrow,.eyebrow::before,.brand .mk,
+.hero-badge b,.nav-phone svg,.proc .n,.tags span,.zona-map .pin,.quote .av,.cinfo .ic svg{transition:color .5s,fill .5s,stroke .5s,background .5s,box-shadow .5s}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -37,8 +44,8 @@ section{position:relative}
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.7rem;border-radius:99px;font-family:'Space Grotesk';font-weight:600;font-size:.9rem;
   cursor:pointer;border:0;transition:transform .25s,box-shadow .25s,background .25s;white-space:nowrap}
-.btn.primary{background:linear-gradient(135deg,var(--red),#e0416a);color:#fff;box-shadow:0 12px 30px rgba(203,10,61,.32)}
-.btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(203,10,61,.42)}
+.btn.primary{background:linear-gradient(135deg,var(--red),var(--red-l));color:#fff;box-shadow:0 12px 30px var(--glow)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px var(--glow)}
 .btn.dark{background:var(--ink);color:#fff}
 .btn.dark:hover{transform:translateY(-3px)}
 .btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
@@ -83,24 +90,25 @@ section{position:relative}
 .hero-trust .t span{font-size:.8rem;color:var(--muted)}
 
 /* hero visual */
-.hero-visual{position:relative;height:460px}
-.orb{position:absolute;inset:0;border-radius:32px;overflow:hidden;background:
-  radial-gradient(120% 100% at 20% 10%,#7fa3bd,transparent 55%),
-  radial-gradient(120% 120% at 90% 90%,#e0416a,transparent 55%),
-  linear-gradient(160deg,#43617a,#26384a);box-shadow:var(--shadow)}
-.orb::after{content:'';position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(255,255,255,.18),transparent 60%)}
-.wave{position:absolute;left:-20%;right:-20%;height:60%;bottom:-6%;opacity:.5;
-  background:radial-gradient(closest-side,rgba(255,255,255,.35),transparent);filter:blur(6px);animation:sway 7s ease-in-out infinite}
-@keyframes sway{50%{transform:translateY(-16px) scale(1.04)}}
-.dial-card{position:absolute;top:26px;left:26px;right:26px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:1.1rem 1.3rem;color:#fff}
-.dial-card .row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
-.dial-card .tmp{font-family:'Space Grotesk';font-weight:700;font-size:2.6rem;line-height:1}
-.dial-card .tmp span{font-size:1.1rem;vertical-align:top}
-.dial-card .st{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
-.dial-card .track{height:7px;border-radius:99px;background:rgba(255,255,255,.25);overflow:hidden}
-.dial-card .fill{height:100%;width:62%;border-radius:99px;background:linear-gradient(90deg,#8fb6cf,#ff5c86);animation:breathe 5s ease-in-out infinite}
-@keyframes breathe{50%{width:74%}}
+.hero-visual{position:relative;height:460px;display:grid;place-items:center}
+.thermo{position:relative;width:min(400px,82vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 36%,#ffffff,#e7edf3);border:1px solid var(--line);
+  box-shadow:0 40px 90px rgba(28,50,72,.22),inset 0 2px 6px rgba(255,255,255,.9),inset 0 -8px 22px rgba(28,50,72,.06)}
+.dial{position:absolute;inset:7%;border-radius:50%;
+  background:conic-gradient(from 135deg,var(--slate) 0deg,#9a7fae 96deg,var(--red) 188deg,var(--red) 270deg,var(--slate) 360deg);
+  -webkit-mask:radial-gradient(circle,transparent 62%,#000 63%);mask:radial-gradient(circle,transparent 62%,#000 63%);opacity:.95}
+.dial-track{position:absolute;inset:7%;border-radius:50%;cursor:grab;touch-action:none}
+.dial-track:active{cursor:grabbing}
+.knob{position:absolute;top:50%;left:50%;width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--line);
+  box-shadow:0 6px 16px rgba(28,50,72,.3);transform:translate(-50%,-50%)}
+.knob::after{content:'';position:absolute;inset:7px;border-radius:50%;background:var(--slate);transition:background .3s}
+.thermo-face{position:absolute;inset:21%;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;
+  box-shadow:inset 0 2px 12px rgba(28,50,72,.08)}
+.thermo-face .lab{font-family:'Space Grotesk';font-weight:600;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.thermo-face .temp{font-family:'Space Grotesk';font-weight:700;font-size:3.4rem;line-height:1;color:var(--slate);transition:color .3s}
+.thermo-face .temp sup{font-size:1.2rem;vertical-align:super}
+.thermo-face .mode{font-family:'Space Grotesk';font-weight:600;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.25rem;transition:color .3s}
+.thermo-hint{position:absolute;bottom:-2.1rem;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Space Grotesk';font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .float{position:absolute;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:.85rem 1.1rem;box-shadow:var(--shadow-sm);
   display:flex;align-items:center;gap:.7rem;animation:bob 4s ease-in-out infinite}
 .float .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;flex:none}
@@ -140,8 +148,8 @@ section{position:relative}
 /* WHY */
 .why{padding:5rem 0}
 .why .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.5rem;align-items:center}
-.why-media{position:relative;border-radius:26px;height:440px;background:linear-gradient(160deg,#41617a,#26384a);overflow:hidden;box-shadow:var(--shadow)}
-.why-media .glow{position:absolute;width:60%;height:60%;border-radius:50%;background:radial-gradient(closest-side,rgba(203,10,61,.5),transparent);bottom:-10%;right:-10%;filter:blur(10px)}
+.why-media{position:relative;border-radius:26px;height:440px;background:linear-gradient(160deg,color-mix(in srgb,var(--slate) 78%,#1b2a38),#243646);overflow:hidden;box-shadow:var(--shadow)}
+.why-media .glow{position:absolute;width:60%;height:60%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--red) 55%,transparent),transparent);bottom:-10%;right:-10%;filter:blur(10px)}
 .why-media .badge{position:absolute;bottom:24px;left:24px;background:rgba(255,255,255,.94);border-radius:16px;padding:1.1rem 1.3rem;box-shadow:var(--shadow-sm)}
 .why-media .badge b{font-family:'Space Grotesk';font-size:1.6rem;color:var(--red);display:block}
 .why-media .badge span{font-size:.8rem;color:var(--muted)}
@@ -170,7 +178,7 @@ section{position:relative}
 .calc label{font-size:.82rem;color:#9fb2c2;display:block;margin-bottom:.6rem;font-weight:500}
 .calc .val{font-family:'Space Grotesk';font-weight:700;color:#fff}
 .calc input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:99px;background:rgba(255,255,255,.2);outline:none;margin:.4rem 0 1.4rem}
-.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#597D95,#CB0A3D);cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--slate),var(--red));cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.4)}
 .calc .result{background:linear-gradient(135deg,rgba(89,125,149,.25),rgba(203,10,61,.25));border-radius:16px;padding:1.3rem;text-align:center;margin-top:.5rem}
 .calc .result .big{font-family:'Space Grotesk';font-weight:700;font-size:2.6rem;background:linear-gradient(90deg,#8fb6cf,#ff5c86);-webkit-background-clip:text;background-clip:text;color:transparent}
 .calc .result small{color:#9fb2c2;font-size:.8rem;display:block}
@@ -190,7 +198,7 @@ section{position:relative}
 .zona{padding:5rem 0;background:var(--soft)}
 .zona .container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .zona-map{position:relative;height:360px;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#dbe6ef,#c3d4e2);box-shadow:var(--shadow-sm);display:grid;place-items:center}
-.zona-map .pin{position:relative;width:22px;height:22px;border-radius:50%;background:var(--red);box-shadow:0 0 0 8px rgba(203,10,61,.2),0 0 0 20px rgba(203,10,61,.1)}
+.zona-map .pin{position:relative;width:22px;height:22px;border-radius:50%;background:var(--red);box-shadow:0 0 0 8px color-mix(in srgb,var(--red) 22%,transparent),0 0 0 20px color-mix(in srgb,var(--red) 11%,transparent)}
 .zona-map .pin::after{content:'Murcia';position:absolute;top:-32px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Space Grotesk';font-weight:600;font-size:.8rem;color:var(--ink);background:#fff;padding:.2rem .6rem;border-radius:8px;box-shadow:var(--shadow-sm)}
 .tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
 .tags span{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:.4rem .9rem;font-size:.82rem;color:var(--slate-d)}
@@ -210,7 +218,7 @@ section{position:relative}
 .form .field{margin-bottom:1.1rem}
 .form label{font-size:.8rem;font-weight:600;color:var(--slate-d);display:block;margin-bottom:.4rem}
 .form input,.form select,.form textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;font-family:'Inter';font-size:.95rem;background:var(--bg);transition:border-color .2s,box-shadow .2s}
-.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--slate);box-shadow:0 0 0 3px rgba(89,125,149,.15)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--slate);box-shadow:0 0 0 3px var(--slate-soft)}
 .form textarea{resize:vertical;min-height:90px}
 .form .btn{width:100%;justify-content:center;margin-top:.3rem}
 .form .note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:.9rem}
@@ -226,7 +234,7 @@ footer li{margin-bottom:.6rem}
 footer a{font-size:.9rem;transition:color .2s}
 footer a:hover{color:#fff}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem}
-.foot-bottom a{color:#8fb6cf}
+.foot-bottom a{color:var(--slate-l)}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -296,16 +304,20 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="hero-visual">
-      <div class="orb">
-        <div class="wave"></div>
-        <div class="dial-card">
-          <div class="row"><span class="st">Salón · Confort</span><span class="st" id="mode">Modo Eco</span></div>
-          <div class="row"><span class="tmp">22<span>°C</span></span></div>
-          <div class="track"><div class="fill"></div></div>
+      <div class="thermo">
+        <div class="dial"></div>
+        <div class="dial-track" id="dialTrack"><div class="knob" id="knob"></div></div>
+        <div class="thermo-face">
+          <div>
+            <div class="lab">Control de clima</div>
+            <div class="temp" id="tempVal">22<sup>°</sup></div>
+            <div class="mode" id="tempMode">Confort</div>
+          </div>
         </div>
+        <div class="thermo-hint">Gira el termostato ↻ frío / calor</div>
       </div>
-      <div class="float f1"><span class="ic" style="background:linear-gradient(135deg,#597D95,#8fb6cf)">❄</span><span><b>-40% consumo</b><small>con aerotermia</small></span></div>
-      <div class="float f2"><span class="ic" style="background:linear-gradient(135deg,#CB0A3D,#ff5c86)">✓</span><span><b>Instalación en 48h</b><small>equipos en stock</small></span></div>
+      <div class="float f1"><span class="ic" style="background:linear-gradient(135deg,var(--slate),var(--slate-l))">❄</span><span><b>-40% consumo</b><small>con aerotermia</small></span></div>
+      <div class="float f2"><span class="ic" style="background:linear-gradient(135deg,var(--red),var(--red-l))">✓</span><span><b>Instalación en 48h</b><small>equipos en stock</small></span></div>
     </div>
   </div>
 </header>
@@ -532,9 +544,43 @@ function calc(){
   saveYear.textContent=(save*12)+' €/año';
 }
 [spend,home].forEach(el=>el.addEventListener('input',calc)); calc();
-// hero dial mode cycle
-const modeEl=document.getElementById('mode'), modes=['Modo Eco','Modo Confort','Modo Noche','Modo Auto'];
-let mi=0; setInterval(()=>{mi=(mi+1)%modes.length; if(modeEl) modeEl.textContent=modes[mi];},2600);
+// ---- Termostato del hero: reasigna --slate y --red y recolorea toda la web (azul frío ↔ rojo calor) ----
+const root=document.documentElement;
+const track=document.getElementById('dialTrack');
+const knob=document.getElementById('knob');
+const tempVal=document.getElementById('tempVal');
+const tempMode=document.getElementById('tempMode');
+// anclas por variable en 3 puntos: [frío(t0), reposo(t0.5)=corporativo, calor(t1)]
+const A_SLATE=[[74,134,173],[92,125,149],[214,58,99]];   // --slate: azul → slate → rojo
+const A_RED  =[[58,90,115],[203,10,61],[176,8,53]];      // --red: azul → rojo corporativo → rojo
+const A_SLD  =[[52,92,120],[65,97,122],[168,8,50]];      // --slate-d
+const A_SLL  =[[122,170,200],[138,168,191],[232,137,158]];// --slate-l
+const lp=(a,b,t)=>Math.round(a+(b-a)*t);
+function seg(an,t){const s=t<.5?0:1,k=t<.5?t/.5:(t-.5)/.5,c1=an[s],c2=an[s+1];return`rgb(${lp(c1[0],c2[0],k)},${lp(c1[1],c2[1],k)},${lp(c1[2],c2[2],k)})`;}
+let angle=0;const MIN=-135,MAX=135;
+function setTemp(a){
+  angle=Math.max(MIN,Math.min(MAX,a));
+  const t=(angle-MIN)/(MAX-MIN);
+  root.style.setProperty('--slate',seg(A_SLATE,t));
+  root.style.setProperty('--red',seg(A_RED,t));
+  root.style.setProperty('--slate-d',seg(A_SLD,t));
+  root.style.setProperty('--slate-l',seg(A_SLL,t));
+  const temp=Math.round(16+t*14);
+  if(tempVal) tempVal.innerHTML=temp+'<sup>°</sup>';
+  if(tempMode) tempMode.textContent=t<.34?'Modo frío':t>.66?'Modo calor':'Confort';
+  const rad=(angle-90)*Math.PI/180,r=50;
+  knob.style.left=(50+Math.cos(rad)*r)+'%';
+  knob.style.top=(50+Math.sin(rad)*r)+'%';
+}
+function pAngle(e){const b=track.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height/2;const a=Math.atan2(e.clientY-cy,e.clientX-cx)*180/Math.PI+90;return a>180?a-360:a;}
+let dragging=false;
+track.addEventListener('pointerdown',e=>{dragging=true;track.setPointerCapture(e.pointerId);setTemp(pAngle(e));});
+track.addEventListener('pointermove',e=>{if(dragging)setTemp(pAngle(e));});
+addEventListener('pointerup',()=>dragging=false);
+setTemp(0); // reposo = azul + rojo corporativos
+// demostración suave al entrar (una pasada y vuelve al centro)
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduced){setTimeout(()=>{let d=0,dir=1,ticks=0;const iv=setInterval(()=>{if(dragging){clearInterval(iv);return;}d+=dir*6;ticks++;if(d>120||d<-120)dir*=-1;setTemp(d);if(ticks>72){clearInterval(iv);setTemp(0);}},28);},900);}
 </script>
 </body>
 </html>

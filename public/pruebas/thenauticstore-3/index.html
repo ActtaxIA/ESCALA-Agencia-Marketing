@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nautic Store — Propuesta bold · ESCALA</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Propuesta bold/deportiva de rediseño para The Nautic Store. Demo by ESCALA Marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0b0b0d;--panel:#141418;--panel2:#1c1c22;--lime:#d4ff2e;--orange:#ff5a1f;
+  --blue:#2e7dff;--white:#f4f5f2;--gray:#8a8a93;--line:rgba(244,245,242,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+::selection{background:var(--lime);color:var(--black)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+img{display:block;max-width:100%}
+.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+
+.ribbon{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:.7rem;
+  padding:.4rem 1rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;background:var(--lime);color:var(--black);font-weight:600}
+.ribbon a{text-decoration:underline;text-underline-offset:2px}
+
+header{position:fixed;top:26px;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 4vw;transition:background .35s,backdrop-filter .35s}
+header.scrolled{background:rgba(11,11,13,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:.7rem;font-family:'Anton',sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:.02em}
+.logo .dot{width:12px;height:12px;background:var(--lime);border-radius:50%;box-shadow:0 0 16px var(--lime)}
+nav{display:flex;gap:1.8rem}
+nav a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);transition:color .2s}
+nav a:hover{color:var(--lime)}
+.head-r{display:flex;align-items:center;gap:1rem}
+.pill{padding:.7rem 1.3rem;border-radius:99px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  background:var(--lime);color:var(--black);transition:transform .25s}
+.pill:hover{transform:translateY(-2px)}
+.icon{width:42px;height:42px;border:1px solid var(--line);border-radius:99px;display:grid;place-items:center;transition:border-color .2s}
+.icon:hover{border-color:var(--lime)}
+.menu-t{display:none}
+
+/* hero bento */
+.hero{padding:7.5rem 4vw 2rem;max-width:1500px;margin:0 auto}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(150px,auto);gap:16px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:1.8rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.tile:hover{border-color:rgba(212,255,46,.4)}
+.t-hero{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(150deg,#16161b,#0b0b0d)}
+.t-hero .tag{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.t-hero h1{font-size:clamp(2.6rem,5.5vw,4.6rem);margin:1.2rem 0}
+.t-hero h1 .o{color:var(--orange)}
+.t-hero p{color:var(--gray);max-width:420px;line-height:1.7;margin-bottom:1.6rem}
+.t-hero .cta{display:inline-flex;align-items:center;gap:.6rem;align-self:flex-start;padding:1rem 1.8rem;background:var(--lime);color:var(--black);
+  border-radius:99px;font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;transition:transform .25s,box-shadow .25s}
+.t-hero .cta:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(212,255,46,.3)}
+.t-img{grid-column:span 2;grid-row:span 2;padding:0;background:radial-gradient(circle at 60% 40%,#1c2a1a,#0b0b0d);display:grid;place-items:center}
+.t-img canvas{width:100%;height:100%}
+.t-stat{background:var(--lime);color:var(--black);display:flex;flex-direction:column;justify-content:center}
+.t-stat .num{font-family:'Anton',sans-serif;font-size:3rem;line-height:1}
+.t-stat .lbl{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem;font-weight:600}
+.t-stat.orange{background:var(--orange);color:var(--white)}
+.t-badge{display:flex;flex-direction:column;justify-content:center;gap:.5rem}
+.t-badge .ic{font-size:1.6rem}
+.t-badge strong{font-size:1rem}
+.t-badge span{font-size:.8rem;color:var(--gray)}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);padding:1.3rem 0;margin:2rem 0;overflow:hidden;background:var(--panel)}
+.mq{display:flex;gap:2.5rem;width:max-content;animation:mq 24s linear infinite}
+.mq span{font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:2.5rem;white-space:nowrap}
+.mq span::after{content:'●';color:var(--lime);font-size:.8rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:5rem 4vw;max-width:1500px;margin:0 auto}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.sh h2{font-size:clamp(2.2rem,5vw,4rem)}
+.sh h2 .lime{color:var(--lime)}
+.sh p{color:var(--gray);max-width:380px;line-height:1.6}
+
+/* products grid brutalist */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prod{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,border-color .3s;transform-style:preserve-3d}
+.prod:hover{border-color:rgba(212,255,46,.4)}
+.prod .vis{aspect-ratio:16/11;position:relative;background:radial-gradient(circle at 50% 45%,#1d1d24,#0f0f12);display:grid;place-items:center}
+.prod .vis canvas{width:88%;height:88%}
+.prod .off{position:absolute;top:1rem;left:1rem;background:var(--orange);color:var(--white);font-family:'Anton',sans-serif;font-size:1.1rem;
+  padding:.2rem .7rem;border-radius:8px;letter-spacing:.02em}
+.prod .info{padding:1.5rem}
+.prod .info .brand{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime)}
+.prod .info h3{font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;margin:.4rem 0 .8rem;line-height:1}
+.prod .info .row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-top:1rem}
+.prod .info .price{font-family:'Anton',sans-serif;font-size:1.8rem}
+.prod .info .price s{font-family:'Space Grotesk';font-size:.9rem;color:var(--gray);font-weight:400;margin-left:.5rem}
+.prod .info .add{width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--black);font-size:1.4rem;display:grid;place-items:center;transition:transform .25s}
+.prod .info .add:hover{transform:rotate(90deg) scale(1.1)}
+
+/* split CTA */
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;padding-block:2rem}
+.split .box{border-radius:24px;padding:3rem;display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+.split .a{background:linear-gradient(140deg,var(--blue),#0b2a5e);position:relative;overflow:hidden}
+.split .a h3,.split .b h3{font-family:'Anton',sans-serif;font-size:clamp(2rem,3.5vw,3rem);text-transform:uppercase;line-height:.95}
+.split .a p,.split .b p{color:rgba(244,245,242,.8);margin:1rem 0 2rem;line-height:1.6;max-width:340px}
+.split .b{background:var(--lime);color:var(--black)}
+.split .b p{color:rgba(11,11,13,.72)}
+.split .cta2{align-self:flex-start;padding:.9rem 1.7rem;border-radius:99px;font-weight:600;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.split .a .cta2{background:var(--white);color:var(--black)}
+.split .b .cta2{background:var(--black);color:var(--lime)}
+
+/* trust bento */
+.trust{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tr{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.4rem;text-align:center;transition:transform .25s,border-color .25s}
+.tr:hover{transform:translateY(-4px);border-color:rgba(212,255,46,.4)}
+.tr .ic{font-size:1.5rem;margin-bottom:.6rem}
+.tr strong{display:block;font-size:.82rem}
+.tr span{font-size:.72rem;color:var(--gray)}
+
+footer{border-top:1px solid var(--line);margin-top:4rem;padding:4rem 4vw 2rem;max-width:1500px;margin-inline:auto}
+.fbig{font-family:'Anton',sans-serif;font-size:clamp(3rem,12vw,10rem);text-transform:uppercase;line-height:.85;color:var(--panel2);letter-spacing:.01em;margin-bottom:3rem}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.fgrid h5{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
+.fgrid ul{list-style:none;display:grid;gap:.5rem}
+.fgrid a{font-size:.85rem;color:var(--gray);transition:color .2s}
+.fgrid a:hover{color:var(--white)}
+.fgrid p{color:var(--gray);line-height:1.6;max-width:300px;font-size:.88rem;margin-top:.8rem}
+.fbot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--gray)}
+.fbot a{color:var(--lime)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.vis{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  nav{display:none}.menu-t{display:grid}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .t-hero,.t-img{grid-column:span 2}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .trust{grid-template-columns:repeat(3,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .bento{grid-template-columns:1fr}
+  .t-hero,.t-img,.t-stat,.t-badge{grid-column:span 1}
+  .grid{grid-template-columns:1fr}
+  .trust{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*,.mq{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Propuesta bold para The Nautic Store · <a href="https://www.eskaladigital.com/servicios" target="_blank" rel="noopener">ESCALA Marketing</a></div>
+
+<header id="header">
+  <a class="logo" href="#"><span class="dot"></span>Nautic Store</a>
+  <nav>
+    <a href="#tienda">Tienda</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="head-r">
+    <button class="icon" aria-label="Buscar">⌕</button>
+    <a class="pill" href="#ofertas">Outlet −55%</a>
+    <button class="icon menu-t" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="bento">
+    <div class="tile t-hero reveal">
+      <span class="tag">◆ Equipamiento náutico de alto rendimiento</span>
+      <div>
+        <h1 class="display">Domina<br>el <span class="o">agua</span></h1>
+        <p>Motores, neumáticas y equipo listo para tu próxima misión. Precios de outlet, garantía de 3 años y asesoramiento de gente que navega.</p>
+        <a class="cta" href="#ofertas">Ver ofertas →</a>
+      </div>
+    </div>
+    <div class="tile t-img reveal"><canvas id="hero3"></canvas></div>
+    <div class="tile t-stat reveal"><span class="num" data-count="55">0</span><span class="lbl">% dto. máx. outlet</span></div>
+    <div class="tile t-stat orange reveal"><span class="num" data-count="7">0</span><span class="lbl">Marcas oficiales</span></div>
+    <div class="tile t-badge reveal"><span class="ic">⚙️</span><strong>4 tiempos</strong><span>Motores fiables y eficientes</span></div>
+    <div class="tile t-badge reveal"><span class="ic">🛡️</span><strong>3 años garantía</strong><span>Documentación completa</span></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mq">
+    <span>OZEAM</span><span>SAIL</span><span>TORQEEDO</span><span>VIAMARE</span><span>AQUAPARX</span><span>Z-RAY</span><span>SHERPA</span><span>NAUTICOL</span>
+    <span>OZEAM</span><span>SAIL</span><span>TORQEEDO</span><span>VIAMARE</span><span>AQUAPARX</span><span>Z-RAY</span><span>SHERPA</span><span>NAUTICOL</span>
+  </div>
+</div>
+
+<section id="ofertas">
+  <div class="sh reveal">
+    <h2 class="display">Máquinas<br>en <span class="lime">oferta</span></h2>
+    <p>Stock real de tu catálogo actual, presentado con la energía que se merece. Unidades limitadas.</p>
+  </div>
+  <div class="grid" id="grid3">
+    <article class="prod reveal">
+      <div class="vis"><span class="off">−55%</span><canvas class="m3" data-type="motor"></canvas></div>
+      <div class="info"><span class="brand">SHERPA</span><h3>Fueraborda 12CV</h3><div class="row"><span class="price">877,50€<s>1.950€</s></span><button class="add">+</button></div></div>
+    </article>
+    <article class="prod reveal">
+      <div class="vis"><span class="off">−40%</span><canvas class="m3" data-type="motor"></canvas></div>
+      <div class="info"><span class="brand">SAIL</span><h3>Fueraborda 9,9CV</h3><div class="row"><span class="price">1.422€<s>2.370€</s></span><button class="add">+</button></div></div>
+    </article>
+    <article class="prod reveal">
+      <div class="vis"><span class="off">−45%</span><canvas class="m3" data-type="boat"></canvas></div>
+      <div class="info"><span class="brand">OZEAM</span><h3>Neumática 200</h3><div class="row"><span class="price">288,75€<s>525€</s></span><button class="add">+</button></div></div>
+    </article>
+    <article class="prod reveal">
+      <div class="vis"><span class="off">−30%</span><canvas class="m3" data-type="boat"></canvas></div>
+      <div class="info"><span class="brand">OZEAM</span><h3>Neumática 360</h3><div class="row"><span class="price">675€<s>900€</s></span><button class="add">+</button></div></div>
+    </article>
+    <article class="prod reveal">
+      <div class="vis"><span class="off">−50%</span><canvas class="m3" data-type="motor"></canvas></div>
+      <div class="info"><span class="brand">SHERPA</span><h3>5,5CV V3</h3><div class="row"><span class="price">360€<s>720€</s></span><button class="add">+</button></div></div>
+    </article>
+    <article class="prod reveal">
+      <div class="vis"><span class="off">−35%</span><canvas class="m3" data-type="motor"></canvas></div>
+      <div class="info"><span class="brand">SAIL</span><h3>Fueraborda 15CV</h3><div class="row"><span class="price">2.262€<s>3.481€</s></span><button class="add">+</button></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="tienda">
+  <div class="split">
+    <div class="box a reveal">
+      <h3 class="display">¿Barca +<br>motor?</h3>
+      <p>Te montamos el pack completo con la potencia justa para tu eslora. Sin sobrepagar, sin quedarte corto.</p>
+      <a class="cta2" href="#contacto">Configura tu pack →</a>
+    </div>
+    <div class="box b reveal">
+      <h3 class="display">Outlet<br>en vivo</h3>
+      <p>Descuentos de última hora que rotan cada semana. Cuando vuela, vuela.</p>
+      <a class="cta2" href="#ofertas">Ver stock →</a>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="sh reveal">
+    <h2 class="display">Por qué <span class="lime">nosotros</span></h2>
+    <p>Los mismos valores de siempre, con actitud.</p>
+  </div>
+  <div class="trust">
+    <div class="tr reveal"><div class="ic">🚚</div><strong>Envío 5€</strong><span>Península</span></div>
+    <div class="tr reveal"><div class="ic">🔒</div><strong>Pago seguro</strong><span>Sequra</span></div>
+    <div class="tr reveal"><div class="ic">↩️</div><strong>Devolución</strong><span>Garantizada</span></div>
+    <div class="tr reveal"><div class="ic">⭐</div><strong>Calidad</strong><span>Oficial</span></div>
+    <div class="tr reveal"><div class="ic">🛠️</div><strong>Postventa</strong><span>Experta</span></div>
+    <div class="tr reveal"><div class="ic">💰</div><strong>Mejor precio</strong><span>Garantía</span></div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="fbig">Zarpa ya</div>
+  <div class="fgrid">
+    <div>
+      <a class="logo" href="#"><span class="dot"></span>Nautic Store</a>
+      <p>Distribuidores oficiales de Sail, Viamare, Nauticol, Torqeedo, Aquaparx, Z-Ray y Ozeam. 3 años de garantía en todo.</p>
+    </div>
+    <div><h5>Tienda</h5><ul><li><a href="#">Motores</a></li><li><a href="#">Neumáticas</a></li><li><a href="#">Deportes</a></li><li><a href="#">Accesorios</a></li></ul></div>
+    <div><h5>Empresa</h5><ul><li><a href="#">Aviso legal</a></li><li><a href="#">Envíos</a></li><li><a href="#">Garantía</a></li><li><a href="#">Privacidad</a></li></ul></div>
+    <div><h5>Contacto</h5><ul><li><a href="#">info@thenauticstore.com</a></li><li><a href="#">673 098 324</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 The Nautic Store · Propuesta visual demo</span>
+    <span>Diseño por <a href="https://www.eskaladigital.com/servicios" target="_blank" rel="noopener">ESCALA Marketing</a></span>
+  </div>
+</footer>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function renderer(canvas){
+  const r = new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  r.setPixelRatio(Math.min(devicePixelRatio,2));
+  r.outputColorSpace = THREE.SRGBColorSpace;
+  return r;
+}
+function lights(s){
+  s.add(new THREE.AmbientLight(0xffffff,.6));
+  const k=new THREE.DirectionalLight(0xffffff,1.3);k.position.set(4,6,5);s.add(k);
+  const l=new THREE.DirectionalLight(0xd4ff2e,.7);l.position.set(-5,2,-3);s.add(l);
+}
+function motor(sc=1){
+  const g=new THREE.Group();
+  const body=new THREE.MeshStandardMaterial({color:0x1c1c22,metalness:.7,roughness:.3});
+  const acc=new THREE.MeshStandardMaterial({color:0xd4ff2e,metalness:.4,roughness:.35});
+  const b=new THREE.Mesh(new THREE.BoxGeometry(.4*sc,1*sc,.5*sc),body);b.position.y=.5*sc;g.add(b);
+  const h=new THREE.Mesh(new THREE.CylinderGeometry(.24*sc,.3*sc,.4*sc,20),body);h.position.y=1.1*sc;g.add(h);
+  const sh=new THREE.Mesh(new THREE.BoxGeometry(.09*sc,.55*sc,.09*sc),acc);sh.position.set(0,.25*sc,.22*sc);g.add(sh);
+  const p=new THREE.Mesh(new THREE.CylinderGeometry(.06*sc,.06*sc,.55*sc,10),acc);p.rotation.x=Math.PI/2;p.position.set(0,.08*sc,.38*sc);g.add(p);
+  return g;
+}
+function boat(sc=1){
+  const g=new THREE.Group();
+  const hull=new THREE.MeshStandardMaterial({color:0xff5a1f,metalness:.2,roughness:.5});
+  const tube=new THREE.MeshStandardMaterial({color:0xf4f5f2,metalness:.05,roughness:.6});
+  const floor=new THREE.Mesh(new THREE.BoxGeometry(2.2*sc,.07*sc,.9*sc),new THREE.MeshStandardMaterial({color:0x8a8a93,metalness:.7,roughness:.35}));
+  floor.position.y=.06*sc;g.add(floor);
+  [[.7,.35],[-.7,.35],[.7,-.35],[-.7,-.35]].forEach(([x,z])=>{
+    const t=new THREE.Mesh(new THREE.CylinderGeometry(.15*sc,.15*sc,2.4*sc,16),tube);
+    t.rotation.z=Math.PI/2;t.position.set(0,.2*sc,z*sc);g.add(t);
+  });
+  const bow=new THREE.Mesh(new THREE.ConeGeometry(.45*sc,.7*sc,16),hull);bow.rotation.x=Math.PI/2;bow.position.set(1.15*sc,.14*sc,0);g.add(bow);
+  return g;
+}
+
+// hero big scene
+(function(){
+  const c=document.getElementById('hero3');const r=renderer(c);
+  const s=new THREE.Scene();const cam=new THREE.PerspectiveCamera(42,1,.1,50);cam.position.set(0,1.1,4);lights(s);
+  const m=motor(1.15);s.add(m);let a=0,mx=0,my=0;
+  c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect();mx=((e.clientX-b.left)/b.width-.5)*2;my=((e.clientY-b.top)/b.height-.5)*2;});
+  function rz(){const w=c.clientWidth,h=c.clientHeight;if(!w||!h)return;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+  function loop(){requestAnimationFrame(loop);if(!reduced){a+=.01;m.rotation.y=a+mx*.5;m.rotation.x=my*.2;}r.render(s,cam);}
+  rz();addEventListener('resize',rz);new ResizeObserver(rz).observe(c);loop();
+})();
+
+// mini product scenes
+document.querySelectorAll('.m3').forEach(el=>{
+  const r=renderer(el);const s=new THREE.Scene();const cam=new THREE.PerspectiveCamera(38,1,.1,30);cam.position.set(0,.8,3.2);lights(s);
+  const m=el.dataset.type==='boat'?boat(.7):motor(1);s.add(m);
+  function rz(){const w=el.clientWidth,h=el.clientHeight;if(!w||!h)return;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+  let a=Math.random()*6;
+  function loop(){requestAnimationFrame(loop);if(!reduced){a+=.012;m.rotation.y=a;}r.render(s,cam);}
+  rz();new ResizeObserver(rz).observe(el);loop();
+});
+</script>
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,to=+el.dataset.count;let n=0;
+  const step=()=>{n+=Math.ceil(to/30);if(n>=to){n=to;el.textContent=n;}else{el.textContent=n;requestAnimationFrame(step);}};
+  step();cio.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+// tilt on product cards
+document.querySelectorAll('.prod').forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+    const b=card.getBoundingClientRect();const x=(e.clientX-b.left)/b.width-.5;const y=(e.clientY-b.top)/b.height-.5;
+    card.style.transform=`perspective(700px) rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-4px)`;
+  });
+  card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+
+// add feedback
+document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>{
+  b.textContent='✓';b.style.background='var(--orange)';b.style.color='#fff';
+  setTimeout(()=>{b.textContent='+';b.style.background='';b.style.color='';},1400);
+}));
+</script>
+</body>
+</html>

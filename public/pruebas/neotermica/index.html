@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neotérmica — Propuestas de diseño web · ESCALA</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Índice de propuestas de rediseño web para Neotérmica. Demo by ESCALA Marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b121c;--panel:#141d2b;--panel2:#1c2838;--white:#eef3fb;--text:rgba(238,243,251,.72);
+  --cold:#597D95;--cold-lite:#8fb6cf;--warm:#CB0A3D;--warm-lite:#ff5c86;--line:rgba(238,243,251,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden}
+::selection{background:var(--warm);color:#fff}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.05}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(55vw 55vw at 82% -8%,rgba(203,10,61,.14),transparent 60%),radial-gradient(50vw 50vw at 0% 105%,rgba(89,125,149,.16),transparent 60%)}
+
+.ribbon{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:center;gap:.7rem;
+  padding:.44rem 1rem;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  background:linear-gradient(90deg,var(--cold),var(--warm));color:#fff;font-weight:600}
+.ribbon a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:8rem 5vw 4rem}
+.head{text-align:center;max-width:760px;margin:0 auto 3.5rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-family:'Space Grotesk';font-weight:700;font-size:1.2rem;margin-bottom:1.6rem}
+.brand .mk{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--cold),var(--warm));display:grid;place-items:center;font-size:1.05rem}
+.head .kick{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cold-lite);display:block;margin-bottom:1rem}
+.head h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.02em;margin-bottom:1rem}
+.head h1 em{font-style:italic;background:linear-gradient(90deg,var(--cold-lite),var(--warm-lite));-webkit-background-clip:text;background-clip:text;color:transparent}
+.head p{color:var(--text);line-height:1.8;font-size:1.08rem}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.demo{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  transition:transform .35s,border-color .35s,box-shadow .35s}
+.demo:hover{transform:translateY(-8px);border-color:rgba(203,10,61,.45);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.demo .thumb{height:150px;position:relative;overflow:hidden;display:grid;place-items:center}
+.demo .thumb .lbl{position:absolute;top:.9rem;left:.9rem;font-family:'Space Grotesk';font-weight:700;font-size:.7rem;letter-spacing:.1em;
+  background:rgba(11,18,28,.6);backdrop-filter:blur(6px);border:1px solid var(--line);padding:.25rem .7rem;border-radius:99px}
+.demo .thumb .tag{position:absolute;bottom:.9rem;right:.9rem;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.22rem .6rem;border-radius:99px;background:rgba(11,18,28,.55);border:1px solid var(--line)}
+.demo .body{padding:1.5rem 1.6rem 1.7rem;flex:1;display:flex;flex-direction:column}
+.demo h3{font-size:1.2rem;margin-bottom:.5rem}
+.demo p{color:var(--text);line-height:1.6;font-size:.9rem;flex:1;margin-bottom:1.2rem}
+.demo .open{display:inline-flex;align-items:center;gap:.5rem;font-family:'Space Grotesk';font-weight:600;font-size:.74rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--warm-lite);transition:gap .25s}
+.demo:hover .open{gap:.85rem}
+.demo .link-abs{position:absolute;inset:0;z-index:2}
+
+/* thumbnail backgrounds evocando cada demo */
+.t1{background:radial-gradient(circle at 50% 45%,#1c2838,#0b121c)}
+.t1 .dial{width:64px;height:64px;border-radius:50%;background:conic-gradient(from 135deg,#597D95,#8a6a86,#CB0A3D,#CB0A3D,#597D95);
+  -webkit-mask:radial-gradient(circle,transparent 55%,#000 56%);mask:radial-gradient(circle,transparent 55%,#000 56%)}
+.t2{display:flex}.t2 i{flex:1}.t2 .a{background:linear-gradient(160deg,#123e5e,#0a2740)}.t2 .b{background:linear-gradient(160deg,#5e2408,#2a1206)}
+.t3{background:linear-gradient(135deg,#dfeef0,#8fb6cf)}
+.t4{background:#0f1622;background-image:linear-gradient(rgba(52,227,154,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(52,227,154,.12) 1px,transparent 1px);background-size:22px 22px}
+.t5{background:linear-gradient(135deg,#c8663f,#faf3e9)}
+.t6{background:radial-gradient(circle at 50% 45%,#1c2838,#0c131d)}
+.t6 .dial{width:64px;height:64px;border-radius:50%;background:conic-gradient(from 135deg,#597D95,#8a6a86,#CB0A3D,#CB0A3D,#597D95);
+  -webkit-mask:radial-gradient(circle,transparent 55%,#000 56%);mask:radial-gradient(circle,transparent 55%,#000 56%)}
+.t7{background:radial-gradient(circle at 50% 50%,#243447,#0b121c)}
+.t7 .box{width:80px;height:56px;border:1px solid rgba(143,182,207,.6);border-radius:6px;position:relative}
+.t7 .box::after{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:26px;height:8px;border-radius:3px;background:#8fb6cf;box-shadow:0 0 12px #8fb6cf}
+
+.footer{text-align:center;margin-top:4rem;color:var(--text);font-size:.85rem}
+.footer a{color:var(--warm-lite);font-weight:600}
+.footer .contact{margin-top:.6rem;color:var(--white)}
+
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.wrap{padding-top:6rem}}
+</style>
+</head>
+<body>
+<div class="ambient"></div>
+<div class="ribbon">Propuestas de diseño para Neotérmica · <a href="https://www.eskaladigital.com/servicios" target="_blank" rel="noopener">ESCALA Marketing</a></div>
+
+<div class="wrap">
+  <div class="head">
+    <div class="brand"><span class="mk">❄</span>Neotérmica</div>
+    <span class="kick">7 conceptos · elige tu dirección</span>
+    <h1>Tu nueva web, en <em>siete visiones</em></h1>
+    <p>Hemos preparado siete propuestas muy distintas para el rediseño de Neotérmica. Ábrelas, muévete por ellas y dinos cuál conecta más con vosotros. Desde aquí puedes verlas todas.</p>
+  </div>
+
+  <div class="grid">
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-1" target="_blank" rel="noopener" aria-label="Abrir propuesta 1"></a>
+      <div class="thumb t1"><span class="lbl">01</span><div class="dial"></div><span class="tag">Interactiva</span></div>
+      <div class="body"><h3>Termostato interactivo</h3><p>Oscura y tecnológica. Un termostato que giras y cambia toda la paleta de frío a calor.</p><span class="open">Abrir demo →</span></div>
+    </article>
+
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-2" target="_blank" rel="noopener" aria-label="Abrir propuesta 2"></a>
+      <div class="thumb t2"><span class="lbl">02</span><i class="a"></i><i class="b"></i><span class="tag">Impactante</span></div>
+      <div class="body"><h3>Frío / Calor</h3><p>Split dramático a pantalla completa: dos mundos, hielo y fuego, que el visitante reparte a su gusto.</p><span class="open">Abrir demo →</span></div>
+    </article>
+
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-3" target="_blank" rel="noopener" aria-label="Abrir propuesta 3"></a>
+      <div class="thumb t3"><span class="lbl" style="color:#12303f;border-color:rgba(18,48,63,.2);background:rgba(255,255,255,.5)">03</span><span class="tag" style="color:#12303f;background:rgba(255,255,255,.5);border-color:rgba(18,48,63,.2)">Minimal</span></div>
+      <div class="body"><h3>El Aire</h3><p>Luminosa y limpia, tipo spa. Partículas de aire que fluyen y reaccionan al cursor. Sensación de calma y salud.</p><span class="open">Abrir demo →</span></div>
+    </article>
+
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-4" target="_blank" rel="noopener" aria-label="Abrir propuesta 4"></a>
+      <div class="thumb t4"><span class="lbl">04</span><span class="tag" style="color:#34e39a;border-color:rgba(52,227,154,.4)">Datos</span></div>
+      <div class="body"><h3>Eficiencia</h3><p>Estética dashboard con una calculadora de ahorro en vivo. Ideal para vender aerotermia y eficiencia energética.</p><span class="open">Abrir demo →</span></div>
+    </article>
+
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-5" target="_blank" rel="noopener" aria-label="Abrir propuesta 5"></a>
+      <div class="thumb t5"><span class="lbl" style="color:#3a2a20;border-color:rgba(58,42,32,.2);background:rgba(255,255,255,.5)">05</span><span class="tag" style="color:#3a2a20;background:rgba(255,255,255,.5);border-color:rgba(58,42,32,.2)">Cercana</span></div>
+      <div class="body"><h3>Tu Hogar</h3><p>Cálida y humana. Una casa en corte interactiva: cada estancia se ilumina y recomienda su sistema ideal.</p><span class="open">Abrir demo →</span></div>
+    </article>
+
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-6" target="_blank" rel="noopener" aria-label="Abrir propuesta 6"></a>
+      <div class="thumb t6"><span class="lbl">06</span><div class="dial"></div><span class="tag">Corporativa</span></div>
+      <div class="body"><h3>Termostato · Colores de marca</h3><p>La propuesta 1 repintada con vuestros colores corporativos reales: azul pizarra y carmesí.</p><span class="open">Abrir demo →</span></div>
+    </article>
+
+    <article class="demo">
+      <a class="link-abs" href="/pruebas/neotermica-7" target="_blank" rel="noopener" aria-label="Abrir propuesta 7"></a>
+      <div class="thumb t7"><span class="lbl">07</span><div class="box"></div><span class="tag">Recorrido 3D</span></div>
+      <div class="body"><h3>Rayos X · Recorrido 3D</h3><p>Un viaje con scroll por distintos inmuebles (casa, oficina, bar, clínica, gimnasio, nave) viendo el aire funcionar por dentro.</p><span class="open">Abrir demo →</span></div>
+    </article>
+  </div>
+
+  <div class="footer">
+    <p>Todas las propuestas son demos visuales · <span style="color:var(--cold-lite)">Neotérmica Climatización · Murcia</span></p>
+    <p class="contact">678 495 046 · info@neotermica.es</p>
+    <p style="margin-top:1rem">Diseño por <a href="https://www.eskaladigital.com/servicios" target="_blank" rel="noopener">ESCALA Marketing</a></p>
+  </div>
+</div>
+</body>
+</html>

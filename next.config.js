@@ -61,6 +61,16 @@ const nextConfig = {
     ]
   },
 
+  // Demos HTML para clientes: /pruebas/slug → /pruebas/slug/index.html
+  async rewrites() {
+    return [
+      {
+        source: '/pruebas/:slug',
+        destination: '/pruebas/:slug/index.html',
+      },
+    ]
+  },
+
   // Redirecciones SEO: forzar www como canónico
   async redirects() {
     return [

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neotérmica — Recorrido 3D Rayos X · ESCALA</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Recorrido 3D interactivo por inmuebles y su climatización para Neotérmica. Demo by ESCALA Marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b121c;--panel:rgba(12,20,30,.72);--white:#eef3fb;--text:rgba(238,243,251,.72);
+  --cold:#597D95;--cold-lite:#8fb6cf;--warm:#CB0A3D;--warm-lite:#ff5c86;--line:rgba(238,243,251,.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font-weight:300}
+::selection{background:var(--warm);color:#fff}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.04}
+
+#scene{position:fixed;inset:0;z-index:0}
+.vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 30%,transparent 55%,rgba(4,8,14,.75) 100%)}
+
+/* top bar */
+.ribbon{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:center;gap:.7rem;
+  padding:.42rem 1rem;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  background:linear-gradient(90deg,var(--cold),var(--warm));color:#fff;font-weight:600}
+.ribbon a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.topbar{position:fixed;top:27px;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:'Space Grotesk';font-weight:700;font-size:1.15rem}
+.brand .mk{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--cold),var(--warm));display:grid;place-items:center;font-size:1rem}
+.xray-tag{font-family:'Space Grotesk';font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cold-lite);
+  border:1px solid var(--line);border-radius:99px;padding:.4rem .9rem;display:flex;align-items:center;gap:.5rem}
+.xray-tag::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--warm);box-shadow:0 0 10px var(--warm);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* progress */
+.progress{position:fixed;top:0;left:0;height:3px;z-index:45;background:linear-gradient(90deg,var(--cold),var(--warm));width:0%;transition:width .1s linear}
+.chapters{position:fixed;right:2.4vw;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:.9rem}
+.chapters button{width:11px;height:11px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;transition:all .3s;padding:0}
+.chapters button.on{background:var(--warm);border-color:var(--warm);box-shadow:0 0 12px var(--warm);transform:scale(1.25)}
+
+/* room fade overlay */
+.flash{position:fixed;inset:0;z-index:5;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .35s}
+.flash.show{opacity:1}
+
+/* scroll steps */
+.steps{position:relative;z-index:10}
+.step{min-height:100vh;display:flex;align-items:center;padding:0 6vw;pointer-events:none}
+.step:nth-child(even){justify-content:flex-end}
+.card{max-width:440px;background:var(--panel);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:22px;
+  padding:2.2rem 2.3rem;pointer-events:auto;box-shadow:0 30px 80px rgba(0,0,0,.5);opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.step.in .card{opacity:1;transform:none}
+.card .num{font-family:'Space Grotesk';font-weight:700;font-size:.72rem;letter-spacing:.2em;color:var(--cold-lite);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.card .num .chip{padding:.2rem .6rem;border-radius:99px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase}
+.chip.cold{background:rgba(89,125,149,.2);color:var(--cold-lite);border:1px solid rgba(89,125,149,.4)}
+.chip.warm{background:rgba(203,10,61,.18);color:var(--warm-lite);border:1px solid rgba(203,10,61,.45)}
+.card h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-bottom:.4rem}
+.card .place{font-family:'Space Grotesk';font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-lite);margin-bottom:1.1rem}
+.card p{line-height:1.8;color:var(--text);font-size:1rem;margin-bottom:1rem}
+.card .tip{font-size:.9rem;line-height:1.7;color:var(--white);background:rgba(89,125,149,.1);border-left:3px solid var(--cold);
+  border-radius:8px;padding:.8rem 1rem}
+.card .tip b{color:var(--cold-lite)}
+
+/* hero + final */
+.hero-card,.final-card{max-width:640px;background:transparent;border:0;box-shadow:none;backdrop-filter:none}
+.step.hero{justify-content:center;text-align:center}
+.step.final{justify-content:center;text-align:center}
+.hero-card h1{font-size:clamp(2.6rem,7vw,5.4rem);letter-spacing:-.02em;margin-bottom:1.3rem}
+.hero-card h1 em{font-style:italic;background:linear-gradient(90deg,var(--cold-lite),var(--warm-lite));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-card p{font-size:1.15rem;line-height:1.8;color:var(--text);max-width:520px;margin:0 auto}
+.scrollcue{margin-top:2.4rem;font-family:'Space Grotesk';font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text);animation:bob 2.2s infinite}
+@keyframes bob{50%{transform:translateY(7px);opacity:.4}}
+.final-card h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1rem}
+.final-card p{color:var(--text);line-height:1.8;max-width:520px;margin:0 auto 2rem;font-size:1.08rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:1.05rem 2rem;border-radius:99px;font-family:'Space Grotesk';font-weight:600;
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,var(--warm),#e0416a);color:#fff;
+  box-shadow:0 14px 40px rgba(203,10,61,.4);transition:transform .25s;pointer-events:auto}
+.btn:hover{transform:translateY(-3px)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--white);box-shadow:none;margin-left:.6rem}
+
+@media(max-width:700px){
+  .step,.step:nth-child(even){justify-content:center}
+  .card{max-width:92vw}
+  .chapters{right:1.2vw}
+  .xray-tag{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div class="vignette"></div>
+<div class="flash" id="flash"></div>
+
+<div class="progress" id="progress"></div>
+<div class="ribbon">Recorrido 3D · Propuesta para Neotérmica · <a href="https://www.eskaladigital.com/servicios" target="_blank" rel="noopener">ESCALA Marketing</a></div>
+<div class="topbar">
+  <div class="brand"><span class="mk">❄</span>Neotérmica</div>
+  <div class="xray-tag">Modo rayos X</div>
+</div>
+<div class="chapters" id="chapters"></div>
+
+<main class="steps" id="steps">
+  <section class="step hero" data-step="0">
+    <div class="hero-card card">
+      <h1>Cada espacio pide<br>su <em>clima</em></h1>
+      <p>Recorre distintos inmuebles por dentro. En cada uno, las paredes se vuelven transparentes y verás el sistema de climatización de Neotérmica funcionando: por dónde entra el aire, dónde va el calor y por qué.</p>
+      <div class="scrollcue">▼ Haz scroll para entrar</div>
+    </div>
+  </section>
+
+  <section class="step" data-step="1">
+    <div class="card">
+      <div class="num">01 · Vivienda <span class="chip cold">Frío</span></div>
+      <h2>Salón</h2>
+      <div class="place">Split mural inverter</div>
+      <p>El equipo de la pared impulsa aire fresco en abanico por todo el salón. Silencioso, con tecnología inverter que ajusta la potencia y ahorra energía cuando la estancia ya está a temperatura.</p>
+      <div class="tip"><b>Neotérmica:</b> dimensionamos los frigorías según los m² y la orientación, para que enfríe rápido sin gastar de más.</div>
+    </div>
+  </section>
+
+  <section class="step" data-step="2">
+    <div class="card">
+      <div class="num">02 · Vivienda <span class="chip warm">Calor</span></div>
+      <h2>Dormitorio</h2>
+      <div class="place">Suelo radiante</div>
+      <p>Bajo el suelo circula agua caliente que sube en calor uniforme y envolvente. Sin ruido, sin corrientes y sin radiadores a la vista: el confort perfecto para descansar en invierno.</p>
+      <div class="tip"><b>Neotérmica:</b> trabaja a baja temperatura, ideal combinado con aerotermia para un consumo mínimo.</div>
+    </div>
+  </section>
+
+  <section class="step" data-step="3">
+    <div class="card">
+      <div class="num">03 · Oficina <span class="chip cold">Frío</span></div>
+      <h2>Oficina</h2>
+      <div class="place">Climatización por conductos</div>
+      <p>El aire se reparte de forma invisible por rejillas en el techo, climatizando toda la planta de manera uniforme. Ni un solo equipo a la vista: solo confort constante para trabajar mejor.</p>
+      <div class="tip"><b>Neotérmica:</b> una sola máquina oculta abastece varias salas, con zonificación por estancias.</div>
+    </div>
+  </section>
+
+  <section class="step" data-step="4">
+    <div class="card">
+      <div class="num">04 · Hostelería <span class="chip cold">Frío</span></div>
+      <h2>Bar &amp; Restaurante</h2>
+      <div class="place">Cassette de techo</div>
+      <p>El cassette empotrado en el techo lanza aire en cuatro direcciones, manteniendo el local fresco incluso lleno de gente. Alta potencia, reparto uniforme y estética limpia sobre la barra.</p>
+      <div class="tip"><b>Neotérmica:</b> potencia y mantenimiento pensados para locales de alta ocupación.</div>
+    </div>
+  </section>
+
+  <section class="step final" data-step="5">
+    <div class="final-card card">
+      <h2>Tu inmueble, su clima ideal</h2>
+      <p>Vivienda, oficina o local: estudiamos cada espacio y te proponemos el sistema exacto que necesita. Más de 20 años climatizando Murcia.</p>
+      <div>
+        <a class="btn" href="#">Solicitar presupuesto →</a>
+        <a class="btn ghost" href="#" onclick="scrollTo({top:0,behavior:'smooth'});return false;">Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const COLD = 0x597D95, COLDLITE = 0x8fb6cf, WARM = 0xCB0A3D, WARMLITE = 0xff5c86;
+
+const canvas = document.getElementById('scene');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0b121c);
+scene.fog = new THREE.Fog(0x0b121c, 10, 26);
+
+const camera = new THREE.PerspectiveCamera(48, innerWidth/innerHeight, 0.1, 100);
+
+// lights
+scene.add(new THREE.AmbientLight(0x88a0c0, 0.7));
+const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(5,8,6); scene.add(key);
+const rimC = new THREE.PointLight(COLDLITE, 0.6, 30); rimC.position.set(-6,4,4); scene.add(rimC);
+const rimW = new THREE.PointLight(WARMLITE, 0.5, 30); rimW.position.set(6,3,-4); scene.add(rimW);
+
+// ---- material helpers ----
+const glassWall = () => new THREE.MeshStandardMaterial({color:0x9fc0d8, transparent:true, opacity:0.08, metalness:0.1, roughness:0.9, side:THREE.DoubleSide});
+const edgeMat = new THREE.LineBasicMaterial({color:0x6f93ad, transparent:true, opacity:0.5});
+const floorMat = (c)=> new THREE.MeshStandardMaterial({color:c, metalness:0.2, roughness:0.7});
+const propMat = (c)=> new THREE.MeshStandardMaterial({color:c, metalness:0.15, roughness:0.6});
+
+function boxEdges(w,h,d){
+  const g = new THREE.BoxGeometry(w,h,d);
+  return new THREE.LineSegments(new THREE.EdgesGeometry(g), edgeMat);
+}
+function prop(w,h,d,c,x,y,z){
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), propMat(c));
+  m.position.set(x,y,z); return m;
+}
+
+// glowing HVAC unit
+function makeUnit(w,h,d,mode){
+  const col = mode==='warm'? WARM : COLD;
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), new THREE.MeshStandardMaterial({color:0xf4f8fc, metalness:0.3, roughness:0.4, emissive:col, emissiveIntensity:0.15}));
+  g.add(body);
+  const glow = new THREE.Mesh(new THREE.BoxGeometry(w*1.08,h*1.08,d*1.08), new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0.16}));
+  g.add(glow);
+  g.userData.glow = glow;
+  return g;
+}
+
+// build a room. returns {group, unitPos, mode, air}
+function buildRoom(opts){
+  const g = new THREE.Group();
+  const W=8, H=3.2, D=6;
+  // floor
+  const floor = new THREE.Mesh(new THREE.BoxGeometry(W,0.1,D), floorMat(opts.floor));
+  floor.position.y = 0; g.add(floor);
+  if (opts.radiant){
+    const rad = new THREE.Mesh(new THREE.PlaneGeometry(W*0.86,D*0.86), new THREE.MeshBasicMaterial({color:WARM, transparent:true, opacity:0.28}));
+    rad.rotation.x = -Math.PI/2; rad.position.y = 0.061; g.add(rad);
+    // radiant coil lines
+    const coil = new THREE.Group();
+    for(let i=0;i<7;i++){ const line = new THREE.Mesh(new THREE.BoxGeometry(W*0.8,0.02,0.05), new THREE.MeshBasicMaterial({color:WARMLITE,transparent:true,opacity:0.6})); line.position.set(0,0.07,-2+ i*0.66); coil.add(line);} g.add(coil);
+  }
+  // glass walls (rayos X)
+  const back = new THREE.Mesh(new THREE.PlaneGeometry(W,H), glassWall()); back.position.set(0,H/2,-D/2); g.add(back);
+  const left = new THREE.Mesh(new THREE.PlaneGeometry(D,H), glassWall()); left.rotation.y=Math.PI/2; left.position.set(-W/2,H/2,0); g.add(left);
+  const right = new THREE.Mesh(new THREE.PlaneGeometry(D,H), glassWall()); right.rotation.y=-Math.PI/2; right.position.set(W/2,H/2,0); g.add(right);
+  const ceil = new THREE.Mesh(new THREE.PlaneGeometry(W,D), glassWall()); ceil.rotation.x=Math.PI/2; ceil.position.set(0,H,0); g.add(ceil);
+  // wall edges wireframe
+  const we = boxEdges(W,H,D); we.position.y=H/2; g.add(we);
+
+  // props
+  opts.props(g);
+
+  // unit
+  const unit = opts.unit();
+  g.add(unit.mesh);
+
+  // airflow particles
+  const N = 220;
+  const pos = new Float32Array(N*3);
+  const seed = [];
+  for(let i=0;i<N;i++){ seed.push(spawn(unit.origin, opts.flow)); pos[i*3]=seed[i].x; pos[i*3+1]=seed[i].y; pos[i*3+2]=seed[i].z; }
+  const pg = new THREE.BufferGeometry();
+  pg.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  const pmat = new THREE.PointsMaterial({color: opts.mode==='warm'?WARMLITE:COLDLITE, size:0.09, transparent:true, opacity:0.85, depthWrite:false, blending:THREE.AdditiveBlending});
+  const points = new THREE.Points(pg, pmat);
+  g.add(points);
+
+  g.visible = false;
+  scene.add(g);
+  return {group:g, air:{points, seed, flow:opts.flow, origin:unit.origin, glow:unit.mesh.userData.glow}};
+}
+
+function spawn(o, flow){
+  return {
+    x:o.x + (Math.random()-.5)*flow.spread,
+    y:o.y + (Math.random()-.5)*flow.spread*0.4,
+    z:o.z + (Math.random()-.5)*flow.spread,
+    life:Math.random()
+  };
+}
+
+// ---------- ROOMS ----------
+const rooms = [];
+
+// 0 Salón — split mural (frío)
+rooms.push(buildRoom({
+  floor:0x2a3546, mode:'cold',
+  unit:()=>{ const u=makeUnit(1.4,0.4,0.35,'cold'); u.position.set(-2.6,2.5,-2.7); return {mesh:u, origin:new THREE.Vector3(-2.6,2.35,-2.5)}; },
+  flow:{dir:new THREE.Vector3(0.5,-0.5,0.6), spread:1.2, speed:0.05, len:5},
+  props:(g)=>{
+    g.add(prop(2.4,0.6,1,0x394b5e, -1.8,0.4,1.4));      // sofa base
+    g.add(prop(2.4,0.7,0.3,0x30414f, -1.8,0.8,0.95));   // sofa back
+    g.add(prop(1.2,0.5,0.7,0x4a3f39, 1.9,0.35,1.2));    // armchair
+    g.add(prop(1.6,0.05,0.9,0x223, 0,0.09,0.4));        // rug
+    g.add(prop(1.2,0.4,0.5,0x2b3a48, 0,0.3,0.4));       // coffee table
+    g.add(prop(0.1,1.6,1.2,0x30414f, 3.6,0.9,-1));      // shelf
+  }
+}));
+
+// 1 Dormitorio — suelo radiante (calor)
+rooms.push(buildRoom({
+  floor:0x3a2e2a, mode:'warm', radiant:true,
+  unit:()=>{ const u=makeUnit(2.2,0.06,1.8,'warm'); u.position.set(0,0.08,-0.6); return {mesh:u, origin:new THREE.Vector3(0,0.2,-0.6)}; },
+  flow:{dir:new THREE.Vector3(0,1,0), spread:3.2, speed:0.04, len:3.2},
+  props:(g)=>{
+    g.add(prop(2.6,0.5,3,0x4a3540, 0,0.35,-1));         // bed base
+    g.add(prop(2.6,0.7,0.25,0x3a2a33, 0,0.75,-2.4));    // headboard
+    g.add(prop(2.4,0.15,2.4,0xef, 0,0.62,-0.7));        // mattress/duvet
+    g.add(prop(1.1,0.5,0.5,0xf0e6dc, -0.6,0.78,-2.1));  // pillow
+    g.add(prop(1.1,0.5,0.5,0xf0e6dc, 0.6,0.78,-2.1));   // pillow
+    g.add(prop(0.6,0.5,0.5,0x50414d, 1.9,0.3,-2));      // nightstand
+  }
+}));
+
+// 2 Oficina — conductos techo (frío)
+rooms.push(buildRoom({
+  floor:0x2b3340, mode:'cold',
+  unit:()=>{ const u=makeUnit(1.1,0.12,1.1,'cold'); u.position.set(0,3.05,-1.2); return {mesh:u, origin:new THREE.Vector3(0,2.9,-1.2)}; },
+  flow:{dir:new THREE.Vector3(0,-1,0.2), spread:1.4, speed:0.06, len:4},
+  props:(g)=>{
+    for(let i=0;i<3;i++){
+      const x=-2.4+i*2.4;
+      g.add(prop(1.6,0.08,0.8,0x3a4a5a, x,0.85,0.6));   // desk
+      g.add(prop(0.05,0.7,0.4,0x1a2530, x-0.4,0.5,0.6));// desk leg zone
+      const mon=prop(0.7,0.45,0.05,0x101820, x,1.2,0.35); g.add(mon);
+      const scr=prop(0.62,0.37,0.02,COLD, x,1.2,0.33); scr.material=new THREE.MeshBasicMaterial({color:COLDLITE,transparent:true,opacity:0.5}); g.add(scr);
+      g.add(prop(0.5,0.5,0.5,0x30414f, x,0.35,1.3));    // chair
+    }
+    g.add(prop(0.1,1.8,2.4,0x2a3644, 3.7,0.95,0));      // partition
+  }
+}));
+
+// 3 Bar / Restaurante — cassette techo (frío)
+rooms.push(buildRoom({
+  floor:0x241f2c, mode:'cold',
+  unit:()=>{ const u=makeUnit(1.3,0.14,1.3,'cold'); u.position.set(0,3.04,-1.5); return {mesh:u, origin:new THREE.Vector3(0,2.9,-1.5)}; },
+  flow:{dir:new THREE.Vector3(0,-1,0), spread:2.4, speed:0.06, len:4},
+  props:(g)=>{
+    g.add(prop(4.6,1.1,0.9,0x3a2b33, 0,0.55,-1.6));     // bar counter
+    g.add(prop(4.7,0.1,1.05,0x51606e, 0,1.12,-1.6));    // bar top
+    g.add(prop(3.6,1.3,0.25,0x2a2030, 0,1.6,-2.7));     // back shelf
+    for(let i=0;i<5;i++){ const b=prop(0.16,0.5,0.16,[COLDLITE,WARMLITE,0xe0c060,0x8fb6cf,0xff5c86][i], -1.6+i*0.8,2.0,-2.65); b.material=new THREE.MeshBasicMaterial({color:b.material.color,transparent:true,opacity:0.7}); g.add(b);} // bottles
+    for(let i=0;i<4;i++){ const s=new THREE.Mesh(new THREE.CylinderGeometry(0.22,0.22,0.9,14), propMat(0x30414f)); s.position.set(-1.8+i*1.2,0.45,-0.4); g.add(s);} // stools
+    g.add(prop(1.3,0.7,1.3,0x2b3a48, 2.6,0.4,1.4));     // table
+  }
+}));
+
+// ---------- STEPS (camera + room) ----------
+const V = (x,y,z)=>new THREE.Vector3(x,y,z);
+const STEPS = [
+  {room:0, pos:V(0,2.4,7.2), look:V(0,1.4,-0.5)},        // hero wide
+  {room:0, pos:V(0.6,2.5,3.2), look:V(-2.4,2.2,-2.3)},   // split
+  {room:1, pos:V(2.6,2.4,3.4), look:V(0,0.5,-1)},        // radiant
+  {room:2, pos:V(2.2,1.7,3.6), look:V(0,2.6,-1.2)},      // ducts
+  {room:3, pos:V(3.0,1.9,3.4), look:V(0,1.4,-1.6)},      // cassette
+  {room:3, pos:V(0,2.6,7.6), look:V(0,1.3,-1)}           // final wide
+];
+
+let curRoom = -1;
+function showRoom(idx){
+  if (idx===curRoom) return;
+  const flash = document.getElementById('flash');
+  flash.classList.add('show');
+  setTimeout(()=>{
+    rooms.forEach((r,i)=> r.group.visible = (i===idx));
+    curRoom = idx;
+    flash.classList.remove('show');
+  }, 200);
+}
+
+// camera state
+let camPos = STEPS[0].pos.clone();
+let camLook = STEPS[0].look.clone();
+let tgtPos = camPos.clone();
+let tgtLook = camLook.clone();
+let mouseX=0, mouseY=0;
+addEventListener('pointermove', e=>{ mouseX=(e.clientX/innerWidth-.5); mouseY=(e.clientY/innerHeight-.5); });
+
+showRoom(0);
+
+// ---------- scroll wiring ----------
+const stepEls = [...document.querySelectorAll('.step')];
+const chapters = document.getElementById('chapters');
+stepEls.forEach((el,i)=>{ const b=document.createElement('button'); b.onclick=()=>el.scrollIntoView({behavior:'smooth'}); chapters.appendChild(b); });
+const dots = [...chapters.children];
+
+let activeStep = -1;
+function setStep(i){
+  if(i===activeStep) return;
+  activeStep = i;
+  const s = STEPS[i];
+  tgtPos = s.pos.clone(); tgtLook = s.look.clone();
+  showRoom(s.room);
+  dots.forEach((d,k)=>d.classList.toggle('on', k===i));
+}
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); setStep(+e.target.dataset.step); } });
+},{threshold:0.55});
+stepEls.forEach(el=>io.observe(el));
+
+// progress bar
+addEventListener('scroll', ()=>{
+  const h = document.documentElement.scrollHeight - innerHeight;
+  document.getElementById('progress').style.width = (scrollY/h*100)+'%';
+});
+
+// ---------- render loop ----------
+function resize(){ renderer.setSize(innerWidth,innerHeight); camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+
+const tmp = new THREE.Vector3();
+let t=0;
+function animate(){
+  requestAnimationFrame(animate);
+  t += 1;
+  // camera easing
+  const ease = reduced?1:0.06;
+  camPos.lerp(tgtPos, ease);
+  camLook.lerp(tgtLook, ease);
+  const px = camPos.x + mouseX*0.6;
+  const py = camPos.y - mouseY*0.4;
+  camera.position.set(px,py,camPos.z);
+  camera.lookAt(camLook);
+
+  // airflow of current room
+  const room = rooms[curRoom];
+  if(room){
+    const {points, seed, flow, origin, glow} = room.air;
+    const arr = points.geometry.attributes.position.array;
+    if(!reduced){
+      for(let i=0;i<seed.length;i++){
+        const s = seed[i];
+        s.x += flow.dir.x*flow.speed*(0.6+Math.random()*0.8);
+        s.y += flow.dir.y*flow.speed*(0.6+Math.random()*0.8);
+        s.z += flow.dir.z*flow.speed*(0.6+Math.random()*0.8);
+        s.life += 0.01;
+        if(s.life>1){ const n=spawn(origin,flow); s.x=n.x;s.y=n.y;s.z=n.z;s.life=0; }
+        arr[i*3]=s.x; arr[i*3+1]=s.y; arr[i*3+2]=s.z;
+      }
+      points.geometry.attributes.position.needsUpdate = true;
+      if(glow) glow.material.opacity = 0.12 + Math.sin(t*0.06)*0.06;
+    }
+  }
+  renderer.render(scene,camera);
+}
+animate();
+</script>
+</body>
+</html>

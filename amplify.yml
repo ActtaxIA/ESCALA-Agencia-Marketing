@@ -7,6 +7,7 @@ frontend:
     build:
       commands:
         - npm run build
+        - if [ -d .next/standalone/public ]; then cp -r public/. .next/standalone/public/; fi
   artifacts:
     baseDirectory: .next
     files:

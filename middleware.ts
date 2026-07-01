@@ -4,11 +4,9 @@ import { NextResponse, type NextRequest } from 'next/server'
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Demos HTML en public/pruebas/:slug/index.html
-  const pruebasMatch = pathname.match(/^\/pruebas\/([a-z0-9-]+)\/?$/i)
-  if (pruebasMatch) {
-    const slug = pruebasMatch[1]
-    return NextResponse.rewrite(new URL(`/pruebas/${slug}/index.html`, request.url))
+  // Demos para clientes: ruta App Router en /pruebas/[slug]
+  if (pathname.startsWith('/pruebas/')) {
+    return NextResponse.next()
   }
 
   // Excluir /administrator/login del middleware (evitar loops)
@@ -76,7 +74,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|html)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
 
